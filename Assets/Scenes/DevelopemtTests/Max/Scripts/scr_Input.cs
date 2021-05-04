@@ -6,6 +6,7 @@ public class scr_Input : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemSprite;
+    public GameObject Itemslots;
     private bool isDragging;
 
     void Start()
@@ -24,6 +25,7 @@ public class scr_Input : MonoBehaviour
             {
                 if (hit.collider.tag == "Item")
                 {
+                    Itemslots.SetActive(true);
                     for (int i = 0; i < inventory.slots.Length; i++)
                     {
                         if (inventory.isFull[i] == false)
@@ -38,6 +40,7 @@ public class scr_Input : MonoBehaviour
                 }
             }
         }
+
 
     }
 

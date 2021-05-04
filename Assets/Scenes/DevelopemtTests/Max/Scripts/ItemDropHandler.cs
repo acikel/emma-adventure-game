@@ -5,6 +5,21 @@ using UnityEngine.EventSystems;
 
 public class ItemDropHandler : MonoBehaviour, IDropHandler
 {
+    private Inventory inventory;
+    public int i;
+
+    private void Start()
+    {
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+    }
+
+    private void Update()
+    {
+        if (transform.childCount <= 0)
+        {
+            inventory.isFull[i] = false;
+        }
+    }
     public void OnDrop(PointerEventData eventData)
     {
         RectTransform invPanel = transform as RectTransform;
