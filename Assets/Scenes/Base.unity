@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1143296040}
   - component: {fileID: 1143296039}
+  - component: {fileID: 1143296045}
   - component: {fileID: 1143296041}
   - component: {fileID: 1143296042}
   - component: {fileID: 1143296044}
@@ -203,7 +204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143296038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: -10.4, z: 0}
+  m_LocalPosition: {x: -2.1, y: -10.4, z: -0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -223,11 +224,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarSpriteRenderer: {fileID: 1143296039}
   avatarAnimator: {fileID: 0}
-  stopDistance: 0.1
-  stopDistanceFar: 0.1
+  stopDistance: 0.05
+  stopDistanceFar: 0.05
   startWalkDelay: 0.0001
-  lerpDistanceFarSummand: 25
-  lerpDuration: 15
+  lerpDistanceFarSummand: 40
+  lerpDuration: 1
   scalingFactor: 0.03
 --- !u!58 &1143296042
 CircleCollider2D:
@@ -242,7 +243,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -10.91}
+  m_Offset: {x: 0, y: -0.87}
   serializedVersion: 2
   m_Radius: 1
 --- !u!50 &1143296043
@@ -276,12 +277,24 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.2372284, y: 10.721851}
   m_Size: {x: 13.214018, y: 27.454372}
   m_Direction: 0
+--- !u!114 &1143296045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143296038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4880a7f85de22e14cbabbacb819cb956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1240954694
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +311,7 @@ GameObject:
   - component: {fileID: 1240954698}
   m_Layer: 0
   m_Name: Helper
-  m_TagString: Untagged
+  m_TagString: Helper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240954694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.41, y: -6.24, z: 0}
+  m_LocalPosition: {x: 21.1, y: -9.7, z: -0.05}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -382,11 +395,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarSpriteRenderer: {fileID: 1240954695}
   avatarAnimator: {fileID: 0}
-  stopDistance: 0.08
-  stopDistanceFar: 0.055
+  stopDistance: 0.05
+  stopDistanceFar: 0.05
   startWalkDelay: 0.0001
-  lerpDistanceFarSummand: 40
-  lerpDuration: 35
+  lerpDistanceFarSummand: 35
+  lerpDuration: 1
   scalingFactor: 1
 --- !u!70 &1240954698
 CapsuleCollider2D:
@@ -401,8 +414,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14198878, y: 0.010143455}
-  m_Size: {x: 4.1151237, y: 2.5126843}
+  m_Offset: {x: 1.4499996, y: 0.7749688}
+  m_Size: {x: 3.8899732, y: 2.422631}
   m_Direction: 1
 --- !u!58 &1240954699
 CircleCollider2D:
@@ -417,7 +430,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.96, y: -0.87}
+  m_Offset: {x: 0.03, y: -0.09}
   serializedVersion: 2
   m_Radius: 0.05
 --- !u!50 &1240954700
@@ -494,7 +507,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 18.134563
+  orthographic size: 45.360104
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
