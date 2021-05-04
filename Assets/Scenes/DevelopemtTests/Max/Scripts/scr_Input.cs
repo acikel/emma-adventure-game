@@ -6,6 +6,7 @@ public class scr_Input : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemSprite;
+    private bool isDragging;
 
     void Start()
     {
@@ -37,5 +38,7 @@ public class scr_Input : MonoBehaviour
                 }
             }
         }
+
     }
+
 }
