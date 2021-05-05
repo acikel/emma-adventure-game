@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class DropOff : MonoBehaviour
 {
-    private bool GO = false;
+    public delegate void PlayerNearby();
+    public static event PlayerNearby entered;
+    public static event PlayerNearby exit;
+
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            GO = true;
-            Debug.Log("true");
+            entered();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            GO = false;
-            Debug.Log("false");
+            exit();
         }
     }
 }

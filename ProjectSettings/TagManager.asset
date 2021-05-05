@@ -9,6 +9,7 @@ TagManager:
   - Helper
   - Ground
   - Obstacle
+  - Object
   layers:
   - Default
   - TransparentFX

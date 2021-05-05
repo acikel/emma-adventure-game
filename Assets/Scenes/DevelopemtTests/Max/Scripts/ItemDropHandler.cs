@@ -7,6 +7,8 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
 {
     private Inventory inventory;
     public int i;
+    private bool playerentered;
+    private bool playerexit;
 
     private void Start()
     {
@@ -28,13 +30,35 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             if (hit.collider != null)
             {
-                    if (hit.collider.tag == "Object")
-                    {
-                        foreach (Transform child in transform){
+                if (hit.collider.tag == "Object" && playerentered)
+                {
+                    foreach (Transform child in transform) {
                         GameObject.Destroy(child.gameObject);
                     }
                 }
             }
         }
+    }
+    private void OnEnable()
+    {
+        DropOff.entered += entered;
+        DropOff.entered -= exit;
+
+    }
+
+    private void OnDisable()
+    {
+        DropOff.entered -= entered;
+        DropOff.entered += exit;
+    }
+
+    void entered()
+    {
+        playerentered = true;
+    }
+
+    void exit()
+    {
+        playerexit = true;
     }
 }
