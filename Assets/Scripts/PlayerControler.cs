@@ -66,15 +66,21 @@ public class PlayerControler : MonoBehaviour
 
         if (inputManager.isMouseDown())
         {
-            if ((raycastHit= inputManager.getRaycastRigidbody("Player")).rigidbody!=null && raycastHit.rigidbody.gameObject!= GameManager.currentAvatar.gameObject && !isMoving)
+            if ((raycastHit= inputManager.getRaycastRigidbody("Player")).rigidbody!=null )
             {
-                GM.ChangeController(GameManager.playerAvatar, GameManager.helperAvatar);
+                if(raycastHit.rigidbody.gameObject != GameManager.currentAvatar.gameObject && !isMoving)
+                {
+                    GM.ChangeController(GameManager.playerAvatar, GameManager.helperAvatar);
+                }  
             }
             //else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
             
-            else if ((raycastHit = inputManager.getRaycastRigidbody("Helper")).rigidbody != null && raycastHit.rigidbody.gameObject != GameManager.currentAvatar.gameObject && !isMoving)
+            else if ((raycastHit = inputManager.getRaycastRigidbody("Helper")).rigidbody != null)
             {
-                GM.ChangeController(GameManager.helperAvatar, GameManager.playerAvatar);
+                if(raycastHit.rigidbody.gameObject != GameManager.currentAvatar.gameObject && !isMoving)
+                {
+                    GM.ChangeController(GameManager.helperAvatar, GameManager.playerAvatar);
+                }
             }
             else if (inputManager.checkIfColliderWasHit("SelectableItem"))
             {
