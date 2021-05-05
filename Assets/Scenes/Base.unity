@@ -225,8 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarSpriteRenderer: {fileID: 1143296039}
   avatarAnimator: {fileID: 1143296046}
-  stopDistance: 0.05
-  stopDistanceFar: 0.05
+  stopDistance: 0.04
+  stopDistanceFar: 0.04
   startWalkDelay: 0.0001
   lerpDistanceFarSummand: 40
   lerpDuration: 1

@@ -45,7 +45,10 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        resetTriggerIdleAnimation();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -96,7 +99,7 @@ public class PlayerControler : MonoBehaviour
             else if (inputManager.checkIfColliderWasHit("Ground"))
             {
                 targetPosition = inputManager.getRaycastCollider("Ground").point;
-                triggerWalkAnimation();
+                //triggerWalkAnimation();
                 initializeLerp();
                 isMoving = true;
 
@@ -112,7 +115,7 @@ public class PlayerControler : MonoBehaviour
                     if (inputManager.checkIfColliderWasHit("Item"))
                         targetPosition.x -= 1;
                     
-                    triggerWalkAnimation();
+                    //triggerWalkAnimation();
                     initializeLerp();
                     isMoving = true;
 
@@ -149,6 +152,15 @@ public class PlayerControler : MonoBehaviour
         stopDistance = avatar.stopDistance;
     }
 
+    private void resetTriggerIdleAnimation()
+    {
+        if (avatar.avatarAnimator != null)
+        {
+            avatar.avatarAnimator.ResetTrigger("Idle");
+        }
+        
+    }
+
     private void triggerWalkAnimation()
     {
         walkTriggered = true;
@@ -169,6 +181,7 @@ public class PlayerControler : MonoBehaviour
             avatar.avatarAnimator.SetTrigger("Idle");
         }
     }
+
 
     private void CheckSpriteFlip()
     {
