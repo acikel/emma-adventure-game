@@ -11,6 +11,8 @@ public class PlayerControler : MonoBehaviour
     private RaycastHit2D raycastSecondayHit;
     private Vector2 mousePositionWorld2d;
 
+    private RaycastHit2D raycastHit;
+
     private GameManager GM;
     private InputManager inputManager;
 
@@ -64,29 +66,23 @@ public class PlayerControler : MonoBehaviour
 
         if (inputManager.isMouseDown())
         {
-            if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.gameObject.tag == "Player")
+            if ((raycastHit= inputManager.getRaycastRigidbody("Player")).rigidbody!=null && raycastHit.rigidbody.gameObject!= GameManager.currentAvatar.gameObject && !isMoving)
             {
-                if (GameManager.currentAvatar.gameObject != inputManager.getRaycastMainHitOnMouseDown().rigidbody.gameObject && !isMoving)
-                {
-                    GM.ChangeController(GameManager.playerAvatar, GameManager.helperAvatar);
-                }
-
+                GM.ChangeController(GameManager.playerAvatar, GameManager.helperAvatar);
             }
-            else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
+            //else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
+            
+            else if ((raycastHit = inputManager.getRaycastRigidbody("Helper")).rigidbody != null && raycastHit.rigidbody.gameObject != GameManager.currentAvatar.gameObject && !isMoving)
             {
-                if (GameManager.currentAvatar.gameObject != inputManager.getRaycastMainHitOnMouseDown().rigidbody.gameObject && !isMoving)
-                {
-                    GM.ChangeController(GameManager.helperAvatar, GameManager.playerAvatar);
-                }
-
+                GM.ChangeController(GameManager.helperAvatar, GameManager.playerAvatar);
             }
-            else if (inputManager.getRaycastMainHitOnMouseDown().collider != null && inputManager.getRaycastMainHitOnMouseDown().collider.gameObject.tag == "SelectableItem")
+            else if (inputManager.checkIfColliderWasHit("SelectableItem"))
             {
 
             }
-            else if (inputManager.getRaycastMainHitOnMouseDown().collider != null && inputManager.getRaycastMainHitOnMouseDown().collider.gameObject.tag == "Ground")
+            else if (inputManager.checkIfColliderWasHit("Ground"))
             {
-                targetPosition = inputManager.getRaycastMainHitOnMouseDown().point;
+                targetPosition = inputManager.getRaycastCollider("Ground").point;
                 initializeLerp();
 
                 //triggerWalkAnimation();
@@ -101,7 +97,7 @@ public class PlayerControler : MonoBehaviour
                 if (getGroundColliderIntersectionToMouseclickOutsideGround())
                 {
                     //move player infront of item.
-                    if (inputManager.getRaycastMainHitOnMouseDown().collider != null && inputManager.getRaycastMainHitOnMouseDown().collider.tag == "Item")
+                    if (inputManager.checkIfColliderWasHit("Item"))
                         targetPosition.x -= 1;
                     initializeLerp();
                     //triggerWalkAnimation();
