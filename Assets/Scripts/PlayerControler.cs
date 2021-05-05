@@ -37,6 +37,13 @@ public class PlayerControler : MonoBehaviour
 
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
+        {
+            triggerIdleAnimation();
+        }
+    }
 
 
     // Start is called before the first frame update
@@ -89,9 +96,8 @@ public class PlayerControler : MonoBehaviour
             else if (inputManager.checkIfColliderWasHit("Ground"))
             {
                 targetPosition = inputManager.getRaycastCollider("Ground").point;
+                triggerWalkAnimation();
                 initializeLerp();
-
-                //triggerWalkAnimation();
                 isMoving = true;
 
                 //Check if sprite flip needed:
@@ -105,8 +111,9 @@ public class PlayerControler : MonoBehaviour
                     //move player infront of item.
                     if (inputManager.checkIfColliderWasHit("Item"))
                         targetPosition.x -= 1;
+                    
+                    triggerWalkAnimation();
                     initializeLerp();
-                    //triggerWalkAnimation();
                     isMoving = true;
 
                     //Check if sprite flip needed:
@@ -154,9 +161,9 @@ public class PlayerControler : MonoBehaviour
 
     private void triggerIdleAnimation()
     {
+        isMoving = false;
         idleTriggered = true;
         walkTriggered = false;
-        isMoving = false;
         if (avatar.avatarAnimator != null)
         {
             avatar.avatarAnimator.SetTrigger("Idle");
