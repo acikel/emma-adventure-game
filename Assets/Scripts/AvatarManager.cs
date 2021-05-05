@@ -1,11 +1,11 @@
 using UnityEngine;
 public enum GameState { INTRO, MAIN_MENU, PAUSED, GAME, CREDITS, HELP }
-public class GameManager : Object
+public class AvatarManager : Object
 {
 
 
-	protected GameManager() { }
-	private static GameManager instance = null;
+	protected AvatarManager() { instance = this; }
+	private static AvatarManager instance = null;
 	public delegate void OnStateChangeHandler();
 	public delegate void OnControllerChangeHandler();
 	public GameState gameState { get; private set; }
@@ -20,14 +20,16 @@ public class GameManager : Object
 	public static Avatar helperAvatar;
 
 	public static Transform groundCenter;
-	public static GameManager Instance
+	public static AvatarManager Instance
 	{
 		get
 		{
 
-			if (GameManager.instance == null)
+			if (playerAvatar==null)
 			{
-				GameManager.instance = new GameManager();
+				
+				AvatarManager.instance = new AvatarManager();
+				//Debug.Log("hi3"+instance);
 				playerAvatar = GameObject.FindWithTag("Player").GetComponent<Emma>();
 				helperAvatar = GameObject.FindWithTag("Helper").GetComponent<Helper>();
 				backgroundCollider = GameObject.FindWithTag("Ground").GetComponent<PolygonCollider2D>();
@@ -36,13 +38,20 @@ public class GameManager : Object
 				currentAvatar = playerAvatar;
 				groundCenter = GameObject.FindWithTag("Ground").transform.Find("Center");
 			}
-			return GameManager.instance;
+			return AvatarManager.instance;
 
 		}
 
 	}
 
-
+	public void ReloadGround()
+    {
+		//Debug.Log("hi");
+		backgroundCollider = GameObject.FindWithTag("Ground").GetComponent<PolygonCollider2D>();
+		background = GameObject.FindWithTag("Ground");
+		groundCenter = GameObject.FindWithTag("Ground").transform.Find("Center");
+	}
+	
 	public void ChangeGroundCenter(Transform newGroundCenter)
 	{
 		groundCenter = newGroundCenter;
@@ -69,7 +78,7 @@ public class GameManager : Object
 
 	public void OnApplicationQuit()
 	{
-		GameManager.instance = null;
+		AvatarManager.instance = null;
 	}
 
 }

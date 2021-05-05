@@ -32,6 +32,8 @@ public static class API
         }
     }
     private static InputManager _inputManagerInstance;
+    private static SceneManager _sceneManagerInstance;
+    private static AvatarManager _avatarManagerInstance;
     public static InputManager InputManager
     {
         get
@@ -44,6 +46,34 @@ public static class API
             return _inputManagerInstance;
         }
     }
+
+    public static SceneManager SceneManager
+    {
+        get
+        {
+            if (_sceneManagerInstance == null ||
+            ReferenceEquals(_sceneManagerInstance, null))
+            {
+                _sceneManagerInstance = FindSingleInstance<SceneManager>();
+            }
+            return _sceneManagerInstance;
+        }
+    }
+
+    public static AvatarManager AvatarManager
+    {
+        get
+        {
+            if (_avatarManagerInstance == null ||
+            ReferenceEquals(_avatarManagerInstance, null))
+            {
+                //Debug.Log("was1");
+                _avatarManagerInstance = AvatarManager.Instance;
+            }
+            return _avatarManagerInstance;
+        }
+    }
+
     public static bool PrewarmReferences()
     {
         if (InputManager)

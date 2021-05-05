@@ -13,7 +13,7 @@ public class PlayerControler : MonoBehaviour
 
     private RaycastHit2D raycastHit;
 
-    private GameManager GM;
+    private AvatarManager avatarManager;
     private InputManager inputManager;
 
     //lerp parameters:
@@ -27,12 +27,18 @@ public class PlayerControler : MonoBehaviour
     private float avatarDistanceToHorizont;
     private float maxDistance;
 
+    public delegate void OnCollisionWithPortalHandler(string sceneNameToTransitionTo);
+    public static event OnCollisionWithPortalHandler OnCollisionWithPortal;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         {
             triggerIdleAnimation();
+        }else if (collision.gameObject.tag == "Portal")
+        {
+            triggerIdleAnimation();
+            OnCollisionWithPortal(collision.gameObject.name);
         }
 
     }
@@ -53,9 +59,10 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
 
-        GM = GameManager.Instance;
-        GM.OnControllerChange += HandleOnControllerChange;
-        avatar = GameManager.currentAvatar;
+        avatarManager = API.AvatarManager;
+        //Debug.Log("avatarManager1:" + avatarManager);
+        avatarManager.OnControllerChange += HandleOnControllerChange;
+        avatar = AvatarManager.currentAvatar;
 
         idleTriggered = true;
         lerpDurationNear = avatar.lerpDuration;
@@ -68,7 +75,7 @@ public class PlayerControler : MonoBehaviour
 
     private void OnDisable()
     {
-        GM.OnControllerChange -= HandleOnControllerChange;
+        avatarManager.OnControllerChange -= HandleOnControllerChange;
     }
     // Update is called once per frame
     void Update()
@@ -78,18 +85,18 @@ public class PlayerControler : MonoBehaviour
         {
             if ((raycastHit= inputManager.getRaycastRigidbody("Player")).rigidbody!=null )
             {
-                if(raycastHit.rigidbody.gameObject != GameManager.currentAvatar.gameObject && !isMoving)
+                if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
                 {
-                    GM.ChangeController(GameManager.playerAvatar, GameManager.helperAvatar);
+                    avatarManager.ChangeController(AvatarManager.playerAvatar, AvatarManager.helperAvatar);
                 }  
             }
             //else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
             
             else if ((raycastHit = inputManager.getRaycastRigidbody("Helper")).rigidbody != null)
             {
-                if(raycastHit.rigidbody.gameObject != GameManager.currentAvatar.gameObject && !isMoving)
+                if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
                 {
-                    GM.ChangeController(GameManager.helperAvatar, GameManager.playerAvatar);
+                    avatarManager.ChangeController(AvatarManager.helperAvatar, AvatarManager.playerAvatar);
                 }
             }
             else if (inputManager.checkIfColliderWasHit("SelectableItem"))
@@ -140,14 +147,14 @@ public class PlayerControler : MonoBehaviour
 
     private void scaleCharachter()
     {
-        avatarDistanceToHorizont = GameManager.backgroundCollider.bounds.max.y - avatar.gameObject.transform.position.y;
-        maxDistance = GameManager.backgroundCollider.bounds.max.y - GameManager.backgroundCollider.bounds.min.y;
+        avatarDistanceToHorizont = AvatarManager.backgroundCollider.bounds.max.y - avatar.gameObject.transform.position.y;
+        maxDistance = AvatarManager.backgroundCollider.bounds.max.y - AvatarManager.backgroundCollider.bounds.min.y;
         avatar.gameObject.transform.localScale = avatar.getLocalScale() + avatarDistanceToHorizont / maxDistance * Vector3.one * avatar.scalingFactor;
     }
 
     private void HandleOnControllerChange()
     {
-        avatar = GameManager.currentAvatar;
+        avatar = AvatarManager.currentAvatar;
         lerpDuration = avatar.lerpDuration;
         stopDistance = avatar.stopDistance;
     }
@@ -215,9 +222,9 @@ public class PlayerControler : MonoBehaviour
         raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
         if (assignColliderAndExit()) return true;
 
-        if (GameManager.groundCenter != null)
+        if (AvatarManager.groundCenter != null)
         {
-            Vector2 groundCenter2d = GameManager.groundCenter.position;
+            Vector2 groundCenter2d = AvatarManager.groundCenter.position;
             Vector2 direction = groundCenter2d - mousePositionWorld2d;
             raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, 1 << LayerMask.NameToLayer("Ground"));
             if (assignColliderAndExit()) return true;
