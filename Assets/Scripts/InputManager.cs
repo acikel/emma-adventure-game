@@ -57,6 +57,7 @@ public class InputManager : MonoBehaviour
         {
             foreach (RaycastHit2D raycastCollider in raycastMainHit)
             {
+                //Debug.Log("collider:"+raycastCollider.collider.name);
                 if (raycastCollider.collider != null && raycastCollider.collider.gameObject.tag == colliderTag)
                 {
                     return raycastCollider;
@@ -71,6 +72,7 @@ public class InputManager : MonoBehaviour
         {
             foreach (RaycastHit2D raycasRigidbody in raycastMainHit)
             {
+                //Debug.Log("rigidbody:" + raycasRigidbody.rigidbody.name);
                 if (raycasRigidbody.rigidbody != null && raycasRigidbody.rigidbody.gameObject.tag == rigidbodyTag)
                 {
                     return raycasRigidbody;
