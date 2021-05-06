@@ -8,7 +8,6 @@ public class Backpack : MonoBehaviour
     public Button BackpackButton;
     public GameObject Inventory;
 
-
     private void Start()
     {
         BackpackButton.onClick.AddListener(OnClick);

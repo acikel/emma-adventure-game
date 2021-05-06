@@ -35,7 +35,6 @@ public class scr_Input : MonoBehaviour
                             Destroy(hit.collider.gameObject);
                             break;
                         }
-                        //https://www.youtube.com/watch?v=DLAIYSMYy2g
                     }
                 }
             }
