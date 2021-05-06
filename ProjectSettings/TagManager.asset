@@ -9,8 +9,8 @@ TagManager:
   - Helper
   - Ground
   - Obstacle
-  - Object
   - Portal
+  - DropOff
   layers:
   - Default
   - TransparentFX
@@ -45,6 +45,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Player
+    uniqueID: 3997543879
+    locked: 0
+  - name: Rest
+    uniqueID: 1916355755
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
