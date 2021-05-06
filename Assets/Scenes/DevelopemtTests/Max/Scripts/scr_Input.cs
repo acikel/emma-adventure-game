@@ -11,7 +11,7 @@ public class scr_Input : MonoBehaviour
 
     void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
     }
 
     // Update is called once per frame
