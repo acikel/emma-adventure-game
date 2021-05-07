@@ -9,6 +9,6 @@ public class DialogueUI : MonoBehaviour
 
     private void Start()
     {
-        textLabel.text = "”I don't want to leave you, I don't want to be alone again, I want everything to go back to how it was! How can I even see you?”";
+        textLabel.text = "”I don't want to leave you, I don't want to be alone again, I want everything to go back to how it was! How can I even see you?";
     }
 }
