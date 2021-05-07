@@ -7,7 +7,8 @@ public class Inventory : MonoBehaviour
 {
     public GameObject itemSprite;
     public GameObject Itemslots;
-    
+    public GameObject InventoryBlocker;
+
 
     public bool[] isFull;
     public GameObject[] slots;
@@ -50,7 +51,7 @@ public class Inventory : MonoBehaviour
         {
             isFull[i] = false;
         }
-        Itemslots.SetActive(false);
+        openInventorySlotsAndBlockMovementForInventory(false);
     }
     private void OnEnable()
     {
@@ -72,9 +73,14 @@ public class Inventory : MonoBehaviour
             
     }
 
+    private void openInventorySlotsAndBlockMovementForInventory(bool value)
+    {
+        Itemslots.SetActive(value);
+        InventoryBlocker.SetActive(value);
+    }
     private void HandleOnItemCollision()
     {
-        Itemslots.SetActive(true);
+        openInventorySlotsAndBlockMovementForInventory(true);
         for (int i = 0; i < slots.Length; i++)
         {
             if (isFull[i] == false)

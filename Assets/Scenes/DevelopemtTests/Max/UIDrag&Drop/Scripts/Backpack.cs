@@ -7,6 +7,7 @@ public class Backpack : MonoBehaviour
 {
     public Button BackpackButton;
     public GameObject InventorySlots;
+    public GameObject InventoryBlocker;
 
     private void Start()
     {
@@ -18,16 +19,20 @@ public class Backpack : MonoBehaviour
     {
         if (InventorySlots.activeSelf == true)
         {
-
-            InventorySlots.SetActive(false);
+            openInventorySlotsAndBlockMovementForInventory(false);
         }
         else
         {
             if (InventorySlots.activeSelf == false)
             {
-
-                InventorySlots.SetActive(true);
+                openInventorySlotsAndBlockMovementForInventory(true);
             }
         }
+    }
+
+    private void openInventorySlotsAndBlockMovementForInventory(bool value)
+    {
+        InventorySlots.SetActive(value);
+        InventoryBlocker.SetActive(value);
     }
 }

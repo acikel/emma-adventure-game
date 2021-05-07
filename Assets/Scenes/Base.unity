@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackpackButton: {fileID: 418353900}
   InventorySlots: {fileID: 558216588}
+  InventoryBlocker: {fileID: 980996455}
 --- !u!114 &418353900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 5383980209674444994, guid: 10bffb7f28d01674eba0b6cbc5c538ea, type: 3}
   Itemslots: {fileID: 558216588}
+  InventoryBlocker: {fileID: 980996455}
   isFull: 00000000
   slots:
   - {fileID: 240426782}
