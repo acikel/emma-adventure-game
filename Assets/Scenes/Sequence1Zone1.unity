@@ -260,7 +260,6 @@ GameObject:
   m_Component:
   - component: {fileID: 331722027}
   - component: {fileID: 331722026}
-  - component: {fileID: 331722025}
   - component: {fileID: 331722028}
   m_Layer: 0
   m_Name: DropOff
@@ -269,22 +268,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &331722025
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331722024}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.92
 --- !u!212 &331722026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -345,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 331722024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.05, y: 18.2, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1.4907}
+  m_LocalScale: {x: 10, y: 10, z: 0}
   m_Children:
   - {fileID: 1865989628}
   m_Father: {fileID: 0}
@@ -1454,8 +1437,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865989626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.50500005, y: -1.82, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.6708258}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_Children: []
   m_Father: {fileID: 331722027}
   m_RootOrder: 0
@@ -1475,4 +1458,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.92
+  m_Radius: 17.82

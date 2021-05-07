@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     private InputManager inputManager;
     private Inventory inventory;
     private Collider2D itemCollider;
+    private bool playerIsColliding;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,17 +21,21 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(playerIsColliding && inputManager.isMouseDown() && inputManager.checkIfSpecificColliderWasHit("Item", itemCollider))
+        {
+            lockMovementAndPutItemIntoInventory();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!inventory.isInvetoryFull() && inputManager.checkIfSpecificColliderWasHit("Item", itemCollider) && collision.gameObject.tag == "Player")
         {
-            inventory.InteractionWithInventoryActive = true;
-            OnItemCollision?.Invoke();
-
-            gameObject.SetActive(false);
+            lockMovementAndPutItemIntoInventory();
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            playerIsColliding = true;
         }
     }
 
@@ -38,17 +43,24 @@ public class Item : MonoBehaviour
     {
         if (!inventory.isInvetoryFull() && inputManager.checkIfSpecificColliderWasHit("Item", itemCollider) && collision.gameObject.tag == "Player" && gameObject.activeSelf)
         {
-            inventory.InteractionWithInventoryActive = true;
-            OnItemCollision?.Invoke();
-
-            gameObject.SetActive(false);
+            lockMovementAndPutItemIntoInventory();
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            inventory.InteractionWithInventoryActive = false;
+        }
     }
 
+    private void lockMovementAndPutItemIntoInventory()
+    {
+        inventory.InteractionWithInventoryActive = true;
+        OnItemCollision?.Invoke();
+
+        gameObject.SetActive(false);
+    }
     
 }

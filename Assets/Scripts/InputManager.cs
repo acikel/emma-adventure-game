@@ -19,19 +19,19 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         
-        mousePosition = Input.mousePosition;
-        mousePositionWorld2d = mainCamera.ScreenToWorldPoint(mousePosition);
-
         
-
-        //Raycast 2D for item detection, object need 2d collider to be detected
-        raycastMainHit = Physics2D.RaycastAll(mousePositionWorld2d, Vector2.zero);
-        Debug.Log("Raycasting" +raycastMainHit.Length);
 
         if (Input.GetMouseButtonDown(0))
         {
             mouseDown = true;
-            
+            mousePosition = Input.mousePosition;
+            mousePositionWorld2d = mainCamera.ScreenToWorldPoint(mousePosition);
+
+
+
+            //Raycast 2D for item detection, object need 2d collider to be detected
+            raycastMainHit = Physics2D.RaycastAll(mousePositionWorld2d, Vector2.zero);
+            //Debug.Log("Raycasting" +raycastMainHit.Length);
         }
         if (Input.GetMouseButtonUp(0))
         {
