@@ -21,13 +21,17 @@ public class Item : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!inventory.isInvetoryFull() && inputManager.checkIfColliderWasHit("Item") && collision.gameObject.tag == "Player")
+        if (!inventory.isInvetoryFull() && inputManager.checkIfColliderWasHit("Item") && collision.gameObject.tag == "Player")
         {
             OnItemCollision?.Invoke();
 
             gameObject.SetActive(false);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }
