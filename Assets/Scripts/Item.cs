@@ -33,9 +33,10 @@ public class Item : MonoBehaviour
         {
             lockMovementAndPutItemIntoInventory();
         }
-        else if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             playerIsColliding = true;
+            //Debug.Log("player is colliding"+ playerIsColliding);
         }
     }
 
@@ -51,16 +52,55 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            inventory.InteractionWithInventoryActive = false;
+            playerIsColliding = false;
         }
     }
 
     private void lockMovementAndPutItemIntoInventory()
     {
-        inventory.InteractionWithInventoryActive = true;
-        OnItemCollision?.Invoke();
+        if (!inventory.isInvetoryFull())
+        {
+            //inventory.InteractionWithInventoryActive is set to false in inventory after putting this item into the inventory slot.
+            inventory.InteractionWithInventoryActive = true;
+            //OnItemCollision event is handled in the inventory script via HandleOnItemCollision method
 
-        gameObject.SetActive(false);
+
+
+            OnItemCollision?.Invoke();
+            //replacement of OnItemCollision?.Invoke(); to call events with IEnumerator as return type and Coroutines in Handler Methods:
+            /*
+            if (OnItemCollision != null)
+            {
+                for (int n = OnItemCollision.GetInvocationList().Length - 1; n >= 0; n--)
+                {
+                    HandleItemCollision onCollisionWithPortalCoroutine = OnItemCollision.GetInvocationList()[n] as HandleItemCollision;
+                    StartCoroutine(OnItemCollision());
+                }
+            }*/
+
+
+            gameObject.SetActive(false);
+        }
     }
-    
+
+    private void OnMouseEnter()
+    {
+        //Debug.Log("MouseOver");
+        if(playerIsColliding)
+            inventory.InteractionWithInventoryActive = true;
+    }
+    private void OnMouseExit()
+    {
+        //Debug.Log("MouseExit");
+        if (playerIsColliding)
+            inventory.InteractionWithInventoryActive = false;
+    }
+
+    private void OnMouseOver()
+    {
+        //Debug.Log("MouseOver");
+        if (playerIsColliding)
+            inventory.InteractionWithInventoryActive = true;
+    }
+
 }

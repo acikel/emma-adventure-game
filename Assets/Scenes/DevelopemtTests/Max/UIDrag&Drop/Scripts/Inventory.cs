@@ -7,11 +7,15 @@ public class Inventory : MonoBehaviour
 {
     public GameObject itemSprite;
     public GameObject Itemslots;
+    
 
     public bool[] isFull;
     public GameObject[] slots;
+
     private bool interactionWithInventoryActive;
     private GameObject currentlyDraggedSlot;
+    private bool collisionWasHandled;
+    private InputManager inputManager;
 
     public bool InteractionWithInventoryActive
     {
@@ -39,6 +43,7 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        inputManager = API.InputManager;
         currentlyDraggedSlot = new GameObject();
         interactionWithInventoryActive = false;
         for (int i=0 ; i < isFull.Length; i++)
@@ -58,7 +63,12 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(collisionWasHandled && !inputManager.isMouseDown())
+        {
+            interactionWithInventoryActive = false;
+            collisionWasHandled = false;
+        }
+            
     }
 
     private void HandleOnItemCollision()
@@ -73,8 +83,11 @@ public class Inventory : MonoBehaviour
                 break;
             }
         }
-        interactionWithInventoryActive = false;
+        collisionWasHandled = true;
+        //yield return new WaitForSeconds(0);
+
     }
+
     public void setCurrentlyDraggedSlotToEmpty()
     {
         int index=-1;
@@ -89,9 +102,18 @@ public class Inventory : MonoBehaviour
 
     public bool isInvetoryFull()
     {
+        foreach (bool fullSlot in isFull)
+        {
+            if (!fullSlot)
+                return false;
+        }
+
+        return true;
+        /*
         if (isFull[isFull.Length-1] == true)
             return true;
         return false;
+        */
     }
 
 }
