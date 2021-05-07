@@ -92,8 +92,7 @@ public class Item : MonoBehaviour
     private void OnMouseExit()
     {
         //Debug.Log("MouseExit");
-        if (playerIsColliding)
-            inventory.InteractionWithInventoryActive = false;
+        inventory.InteractionWithInventoryActive = false;
     }
 
     private void OnMouseOver()

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Backpack : MonoBehaviour
 {
     public Button BackpackButton;
-    public GameObject Inventory;
+    public GameObject InventorySlots;
 
     private void Start()
     {
@@ -16,17 +16,17 @@ public class Backpack : MonoBehaviour
 
     void OnClick()
     {
-        if (Inventory.activeSelf == true)
+        if (InventorySlots.activeSelf == true)
         {
 
-            Inventory.SetActive(false);
+            InventorySlots.SetActive(false);
         }
         else
         {
-            if (Inventory.activeSelf == false)
+            if (InventorySlots.activeSelf == false)
             {
 
-                Inventory.SetActive(true);
+                InventorySlots.SetActive(true);
             }
         }
     }

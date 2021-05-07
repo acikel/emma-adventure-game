@@ -50,6 +50,7 @@ public class Inventory : MonoBehaviour
         {
             isFull[i] = false;
         }
+        Itemslots.SetActive(false);
     }
     private void OnEnable()
     {
@@ -116,4 +117,5 @@ public class Inventory : MonoBehaviour
         */
     }
 
+   
 }
