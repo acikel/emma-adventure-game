@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 331722027}
   - component: {fileID: 331722026}
   - component: {fileID: 331722025}
+  - component: {fileID: 331722028}
   m_Layer: 0
   m_Name: DropOff
   m_TagString: DropOff
@@ -275,7 +276,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331722024}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -283,7 +284,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.14
+  m_Radius: 1.92
 --- !u!212 &331722026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -345,10 +346,23 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.05, y: 18.2, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1.4907}
-  m_Children: []
+  m_Children:
+  - {fileID: 1865989628}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331722028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331722024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e2f907ca86d0841a327871155051c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &407805868
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +375,7 @@ GameObject:
   - component: {fileID: 407805871}
   - component: {fileID: 407805870}
   - component: {fileID: 407805872}
+  - component: {fileID: 407805873}
   m_Layer: 0
   m_Name: Magnet (3)
   m_TagString: Item
@@ -474,6 +489,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca5934bfa66b26441aa4f133db67eb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &407805873
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407805868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 0.74
 --- !u!1 &544239736
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +517,7 @@ GameObject:
   - component: {fileID: 544239740}
   - component: {fileID: 544239739}
   - component: {fileID: 544239738}
+  - component: {fileID: 544239741}
   m_Layer: 0
   m_Name: Magnet (7)
   m_TagString: Item
@@ -599,6 +631,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &544239741
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544239736}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 0.74
 --- !u!1 &570012857
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +774,7 @@ GameObject:
   - component: {fileID: 667187623}
   - component: {fileID: 667187622}
   - component: {fileID: 667187621}
+  - component: {fileID: 667187624}
   m_Layer: 0
   m_Name: Magnet (6)
   m_TagString: Item
@@ -839,6 +888,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &667187624
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667187619}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 0.74
 --- !u!1 &839378811
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +946,7 @@ GameObject:
   - component: {fileID: 845006084}
   - component: {fileID: 845006083}
   - component: {fileID: 845006082}
+  - component: {fileID: 845006085}
   m_Layer: 0
   m_Name: Magnet (5)
   m_TagString: Item
@@ -994,6 +1060,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &845006085
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845006080}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 0.74
 --- !u!1 &1057455867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1088,7 @@ GameObject:
   - component: {fileID: 1057455871}
   - component: {fileID: 1057455870}
   - component: {fileID: 1057455869}
+  - component: {fileID: 1057455872}
   m_Layer: 0
   m_Name: Magnet (4)
   m_TagString: Item
@@ -1119,6 +1202,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1057455872
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057455867}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.00000023841858}
+  serializedVersion: 2
+  m_Radius: 0.74
 --- !u!1 &1142233316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,3 +1414,65 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 170.33627, y: 45.811806}
   m_EdgeRadius: 0
+--- !u!1 &1865989626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865989628}
+  - component: {fileID: 1865989627}
+  - component: {fileID: 1865989629}
+  m_Layer: 0
+  m_Name: DropOffInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1865989627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865989626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd67899dd4523c4e831a0ebd8dc8d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNameToDrop:
+  - Item
+--- !u!4 &1865989628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865989626}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.50500005, y: -1.82, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.6708258}
+  m_Children: []
+  m_Father: {fileID: 331722027}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1865989629
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865989626}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.92

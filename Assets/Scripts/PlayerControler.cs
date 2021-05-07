@@ -115,7 +115,7 @@ public class PlayerControler : MonoBehaviour
                     avatarManager.ChangeController(AvatarManager.helperAvatar, AvatarManager.playerAvatar);
                 }
             }
-            else if (inputManager.checkIfColliderWasHit("SelectableItem"))
+            else if (inputManager.checkIfColliderWasHit("SelectedItem"))
             {
 
             }

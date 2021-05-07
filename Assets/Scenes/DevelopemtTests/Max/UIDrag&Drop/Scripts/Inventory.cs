@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IEndDragHandler
+public class Inventory : MonoBehaviour
 {
     public GameObject itemSprite;
     public GameObject Itemslots;
@@ -18,6 +18,10 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         get
         {
             return interactionWithInventoryActive;
+        }
+        set
+        {
+            interactionWithInventoryActive = value;
         }
     }
 
@@ -35,6 +39,7 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void Start()
     {
+        currentlyDraggedSlot = new GameObject();
         interactionWithInventoryActive = false;
         for (int i=0 ; i < isFull.Length; i++)
         {
@@ -68,16 +73,18 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                 break;
             }
         }
+        interactionWithInventoryActive = false;
     }
     public void setCurrentlyDraggedSlotToEmpty()
     {
-        int index;
+        int index=-1;
         for(index=0; index<slots.Length; index++)
         {
             if (slots[index] == currentlyDraggedSlot)
                 break;
         }
-        isFull[index] = false;
+        if(index != -1)
+            isFull[index] = false;
     }
 
     public bool isInvetoryFull()
@@ -87,23 +94,4 @@ public class Inventory : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         return false;
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        interactionWithInventoryActive = false;
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        interactionWithInventoryActive = true;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        interactionWithInventoryActive = false;
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        interactionWithInventoryActive = true;
-    }
 }

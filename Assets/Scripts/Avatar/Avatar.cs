@@ -21,9 +21,9 @@ public class Avatar : MonoBehaviour
 
     private void Start()
     {
-        avatarLocalScale = this.gameObject.transform.localScale;
-        capsuleTrigger = this.gameObject.GetComponent<CapsuleCollider2D>();
-        rigidbody2d = this.gameObject.GetComponent<Rigidbody2D>();
+        avatarLocalScale = gameObject.transform.localScale;
+        capsuleTrigger = gameObject.GetComponent<CapsuleCollider2D>();
+        rigidbody2d = gameObject.GetComponent<Rigidbody2D>();
     }
 
     private void Update()

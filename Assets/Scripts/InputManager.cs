@@ -19,16 +19,19 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         
+        mousePosition = Input.mousePosition;
+        mousePositionWorld2d = mainCamera.ScreenToWorldPoint(mousePosition);
+
+        
+
+        //Raycast 2D for item detection, object need 2d collider to be detected
+        raycastMainHit = Physics2D.RaycastAll(mousePositionWorld2d, Vector2.zero);
+        Debug.Log("Raycasting" +raycastMainHit.Length);
+
         if (Input.GetMouseButtonDown(0))
         {
             mouseDown = true;
-            mousePosition = Input.mousePosition;
-            mousePositionWorld2d = mainCamera.ScreenToWorldPoint(mousePosition);
-
-
-
-            //Raycast 2D for item detection, object need 2d collider to be detected
-            raycastMainHit = Physics2D.RaycastAll(mousePositionWorld2d, Vector2.zero);
+            
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -135,6 +138,21 @@ public class InputManager : MonoBehaviour
             foreach (RaycastHit2D raycastCollider in raycastMainHit)
             {
                 if (raycastCollider.collider != null &&  raycastCollider.collider.gameObject.tag == colliderTag)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool checkIfSpecificColliderWasHit(string colliderTag, Collider2D collider)
+    {
+        if (raycastMainHit != null)
+        {
+            foreach (RaycastHit2D raycastCollider in raycastMainHit)
+            {
+                if (raycastCollider.collider != null && raycastCollider.collider.gameObject.tag == colliderTag && raycastCollider.collider==collider)
                 {
                     return true;
                 }
