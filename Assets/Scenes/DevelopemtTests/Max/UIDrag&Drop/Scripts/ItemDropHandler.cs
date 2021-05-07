@@ -5,21 +5,16 @@ using UnityEngine.EventSystems;
 
 public class ItemDropHandler : MonoBehaviour, IDropHandler
 {
-    private Inventory inventory;
-    public int i;
-
+    Inventory inventory;
 
     private void Start()
     {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        inventory = API.Inventory;
     }
 
     private void Update()
     {
-        if (transform.childCount <= 0)
-        {
-            inventory.isFull[i] = false;
-        }
+        
     }
     public void OnDrop(PointerEventData eventData)
     {
@@ -31,6 +26,7 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
             {
                 if (hit.collider.tag == "DropOff")
                 {
+                    inventory.setCurrentlyDraggedSlotToEmpty();
                     foreach (Transform child in transform) {
                         GameObject.Destroy(child.gameObject);
                     }

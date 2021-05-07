@@ -15,6 +15,7 @@ public class PlayerControler : MonoBehaviour
 
     private AvatarManager avatarManager;
     private InputManager inputManager;
+    private Inventory inventory;
 
     //lerp parameters:
     private float lerpDurationNear;
@@ -83,6 +84,8 @@ public class PlayerControler : MonoBehaviour
         stopDistance = avatar.stopDistance;
         inputManager = API.InputManager;
 
+        inventory = API.Inventory;
+
     }
 
     private void OnDisable()
@@ -93,7 +96,8 @@ public class PlayerControler : MonoBehaviour
     void Update()
     {
 
-        if (inputManager.isMouseDown())
+        //Debug.Log("in inventory "+inventory.InteractionWithInventoryActive);
+        if (!inventory.InteractionWithInventoryActive && inputManager.isMouseDown())
         {
             if ((raycastHit= inputManager.getRaycastRigidbody("Player")).rigidbody!=null )
             {

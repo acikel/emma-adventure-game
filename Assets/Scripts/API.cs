@@ -35,6 +35,7 @@ public static class API
     private static SceneManager _sceneManagerInstance;
     private static AvatarManager _avatarManagerInstance;
     private static CanvasGroup _fadeImageInstance;
+    private static Inventory _inventoryInstance;
     public static InputManager InputManager
     {
         get
@@ -85,6 +86,19 @@ public static class API
                 _fadeImageInstance = FindSingleInstance<CanvasGroup>();
             }
             return _fadeImageInstance;
+        }
+    }
+
+    public static Inventory Inventory
+    {
+        get
+        {
+            if (_inventoryInstance == null ||
+            ReferenceEquals(_inventoryInstance, null))
+            {
+                _inventoryInstance = FindSingleInstance<Inventory>();
+            }
+            return _inventoryInstance;
         }
     }
 
