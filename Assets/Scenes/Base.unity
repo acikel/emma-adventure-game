@@ -379,6 +379,8 @@ MonoBehaviour:
   BackpackButton: {fileID: 418353900}
   InventorySlots: {fileID: 558216588}
   InventoryBlocker: {fileID: 980996455}
+  openedBackpackSprite: {fileID: 21300000, guid: 3bc329053f732fe42906453632e010d1, type: 3}
+  closedBackpackSprite: {fileID: 21300000, guid: c2055d14f966e6740b00100fe0a77509, type: 3}
 --- !u!114 &418353900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,7 +445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 129a8d4a5dbc6c645846e809d4de61e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2055d14f966e6740b00100fe0a77509, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1073,7 +1075,7 @@ Transform:
   m_GameObject: {fileID: 1455400431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1.2462, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
