@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sequence1Zone2.unity
     guid: edb626f452faf124cb552cdbadeca37b
+  - enabled: 1
+    path: Assets/Scenes/Sequence1Zone3.unity
+    guid: 85880f65c253f614c978518d3961bf66
+  - enabled: 1
+    path: Assets/Scenes/Sequence1Zone5.unity
+    guid: 0e5c3ed83c351874f9dcee9051d5be39
+  - enabled: 1
+    path: Assets/Scenes/Sequence1Zone4.unity
+    guid: 87c5e6f479e877d48b1eaa4fcc4f2d8b
+  - enabled: 1
+    path: Assets/Scenes/Sequence1Zone6.unity
+    guid: 9521a864a3cde3145b26207b836dc680
   m_configObjects: {}
