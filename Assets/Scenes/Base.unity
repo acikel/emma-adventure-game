@@ -505,6 +505,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68522ca79d15c204387d1bea31aceab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSprite: {fileID: 5383980209674444994, guid: 10bffb7f28d01674eba0b6cbc5c538ea, type: 3}
+  Itemslots: {fileID: 558216588}
+  InventoryBlocker: {fileID: 980996455}
+  isFull: 00000000
+  slots:
+  - {fileID: 240426782}
+  - {fileID: 257813481}
+  - {fileID: 1640630998}
+  - {fileID: 1149049260}
 --- !u!1 &479643704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +1072,7 @@ Transform:
   m_GameObject: {fileID: 1455400431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1.2462, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

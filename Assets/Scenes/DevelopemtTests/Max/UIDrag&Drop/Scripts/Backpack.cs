@@ -9,22 +9,28 @@ public class Backpack : MonoBehaviour
     public GameObject InventorySlots;
     public GameObject InventoryBlocker;
 
+    public Sprite openedBackpackSprite;
+    public Sprite closedBackpackSprite;
+    private Image buttonSprite;
+
     private void Start()
     {
         BackpackButton.onClick.AddListener(OnClick);
-
+        buttonSprite = GetComponent<Image>();
     }
 
     void OnClick()
     {
         if (InventorySlots.activeSelf == true)
         {
+            buttonSprite.sprite = closedBackpackSprite;
             openInventorySlotsAndBlockMovementForInventory(false);
         }
         else
         {
             if (InventorySlots.activeSelf == false)
             {
+                buttonSprite.sprite = openedBackpackSprite;
                 openInventorySlotsAndBlockMovementForInventory(true);
             }
         }
