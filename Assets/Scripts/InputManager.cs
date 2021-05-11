@@ -19,6 +19,8 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         
+        
+
         if (Input.GetMouseButtonDown(0))
         {
             mouseDown = true;
@@ -29,6 +31,7 @@ public class InputManager : MonoBehaviour
 
             //Raycast 2D for item detection, object need 2d collider to be detected
             raycastMainHit = Physics2D.RaycastAll(mousePositionWorld2d, Vector2.zero);
+            //Debug.Log("Raycasting" +raycastMainHit.Length);
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -57,6 +60,7 @@ public class InputManager : MonoBehaviour
         {
             foreach (RaycastHit2D raycastCollider in raycastMainHit)
             {
+                //Debug.Log("collider:"+raycastCollider.collider.name);
                 if (raycastCollider.collider != null && raycastCollider.collider.gameObject.tag == colliderTag)
                 {
                     return raycastCollider;
@@ -71,6 +75,7 @@ public class InputManager : MonoBehaviour
         {
             foreach (RaycastHit2D raycasRigidbody in raycastMainHit)
             {
+                //Debug.Log("rigidbody:" + raycasRigidbody.rigidbody.name);
                 if (raycasRigidbody.rigidbody != null && raycasRigidbody.rigidbody.gameObject.tag == rigidbodyTag)
                 {
                     return raycasRigidbody;
@@ -133,6 +138,21 @@ public class InputManager : MonoBehaviour
             foreach (RaycastHit2D raycastCollider in raycastMainHit)
             {
                 if (raycastCollider.collider != null &&  raycastCollider.collider.gameObject.tag == colliderTag)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool checkIfSpecificColliderWasHit(string colliderTag, Collider2D collider)
+    {
+        if (raycastMainHit != null)
+        {
+            foreach (RaycastHit2D raycastCollider in raycastMainHit)
+            {
+                if (raycastCollider.collider != null && raycastCollider.collider.gameObject.tag == colliderTag && raycastCollider.collider==collider)
                 {
                     return true;
                 }

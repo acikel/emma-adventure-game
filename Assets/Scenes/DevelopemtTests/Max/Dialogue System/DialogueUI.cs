@@ -32,7 +32,7 @@ public class DialogueUI : MonoBehaviour
         Button2.onClick.AddListener(OnClick);
         Button3.onClick.AddListener(OnClick);
 
-        Write.Run("Oooh, is that you Emma? Oh you've gotten so tall! Still skinny though. Always so picky about dinner…. ", Other);
+        Write.Run("Oooh, is that you Emma? Oh you've gotten so tall! Still skinny though. Always so picky about dinnerï¿½. ", Other);
     }
     private void Update()
     {
@@ -48,7 +48,7 @@ public class DialogueUI : MonoBehaviour
             }
             if (Click == 2)
             {
-                Write.Run("Oh don't fret dear, look who it is! (Helper) was my friend when I was your age, and when his time came, I put his bones together on my own. I just couldn't say goodbye... I’m glad he's here to watch over you.", Other);
+                Write.Run("Oh don't fret dear, look who it is! (Helper) was my friend when I was your age, and when his time came, I put his bones together on my own. I just couldn't say goodbye... Iï¿½m glad he's here to watch over you.", Other);
                 Emma.text = string.Empty;
             }
             if (Click == 3)
@@ -82,7 +82,7 @@ public class DialogueUI : MonoBehaviour
             if (Click == 7)
             {
                 Write.Run("I don't want to leave you, I don't want to be alone again, I want everything to go back to how it was! How can I even see you?", Answer1);
-                Write.Run("But what if there's no one? I don't want to be around this dead silence… How did you manage to come back..?", Answer2);
+                Write.Run("But what if there's no one? I don't want to be around this dead silenceï¿½ How did you manage to come back..?", Answer2);
                 Other.text = string.Empty;
 
             }
@@ -101,7 +101,7 @@ public class DialogueUI : MonoBehaviour
             }
             if (Click == 8)
             {
-                Write.Run("You're not alone. Not anymore..  (helper) is with you my dear, after all, as long as there are bones, we can't be forgotten. Now, don't be afraid, you're a brave girl and I know you can find the answers that you’re looking for.", Other);
+                Write.Run("You're not alone. Not anymore..  (helper) is with you my dear, after all, as long as there are bones, we can't be forgotten. Now, don't be afraid, you're a brave girl and I know you can find the answers that youï¿½re looking for.", Other);
                 Answer1.text = string.Empty;
                 Answer2.text = string.Empty;
             }

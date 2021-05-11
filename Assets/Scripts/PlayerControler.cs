@@ -15,6 +15,7 @@ public class PlayerControler : MonoBehaviour
 
     private AvatarManager avatarManager;
     private InputManager inputManager;
+    private Inventory inventory;
 
     //lerp parameters:
     private float lerpDurationNear;
@@ -27,7 +28,7 @@ public class PlayerControler : MonoBehaviour
     private float avatarDistanceToHorizont;
     private float maxDistance;
 
-    public delegate void OnCollisionWithPortalHandler(string sceneNameToTransitionTo);
+    public delegate IEnumerator OnCollisionWithPortalHandler(string sceneNameToTransitionTo);
     public static event OnCollisionWithPortalHandler OnCollisionWithPortal;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,7 +39,19 @@ public class PlayerControler : MonoBehaviour
         }else if (collision.gameObject.tag == "Portal")
         {
             triggerIdleAnimation();
-            OnCollisionWithPortal(collision.gameObject.name);
+
+
+            //replacement of OnCollisionWithPortal(collision.gameObject.name); to call events with IEnumerator as return type and Coroutines in Handler Methods:
+            if (OnCollisionWithPortal != null)
+            {
+                for (int n = OnCollisionWithPortal.GetInvocationList().Length - 1; n >= 0; n--)
+                {
+                    OnCollisionWithPortalHandler onCollisionWithPortalCoroutine = OnCollisionWithPortal.GetInvocationList()[n] as OnCollisionWithPortalHandler;
+                    StartCoroutine(onCollisionWithPortalCoroutine(collision.gameObject.name));
+                }
+            }
+
+            
         }
 
     }
@@ -71,6 +84,8 @@ public class PlayerControler : MonoBehaviour
         stopDistance = avatar.stopDistance;
         inputManager = API.InputManager;
 
+        inventory = API.Inventory;
+
     }
 
     private void OnDisable()
@@ -81,7 +96,8 @@ public class PlayerControler : MonoBehaviour
     void Update()
     {
 
-        if (inputManager.isMouseDown())
+        //Debug.Log("in inventory "+inventory.InteractionWithInventoryActive);
+        if (!inventory.InteractionWithInventoryActive && inputManager.isMouseDown())
         {
             if ((raycastHit= inputManager.getRaycastRigidbody("Player")).rigidbody!=null )
             {
@@ -99,7 +115,7 @@ public class PlayerControler : MonoBehaviour
                     avatarManager.ChangeController(AvatarManager.helperAvatar, AvatarManager.playerAvatar);
                 }
             }
-            else if (inputManager.checkIfColliderWasHit("SelectableItem"))
+            else if (inputManager.checkIfColliderWasHit("SelectedItem"))
             {
 
             }

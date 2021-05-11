@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using ScM=UnityEngine.SceneManagement;
@@ -12,10 +13,15 @@ public class SceneManager : MonoBehaviour
     private GameObject playerStartLocation;
     private GameObject helperStartLocation;
 
+    private bool isFading;
+    private CanvasGroup faderCanvasGroup;
+    public float fadeDuration = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
+        faderCanvasGroup = API.FadeImage;
+        faderCanvasGroup.alpha = 1f;
         avatarManager = API.AvatarManager;
         //Debug.Log("avatarManager1:" + avatarManager);
         currentAdditiveSceneName ="Sequence1Zone1";
@@ -25,7 +31,8 @@ public class SceneManager : MonoBehaviour
         loadStartLocations();
         if(playerStartLocation!=null)
             initializeStartLocations();
-        
+        StartCoroutine(Fade(0f));
+
     }
 
     private void loadStartLocations()
@@ -70,16 +77,33 @@ public class SceneManager : MonoBehaviour
                 loadStartLocations();
                 if (playerStartLocation != null)
                     initializeStartLocations();
+                StartCoroutine(Fade(0f));
             }
         }
     }
 
-    private void HandleOnCollisionWithPortal(string sceneNameToTransitionTo)
+    private IEnumerator HandleOnCollisionWithPortal(string sceneNameToTransitionTo)
     {
+        yield return StartCoroutine(Fade(1f));
         ScM.SceneManager.LoadSceneAsync(sceneNameToTransitionTo, LoadSceneMode.Additive);
         ScM.SceneManager.UnloadSceneAsync(currentAdditiveSceneName);
         currentAdditiveSceneName = sceneNameToTransitionTo;
         reloadDone = false;
-        
+    }
+
+
+    private IEnumerator Fade(float finalAlpha)
+    {
+        isFading = true;
+        faderCanvasGroup.blocksRaycasts = true;
+        float fadeSpeed = Mathf.Abs(faderCanvasGroup.alpha - finalAlpha) / fadeDuration;
+        while (!Mathf.Approximately(faderCanvasGroup.alpha, finalAlpha))
+        {
+            faderCanvasGroup.alpha = Mathf.MoveTowards(faderCanvasGroup.alpha, finalAlpha,
+                fadeSpeed * Time.deltaTime);
+            yield return null;
+        }
+        isFading = false;
+        faderCanvasGroup.blocksRaycasts = false;
     }
 }
