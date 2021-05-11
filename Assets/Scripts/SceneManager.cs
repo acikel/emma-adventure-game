@@ -120,7 +120,7 @@ public class SceneManager : MonoBehaviour
                 fadeSpeed * Time.deltaTime);
             yield return null;
         }
-        yield return StartCoroutine(Wait(0.1f));
+        yield return StartCoroutine(Wait(0.001f));
         inventory.InteractionWithInventoryActive = false;
         isFading = false;
         faderCanvasGroup.blocksRaycasts = false;
