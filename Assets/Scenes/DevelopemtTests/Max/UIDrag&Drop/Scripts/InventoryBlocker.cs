@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 public class InventoryBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDragHandler, IEndDragHandler
 {
     private Inventory inventory;
+    private SceneManager sceneManager;
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +27,15 @@ public class InventoryBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //Debug.Log("Entered");
-        inventory = API.Inventory;
-        inventory.InteractionWithInventoryActive = false;
+        
+        sceneManager = API.SceneManager;
+        if (!sceneManager.IsFading)
+        {
+            //Debug.Log("Entered");
+            inventory = API.Inventory;
+            inventory.InteractionWithInventoryActive = false;
+        }
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -40,9 +47,14 @@ public class InventoryBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //Debug.Log("Entered3");
-        inventory = API.Inventory;
-        inventory.InteractionWithInventoryActive = false;
+        
+        sceneManager = API.SceneManager;
+        if (!sceneManager.IsFading)
+        {
+            //Debug.Log("Entered3");
+            inventory = API.Inventory;
+            inventory.InteractionWithInventoryActive = false;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)

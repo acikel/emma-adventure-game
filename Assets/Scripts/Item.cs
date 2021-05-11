@@ -10,12 +10,14 @@ public class Item : MonoBehaviour
     private Inventory inventory;
     private Collider2D itemCollider;
     private bool playerIsColliding;
+    private SceneManager sceneManager;
     // Start is called before the first frame update
     void Start()
     {
         itemCollider = gameObject.GetComponent<PolygonCollider2D>();
         inventory = API.Inventory;
         inputManager = API.InputManager;
+        sceneManager = API.SceneManager;
     }
 
     // Update is called once per frame
@@ -91,8 +93,12 @@ public class Item : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        //Debug.Log("MouseExit");
-        inventory.InteractionWithInventoryActive = false;
+        sceneManager = API.SceneManager;
+        if (!sceneManager.IsFading)
+        {
+            //Debug.Log("MouseExit");
+            inventory.InteractionWithInventoryActive = false;
+        }
     }
 
     private void OnMouseOver()

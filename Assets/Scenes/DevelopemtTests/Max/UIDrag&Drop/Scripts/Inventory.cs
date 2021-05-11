@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
 
     private bool interactionWithInventoryActive;
     private GameObject currentlyDraggedSlot;
-    private bool collisionWasHandled;
+    //private bool collisionWasHandled;
     private InputManager inputManager;
 
     public bool InteractionWithInventoryActive
@@ -46,7 +46,7 @@ public class Inventory : MonoBehaviour
     {
         inputManager = API.InputManager;
         currentlyDraggedSlot = new GameObject();
-        interactionWithInventoryActive = false;
+        //interactionWithInventoryActive = false;
         for (int i=0 ; i < isFull.Length; i++)
         {
             isFull[i] = false;
@@ -65,12 +65,13 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(collisionWasHandled && !inputManager.isMouseDown())
         {
             interactionWithInventoryActive = false;
             collisionWasHandled = false;
         }
-            
+            */
     }
 
     private void openInventorySlotsAndBlockMovementForInventory(bool value)
@@ -90,7 +91,7 @@ public class Inventory : MonoBehaviour
                 break;
             }
         }
-        collisionWasHandled = true;
+        //collisionWasHandled = true;
         //yield return new WaitForSeconds(0);
 
     }

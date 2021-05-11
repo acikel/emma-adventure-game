@@ -13,10 +13,13 @@ public class Backpack : MonoBehaviour
     public Sprite closedBackpackSprite;
     private Image buttonSprite;
 
+    private Inventory inventory;
+
     private void Start()
     {
         BackpackButton.onClick.AddListener(OnClick);
         buttonSprite = GetComponent<Image>();
+        inventory = API.Inventory;
     }
 
     void OnClick()
@@ -34,6 +37,12 @@ public class Backpack : MonoBehaviour
                 openInventorySlotsAndBlockMovementForInventory(true);
             }
         }
+        
+    }
+
+    private void OnMouseOver()
+    {
+        inventory.InteractionWithInventoryActive = true;
     }
 
     private void openInventorySlotsAndBlockMovementForInventory(bool value)

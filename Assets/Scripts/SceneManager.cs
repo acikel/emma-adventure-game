@@ -17,6 +17,17 @@ public class SceneManager : MonoBehaviour
     private CanvasGroup faderCanvasGroup;
     public float fadeDuration = 1f;
 
+    private Inventory inventory;
+
+
+    public bool IsFading
+    {
+        get
+        {
+            return isFading;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +39,8 @@ public class SceneManager : MonoBehaviour
         //ScM.SceneManager.LoadSceneAsync("Sequence1Zone1", LoadSceneMode.Additive);
         //ScM.SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
         inputManager = API.InputManager;
+        inventory = API.Inventory;
+
         loadStartLocations();
         if(playerStartLocation!=null)
             initializeStartLocations();
@@ -35,6 +48,7 @@ public class SceneManager : MonoBehaviour
 
     }
 
+    
     private void loadStartLocations()
     {
         playerStartLocation = GameObject.Find("PlayerStartLocation");
@@ -95,6 +109,9 @@ public class SceneManager : MonoBehaviour
     private IEnumerator Fade(float finalAlpha)
     {
         isFading = true;
+        //Debug.Log("inventory interaction1:" + inventory.InteractionWithInventoryActive);
+        inventory.InteractionWithInventoryActive = true;
+        //Debug.Log("inventory interaction2:" + inventory.InteractionWithInventoryActive);
         faderCanvasGroup.blocksRaycasts = true;
         float fadeSpeed = Mathf.Abs(faderCanvasGroup.alpha - finalAlpha) / fadeDuration;
         while (!Mathf.Approximately(faderCanvasGroup.alpha, finalAlpha))
@@ -103,7 +120,14 @@ public class SceneManager : MonoBehaviour
                 fadeSpeed * Time.deltaTime);
             yield return null;
         }
+        yield return StartCoroutine(Wait(0.1f));
+        inventory.InteractionWithInventoryActive = false;
         isFading = false;
         faderCanvasGroup.blocksRaycasts = false;
+    }
+
+    private IEnumerator Wait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 }
