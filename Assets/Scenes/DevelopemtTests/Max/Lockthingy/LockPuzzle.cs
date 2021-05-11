@@ -11,51 +11,48 @@ public class LockPuzzle : MonoBehaviour
     public Button Square;
     public Button Circle;
     public bool solved;
+    public GameObject Lock;
 
     public List<int> InputCode = new List<int>();
-    public List<int> Code = new List<int>() { 3, 0, 4, 3 };
+    public List<int> Code;
 
     void Start()
     {
         Triangle.onClick.AddListener(OnClick1);
         Square.onClick.AddListener(OnClick2);
         Circle.onClick.AddListener(OnClick3);
+        Code = new List<int>() { 3, 0, 4, 3 };
 
     }
 
     private void Update()
     {
+        for (int i = 0; i < InputCode.Count; i++)
+        {
+            //Debug.Log(InputCode[i]);
+            //Debug.Log(Code[i]);
+        }
         Debug.Log(InputCode.Count);
-        solved = Check(InputCode, Code);
+        Debug.Log(solved);
+        Check();
+    }
+    void Check()
+    {
         if (InputCode.Count == 4)
         {
-            if (solved == true)
+            for (int i = 0; i < InputCode.Count; i++)
             {
-                Debug.Log("yes");
-            }
-            if (solved == false)
-            {
-                Debug.Log("false");
-            }
-        }
-    }
-
-    private bool Check(List<int> list1, List<int> list2)
-    {
-        var areListsEqual = false;
-
-        if (list1.Count != list2.Count)
-            return false;
-
-        for (var i = 0; i < list1.Count; i++)
-        {
-            if (list2[i] == list1[i])
-            {
-                areListsEqual = true;
+                if (InputCode[i] != Code[i])
+                {
+                    solved = false;
+                    return;
+                }
+                solved = true;
+                //What happens if the Code is solved
+                Lock.SetActive(false);
+                return;
             }
         }
-
-        return areListsEqual;
     }
 
     void OnClick1()
