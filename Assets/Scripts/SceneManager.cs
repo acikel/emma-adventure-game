@@ -18,7 +18,16 @@ public class SceneManager : MonoBehaviour
     public float fadeDuration = 1f;
 
     private Inventory inventory;
+    private bool isReloading;
 
+
+    public bool IsReloading
+    {
+        get
+        {
+            return isReloading;
+        }
+    }
 
     public bool IsFading
     {
@@ -86,22 +95,26 @@ public class SceneManager : MonoBehaviour
         {
             if (ScM.SceneManager.GetSceneByName(currentAdditiveSceneName).isLoaded)
             {
-                reloadDone = true;
+                
                 avatarManager.ReloadGround();
                 loadStartLocations();
                 if (playerStartLocation != null)
                     initializeStartLocations();
                 StartCoroutine(Fade(0f));
+                reloadDone = true;
+                isReloading = false;
             }
         }
     }
 
     private IEnumerator HandleOnCollisionWithPortal(string sceneNameToTransitionTo)
     {
+        isReloading = true;
         yield return StartCoroutine(Fade(1f));
         ScM.SceneManager.LoadSceneAsync(sceneNameToTransitionTo, LoadSceneMode.Additive);
         ScM.SceneManager.UnloadSceneAsync(currentAdditiveSceneName);
         currentAdditiveSceneName = sceneNameToTransitionTo;
+        //Debug.Log("current scene name:"+ currentAdditiveSceneName);
         reloadDone = false;
     }
 

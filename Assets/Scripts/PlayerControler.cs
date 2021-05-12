@@ -16,6 +16,7 @@ public class PlayerControler : MonoBehaviour
     private AvatarManager avatarManager;
     private InputManager inputManager;
     private Inventory inventory;
+    private SceneManager sceneManager;
 
     //lerp parameters:
     private float lerpDurationNear;
@@ -36,10 +37,10 @@ public class PlayerControler : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         {
             triggerIdleAnimation();
-        }else if (collision.gameObject.tag == "Portal")
+        }else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
         {
             triggerIdleAnimation();
-
+            //Debug.Log("Portal name:"+ collision.gameObject.name);
 
             //replacement of OnCollisionWithPortal(collision.gameObject.name); to call events with IEnumerator as return type and Coroutines in Handler Methods:
             if (OnCollisionWithPortal != null)
@@ -85,6 +86,7 @@ public class PlayerControler : MonoBehaviour
         inputManager = API.InputManager;
 
         inventory = API.Inventory;
+        sceneManager = API.SceneManager;
 
     }
 
