@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,7 +21,9 @@ public class SceneManager : MonoBehaviour
     private Inventory inventory;
     private bool isReloading;
 
-
+    //need to be actions to call in IEnumerator method HandleOnCollisionWithPortal below.
+    public event Action BeforeSceneUnload;
+    public event Action AfterSceneLoad;
     public bool IsReloading
     {
         get
@@ -111,11 +114,22 @@ public class SceneManager : MonoBehaviour
     {
         isReloading = true;
         yield return StartCoroutine(Fade(1f));
-        ScM.SceneManager.LoadSceneAsync(sceneNameToTransitionTo, LoadSceneMode.Additive);
+
+        if (BeforeSceneUnload != null)
+            BeforeSceneUnload();
+
         ScM.SceneManager.UnloadSceneAsync(currentAdditiveSceneName);
+        yield return ScM.SceneManager.LoadSceneAsync(sceneNameToTransitionTo, LoadSceneMode.Additive);
+        
+
+        if (AfterSceneLoad != null)
+            AfterSceneLoad();
+
         currentAdditiveSceneName = sceneNameToTransitionTo;
         //Debug.Log("current scene name:"+ currentAdditiveSceneName);
         reloadDone = false;
+
+        
     }
 
 

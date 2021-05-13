@@ -1159,6 +1159,116 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.00000023841858}
   serializedVersion: 2
   m_Radius: 0.75
+--- !u!1 &1085701736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085701738}
+  - component: {fileID: 1085701737}
+  - component: {fileID: 1085701739}
+  - component: {fileID: 1085701742}
+  - component: {fileID: 1085701741}
+  - component: {fileID: 1085701740}
+  m_Layer: 0
+  m_Name: Savers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1085701737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085701736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaf98a81890a7d4a9e5ec30b004edb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: Magnet1GameObject
+  saveData: {fileID: 11400000, guid: 35d011b2fcd5a1c44b66f8607d2550fa, type: 2}
+  gameObjectToSave: {fileID: 407805868}
+--- !u!4 &1085701738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085701736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.940765, y: 31.727348, z: -79.13294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1085701739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085701736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaf98a81890a7d4a9e5ec30b004edb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: Magnet2GameObject
+  saveData: {fileID: 11400000, guid: 35d011b2fcd5a1c44b66f8607d2550fa, type: 2}
+  gameObjectToSave: {fileID: 845006080}
+--- !u!114 &1085701740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085701736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaf98a81890a7d4a9e5ec30b004edb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: Magnet5GameObject
+  saveData: {fileID: 11400000, guid: 35d011b2fcd5a1c44b66f8607d2550fa, type: 2}
+  gameObjectToSave: {fileID: 1057455867}
+--- !u!114 &1085701741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085701736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaf98a81890a7d4a9e5ec30b004edb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: Magnet4GameObject
+  saveData: {fileID: 11400000, guid: 35d011b2fcd5a1c44b66f8607d2550fa, type: 2}
+  gameObjectToSave: {fileID: 544239736}
+--- !u!114 &1085701742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085701736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaf98a81890a7d4a9e5ec30b004edb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: Magnet3GameObject
+  saveData: {fileID: 11400000, guid: 35d011b2fcd5a1c44b66f8607d2550fa, type: 2}
+  gameObjectToSave: {fileID: 667187619}
 --- !u!1 &1087833165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1759,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.02}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11.03
+  m_Radius: 19.100935

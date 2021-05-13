@@ -265,7 +265,7 @@ public class PlayerControler : MonoBehaviour
     private void initializeLerp()
     {
         currentLerpTime = 0f;
-        Debug.Log("distance: " + Vector2.Distance(avatar.transform.position, targetPosition));
+        //Debug.Log("distance: " + Vector2.Distance(avatar.transform.position, targetPosition));
         if (Vector2.Distance(avatar.transform.position, targetPosition) < 60)
         {
             lerpDuration = lerpDurationNear;

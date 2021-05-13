@@ -10,7 +10,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         inventory = API.Inventory;
         inventory.InteractionWithInventoryActive = true;
-        transform.position = Input.mousePosition;
+        transform.position = Camera.main.ScreenToWorldPoint((Input.mousePosition));
         inventory.CurrentlyDraggedSlot = transform.parent.gameObject;
     }
 
