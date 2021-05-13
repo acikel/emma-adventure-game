@@ -887,7 +887,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1455400433}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 0
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1135,7 +1135,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -1410,7 +1410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533171, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533183, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: m_Name
