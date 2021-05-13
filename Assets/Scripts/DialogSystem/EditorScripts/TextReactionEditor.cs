@@ -7,7 +7,7 @@ public class TextReactionEditor : ReactionEditor
     private SerializedProperty messageProperty;         // Represents the string field which is the message to be displayed.
     private SerializedProperty textColorProperty;       // Represents the color field which is the color of the message to be displayed.
     //private SerializedProperty delayProperty;           // Represents the float field which is the delay before the messaage is displayed
-
+    private SerializedProperty turnProperty;
 
     private const float messageGUILines = 3f;           // How many lines tall the GUI for the message field should be.
     private const float areaWidthOffset = 19f;          // Offset to account for the message GUI being made of two GUI calls.  It makes the GUI line up.
@@ -15,9 +15,9 @@ public class TextReactionEditor : ReactionEditor
     // The name of the field which is the message to be written to the screen.
     private const string textReactionPropTextColorName = "textColor";
     // The name of the field which is the color of the message to be written to the screen.
-    private const string textReactionPropDelayName = "delay";
+    //private const string textReactionPropDelayName = "delay";
     // The name of the field which is the delay before the message is written to the screen.
-
+    private const string textReactionPropTurn= "reactionTurn";
 
     protected override void Init()
     {
@@ -25,6 +25,7 @@ public class TextReactionEditor : ReactionEditor
         messageProperty = serializedObject.FindProperty(textReactionPropMessageName);
         textColorProperty = serializedObject.FindProperty(textReactionPropTextColorName);
         //delayProperty = serializedObject.FindProperty(textReactionPropDelayName);
+        turnProperty = serializedObject.FindProperty(textReactionPropTurn);
     }
 
 
@@ -42,6 +43,8 @@ public class TextReactionEditor : ReactionEditor
         // Display default GUI for the text color and the delay.
         EditorGUILayout.PropertyField(textColorProperty);
         //EditorGUILayout.PropertyField(delayProperty);
+
+        EditorGUILayout.PropertyField(turnProperty);
     }
 
 

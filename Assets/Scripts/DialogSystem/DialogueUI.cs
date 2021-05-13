@@ -32,28 +32,28 @@ public class DialogueUI : MonoBehaviour
         Button2.onClick.AddListener(OnClick);
         Button3.onClick.AddListener(OnClick);
 
-        Write.Run("Oooh, is that you Emma? Oh you've gotten so tall! Still skinny though. Always so picky about dinner. ", Other);
+        //Write.Run("Oooh, is that you Emma? Oh you've gotten so tall! Still skinny though. Always so picky about dinner. ", Other);
     }
     private void Update()
     {
         Debug.Log(Click);
-        go = Write.written;
+        //go = Write.written;
         InputMouse();
         if (go == false)
         {
             if (Click == 1)
             {
-                Write.Run(" noise of crying ", Emma);
+                //Write.Run(" noise of crying ", Emma);
                 Other.text = string.Empty;
             }
             if (Click == 2)
             {
-                Write.Run("Oh don't fret dear, look who it is! (Helper) was my friend when I was your age, and when his time came, I put his bones together on my own. I just couldn't say goodbye... I'm glad he's here to watch over you.", Other);
+                //Write.Run("Oh don't fret dear, look who it is! (Helper) was my friend when I was your age, and when his time came, I put his bones together on my own. I just couldn't say goodbye... I'm glad he's here to watch over you.", Other);
                 Emma.text = string.Empty;
             }
             if (Click == 3)
             {
-                Write.Run("Grandmama, what happened? Why did you leave me alone? what happened to you and everything around?", Emma);
+                //Write.Run("Grandmama, what happened? Why did you leave me alone? what happened to you and everything around?", Emma);
                 Other.text = string.Empty;
             }
             if (Click == 4)
@@ -127,7 +127,7 @@ public class DialogueUI : MonoBehaviour
         Button1Obj.SetActive(false);
         Button2Obj.SetActive(false);
         Button3Obj.SetActive(false);
-        Write.written = false;
+        //Write.written = false;
         Click += 1;
     }
 
@@ -135,7 +135,7 @@ public class DialogueUI : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && go == true && buttonON == false)
         {
-            Write.written = false;
+            //Write.written = false;
             Click += 1;
 
         }

@@ -33,11 +33,11 @@ public class AvatarManager : Object
 				playerAvatar = GameObject.FindWithTag("Player").GetComponent<Emma>();
 				helperAvatar = GameObject.FindWithTag("Helper").GetComponent<Helper>();
 				helperAvatar.gameObject.SetActive(false);
-				backgroundCollider = GameObject.FindWithTag("Ground").GetComponent<PolygonCollider2D>();
+				backgroundCollider = GameObject.FindWithTag("Ground")?.GetComponent<PolygonCollider2D>();
 				background = GameObject.FindWithTag("Ground");
 
 				currentAvatar = playerAvatar;
-				groundCenter = GameObject.FindWithTag("Ground").transform.Find("Center");
+				groundCenter = GameObject.FindWithTag("Ground")?.transform.Find("Center");
 			}
 			return AvatarManager.instance;
 

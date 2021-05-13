@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
+using TMPro;
 
 // This class is used to manage the text that is
 // displayed on screen.  In situations where many
@@ -14,15 +16,28 @@ public class TextManager : MonoBehaviour
     {
         public string message;      // The body of the message.
         public Color textColor;     // The color the message should be displayed in.
-        public float startTime;     // The time the message should start being displayed based on when it is triggered and its delay.
+        //public float startTime;     // The time the message should start being displayed based on when it is triggered and its delay.
+        public string callerName;
     }
 
 
-    public Text textEmma;                               // Reference to the Text component that will display the message for player.
-    public Text textOther;
-    public Text textAnswerButton1;
-    public Text textAnswerButton2;
-    public Text textAnswerButton3;
+    public TMP_Text textEmma;                               // Reference to the Text component that will display the message for player.
+    public TMP_Text[] textNPCs;
+    //public Text[] textAnswerButton;
+    public Button[] buttonAnswerOptions;
+
+
+    //Subscribed by ReactionCollection to define which reaction will be invoked next.
+    public delegate void OnNextTurnHandler();
+    public static event OnNextTurnHandler OnNextTurn;
+
+    //Subscribed by Typeeriter to determine end of typewriting.
+    public delegate void OnEndTypeWritingHandler();
+    public static event OnEndTypeWritingHandler OnEndTypeWriting;
+
+    private TipewriterEffect typeWriter;
+    private InputManager inputManager;
+    private TMP_Text currentTextBox;
 
     public float displayTimePerCharacter = 0.1f;    // The amount of time that each character in a message adds to the amount of time it is displayed for.
     public float additionalDisplayTime = 0.5f;      // The additional time that is added to the message is displayed for.
@@ -32,11 +47,70 @@ public class TextManager : MonoBehaviour
     // Collection of instructions that are ordered by their startTime.
     private float clearTime;                        // The time at which there should no longer be any text on screen.
 
+    //turn of a reaction in a conversation beginning from 1. Used by ReactionCollection class.
+    private static int turnCounter;
+
+    public static int TurnCounter
+    {
+        get
+        {
+            return turnCounter;
+        }
+    }
+
+    private void Start()
+    {
+        inputManager = API.InputManager;
+        typeWriter = GetComponent<TipewriterEffect>();
+        turnCounter = 1;
+        addOnClickListenerToButtons();
+    }
+
+    
+    private void addOnClickListenerToButtons()
+    {
+        foreach(Button b in buttonAnswerOptions)
+        {
+            b.onClick.AddListener(OnClick);
+        }
+    }
+
+    void OnClick()
+    {
+        foreach (Button b in buttonAnswerOptions)
+        {
+            b.gameObject.SetActive(false);
+        }
+        //Write.written = false;
+        turnCounter++;
+
+        OnNextTurn?.Invoke();
+    }
 
     private void Update()
     {
+        if(inputManager.isMouseDown() && !buttonAnswerOptions[0].IsActive()/*&& type writer ist fertig und sound fertig sonst beenden in anderen methode und keine buttons activ da dann antwort gewaehlt werden muss*/)
+        {
+            if (typeWriter.IsWritingDone)
+            {
+                turnCounter++;
+                if (currentTextBox != null)
+                {
+                    currentTextBox.text = string.Empty;
+                    OnNextTurn?.Invoke();
+                }
+                
+            }
+            else
+            {
+                OnEndTypeWriting?.Invoke();
+            }
+            
+        }
+
+        /*
         // If there are instructions and the time is beyond the start time of the first instruction...
-        if (instructions.Count > 0 && Time.time >= instructions[0].startTime)
+        if (instructions.Count > 0 )
         {
             // ... set the Text component to display the instruction's message in the correct color.
             textEmma.text = instructions[0].message;
@@ -50,9 +124,11 @@ public class TextManager : MonoBehaviour
         {
             textEmma.text = string.Empty;
         }
+        */
     }
 
 
+    /*
     // This function is called from TextReactions in order to display a message to the screen.
     public void DisplayMessage(string message, Color textColor, float delay)
     {
@@ -83,10 +159,64 @@ public class TextManager : MonoBehaviour
         // Order the instructions by their start time.
         SortInstructions();
     }
+    */
 
-
-    public void DisplayMessage(string message, Color textColor)
+    private void writeText(string message, string textObjectName)
     {
+        if (textObjectName.Contains("Emma"))
+        {
+            typeWriter.Run(message, textEmma);
+            currentTextBox = textEmma;
+        }else if (textObjectName.Contains("NPC"))
+        {
+            int npcNumber;
+            if((npcNumber=getNPCNumberFromName(textObjectName))!=-1 &&  npcNumber - 1< textNPCs.Length && 0 < npcNumber)
+            {
+                typeWriter.Run(message, textNPCs[npcNumber - 1]);
+                currentTextBox = textNPCs[npcNumber - 1];
+            }
+                
+        }
+        else if (textObjectName.Contains("Button"))
+        {
+            int buttonNumber;
+            if ((buttonNumber = getNPCNumberFromName(textObjectName)) != -1 && buttonNumber - 1 < textNPCs.Length && 0 < buttonNumber)
+            {
+                currentTextBox = buttonAnswerOptions[buttonNumber - 1].GetComponentInChildren<TMP_Text>();
+                typeWriter.ShowButtonTextImmediately(message, currentTextBox);//antworten werden direct angezeigt.
+                setButtonActive(buttonAnswerOptions[buttonNumber - 1], true);
+            }
+                
+        }
+
+
+    }
+
+    private void setButtonActive(Button answerButton, bool setActive)
+    {
+        answerButton.gameObject.SetActive(setActive);
+    }
+    private int getNPCNumberFromName(string textObjectName)
+    {
+        string b = string.Empty;
+        int val;
+
+        for (int i = 0; i < textObjectName.Length; i++)
+        {
+            if (Char.IsDigit(textObjectName[i]))
+                b += textObjectName[i];
+        }
+
+        if (b.Length > 0)
+            return val = int.Parse(b);
+
+        return -1;
+    }
+    public void DisplayMessage(string message, Color textColor, string textObjectName)
+    {
+        writeText(message, textObjectName);
+
+        /*
         // The time when the message should start displaying is the current time offset by the delay.
         float startTime = Time.time;
 
@@ -105,16 +235,20 @@ public class TextManager : MonoBehaviour
         {
             message = message,
             textColor = textColor,
-            startTime = startTime
+            //startTime = startTime
+            callerName = textObjectName
         };
 
         // Add the new instruction to the collection.
         instructions.Add(newInstruction);
 
         // Order the instructions by their start time.
-        SortInstructions();
+        //SortInstructions();
+        */
     }
 
+
+    /*
     // This function orders the instructions by start time using a bubble sort.
     private void SortInstructions()
     {
@@ -129,6 +263,7 @@ public class TextManager : MonoBehaviour
             {
                 // ... and compare the instruction from the outer loop with this one.
                 // If the outer loop's instruction has a later start time, swap their positions and set the flag to true.
+                
                 if (instructions[i].startTime > instructions[j].startTime)
                 {
                     Instruction temp = instructions[i];
@@ -137,6 +272,7 @@ public class TextManager : MonoBehaviour
 
                     swapped = true;
                 }
+                
             }
 
             // If for a single instruction, all other instructions are later then they are correctly ordered.
@@ -144,5 +280,6 @@ public class TextManager : MonoBehaviour
                 break;
         }
     }
+    */
 }
 

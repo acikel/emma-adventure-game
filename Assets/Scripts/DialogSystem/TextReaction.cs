@@ -12,16 +12,18 @@ public class TextReaction : Reaction
 
     private TextManager textManager;            // Reference to the component to display the text.
 
-
-    protected override void SpecificInit()
+    private void OnEnable()
     {
         textManager = FindObjectOfType<TextManager>();
+    }
+    protected override void SpecificInit()
+    {
     }
 
 
     protected override void ImmediateReaction()
     {
         //textManager.DisplayMessage(message, textColor, delay);
-        textManager.DisplayMessage(message, textColor);
+        textManager.DisplayMessage(message, textColor, GameObjectName);
     }
 }
