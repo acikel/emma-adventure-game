@@ -32,7 +32,7 @@ public class DialogueUI : MonoBehaviour
         Button2.onClick.AddListener(OnClick);
         Button3.onClick.AddListener(OnClick);
 
-        Write.Run("Oooh, is that you Emma? Oh you've gotten so tall! Still skinny though. Always so picky about dinner�. ", Other);
+        Write.Run("Oooh, is that you Emma? Oh you've gotten so tall! Still skinny though. Always so picky about dinner. ", Other);
     }
     private void Update()
     {
@@ -48,7 +48,7 @@ public class DialogueUI : MonoBehaviour
             }
             if (Click == 2)
             {
-                Write.Run("Oh don't fret dear, look who it is! (Helper) was my friend when I was your age, and when his time came, I put his bones together on my own. I just couldn't say goodbye... I�m glad he's here to watch over you.", Other);
+                Write.Run("Oh don't fret dear, look who it is! (Helper) was my friend when I was your age, and when his time came, I put his bones together on my own. I just couldn't say goodbye... I'm glad he's here to watch over you.", Other);
                 Emma.text = string.Empty;
             }
             if (Click == 3)
