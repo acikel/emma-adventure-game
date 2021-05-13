@@ -72,6 +72,7 @@ public class Inventory : MonoBehaviour
             collisionWasHandled = false;
         }
             */
+        Debug.Log("interactionWithInventoryActive: "+ interactionWithInventoryActive);
     }
 
     private void openInventorySlotsAndBlockMovementForInventory(bool value)

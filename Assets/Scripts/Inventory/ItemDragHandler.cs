@@ -23,7 +23,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     // Start is called before the first frame update
     void Start()
     {
-        
+        inventory = API.Inventory;
+        inventory.InteractionWithInventoryActive = false;
     }
 
     // Update is called once per frame

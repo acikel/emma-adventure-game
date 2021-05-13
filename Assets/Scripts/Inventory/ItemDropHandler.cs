@@ -39,7 +39,6 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
                   {
                         inventory.setCurrentlyDraggedSlotToEmpty();
                         GameObject.Destroy(inventory.CurrentlyDraggedSlot.transform.GetChild(0).gameObject);
-                        inventory.InteractionWithInventoryActive = false;
             }
               }
 

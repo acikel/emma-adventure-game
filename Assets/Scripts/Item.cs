@@ -55,12 +55,6 @@ public class Item : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerIsColliding = false;
-
-            if (!sceneManager.IsFading)
-            {
-                //Debug.Log("MouseExit");
-                inventory.InteractionWithInventoryActive = false;
-            }
         }
     }
 
