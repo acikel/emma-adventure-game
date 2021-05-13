@@ -6,6 +6,7 @@ public class DropOff : MonoBehaviour
 {
     Inventory inventory;
     private bool playerColliding;
+    private bool itemColliding;
 
     [SerializeField]
     public List<string> itemNameToDrop=new List<string>();
@@ -17,7 +18,14 @@ public class DropOff : MonoBehaviour
             return playerColliding;
         }
     }
-    
+
+    public bool ItemColliding
+    {
+        get
+        {
+            return itemColliding;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +38,7 @@ public class DropOff : MonoBehaviour
     {
         
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -47,11 +56,24 @@ public class DropOff : MonoBehaviour
                  }
              }
          }*/
+        else if (collision.gameObject.tag == "Item")
+        {
+            //Debug.Log("item colliding start");
+            itemColliding = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
+        {
             playerColliding = false;
+        }
+        else if (collision.gameObject.tag == "Item")
+        {
+            //Debug.Log("item colliding end");
+            itemColliding = false;
+        }
+        
     }
 }
