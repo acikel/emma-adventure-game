@@ -11,8 +11,10 @@ public class Avatar : MonoBehaviour
     public float stopDistanceFar = 0.055f;
     //used for near and far walk distance
     public float startWalkDelay = 0.0001f;
+    [SerializeField]
     public float lerpDistanceFarSummand = 40f;
     //used for near stop distance
+    [SerializeField]
     public float lerpDuration = 35f;
     public float scalingFactor = 1f;
     private Vector3 avatarLocalScale = Vector3.one;
