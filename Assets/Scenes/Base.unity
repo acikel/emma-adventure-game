@@ -1353,14 +1353,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
-      propertyPath: scalingFactor
-      value: 0.03
       propertyPath: lerpDuration
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: stopDistance
       value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+      propertyPath: scalingFactor
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: lerpDistanceFarSummand
