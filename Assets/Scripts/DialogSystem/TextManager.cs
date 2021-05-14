@@ -97,7 +97,7 @@ public class TextManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("turn count:" + turnCounter + "newMouseClick"+ newMouseClick+ "inputManager.isMouseDown()"+ inputManager.isMouseDown()+ "!buttonAnswerOptions[0].IsActive()"+ !buttonAnswerOptions[0].IsActive());
+        //Debug.Log("turn count:" + turnCounter + "newMouseClick"+ newMouseClick+ "inputManager.isMouseDown()"+ inputManager.isMouseDown()+ "!buttonAnswerOptions[0].IsActive()"+ !buttonAnswerOptions[0].IsActive());
         if(newMouseClick && inputManager.isMouseDown() && !buttonAnswerOptions[0].IsActive()/*&& type writer ist fertig und sound fertig sonst beenden in anderen methode und keine buttons activ da dann antwort gewaehlt werden muss*/)
         {
             newMouseClick = false;
@@ -237,7 +237,7 @@ public class TextManager : MonoBehaviour
     }
     public void DisplayMessage(string message, Color textColor, string textObjectName)
     {
-        Debug.Log("in DisplayMessage from " + textObjectName);
+        //Debug.Log("in DisplayMessage from " + textObjectName);
         writeText(message, textObjectName);
 
         /*

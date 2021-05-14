@@ -45,7 +45,7 @@ public class ReactionCollection : MonoBehaviour
     }
     public void React()
     {
-        Debug.Log("reactions" + gameObject.name + " : "+ reactions);
+        //Debug.Log("reactions" + gameObject.name + " : "+ reactions);
         if (reactions == null)
             return;
 
@@ -56,7 +56,7 @@ public class ReactionCollection : MonoBehaviour
             //Debug.Log("inReact2 "+reactions[i].GameObjectName+ ": " + reactions[i].reactionTurn);
             if (TextManager.TurnCounter == reactions[i].reactionTurn)
             {
-                Debug.Log("inReact3" + reactions[i].GameObjectName);
+                //Debug.Log("inReact3" + reactions[i].GameObjectName);
                 lastReactionToPlay++;
                 reactions[i].React(this);
             }
