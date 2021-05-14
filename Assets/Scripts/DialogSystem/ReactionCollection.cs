@@ -8,6 +8,7 @@ public class ReactionCollection : MonoBehaviour
     //public Reaction[] reactions = new Reaction[0];      // Array of all the Reactions to play when React is called.
     public Reaction[] reactions;
     private int lastReactionToPlay;
+    private int lastReactionToPlayTmp;
 
     private void OnEnable()
     {
@@ -25,33 +26,43 @@ public class ReactionCollection : MonoBehaviour
             reactions[i].Init();
         }
         lastReactionToPlay = 0;
+        lastReactionToPlayTmp = -1;
         SortReactions();
         assignGameObjectName();
         React();
     }
 
+    private void printReactions()
+    {
+        for (int i=0; i< reactions.Length; i++)
+        {
+            Debug.Log("Reactions of:" + gameObject.name + "reaction nr"+i+ " turn: "+ reactions[i].reactionTurn );
+        }
+    }
     private void OnDisable()
     {
         TextManager.OnNextTurn -= React;
     }
     public void React()
     {
+        Debug.Log("reactions" + gameObject.name + " : "+ reactions);
         if (reactions == null)
             return;
 
-        Debug.Log("inReact1");
+        //Debug.Log("inReact" +gameObject.name+"  " + "  reactions.Length: "+ reactions.Length);
         //Debug.Log("current turn:"+ TextManager.TurnCounter);
         for (int i = lastReactionToPlay; i < reactions.Length; i++)
         {
             //Debug.Log("inReact2 "+reactions[i].GameObjectName+ ": " + reactions[i].reactionTurn);
             if (TextManager.TurnCounter == reactions[i].reactionTurn)
             {
-                Debug.Log("inReact3");
+                Debug.Log("inReact3" + reactions[i].GameObjectName);
                 lastReactionToPlay++;
                 reactions[i].React(this);
             }
         }
-        
+
+        //Debug.Log("current index in " + gameObject.name  +" : "+ lastReactionToPlay);
     /*
         if (TextManager.TurnCounter==reactions[lastReactionToPlay].reactionTurn lastReactionToPlay < reactions.Length)
         {
@@ -100,7 +111,7 @@ public class ReactionCollection : MonoBehaviour
                 // ... and compare the instruction from the outer loop with this one.
                 // If the outer loop's instruction has a later start time, swap their positions and set the flag to true.
                 
-                if (reactions[i].reactionTurn > reactions[j].reactionTurn)
+                if (reactions[i].reactionTurn < reactions[j].reactionTurn)
                 {
                     Reaction temp = reactions[i];
                     reactions[i] = reactions[j];

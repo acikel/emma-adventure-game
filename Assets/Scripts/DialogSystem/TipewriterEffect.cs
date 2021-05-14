@@ -47,7 +47,7 @@ public class TipewriterEffect : MonoBehaviour
         this.textToType = textToType;
         float t = 0;
         int charIndex = 0;
-        Debug.Log("writer Done0:" + isWritingDone);
+        //Debug.Log("writer Done0:" + isWritingDone);
         while (charIndex < textToType.Length)
         {
             isWritingDone = false;
@@ -56,12 +56,12 @@ public class TipewriterEffect : MonoBehaviour
                 charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
 
                 textLabel.text = textToType.Substring(0, charIndex);
-            Debug.Log("writer Done1:"+isWritingDone);
+            //Debug.Log("writer Done1:"+isWritingDone);
             yield return null;
         }
         
         isWritingDone = true;
-        Debug.Log("writer Done3:" + isWritingDone);
+        //Debug.Log("writer Done3:" + isWritingDone);
         textLabel.text = textToType;
 
     }
@@ -75,10 +75,10 @@ public class TipewriterEffect : MonoBehaviour
 
     private void EndTypewritingShowCompleteText()
     {
-        Debug.Log("end typing1");
+        //Debug.Log("end typing1");
         if (typeWriting != null)
         {
-            Debug.Log("end typing2");
+            //Debug.Log("end typing2");
             isWritingDone = true;
             StopCoroutine(typeWriting);
             textLabel.text = textToType;

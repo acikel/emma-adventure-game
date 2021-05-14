@@ -97,17 +97,17 @@ public class TextManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("turn count:" + turnCounter);
+        Debug.Log("turn count:" + turnCounter + "newMouseClick"+ newMouseClick+ "inputManager.isMouseDown()"+ inputManager.isMouseDown()+ "!buttonAnswerOptions[0].IsActive()"+ !buttonAnswerOptions[0].IsActive());
         if(newMouseClick && inputManager.isMouseDown() && !buttonAnswerOptions[0].IsActive()/*&& type writer ist fertig und sound fertig sonst beenden in anderen methode und keine buttons activ da dann antwort gewaehlt werden muss*/)
         {
             newMouseClick = false;
             if (typeWriter.IsWritingDone)
             {
-                Debug.Log("turn count2:" + turnCounter);
+                //Debug.Log("turn count2:" + turnCounter);
                 turnCounter++;
                 if (currentTextBox != null)
                 {
-                    Debug.Log("turn count3:" + turnCounter);
+                    //Debug.Log("turn count3:" + turnCounter);
                     currentTextBox.text = string.Empty;
                     OnNextTurn?.Invoke();
                 }
@@ -118,11 +118,12 @@ public class TextManager : MonoBehaviour
         }
         if (!newMouseClick && inputManager.isMouseDown() && !typeWriter.IsWritingDone)
         {
-            Debug.Log("turn count4:" + turnCounter);
+            //Debug.Log("turn count4:" + turnCounter);
             OnEndTypeWriting?.Invoke();
         }
         if (!inputManager.isMouseDown())
         {
+            //Debug.Log("mouse new" + newMouseClick);
             newMouseClick = true;
         }
         /*
@@ -183,14 +184,14 @@ public class TextManager : MonoBehaviour
         typeWriter = GetComponent<TipewriterEffect>();
         if (textObjectName.Contains("Emma"))
         {
-            Debug.Log("reaction emma");
+            //Debug.Log("reaction emma");
             typeWriter.Run(message, textEmma);
             currentTextBox = textEmma;
         }else if (textObjectName.Contains("NPC"))
         {
-            Debug.Log("reaction npc");
+            //Debug.Log("reaction npc");
             int npcNumber;
-            if((npcNumber=getNPCNumberFromName(textObjectName))!=-1 &&  npcNumber - 1< textNPCs.Length && 0 < npcNumber)
+            if((npcNumber=getObjectNumberFromName(textObjectName))!=-1 &&  npcNumber - 1< textNPCs.Length && 0 < npcNumber)
             {
                 typeWriter.Run(message, textNPCs[npcNumber - 1]);
                 currentTextBox = textNPCs[npcNumber - 1];
@@ -199,10 +200,11 @@ public class TextManager : MonoBehaviour
         }
         else if (textObjectName.Contains("Button"))
         {
-            Debug.Log("reaction button");
+            //Debug.Log("reaction button");
             int buttonNumber;
-            if ((buttonNumber = getNPCNumberFromName(textObjectName)) != -1 && buttonNumber - 1 < textNPCs.Length && 0 < buttonNumber)
+            if ((buttonNumber = getObjectNumberFromName(textObjectName)) != -1 && buttonNumber - 1 < buttonAnswerOptions.Length && 0 < buttonNumber)
             {
+                //Debug.Log("button number: "+ buttonNumber);
                 currentTextBox = buttonAnswerOptions[buttonNumber - 1].GetComponentInChildren<TMP_Text>();
                 typeWriter.ShowButtonTextImmediately(message, currentTextBox);//antworten werden direct angezeigt.
                 setButtonActive(buttonAnswerOptions[buttonNumber - 1], true);
@@ -217,7 +219,7 @@ public class TextManager : MonoBehaviour
     {
         answerButton.gameObject.SetActive(setActive);
     }
-    private int getNPCNumberFromName(string textObjectName)
+    private int getObjectNumberFromName(string textObjectName)
     {
         string b = string.Empty;
         int val;
@@ -235,6 +237,7 @@ public class TextManager : MonoBehaviour
     }
     public void DisplayMessage(string message, Color textColor, string textObjectName)
     {
+        Debug.Log("in DisplayMessage from " + textObjectName);
         writeText(message, textObjectName);
 
         /*
