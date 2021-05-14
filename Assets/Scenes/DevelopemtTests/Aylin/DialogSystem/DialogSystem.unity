@@ -2092,8 +2092,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 1
-  message: Oooh, is that you Emma? Oh you've gotten so tall! Still skinny though.
-    Always so picky about dinner.
+  message: "Oooh, is that you Emma? Oh you've gotten so tall! Still skinny though.
+    Always so picky about dinner.\nasddddddddddddddddkopkopdaskkaskaskpsdakpdsdsakdskakdsakdsadskoakdspakdsdsdsakpkpsdakpok\naksdadsdijaposidpasodpoasdpoasidpoasopdkopasodkaospdjopasjdpsjapojaswdpojswpjdjaposdjoasjdopjasdoj\naposdpoasdokspoadjosajdojsaodjoasjdoajsdojaodjoajsdpojasdjapisjdikjp\xF6sadjasjdop\xF6jsadjcopsjdpos\xF6yajdops\xF6j"
   textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1986143506
 MonoBehaviour:

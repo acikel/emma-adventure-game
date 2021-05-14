@@ -11,10 +11,12 @@ public class ReactionCollection : MonoBehaviour
 
     private void OnEnable()
     {
+        if (reactions == null)
+            return;
+
         //reactions = new Reaction[0];
-        //TextManager.OnNextTurn += React;
+        TextManager.OnNextTurn += React;
         // Go through all the Reactions and call their Init function.
-        
         for (int i = 0; i < reactions.Length; i++)
         {
             // The DelayedReaction 'hides' the Reaction's Init function with it's own.
@@ -34,13 +36,17 @@ public class ReactionCollection : MonoBehaviour
     }
     public void React()
     {
+        if (reactions == null)
+            return;
+
+        Debug.Log("inReact1");
         //Debug.Log("current turn:"+ TextManager.TurnCounter);
         for (int i = lastReactionToPlay; i < reactions.Length; i++)
         {
-            //Debug.Log("hi "+reactions[i].GameObjectName+ ": " + reactions[i].reactionTurn);
+            //Debug.Log("inReact2 "+reactions[i].GameObjectName+ ": " + reactions[i].reactionTurn);
             if (TextManager.TurnCounter == reactions[i].reactionTurn)
             {
-                //Debug.Log("hi1");
+                Debug.Log("inReact3");
                 lastReactionToPlay++;
                 reactions[i].React(this);
             }
