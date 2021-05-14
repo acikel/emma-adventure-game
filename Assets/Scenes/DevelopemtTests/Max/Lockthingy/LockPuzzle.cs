@@ -3,71 +3,106 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.EventSystems;
 
-public class LockPuzzle : MonoBehaviour
+public class LockPuzzle : MonoBehaviour, IPointerClickHandler
 {
 
     public Button Triangle;
     public Button Square;
     public Button Circle;
-    public bool solved;
-    public GameObject Lock;
+    public Button Hexagon;
+    public Button Octagon;
+    public Button Pentagon;
 
-    public List<int> InputCode = new List<int>();
-    public List<int> Code;
+    public GameObject Lock;
+    public GameObject CheckPanel;
+    public GameObject Window;
+
+    public Sprite CheckPanelgreen;
+    public Sprite CheckPanelred;
+
+    Sprite Image;
+
+    public string InputCode = "";
+    public int InputCodenumber;
+    public int Code = 3043;
+
+    public int count;
 
     void Start()
     {
-        Triangle.onClick.AddListener(OnClick1);
-        Square.onClick.AddListener(OnClick2);
-        Circle.onClick.AddListener(OnClick3);
-        Code = new List<int>() { 3, 0, 4, 3 };
+        Triangle.onClick.AddListener(OnClick3);
+        Square.onClick.AddListener(OnClick4);
+        Circle.onClick.AddListener(OnClick0);
+        Hexagon.onClick.AddListener(OnClick6);
+        Octagon.onClick.AddListener(OnClick8);
+        Pentagon.onClick.AddListener(OnClick5);
+        InputCode = "";
+
+        CheckPanel.GetComponent<Image>().sprite = CheckPanelred;
 
     }
 
     private void Update()
     {
-        for (int i = 0; i < InputCode.Count; i++)
-        {
-            //Debug.Log(InputCode[i]);
-            //Debug.Log(Code[i]);
-        }
-        Debug.Log(InputCode.Count);
-        Debug.Log(solved);
+        Debug.Log(InputCode);
+        count = InputCode.Length;
+
+               
         Check();
     }
     void Check()
     {
-        if (InputCode.Count == 4)
+        if (count == 4)
         {
-            for (int i = 0; i < InputCode.Count; i++)
+            InputCodenumber = int.Parse(InputCode);
+            if (InputCodenumber == Code)
             {
-                if (InputCode[i] != Code[i])
-                {
-                    solved = false;
-                    return;
-                }
-                solved = true;
-                //What happens if the Code is solved
-                Lock.SetActive(false);
-                return;
+                CheckPanel.GetComponent<Image>().sprite = CheckPanelgreen;
+                InputCode = "";
+            }
+            else
+            {
+                InputCode = "";
+               
             }
         }
+        
     }
 
-    void OnClick1()
+    void OnClick0()
     {
-        InputCode.Add(3);
-    }
-
-    void OnClick2()
-    {
-        InputCode.Add(4);
+        InputCode += "0";
     }
 
     void OnClick3()
     {
-        InputCode.Add(0);
+        InputCode += "3";
     }
 
+    void OnClick4()
+    {
+        InputCode += "4";
+    }
+
+    void OnClick5()
+    {
+        InputCode += "5";
+    }
+
+    void OnClick6()
+    {
+        InputCode += "6";
+    }
+
+    void OnClick8()
+    {
+        InputCode += "8";
+    }
+
+    public void OnPointerClick(PointerEventData pointerEventData)
+    {
+        Window.SetActive(true);
+    }
 }
