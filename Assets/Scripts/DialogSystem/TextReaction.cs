@@ -14,7 +14,7 @@ public class TextReaction : Reaction
 
     private void OnEnable()
     {
-        textManager = FindObjectOfType<TextManager>();
+        //textManager = FindObjectOfType<TextManager>();
     }
     protected override void SpecificInit()
     {
@@ -23,6 +23,8 @@ public class TextReaction : Reaction
 
     protected override void ImmediateReaction()
     {
+        textManager = API.TextManager;
+        Debug.Log("reactionname: " + GameObjectName + "reaction message: "+ message);
         //textManager.DisplayMessage(message, textColor, delay);
         textManager.DisplayMessage(message, textColor, GameObjectName);
     }

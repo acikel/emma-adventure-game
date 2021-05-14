@@ -36,6 +36,7 @@ public static class API
     private static AvatarManager _avatarManagerInstance;
     private static CanvasGroup _fadeImageInstance;
     private static Inventory _inventoryInstance;
+    private static TextManager _textManagerInstance;
     public static InputManager InputManager
     {
         get
@@ -59,6 +60,19 @@ public static class API
                 _sceneManagerInstance = FindSingleInstance<SceneManager>();
             }
             return _sceneManagerInstance;
+        }
+    }
+
+    public static TextManager TextManager
+    {
+        get
+        {
+            if (_textManagerInstance == null ||
+            ReferenceEquals(_textManagerInstance, null))
+            {
+                _textManagerInstance = FindSingleInstance<TextManager>();
+            }
+            return _textManagerInstance;
         }
     }
 

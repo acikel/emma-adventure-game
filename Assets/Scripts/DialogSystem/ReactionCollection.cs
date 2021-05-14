@@ -7,14 +7,14 @@ public class ReactionCollection : MonoBehaviour
 {
     //public Reaction[] reactions = new Reaction[0];      // Array of all the Reactions to play when React is called.
     public Reaction[] reactions;
-
     private int lastReactionToPlay;
 
     private void OnEnable()
     {
-        reactions = new Reaction[0];
-        TextManager.OnNextTurn += React;
+        //reactions = new Reaction[0];
+        //TextManager.OnNextTurn += React;
         // Go through all the Reactions and call their Init function.
+        
         for (int i = 0; i < reactions.Length; i++)
         {
             // The DelayedReaction 'hides' the Reaction's Init function with it's own.
@@ -24,6 +24,7 @@ public class ReactionCollection : MonoBehaviour
         }
         lastReactionToPlay = 0;
         SortReactions();
+        assignGameObjectName();
         React();
     }
 
@@ -33,13 +34,13 @@ public class ReactionCollection : MonoBehaviour
     }
     public void React()
     {
-        //Debug.Log("hi0"+ TextManager.TurnCounter);
+        //Debug.Log("current turn:"+ TextManager.TurnCounter);
         for (int i = lastReactionToPlay; i < reactions.Length; i++)
         {
-            //Debug.Log("hi "+reactions[lastReactionToPlay].GameObjectName+ ": " + reactions[lastReactionToPlay].reactionTurn);
-            if (TextManager.TurnCounter == reactions[lastReactionToPlay].reactionTurn)
+            //Debug.Log("hi "+reactions[i].GameObjectName+ ": " + reactions[i].reactionTurn);
+            if (TextManager.TurnCounter == reactions[i].reactionTurn)
             {
-                Debug.Log("hi1");
+                //Debug.Log("hi1");
                 lastReactionToPlay++;
                 reactions[i].React(this);
             }
@@ -68,6 +69,17 @@ public class ReactionCollection : MonoBehaviour
         return lastReactionToPlay == reactions.Length;
     }
 
+    private void assignGameObjectName()
+    {
+        foreach (Reaction r in reactions)
+        {
+            // The DelayedReaction 'hides' the Reaction's Init function with it's own.
+            // This means that we have to try to cast the Reaction to a DelayedReaction and then if it exists call it's Init function.
+            // Note that this mainly done to demonstrate hiding and not especially for functionality.
+            r.setGameObjectName(gameObject.name);
+        }
+        
+    }
     private void SortReactions()
     {
         // Go through all the instructions...
