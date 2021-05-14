@@ -24,7 +24,7 @@ public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Rea
     private const float dropAreaHeight = 50f;               // Height in pixels of the area for dropping scripts.
     private const float controlSpacing = 5f;                // Width in pixels between the popup type selection and drop area.
     private const string reactionsPropName = "reactions";   // Name of the field for the array of Reactions.
-
+    //private const string reactorNamePropName = "nameOfReactor";
 
     private readonly float verticalSpacing = EditorGUIUtility.standardVerticalSpacing;
     // Caching the vertical spacing between GUI elements.
@@ -37,6 +37,7 @@ public class ReactionCollectionEditor : EditorWithSubEditors<ReactionEditor, Rea
 
         // Cache the SerializedProperty
         reactionsProperty = serializedObject.FindProperty(reactionsPropName);
+        //reactionsProperty = serializedObject.FindProperty(reactorNamePropName);
 
         // If new editors are required for Reactions, create them.
         CheckAndCreateSubEditors(reactionCollection.reactions);

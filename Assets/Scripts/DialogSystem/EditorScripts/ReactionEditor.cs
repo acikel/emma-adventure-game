@@ -68,7 +68,6 @@ public abstract class ReactionEditor : Editor
         return (Reaction)CreateInstance(reactionType);
     }
 
-
     protected virtual void DrawReaction()
     {
         // This function can overridden by inheriting classes, but if it isn't, draw the default for it's properties.

@@ -7,9 +7,10 @@ public abstract class Reaction : ScriptableObject
     //turn of a reaction in a conversation beginning from 1.
     public int reactionTurn;
     private string gameObjectName;
-
-    
-    public string GameObjectName
+    // This is called from ReactionCollection.
+    // This function contains everything that is required to be done for all
+    // Reactions as well as call the SpecificInit of the inheriting Reaction.
+    public string GameObjectName 
     {
         get
         {
@@ -17,18 +18,11 @@ public abstract class Reaction : ScriptableObject
         }
     }
 
-    // This is called from ReactionCollection.
-    // This function contains everything that is required to be done for all
-    // Reactions as well as call the SpecificInit of the inheriting Reaction.
     public void Init()
     {
         SpecificInit();
     }
 
-    private void OnEnable()
-    {
-        gameObjectName = name;
-    }
     // This function is virtual so that it can be overridden and used purely
     // for the needs of the inheriting class.
     protected virtual void SpecificInit()
@@ -41,6 +35,11 @@ public abstract class Reaction : ScriptableObject
     public void React(MonoBehaviour monoBehaviour)
     {
         ImmediateReaction();
+    }
+
+    public void setGameObjectName(string name)
+    {
+        gameObjectName = name;
     }
 
     // This is the core of the Reaction and must be overridden to make things happpen.

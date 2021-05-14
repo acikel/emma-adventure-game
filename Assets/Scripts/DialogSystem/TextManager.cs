@@ -48,7 +48,8 @@ public class TextManager : MonoBehaviour
     private float clearTime;                        // The time at which there should no longer be any text on screen.
 
     //turn of a reaction in a conversation beginning from 1. Used by ReactionCollection class.
-    private static int turnCounter;
+    private static int turnCounter=1;
+    private bool newMouseClick = true;
 
     public static int TurnCounter
     {
@@ -64,6 +65,8 @@ public class TextManager : MonoBehaviour
         typeWriter = GetComponent<TipewriterEffect>();
         turnCounter = 1;
         addOnClickListenerToButtons();
+        setButtonsActive(false);
+
     }
 
     
@@ -77,37 +80,51 @@ public class TextManager : MonoBehaviour
 
     void OnClick()
     {
-        foreach (Button b in buttonAnswerOptions)
-        {
-            b.gameObject.SetActive(false);
-        }
+        setButtonsActive(false);
         //Write.written = false;
         turnCounter++;
 
         OnNextTurn?.Invoke();
     }
 
+    private void setButtonsActive(bool isActive)
+    {
+        foreach (Button b in buttonAnswerOptions)
+        {
+            b.gameObject.SetActive(isActive);
+        }
+    }
+
     private void Update()
     {
-        if(inputManager.isMouseDown() && !buttonAnswerOptions[0].IsActive()/*&& type writer ist fertig und sound fertig sonst beenden in anderen methode und keine buttons activ da dann antwort gewaehlt werden muss*/)
+        Debug.Log("turn count:" + turnCounter);
+        if(newMouseClick && inputManager.isMouseDown() && !buttonAnswerOptions[0].IsActive()/*&& type writer ist fertig und sound fertig sonst beenden in anderen methode und keine buttons activ da dann antwort gewaehlt werden muss*/)
         {
+            newMouseClick = false;
             if (typeWriter.IsWritingDone)
             {
+                Debug.Log("turn count2:" + turnCounter);
                 turnCounter++;
                 if (currentTextBox != null)
                 {
+                    Debug.Log("turn count3:" + turnCounter);
                     currentTextBox.text = string.Empty;
                     OnNextTurn?.Invoke();
                 }
                 
             }
-            else
-            {
-                OnEndTypeWriting?.Invoke();
-            }
+            
             
         }
-
+        if (!newMouseClick && inputManager.isMouseDown() && !typeWriter.IsWritingDone)
+        {
+            Debug.Log("turn count4:" + turnCounter);
+            OnEndTypeWriting?.Invoke();
+        }
+        if (!inputManager.isMouseDown())
+        {
+            newMouseClick = true;
+        }
         /*
         // If there are instructions and the time is beyond the start time of the first instruction...
         if (instructions.Count > 0 )
@@ -163,12 +180,15 @@ public class TextManager : MonoBehaviour
 
     private void writeText(string message, string textObjectName)
     {
+        typeWriter = GetComponent<TipewriterEffect>();
         if (textObjectName.Contains("Emma"))
         {
+            Debug.Log("reaction emma");
             typeWriter.Run(message, textEmma);
             currentTextBox = textEmma;
         }else if (textObjectName.Contains("NPC"))
         {
+            Debug.Log("reaction npc");
             int npcNumber;
             if((npcNumber=getNPCNumberFromName(textObjectName))!=-1 &&  npcNumber - 1< textNPCs.Length && 0 < npcNumber)
             {
@@ -179,6 +199,7 @@ public class TextManager : MonoBehaviour
         }
         else if (textObjectName.Contains("Button"))
         {
+            Debug.Log("reaction button");
             int buttonNumber;
             if ((buttonNumber = getNPCNumberFromName(textObjectName)) != -1 && buttonNumber - 1 < textNPCs.Length && 0 < buttonNumber)
             {
