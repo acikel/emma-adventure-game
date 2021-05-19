@@ -26,6 +26,30 @@ TextureImporter:
   - first:
       213: 5386518784400615189
     second: grandma_revived_Sprite-Sheet_7
+  - first:
+      213: -2164913723504541698
+    second: grandma_revived_Sprite-Sheet_8
+  - first:
+      213: 4181113336024519594
+    second: grandma_revived_Sprite-Sheet_9
+  - first:
+      213: 8373711269417494028
+    second: grandma_revived_Sprite-Sheet_10
+  - first:
+      213: 7757013136258480464
+    second: grandma_revived_Sprite-Sheet_11
+  - first:
+      213: 7033127573299050507
+    second: grandma_revived_Sprite-Sheet_12
+  - first:
+      213: 6800177322825511941
+    second: grandma_revived_Sprite-Sheet_13
+  - first:
+      213: -6781715888864060062
+    second: grandma_revived_Sprite-Sheet_14
+  - first:
+      213: -8992105340076496714
+    second: grandma_revived_Sprite-Sheet_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,7 +80,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 0
@@ -135,6 +159,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -143,9 +179,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 920
-        height: 1246
+        y: 187
+        width: 43
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +199,10 @@ TextureImporter:
       name: grandma_revived_Sprite-Sheet_1
       rect:
         serializedVersion: 2
-        x: 920
-        y: 0
-        width: 920
-        height: 1246
+        x: 32
+        y: 47
+        width: 877
+        height: 1120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +220,10 @@ TextureImporter:
       name: grandma_revived_Sprite-Sheet_2
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 0
-        width: 920
-        height: 1246
+        x: 920
+        y: 190
+        width: 43
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +241,10 @@ TextureImporter:
       name: grandma_revived_Sprite-Sheet_3
       rect:
         serializedVersion: 2
-        x: 2760
-        y: 0
-        width: 920
-        height: 1246
+        x: 952
+        y: 47
+        width: 877
+        height: 1120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +262,10 @@ TextureImporter:
       name: grandma_revived_Sprite-Sheet_4
       rect:
         serializedVersion: 2
-        x: 3680
-        y: 0
-        width: 920
-        height: 1246
+        x: 1840
+        y: 190
+        width: 43
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +283,10 @@ TextureImporter:
       name: grandma_revived_Sprite-Sheet_5
       rect:
         serializedVersion: 2
-        x: 4600
-        y: 0
-        width: 920
-        height: 1246
+        x: 1872
+        y: 47
+        width: 877
+        height: 1120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +304,10 @@ TextureImporter:
       name: grandma_revived_Sprite-Sheet_6
       rect:
         serializedVersion: 2
-        x: 5520
-        y: 0
-        width: 920
-        height: 1246
+        x: 2760
+        y: 190
+        width: 43
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +325,10 @@ TextureImporter:
       name: grandma_revived_Sprite-Sheet_7
       rect:
         serializedVersion: 2
-        x: 6440
-        y: 0
-        width: 920
-        height: 1246
+        x: 2792
+        y: 47
+        width: 877
+        height: 1120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,6 +338,174 @@ TextureImporter:
       bones: []
       spriteID: 517ea20ab42c0ca40800000000000000
       internalID: 5386518784400615189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_revived_Sprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 3680
+        y: 190
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: effb42d407ea4f1e0800000000000000
+      internalID: -2164913723504541698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_revived_Sprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 47
+        width: 877
+        height: 1120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3d3673d6c460a30800000000000000
+      internalID: 4181113336024519594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_revived_Sprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 190
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06a051a806653470800000000000000
+      internalID: 8373711269417494028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_revived_Sprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 4632
+        y: 47
+        width: 877
+        height: 1120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059b9b8595276ab60800000000000000
+      internalID: 7757013136258480464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_revived_Sprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 5520
+        y: 190
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08be7ac340ba9160800000000000000
+      internalID: 7033127573299050507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_revived_Sprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 5552
+        y: 47
+        width: 877
+        height: 1120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5047ea80f351f5e50800000000000000
+      internalID: 6800177322825511941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_revived_Sprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 6440
+        y: 190
+        width: 43
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d92a4845182e1a0800000000000000
+      internalID: -6781715888864060062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grandma_revived_Sprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 6472
+        y: 47
+        width: 877
+        height: 1120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8e8ddd5df953380800000000000000
+      internalID: -8992105340076496714
       vertices: []
       indices: 
       edges: []
