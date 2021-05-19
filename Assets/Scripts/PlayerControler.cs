@@ -168,8 +168,8 @@ public class PlayerControler : MonoBehaviour
 
     public void initializeAndRescalePlayer(float avatarStartScale, float avatarScaleFactor)
     {
-        Debug.Log("avatarStartScale: " + avatarStartScale);
-        Debug.Log("avatarScaleFactor: " + avatarScaleFactor);
+        //Debug.Log("avatarStartScale: " + avatarStartScale);
+        //Debug.Log("avatarScaleFactor: " + avatarScaleFactor);
         initializePlayerAvatar(AvatarManager.playerAvatar, avatarStartScale, avatarScaleFactor);
         initializePlayerAvatar(AvatarManager.helperAvatar, avatarStartScale, avatarScaleFactor);
         scaleCharachter(AvatarManager.playerAvatar);
