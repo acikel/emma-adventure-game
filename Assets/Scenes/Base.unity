@@ -1438,7 +1438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: scalingFactor
-      value: 0.03
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: lerpDistanceFarSummand

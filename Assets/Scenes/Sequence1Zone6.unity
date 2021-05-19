@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 914336529}
   - component: {fileID: 914336528}
   m_Layer: 6
-  m_Name: Grandma_hands
+  m_Name: Watercrank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

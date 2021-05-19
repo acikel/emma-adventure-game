@@ -883,7 +883,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: b829445cac821104c9abf6da27756547, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e887c911314d10d42a45b7b122ed8e74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 1591823065}
   - component: {fileID: 1591823064}
   m_Layer: 6
-  m_Name: Key_Under_Water
+  m_Name: 'KeyBranch3Disabled '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
