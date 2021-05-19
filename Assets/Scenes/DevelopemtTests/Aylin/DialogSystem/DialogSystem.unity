@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 5
-  message: Hello1
+  reactionTurn: 6
+  message: What proffesor what are you talking about?
   textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &54111781
 MonoBehaviour:
@@ -150,9 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  message: 
-  textColor: {r: 1, g: 1, b: 1, a: 1}
+  reactionTurn: 3
+  message: Oh don't fret dear, look who it is! (Helper) was my friend when I was
+    your age, and when his time came, I put his bones together on my own. I just
+    couldn't say goodbye... I'm glad he's here to watch over you.
+  textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &159896946
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +396,10 @@ MonoBehaviour:
   - {fileID: 1598252340}
   - {fileID: 1056199348}
   - {fileID: 1986143506}
+  - {fileID: 845319792}
+  - {fileID: 1642908346}
+  - {fileID: 1618937829}
+  - {fileID: 1041307795}
 --- !u!1 &241377046
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +447,17 @@ MonoBehaviour:
   - {fileID: 1939617704}
   - {fileID: 635142289}
   - {fileID: 54111781}
+  - {fileID: 1800235374}
+  - {fileID: 1658474217}
+  - {fileID: 2094867712}
+  - {fileID: 1788004676}
+  - {fileID: 2075871739}
+  - {fileID: 1064605525}
+  - {fileID: 1298000928}
+  - {fileID: 1100327322}
+  - {fileID: 448392643}
+  - {fileID: 1052336079}
+  - {fileID: 1350668766}
 --- !u!114 &270705586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,9 +470,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 6
-  message: Hello2.1
+  reactionTurn: 8
+  message: But what if there's no one? I don't want to be around this dead silence.
+    How did you manage to come back..?
   textColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &448392643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 0
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!114 &485269001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +538,8 @@ MonoBehaviour:
   - {fileID: 902094380}
   - {fileID: 1568683912}
   - {fileID: 1301695964}
+  - {fileID: 1752454960}
+  - {fileID: 1427074730}
 --- !u!4 &542308010
 Transform:
   m_ObjectHideFlags: 0
@@ -598,6 +633,21 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   audioClip: {fileID: 0}
 --- !u!114 &660571996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 0
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
+--- !u!114 &734479197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -733,6 +783,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &845319792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 12
+  message: (Emma wipes her tears and takes a deep breath, and gives grandma a shaky
+    smile)
+  textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &872549993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,8 +811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 5
-  message: Hello1.1
+  reactionTurn: 6
+  message: How do you not know..?
   textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &902094380
 MonoBehaviour:
@@ -1082,6 +1148,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1041307795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 0
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
+--- !u!114 &1052336079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 13
+  message: Off you go, don't dilly dally, I'm going to stay here in my chair- I just
+    got comfortable, and these plants won't water themselves
+  textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1056199348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,6 +1194,24 @@ MonoBehaviour:
   reactionTurn: 4
   message: Grandmama, what happened? Why did you leave me alone? what happened to
     you and everything around?
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1064605525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 9
+  message: Who knows, maybe it's because I wished to make sure you ate enough. That
+    I wished to see you and let you know that you'll be alright. Maybe it was your
+    wish for a real goodbye. some things we'll never know. But if im here now, I'm
+    sure others will be
   textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1075651932
 GameObject:
@@ -1135,6 +1250,23 @@ RectTransform:
   m_AnchoredPosition: {x: 558, y: 776}
   m_SizeDelta: {x: 796.44, y: 377.04}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1100327322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 11
+  message: You're not alone. Not anymore..  (helper) is with you my dear, after all,
+    as long as there are bones, we can't be forgotten. Now, don't be afraid, you're
+    a brave girl and I know you can find the answers that you're looking for.
+  textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1151080796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1522,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1298000928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 0
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!114 &1301695964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,6 +1586,8 @@ MonoBehaviour:
   - {fileID: 1001011751}
   - {fileID: 270705586}
   - {fileID: 1464244178}
+  - {fileID: 1979451918}
+  - {fileID: 734479197}
 --- !u!4 &1302635394
 Transform:
   m_ObjectHideFlags: 0
@@ -1453,6 +1602,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1350668766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 0
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!114 &1414306173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1465,9 +1629,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 5
-  message: Hello1.2
+  reactionTurn: 6
+  message: I haven't seen you in so long and this is all you can say to me?
   textColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1427074730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 0
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!114 &1464244178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,8 +1707,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 6
-  message: Hello2
+  reactionTurn: 8
+  message: I don't want to leave you, I don't want to be alone again, I want everything
+    to go back to how it was! How can I even see you?
   textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1598252340
 MonoBehaviour:
@@ -1546,6 +1726,22 @@ MonoBehaviour:
   reactionTurn: 2
   audioSource: {fileID: 0}
   audioClip: {fileID: 0}
+--- !u!114 &1618937829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 14
+  message: (emma leaves)/n(grandma tries to turn the wheel again)/nWhy didn't I oil
+    this while I was alive?
+  textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1638063085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,6 +1951,70 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1642908346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 0
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
+--- !u!114 &1658474217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 5
+  message: Oooh, I know many many things, but this is not one of them. Perhaps the
+    professor knows more?
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1752454960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 10
+  message: I was alone for so long, it was so quiet...
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1788004676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 7
+  message: I think he was once a famous scientist, but then he lost his job and moved
+    here with his wife. He did seem rather worried last time I saw him. Never liked
+    his wife though. Dreadful woman. high pitched voice. You remember him? He's our
+    closest neighbor. Maybe you should go visit him?
+  textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1793743277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +2149,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1800235374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 3
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!114 &1939617704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1902,8 +2177,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 1
-  message: "Oooh, is that you Emma? Oh you've gotten so tall! Still skinny though.
-    Always so picky about dinner.\nasddddddddddddddddkopkopdaskkaskaskpsdakpdsdsakdskakdsakdsadskoakdspakdsdsdsakpkpsdakpok\naksdadsdijaposidpasodpoasdpoasidpoasopdkopasodkaospdjopasjdpsjapojaswdpojswpjdjaposdjoasjdopjasdoj\naposdpoasdokspoadjosajdojsaodjoasjdoajsdojaodjoajsdpojasdjapisjdikjp\xF6sadjasjdop\xF6jsadjcopsjdpos\xF6yajdops\xF6j"
+  message: 'Oooh, is that you Emma? Oh you''ve gotten so tall! Still skinny though.
+    Always so picky about dinner.
+
+'
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1979451918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 10
+  message: I don't think i can do this alone.
   textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1986143506
 MonoBehaviour:
@@ -2195,3 +2487,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2075871739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 0
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
+--- !u!114 &2094867712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reactionTurn: 5
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}

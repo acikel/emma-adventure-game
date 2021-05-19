@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 using TMPro;
+using System.Collections;
 
 // This class is used to manage the text that is
 // displayed on screen.  In situations where many
@@ -95,10 +96,20 @@ public class TextManager : MonoBehaviour
         }
     }
 
+    //function is needed to wait before next dialog text is invoked. Without waiting 
+    //(if OnNextTurn?.Invoke(); is invoked right after a text is cleared with typeWriter.clearPreviousText(); 
+    //in the upadte function) the typewritting effect does not work somehow.
+    //The longer the text the longer the function needs to wait.
+    private IEnumerator invokeNextTypewrittenDialogText()
+    {
+        yield return new WaitForSeconds(0.3f);
+        OnNextTurn?.Invoke();
+    }
+
     private void Update()
     {
         //Debug.Log("turn count:" + turnCounter + "newMouseClick"+ newMouseClick+ "inputManager.isMouseDown()"+ inputManager.isMouseDown()+ "!buttonAnswerOptions[0].IsActive()"+ !buttonAnswerOptions[0].IsActive());
-        if(newMouseClick && inputManager.isMouseDown() && !buttonAnswerOptions[0].IsActive()/*&& type writer ist fertig und sound fertig sonst beenden in anderen methode und keine buttons activ da dann antwort gewaehlt werden muss*/)
+        if (newMouseClick && inputManager.isMouseDown() && !buttonAnswerOptions[0].IsActive()/*&& type writer ist fertig und sound fertig sonst beenden in anderen methode und keine buttons activ da dann antwort gewaehlt werden muss*/)
         {
             newMouseClick = false;
             if (typeWriter.IsWritingDone)
@@ -108,19 +119,22 @@ public class TextManager : MonoBehaviour
                 if (currentTextBox != null)
                 {
                     //Debug.Log("turn count3:" + turnCounter);
-                    currentTextBox.text = string.Empty;
-                    OnNextTurn?.Invoke();
+                    //currentTextBox.text = string.Empty;
+                    typeWriter.clearPreviousText();
+                    StartCoroutine(invokeNextTypewrittenDialogText());
+                    //OnNextTurn?.Invoke();
+                    
                 }
                 
             }
             
             
-        }
+        }else
         if (!newMouseClick && inputManager.isMouseDown() && !typeWriter.IsWritingDone)
         {
             //Debug.Log("turn count4:" + turnCounter);
             OnEndTypeWriting?.Invoke();
-        }
+        }else
         if (!inputManager.isMouseDown())
         {
             //Debug.Log("mouse new" + newMouseClick);

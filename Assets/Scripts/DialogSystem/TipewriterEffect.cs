@@ -37,25 +37,41 @@ public class TipewriterEffect : MonoBehaviour
     }
     public void Run(string textToType, TMP_Text textLabel)
     {
-        typeWriting=StartCoroutine(TypeText(textToType, textLabel));
+        this.textLabel = textLabel;
+        this.textToType = textToType;
+        //typeWriting = StartCoroutine(PlayText(textToType, textLabel));
+        typeWriting = StartCoroutine(TypeText(textToType, textLabel));
+    }
+
+    IEnumerator PlayText(string textToType, TMP_Text textLabel)
+    {
+        isWritingDone = false;
+        foreach (char c in textToType)
+        {
+            textLabel.text += c;
+            yield return new WaitForSeconds(0.125f);
+        }
+        isWritingDone = true;
     }
 
     private IEnumerator TypeText(string textToType, TMP_Text textLabel)
     {
         isWritingDone = false;
-        this.textLabel = textLabel;
-        this.textToType = textToType;
         float t = 0;
         int charIndex = 0;
+        //Debug.Log("TypeText with effect  "+ t);
         //Debug.Log("writer Done0:" + isWritingDone);
         while (charIndex < textToType.Length)
         {
             isWritingDone = false;
             t += Time.deltaTime * typewriterSpeed;
                 charIndex = Mathf.FloorToInt(t);
-                charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
+            //Debug.Log("TypeText with effect1:" + charIndex);
+            charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
 
-                textLabel.text = textToType.Substring(0, charIndex);
+            //Debug.Log("TypeText with effect2:" + charIndex + "  "+ textToType.Length);
+            //Debug.Log("writer Done1:"+isWritingDone);
+            textLabel.text = textToType.Substring(0, charIndex);
             //Debug.Log("writer Done1:"+isWritingDone);
             yield return null;
         }
@@ -68,10 +84,15 @@ public class TipewriterEffect : MonoBehaviour
 
     public void ShowButtonTextImmediately(string textToType, TMP_Text textLabel)
     {
-
+        //Debug.Log("TypeText Ímmediately");
         textLabel.text = textToType;
     }
 
+    public void clearPreviousText()
+    {
+        //Debug.Log("TypeText Ímmediately");
+        textLabel.text = "";
+    }
 
     private void EndTypewritingShowCompleteText()
     {
@@ -82,6 +103,9 @@ public class TipewriterEffect : MonoBehaviour
             isWritingDone = true;
             StopCoroutine(typeWriting);
             textLabel.text = textToType;
+            typeWriting = null;
+
+
         }
         
 

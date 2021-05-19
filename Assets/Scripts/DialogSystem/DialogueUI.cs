@@ -99,23 +99,23 @@ public class DialogueUI : MonoBehaviour
                 Other.text = string.Empty;
 
             }
-            if (Click == 8)
+            if (Click == 10)
             {
-                Write.Run("You're not alone. Not anymore..  (helper) is with you my dear, after all, as long as there are bones, we can't be forgotten. Now, don't be afraid, you're a brave girl and I know you can find the answers that you�re looking for.", Other);
+                Write.Run("You're not alone. Not anymore..  (helper) is with you my dear, after all, as long as there are bones, we can't be forgotten. Now, don't be afraid, you're a brave girl and I know you can find the answers that you're looking for.", Other);
                 Answer1.text = string.Empty;
                 Answer2.text = string.Empty;
             }
-            if (Click == 9)
+            if (Click == 11)
             {
                 Write.Run("(Emma wipes her tears and takes a deep breath, and gives grandma a shaky smile)", Emma);
                 Other.text = string.Empty;
             }
-            if (Click == 10)
+            if (Click == 12)
             {
                 Write.Run("Off you go, don't dilly dally, I'm going to stay here in my chair- I just got comfortable, and these plants won't water themselves", Other);
                 Emma.text = string.Empty;
             }
-            if (Click == 11)
+            if (Click == 13)
             {
                 Write.Run("(emma leaves)/n(grandma tries to turn the wheel again)/nWhy didn't I oil this while I was alive?", Other);
             }
