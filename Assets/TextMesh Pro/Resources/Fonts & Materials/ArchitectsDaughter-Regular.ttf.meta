@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: eb57d2c942adfea4490c4fed700736db
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Architects Daughter
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e070f46665442b243886efdc9e5c9cf4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
