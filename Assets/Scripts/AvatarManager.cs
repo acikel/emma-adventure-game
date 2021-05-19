@@ -32,9 +32,10 @@ public class AvatarManager : Object
 				//Debug.Log("hi3"+instance);
 				playerAvatar = GameObject.FindWithTag("Player").GetComponent<Emma>();
 				helperAvatar = GameObject.FindWithTag("Helper").GetComponent<Helper>();
-				helperAvatar.gameObject.SetActive(false);
-				backgroundCollider = GameObject.FindWithTag("Ground")?.GetComponent<PolygonCollider2D>();
+				//helperAvatar.gameObject.SetActive(false);
 				background = GameObject.FindWithTag("Ground");
+				backgroundCollider = background?.GetComponent<PolygonCollider2D>();
+				
 
 				currentAvatar = playerAvatar;
 				groundCenter = GameObject.FindWithTag("Ground")?.transform.Find("Center");

@@ -72,12 +72,11 @@ public class PlayerControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        avatarManager = API.AvatarManager;
         //Debug.Log("avatarManager1:" + avatarManager);
+        
+        avatarManager = API.AvatarManager;
         avatarManager.OnControllerChange += HandleOnControllerChange;
         avatar = AvatarManager.currentAvatar;
-
         idleTriggered = true;
         lerpDurationNear = avatar.lerpDuration;
         lerpDurationFar = avatar.lerpDuration + avatar.lerpDistanceFarSummand;
@@ -87,13 +86,17 @@ public class PlayerControler : MonoBehaviour
 
         inventory = API.Inventory;
         sceneManager = API.SceneManager;
+        sceneManager.AfterAvatarInitialization += initializeAndRescalePlayer;
+        scaleCharachter();
 
     }
 
     private void OnDisable()
     {
         avatarManager.OnControllerChange -= HandleOnControllerChange;
+        sceneManager.AfterAvatarInitialization -= initializeAndRescalePlayer;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -163,8 +166,31 @@ public class PlayerControler : MonoBehaviour
     }
 
 
+    public void initializeAndRescalePlayer(float avatarStartScale, float avatarScaleFactor)
+    {
+        Debug.Log("avatarStartScale: " + avatarStartScale);
+        Debug.Log("avatarScaleFactor: " + avatarScaleFactor);
+        initializePlayerAvatar(AvatarManager.playerAvatar, avatarStartScale, avatarScaleFactor);
+        initializePlayerAvatar(AvatarManager.helperAvatar, avatarStartScale, avatarScaleFactor);
+        scaleCharachter(AvatarManager.playerAvatar);
+        scaleCharachter(AvatarManager.helperAvatar);
+    }
+
+    private void initializePlayerAvatar(Avatar avatar, float avatarStartScale, float avatarScaleFactor)
+    {
+        avatar.setLocalScale(Vector3.one * avatarStartScale);
+        avatar.scalingFactor = avatarScaleFactor;
+    }
+
     private void scaleCharachter()
     {
+        scaleCharachter(this.avatar);
+    }
+
+    private void scaleCharachter(Avatar avatar)
+    {
+        //Debug.Log("collider ground: " + AvatarManager.backgroundCollider.bounds);
+        //Debug.Log("avatar: " + avatar.gameObject.transform);
         avatarDistanceToHorizont = AvatarManager.backgroundCollider.bounds.max.y - avatar.gameObject.transform.position.y;
         maxDistance = AvatarManager.backgroundCollider.bounds.max.y - AvatarManager.backgroundCollider.bounds.min.y;
         avatar.gameObject.transform.localScale = avatar.getLocalScale() + avatarDistanceToHorizont / maxDistance * Vector3.one * avatar.scalingFactor;

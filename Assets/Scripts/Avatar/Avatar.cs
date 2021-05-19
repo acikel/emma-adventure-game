@@ -47,4 +47,9 @@ public class Avatar : MonoBehaviour
     {
         return avatarLocalScale;
     }
+
+    public void setLocalScale(Vector3 localScale)
+    {
+        avatarLocalScale = localScale;
+    }
 }

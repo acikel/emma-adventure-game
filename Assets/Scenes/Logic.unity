@@ -153,6 +153,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeDuration: 1
+  sceneScales:
+  - sceneName: Sequence1Zone1
+    avatarStartScale: 6.5
+    avatarScaleFactor: 1.5
+  - sceneName: Sequence1Zone2
+    avatarStartScale: 5.5
+    avatarScaleFactor: 1.5
+  - sceneName: Sequence1Zone3
+    avatarStartScale: 6
+    avatarScaleFactor: 1.5
+  - sceneName: Sequence1Zone4
+    avatarStartScale: 6
+    avatarScaleFactor: 2.5
+  - sceneName: Sequence1Zone5
+    avatarStartScale: 3.5
+    avatarScaleFactor: 3.5
+  - sceneName: Sequence1Zone6
+    avatarStartScale: 4.5
+    avatarScaleFactor: 2.5
 --- !u!4 &1237573578
 Transform:
   m_ObjectHideFlags: 0
