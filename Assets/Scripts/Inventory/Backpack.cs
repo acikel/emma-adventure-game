@@ -20,20 +20,24 @@ public class Backpack : MonoBehaviour
         BackpackButton.onClick.AddListener(OnClick);
         buttonSprite = GetComponent<Image>();
         inventory = API.Inventory;
+        Inventory.OnOpenInventory += openInventorySlotsAndBlockMovementForInventory;
     }
 
+    private void OnDisable()
+    {
+        Inventory.OnOpenInventory -= openInventorySlotsAndBlockMovementForInventory;
+    }
     void OnClick()
     {
         if (InventorySlots.activeSelf == true)
         {
-            buttonSprite.sprite = closedBackpackSprite;
             openInventorySlotsAndBlockMovementForInventory(false);
         }
         else
         {
             if (InventorySlots.activeSelf == false)
             {
-                buttonSprite.sprite = openedBackpackSprite;
+                
                 openInventorySlotsAndBlockMovementForInventory(true);
             }
         }
@@ -49,5 +53,14 @@ public class Backpack : MonoBehaviour
     {
         InventorySlots.SetActive(value);
         InventoryBlocker.SetActive(value);
+
+        if (value)
+        {
+            buttonSprite.sprite = openedBackpackSprite;
+        }
+        else
+        {
+            buttonSprite.sprite = closedBackpackSprite;
+        }
     }
 }

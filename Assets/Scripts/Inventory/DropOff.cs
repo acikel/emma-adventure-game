@@ -56,9 +56,9 @@ public class DropOff : MonoBehaviour
                  }
              }
          }*/
-        else if (collision.gameObject.tag == "Item")
+        else if (isDropOfCollidingWithCorrectItem(collision))
         {
-            //Debug.Log("item colliding start");
+            //Debug.Log("item colliding start"+ collision.gameObject.name);
             itemColliding = true;
         }
     }
@@ -69,11 +69,35 @@ public class DropOff : MonoBehaviour
         {
             playerColliding = false;
         }
-        else if (collision.gameObject.tag == "Item")
+        else if (isDropOfCollidingWithCorrectItem(collision))
         {
-            //Debug.Log("item colliding end");
+           //Debug.Log("item colliding end");
             itemColliding = false;
         }
         
+    }
+
+    private bool isDropOfCollidingWithCorrectItem(Collider2D collision)
+    {
+        foreach(string name in itemNameToDrop)
+        {
+            if (collision.gameObject.name.Contains(name))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool isDropOfCollidingWithCorrectItem(string nameToCompare)
+    {
+        foreach (string name in itemNameToDrop)
+        {
+            if (nameToCompare.Contains(name))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

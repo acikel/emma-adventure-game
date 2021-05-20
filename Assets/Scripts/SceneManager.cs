@@ -57,6 +57,7 @@ public class SceneManager : MonoBehaviour
         avatarManager = API.AvatarManager;
         //Debug.Log("avatarManager1:" + avatarManager);
         currentAdditiveSceneName ="Sequence1Zone1";
+        assignScaleValueForCurrentScene();
         //ScM.SceneManager.LoadSceneAsync("Sequence1Zone1", LoadSceneMode.Additive);
         //ScM.SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
         inputManager = API.InputManager;
@@ -132,6 +133,10 @@ public class SceneManager : MonoBehaviour
         }
     }
 
+    public AvatarScaleValues getCurrentSceneValues()
+    {
+        return currentSceneValues;
+    }
     private IEnumerator HandleOnCollisionWithPortal(string sceneNameToTransitionTo)
     {
         isReloading = true;

@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+//vorheriger name: ItemDragHandler vorbunden mit Item DropHandler
+public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     Inventory inventory;
+    public string inventoryItemName;
+
     public void OnDrag(PointerEventData eventData)
     {
         inventory = API.Inventory;

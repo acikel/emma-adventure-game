@@ -29,6 +29,11 @@ public class PlayerControler : MonoBehaviour
     private float avatarDistanceToHorizont;
     private float maxDistance;
 
+    //used to flip player with its colliders. avatar.avatarSpriteRenderer.flipX only turns sprite but not the collider
+    private Vector3 LocalScaleLeft = new Vector3(1f, 1f, 1f);
+    private Vector3 LocalScaleRight = new Vector3(-1f, 1f, 1f);
+
+    //subscribed by sceneManager
     public delegate IEnumerator OnCollisionWithPortalHandler(string sceneNameToTransitionTo);
     public static event OnCollisionWithPortalHandler OnCollisionWithPortal;
 
@@ -37,7 +42,7 @@ public class PlayerControler : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         {
             triggerIdleAnimation();
-        }else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
+        }else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
         {
             triggerIdleAnimation();
             //Debug.Log("Portal name:"+ collision.gameObject.name);
@@ -240,11 +245,15 @@ public class PlayerControler : MonoBehaviour
         {
             //look to the left
             avatar.avatarSpriteRenderer.flipX = false;
+            //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale* LocalScaleLeft;
         }
         else
         {
             //look to the right
             avatar.avatarSpriteRenderer.flipX = true;
+            //localScaleAvatar.x *= -1;
+            //avatar.gameObject.transform.localScale = localScaleAvatar;
+            //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale * LocalScaleRight;
         }
     }
     private bool getGroundColliderIntersectionToMouseclickOutsideGround()

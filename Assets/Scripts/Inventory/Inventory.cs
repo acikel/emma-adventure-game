@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject itemSprite;
-    public GameObject Itemslots;
+    public List<InventoryItem> inventoryItemSprites;
+    public GameObject inventoryItemslots;
     public GameObject InventoryBlocker;
 
 
@@ -17,6 +17,10 @@ public class Inventory : MonoBehaviour
     private GameObject currentlyDraggedSlot;
     //private bool collisionWasHandled;
     private InputManager inputManager;
+
+    //Subscribed from backpack.cs
+    public delegate void OnOpenInventoryHandler(bool openInventory);
+    public static event OnOpenInventoryHandler OnOpenInventory;
 
     public bool InteractionWithInventoryActive
     {
@@ -77,24 +81,39 @@ public class Inventory : MonoBehaviour
 
     private void openInventorySlotsAndBlockMovementForInventory(bool value)
     {
-        Itemslots.SetActive(value);
+        inventoryItemslots.SetActive(value);
         InventoryBlocker.SetActive(value);
+        OnOpenInventory(value);
     }
-    private void HandleOnItemCollision()
+    private GameObject getCorrespondingSpriteToItemThatWasClicked(string itemName)
+    {
+        foreach(InventoryItem invItem in inventoryItemSprites) 
+        {
+            if (itemName.Contains(invItem.inventoryItemName))
+            {
+                return invItem.gameObject;
+            }
+        }
+        return null;
+    }
+
+    private void HandleOnItemCollision(string itemName)
     {
         openInventorySlotsAndBlockMovementForInventory(true);
+        GameObject invItem = getCorrespondingSpriteToItemThatWasClicked(itemName);
+
         for (int i = 0; i < slots.Length; i++)
         {
             if (isFull[i] == false)
             {
                 isFull[i] = true;
-                Instantiate(itemSprite, slots[i].transform, false);
+                GameObject newItem = Instantiate(invItem, slots[i].transform, false);
+                newItem.transform.position = slots[i].transform.position;
                 break;
             }
         }
         //collisionWasHandled = true;
         //yield return new WaitForSeconds(0);
-
     }
 
     public void setCurrentlyDraggedSlotToEmpty()

@@ -27,20 +27,30 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         //dropOff = this.gameObject.transform.Find("DropOffInfo").GetComponent<DropOff>();
-        dropOff = GameObject.Find("DropOffInfo").GetComponent<DropOff>();
+        dropOff = GameObject.Find("DropOffInfo")?.GetComponent<DropOff>();
         inventory = API.Inventory;
         //Debug.Log(dropOff);
-        foreach (string itemName in dropOff.itemNameToDrop)
-          {
-            //Debug.Log("itemname:" + itemName);
-            //Debug.Log("iventory current tag"+ inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).tag.Equals(itemName));
-            //Debug.Log("player:" + dropOff.PlayerColliding);
-            if (inventory.CurrentlyDraggedSlot.gameObject.transform.childCount>0 && inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).tag.Equals(itemName) && dropOff.PlayerColliding && dropOff.ItemColliding)
-                  {
-                        inventory.setCurrentlyDraggedSlotToEmpty();
-                        GameObject.Destroy(inventory.CurrentlyDraggedSlot.transform.GetChild(0).gameObject);
+        if (dropOff != null)
+        {
+            if(inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 &&  dropOff.isDropOfCollidingWithCorrectItem(inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).name) && dropOff.PlayerColliding && dropOff.ItemColliding)
+            {
+                inventory.setCurrentlyDraggedSlotToEmpty();
+                GameObject.Destroy(inventory.CurrentlyDraggedSlot.transform.GetChild(0).gameObject);
             }
-              }
+            /*
+            foreach (string itemName in dropOff.itemNameToDrop)
+            {
+                //Debug.Log("itemname:" + itemName);
+                //Debug.Log("iventory current tag"+ inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).tag.Equals(itemName));
+                //Debug.Log("player:" + dropOff.PlayerColliding);
+                if (inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 && inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).tag.Equals(itemName) && dropOff.PlayerColliding && dropOff.ItemColliding)
+                {
+                    inventory.setCurrentlyDraggedSlotToEmpty();
+                    GameObject.Destroy(inventory.CurrentlyDraggedSlot.transform.GetChild(0).gameObject);
+                }
+            }
+            */
+        }
 
 
     }

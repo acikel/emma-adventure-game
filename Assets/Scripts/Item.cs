@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public delegate void HandleItemCollision();
+    public string itemName;
+    //ordered list (first sprite is first sprite to change to when the corresponding first item of list dragObjects is dragged onto this item)
+    //of sprites which it will change to if an item is draged onto it.
+    public List<Sprite> orderedSpritesToChange;
+    //ordered list of gameobjects (first game object change sprite of this item to first sprite of list orderedSpritesToChange)
+    //which can be tragged to this item and cause the sprite changed of orderedSpritesToChange.
+    //wenn dragObjects liste leer ist und orderedSpritesToChange vool dann ändert sich das item sprite immer wenn drauf geklickt wird bis
+    //alle sprites von 0,1,2... bis ende bei jedem klick durchiteriert sind.
+    public List<InventoryItem> dragObjects;
+    //holds the current index of orderedSpritesToChange and dragObjects to know which sprite the item this item schould be changed to next.
+    private int counterOfDragItems;
+    private SpriteRenderer spriteRenderer;
+    //subscribed by inventory.cs
+    public delegate void HandleItemCollision(string itemName);
     public static event HandleItemCollision OnItemCollision;
     private InputManager inputManager;
     private Inventory inventory;
@@ -14,40 +27,60 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        itemCollider = gameObject.GetComponent<PolygonCollider2D>();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        itemCollider = gameObject.GetComponent<Collider2D>();
         inventory = API.Inventory;
         inputManager = API.InputManager;
         sceneManager = API.SceneManager;
+        counterOfDragItems = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(playerIsColliding && inputManager.isMouseDown() && inputManager.checkIfSpecificColliderWasHit("Item", itemCollider))
+        if(inputManager.isMouseDown())
         {
-            lockMovementAndPutItemIntoInventory();
+            putItemToInventory();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!inventory.isInvetoryFull() && inputManager.checkIfSpecificColliderWasHit("Item", itemCollider) && collision.gameObject.tag == "Player")
-        {
-            lockMovementAndPutItemIntoInventory();
-        }
+        
         if (collision.gameObject.tag == "Player")
         {
             playerIsColliding = true;
             //Debug.Log("player is colliding"+ playerIsColliding);
         }
+        putItemToInventory();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!inventory.isInvetoryFull() && inputManager.checkIfSpecificColliderWasHit("Item", itemCollider) && collision.gameObject.tag == "Player" && gameObject.activeSelf)
+
+    }
+
+    private void putItemToInventory()
+    {
+        if(playerIsColliding && !inventory.isInvetoryFull() && inputManager.checkIfSpecificColliderWasHit("Item", itemCollider))
         {
-            lockMovementAndPutItemIntoInventory();
+            if (dragObjects.Count == 0 && orderedSpritesToChange.Count == 0)
+            {
+                lockMovementAndPutItemIntoInventory(itemName);
+            }
+            else if (dragObjects.Count == 0 && orderedSpritesToChange.Count != 0)
+            {
+                if (counterOfDragItems < orderedSpritesToChange.Count && spriteRenderer != null)
+                {
+                    spriteRenderer.sprite = orderedSpritesToChange[counterOfDragItems];
+                    counterOfDragItems++;
+                    lockMovementAndPutItemIntoInventory(itemName);
+                }
+            }
+
+            
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -58,7 +91,7 @@ public class Item : MonoBehaviour
         }
     }
 
-    private void lockMovementAndPutItemIntoInventory()
+    private void lockMovementAndPutItemIntoInventory(string itemName)
     {
         if (!inventory.isInvetoryFull())
         {
@@ -68,7 +101,7 @@ public class Item : MonoBehaviour
 
 
 
-            OnItemCollision?.Invoke();
+            OnItemCollision?.Invoke(itemName);
             //replacement of OnItemCollision?.Invoke(); to call events with IEnumerator as return type and Coroutines in Handler Methods:
             /*
             if (OnItemCollision != null)
@@ -80,8 +113,11 @@ public class Item : MonoBehaviour
                 }
             }*/
 
-
-            gameObject.SetActive(false);
+            if(orderedSpritesToChange.Count == 0)
+            {
+                gameObject.SetActive(false);
+            }
+            
         }
     }
 
@@ -108,4 +144,8 @@ public class Item : MonoBehaviour
             inventory.InteractionWithInventoryActive = true;
     }
 
+    private void OnMouseDown()
+    {
+        
+    }
 }
