@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &238899207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1054238853574533183, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+  m_PrefabInstance: {fileID: 1054238852431802393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &238899208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238899207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!1 &240426782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1195,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1455400434}
   - component: {fileID: 1455400433}
-  - component: {fileID: 1455400432}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1185,14 +1202,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1455400432
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455400431}
-  m_Enabled: 1
 --- !u!20 &1455400433
 Camera:
   m_ObjectHideFlags: 0
