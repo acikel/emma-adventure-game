@@ -11,6 +11,10 @@ public class DropOff : MonoBehaviour
     [SerializeField]
     public List<string> itemNameToDrop=new List<string>();
 
+    //subscribed by Item.cs and event called by ItemDropHandler which has a dropOffObject as Child.
+    public delegate void HandleItemDrop(string itemName);
+    public event HandleItemDrop OnItemDrop;
+
     public bool PlayerColliding
     {
         get
@@ -39,6 +43,10 @@ public class DropOff : MonoBehaviour
         
     }
 
+    public void invokeOnItemDrop(string currentlyDragedItemName)
+    {
+        OnItemDrop?.Invoke(currentlyDragedItemName);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

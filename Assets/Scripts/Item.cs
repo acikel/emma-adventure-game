@@ -15,6 +15,12 @@ public class Item : MonoBehaviour
     public List<InventoryItem> dragObjects;
     //holds the current index of orderedSpritesToChange and dragObjects to know which sprite the item this item schould be changed to next.
     private int counterOfDragItems;
+    //Dropoff for sprite to subscribe to so item can compare if the right item was draged to the dropoff scene (dragObjects)
+    //and change the sprite of the item accordingly.
+    //this field need to be assigned manually so the right dropOff zone talks to the right item to change its sprites. 
+    //Thats why the events of Dropoffzone are not static but bind to one DropOfZone too.
+    public DropOff dropOffZone;
+
     private SpriteRenderer spriteRenderer;
     //subscribed by inventory.cs
     public delegate void HandleItemCollision(string itemName);
@@ -27,6 +33,7 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dropOffZone.OnItemDrop += ChangeSpriteAccordingToDropedItem;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         itemCollider = gameObject.GetComponent<Collider2D>();
         inventory = API.Inventory;
@@ -42,6 +49,11 @@ public class Item : MonoBehaviour
         {
             putItemToInventory();
         }
+    }
+
+    private void ChangeSpriteAccordingToDropedItem(string itemName)
+    {
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

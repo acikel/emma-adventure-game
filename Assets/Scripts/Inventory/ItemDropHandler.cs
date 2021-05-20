@@ -9,6 +9,7 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
 {
     Inventory inventory;
     DropOff dropOff;
+    string currentlyDragedItemName;
 
     private void Start()
     {
@@ -29,11 +30,13 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
         //dropOff = this.gameObject.transform.Find("DropOffInfo").GetComponent<DropOff>();
         dropOff = GameObject.Find("DropOffInfo")?.GetComponent<DropOff>();
         inventory = API.Inventory;
+        currentlyDragedItemName = inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).name;
         //Debug.Log(dropOff);
         if (dropOff != null)
         {
-            if(inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 &&  dropOff.isDropOfCollidingWithCorrectItem(inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).name) && dropOff.PlayerColliding && dropOff.ItemColliding)
+            if(inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 &&  dropOff.isDropOfCollidingWithCorrectItem(currentlyDragedItemName) && dropOff.PlayerColliding && dropOff.ItemColliding)
             {
+                dropOff.invokeOnItemDrop(currentlyDragedItemName);
                 inventory.setCurrentlyDraggedSlotToEmpty();
                 GameObject.Destroy(inventory.CurrentlyDraggedSlot.transform.GetChild(0).gameObject);
             }
