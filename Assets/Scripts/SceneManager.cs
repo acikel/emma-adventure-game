@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using ScM=UnityEngine.SceneManagement;
@@ -22,8 +23,16 @@ public class SceneManager : MonoBehaviour
     private bool isReloading;
 
     //need to be actions to call in IEnumerator method HandleOnCollisionWithPortal below.
+    //subscribed by Saver and therefore GameObjectActivitySaver as Saver is the parent of GameObjectActivitySaver.
     public event Action BeforeSceneUnload;
     public event Action AfterSceneLoad;
+    //subscribed by player controller to rescale player after avatar manager and player was reinitialized
+    public delegate void HandleAfterAvatarInitialization(float avatarStartScale, float avatarScaleFactor);
+    public event HandleAfterAvatarInitialization AfterAvatarInitialization;
+
+    public List<AvatarScaleValues> sceneScales = new List<AvatarScaleValues>();
+    private AvatarScaleValues currentSceneValues;
+
     public bool IsReloading
     {
         get
@@ -56,6 +65,16 @@ public class SceneManager : MonoBehaviour
         loadStartLocations();
         if(playerStartLocation!=null)
             initializeStartLocations();
+
+        //PLayer scale and scale needs to be set on player for first scene as AfterAvatarInitialization is null on start.
+        /*
+        assignScaleValueForCurrentScene();
+
+        if (currentSceneValues != null)
+        {
+            AfterAvatarInitialization?.Invoke(currentSceneValues.avatarStartScale, currentSceneValues.avatarScaleFactor);
+        }
+        */
         StartCoroutine(Fade(0f));
 
     }
@@ -103,6 +122,9 @@ public class SceneManager : MonoBehaviour
                 loadStartLocations();
                 if (playerStartLocation != null)
                     initializeStartLocations();
+                if (currentSceneValues != null)
+                    AfterAvatarInitialization?.Invoke(currentSceneValues.avatarStartScale, currentSceneValues.avatarScaleFactor);
+
                 StartCoroutine(Fade(0f));
                 reloadDone = true;
                 isReloading = false;
@@ -126,12 +148,25 @@ public class SceneManager : MonoBehaviour
             AfterSceneLoad();
 
         currentAdditiveSceneName = sceneNameToTransitionTo;
+        assignScaleValueForCurrentScene();
         //Debug.Log("current scene name:"+ currentAdditiveSceneName);
         reloadDone = false;
 
         
     }
 
+    private void assignScaleValueForCurrentScene()
+    {
+        foreach (AvatarScaleValues asv in sceneScales)
+        {
+            if (asv.sceneName.Equals(currentAdditiveSceneName))
+            {
+                currentSceneValues = asv;
+                return;
+            }
+        }
+        currentSceneValues = null;
+    }
 
     private IEnumerator Fade(float finalAlpha)
     {
