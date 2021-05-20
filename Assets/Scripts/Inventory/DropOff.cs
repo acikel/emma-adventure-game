@@ -8,9 +8,15 @@ public class DropOff : MonoBehaviour
     private bool playerColliding;
     private bool itemColliding;
 
+    //names of items that can be dropped to this dropzone. 
+    //Need to be same (and same order) as the ones defined in Item.cs defined in dragObjects if drag should activate a sprite change on an item (these sprites are defined in orderedSpritesToChange).
     [SerializeField]
     public List<string> itemNameToDrop=new List<string>();
-
+    //bool to tell if list of names (itemNameToDrop) should be ordered (if list has more then one item first item need to be dropped 
+    //frist then second and so on) or not.
+    public bool orderedList;
+    //variable to track which object need to collide next if list is ordered (orderedList=true);
+    private int currentListItem;
     //subscribed by Item.cs and event called by ItemDropHandler which has a dropOffObject as Child.
     public delegate void HandleItemDrop(string itemName);
     public event HandleItemDrop OnItemDrop;
@@ -29,12 +35,19 @@ public class DropOff : MonoBehaviour
         {
             return itemColliding;
         }
+        //need to be set by ItemDropHandler.cs when item is distroyed as it wont exit this trigger in that case
+        //for the next item to be placed exactly on the dropoff zone itemColliding need to be reset to false.
+        set
+        {
+            itemColliding = value;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
         inventory = API.Inventory;
+        currentListItem = 0;
     }
 
     // Update is called once per frame
@@ -87,17 +100,60 @@ public class DropOff : MonoBehaviour
 
     private bool isDropOfCollidingWithCorrectItem(Collider2D collision)
     {
-        foreach(string name in itemNameToDrop)
+        if (itemNameToDrop == null)
+            return false;
+            
+        if (orderedList)
         {
-            if (collision.gameObject.name.Contains(name))
-            {
-                return true;
-            }
+            return searchForItemInOrderedList(collision.gameObject.name);
         }
-        return false;
+        else
+        {
+            return searchForItemInUnorderedList(collision.gameObject.name);
+        }
     }
 
     public bool isDropOfCollidingWithCorrectItem(string nameToCompare)
+    {
+        if (itemNameToDrop == null)
+            return false;
+
+        if (orderedList)
+        {
+            return searchForItemInOrderedList(nameToCompare);
+        }
+        else
+        {
+            return searchForItemInUnorderedList(nameToCompare);
+        }
+        
+    }
+
+    //used by ItemDropHandler as user can also just drag and not drop item to dropzone.
+    //currentListItem should only be incremented if right item was dropped.
+    public void moveToNextItemToDrop()
+    {
+        currentListItem++;
+    }
+    private bool searchForItemInOrderedList(string nameToCompare)
+    {
+        //Debug.Log("searchForItemInOrderedList currentListItem: " + currentListItem) ;
+        //Debug.Log("searchForItemInOrderedList itemNameToDrop.Count: " + itemNameToDrop.Count);
+        //Debug.Log("searchForItemInOrderedList nameToCompare: " + nameToCompare);
+        //Debug.Log("searchForItemInOrderedList itemNameToDrop[currentListItem]: " + itemNameToDrop[currentListItem]);
+        if (currentListItem < itemNameToDrop.Count && nameToCompare.Contains(itemNameToDrop[currentListItem]))
+        {
+            //Debug.Log("searchForItemInOrderedList true");
+            return true;
+        }
+        else
+        {
+            //Debug.Log("searchForItemInOrderedList false");
+            return false;
+        }
+    }
+
+    private bool searchForItemInUnorderedList(string nameToCompare)
     {
         foreach (string name in itemNameToDrop)
         {

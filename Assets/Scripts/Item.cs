@@ -7,6 +7,10 @@ public class Item : MonoBehaviour
     public string itemName;
     //ordered list (first sprite is first sprite to change to when the corresponding first item of list dragObjects is dragged onto this item)
     //of sprites which it will change to if an item is draged onto it.
+    //this only happens if orderedSpritesToChange and dragObjects are not empty.
+    //If orderedSpritesToChange is not empty and dragObjects is empty. Only sprites will changed when item is put into inventory.
+    //There is no need to orderedSpritesToChange beeing empty and dragObjects beeing not empty so its not handled.
+    //If orderedSpritesToChange and dragObjects are empty this item is put into inventory without other effects.
     public List<Sprite> orderedSpritesToChange;
     //ordered list of gameobjects (first game object change sprite of this item to first sprite of list orderedSpritesToChange)
     //which can be tragged to this item and cause the sprite changed of orderedSpritesToChange.
@@ -20,6 +24,11 @@ public class Item : MonoBehaviour
     //this field need to be assigned manually so the right dropOff zone talks to the right item to change its sprites. 
     //Thats why the events of Dropoffzone are not static but bind to one DropOfZone too.
     public DropOff dropOffZone;
+    //gameObjectToDeactivateAfterLastDrag is the GameObject which is deactivated after the last item of dragObjects was dragged onto this item.
+    //If orderedSpritesToChange.Count == 0 this item is deactivated. This way no item is deactivated if 
+    //orderedSpritesToChange has items and the last changed item stays in the scene for this gameObjectToDeactivateAfterLastDrag needs to be 
+    //null otherwise gameObjectToDeactivateAfterLastDrag will be deactivated even if this item stays visible.
+    public GameObject gameObjectToDeactivateAfterLastDrag;
 
     private SpriteRenderer spriteRenderer;
     //subscribed by inventory.cs
@@ -33,7 +42,8 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dropOffZone.OnItemDrop += ChangeSpriteAccordingToDropedItem;
+        if(dropOffZone!=null)
+            dropOffZone.OnItemDrop += ChangeSpriteAccordingToDropedItem;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         itemCollider = gameObject.GetComponent<Collider2D>();
         inventory = API.Inventory;
@@ -53,7 +63,23 @@ public class Item : MonoBehaviour
 
     private void ChangeSpriteAccordingToDropedItem(string itemName)
     {
+        //Debug.Log("ChangeSpriteAccordingToDropedItem1 dragObjects: "+ dragObjects 
+        //    + " orderedSpritesToChange: "+ orderedSpritesToChange + " spriteRenderer: "+ spriteRenderer);
+        if (dragObjects == null || orderedSpritesToChange == null || spriteRenderer == null)
+            return;
 
+        //Debug.Log("ChangeSpriteAccordingToDropedItem1.5 itemName: " + itemName 
+        //    + " dragObjects[counterOfDragItems].inventoryItemName "+ dragObjects[counterOfDragItems].inventoryItemName);
+        if (itemName.Contains(dragObjects[counterOfDragItems].inventoryItemName)){
+            spriteRenderer.sprite = orderedSpritesToChange[counterOfDragItems];
+            counterOfDragItems++;
+            //when the last inventory item was dragged onto this item the item with the name itemName is put into the inventory.
+            if (counterOfDragItems>= dragObjects.Count)
+            {
+                lockMovementAndPutItemIntoInventory(this.itemName);
+            }
+            //Debug.Log("ChangeSpriteAccordingToDropedItem2");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -125,7 +151,16 @@ public class Item : MonoBehaviour
                 }
             }*/
 
+            /*
             if(orderedSpritesToChange.Count == 0)
+            {
+                gameObject.SetActive(false);
+            }*/
+            if (gameObjectToDeactivateAfterLastDrag != null)
+            {
+                gameObjectToDeactivateAfterLastDrag.SetActive(false);
+            }
+            else if(orderedSpritesToChange.Count == 0)
             {
                 gameObject.SetActive(false);
             }

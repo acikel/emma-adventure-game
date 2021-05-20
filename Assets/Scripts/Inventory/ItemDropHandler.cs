@@ -38,6 +38,8 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
             {
                 dropOff.invokeOnItemDrop(currentlyDragedItemName);
                 inventory.setCurrentlyDraggedSlotToEmpty();
+                dropOff.moveToNextItemToDrop();
+                dropOff.ItemColliding = false;
                 GameObject.Destroy(inventory.CurrentlyDraggedSlot.transform.GetChild(0).gameObject);
             }
             /*

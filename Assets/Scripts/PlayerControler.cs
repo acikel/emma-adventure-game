@@ -42,7 +42,9 @@ public class PlayerControler : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         {
             triggerIdleAnimation();
-        }else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
+        //}else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
+        }
+        else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
         {
             triggerIdleAnimation();
             //Debug.Log("Portal name:"+ collision.gameObject.name);
