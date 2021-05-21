@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6341269656041547413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/SFX/Menu/snd_Hover
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/SFX/Menu/snd_Hover
+  guid: e9285bb43f62d540825d6c17db0ac035
+  Banks:
+  - {fileID: -1180794204249747068}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 13
 --- !u!114 &-5476917126001830016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,6 +77,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-1180794204249747068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637572009641782306
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-100763247423301319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,15 +127,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 796712254389930246}
-  - {fileID: -4528715526737791404}
+  - {fileID: -1180794204249747068}
   EditorEvents:
-  - {fileID: 1221931412129980712}
+  - {fileID: -6341269656041547413}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -4528715526737791404}
+  - {fileID: -1180794204249747068}
   StringsBanks:
   - {fileID: 796712254389930246}
-  stringsBankWriteTime: 637571212966648304
+  stringsBankWriteTime: 637572009641822159
   cacheVersion: 3
 --- !u!114 &796712254389930246
 MonoBehaviour:
@@ -110,11 +151,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMODEMMA/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637571212966648304
+  lastModified: 637572009641822159
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 754
+    Value: 748
   Exists: 1
 --- !u!114 &1221931412129980712
 MonoBehaviour:
@@ -130,8 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_Hover
   guid: e9285bb43f62d540825d6c17db0ac035
-  Banks:
-  - {fileID: -4528715526737791404}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -154,6 +194,24 @@ MonoBehaviour:
   Path: FMODEMMA/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637571040968530542
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &2646631944405867167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637570996172681773
   LoadResult: 0
   FileSizes: []
   Exists: 0

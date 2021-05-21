@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{9bb4ed84-a8ee-4cff-8371-071c9035e695}">
+	<object class="AudioFile" id="{ead72492-a424-43af-8afc-f5ecbe97c503}">
 		<property name="assetPath">
-			<value>snd_DoorClose.wav</value>
+			<value>snd_LockOpen.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.1739166666666667</value>
+			<value>0.37704166666666666</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{41ddac83-4ed0-424f-8c61-b3c9889f586e}</destination>
