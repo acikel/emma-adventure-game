@@ -103,6 +103,17 @@ public class LockPuzzle : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        Window.SetActive(true);
+        //Window.SetActive(true);
+        if (Window.activeSelf == true)
+        {
+            Window.SetActive(false);
+            //Debug.Log("Window not here");
+        }
+        else
+        {
+            Window.SetActive(true);
+            // Debug.Log("Window here");
+        }
+
     }
 }

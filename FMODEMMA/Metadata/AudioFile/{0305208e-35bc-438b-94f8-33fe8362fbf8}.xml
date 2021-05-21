@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{0305208e-35bc-438b-94f8-33fe8362fbf8}">
+		<property name="assetPath">
+			<value>snd_LockWrong.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1426666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{41ddac83-4ed0-424f-8c61-b3c9889f586e}</destination>
+		</relationship>
+	</object>
+</objects>
