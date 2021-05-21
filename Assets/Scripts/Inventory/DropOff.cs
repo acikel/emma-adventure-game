@@ -8,13 +8,15 @@ public class DropOff : MonoBehaviour
     private bool playerColliding;
     private bool itemColliding;
 
+    //bool to tell if list of names (itemNameToDrop) should be ordered (if list has more then one item first item need to be dropped 
+    //frist then second and so on) or not.
+    public bool orderedList;
+
     //names of items that can be dropped to this dropzone. 
     //Need to be same (and same order) as the ones defined in Item.cs defined in dragObjects if drag should activate a sprite change on an item (these sprites are defined in orderedSpritesToChange).
     [SerializeField]
     public List<string> itemNameToDrop=new List<string>();
-    //bool to tell if list of names (itemNameToDrop) should be ordered (if list has more then one item first item need to be dropped 
-    //frist then second and so on) or not.
-    public bool orderedList;
+    
     //variable to track which object need to collide next if list is ordered (orderedList=true);
     private int currentListItem;
     //subscribed by Item.cs and event called by ItemDropHandler which has a dropOffObject as Child.
@@ -56,6 +58,7 @@ public class DropOff : MonoBehaviour
         
     }
 
+    //Called by ItemDropHandler which has a dropOffObject as Child.
     public void invokeOnItemDrop(string currentlyDragedItemName)
     {
         OnItemDrop?.Invoke(currentlyDragedItemName);
