@@ -64,8 +64,8 @@ public class LockResumePanel : MonoBehaviour, IPointerClickHandler
     {
         if (openLockCloseInventory)
         {
-            canvasLock.sortingOrder = 7;
-            canvasLockResumePanel.sortingOrder = 7;
+            canvasLock.sortingOrder = 6;
+            canvasLockResumePanel.sortingOrder = 6;
 
 
         }
@@ -80,8 +80,10 @@ public class LockResumePanel : MonoBehaviour, IPointerClickHandler
         canvasGroupLock.interactable = openLockCloseInventory;
         
 
+        
         canvasInventory.alpha = Convert.ToInt32(!openLockCloseInventory);
         canvasInventory.blocksRaycasts = !openLockCloseInventory;
         canvasInventory.interactable = !openLockCloseInventory;
+        
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DropOff : MonoBehaviour
 {
     Inventory inventory;
+    InputManager inputManager;
     private bool playerColliding;
     private bool itemColliding;
 
@@ -22,6 +23,9 @@ public class DropOff : MonoBehaviour
     //subscribed by Item.cs and event called by ItemDropHandler which has a dropOffObject as Child.
     public delegate void HandleItemDrop(string itemName);
     public event HandleItemDrop OnItemDrop;
+
+
+    private string currentlyDragedItemName;
 
     public bool PlayerColliding
     {
@@ -48,6 +52,7 @@ public class DropOff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inputManager = API.InputManager;
         inventory = API.Inventory;
         currentListItem = 0;
     }
@@ -55,7 +60,10 @@ public class DropOff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!inputManager.isMouseDown())
+        {
+            dropDraggedItem();
+        }
     }
 
     //Called by ItemDropHandler which has a dropOffObject as Child.
@@ -66,7 +74,7 @@ public class DropOff : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("collision: "+collision.gameObject.tag);
+        //Debug.Log("collision: "+collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
             playerColliding = true;
         /* else
@@ -82,7 +90,7 @@ public class DropOff : MonoBehaviour
          }*/
         else if (isDropOfCollidingWithCorrectItem(collision))
         {
-            //Debug.Log("item colliding start"+ collision.gameObject.name);
+            Debug.Log("item colliding start"+ collision.gameObject.name);
             itemColliding = true;
         }
     }
@@ -95,11 +103,36 @@ public class DropOff : MonoBehaviour
         }
         else if (isDropOfCollidingWithCorrectItem(collision))
         {
-           Debug.Log("item colliding end");
+           //Debug.Log("item colliding end");
             itemColliding = false;
         }
         
     }
+
+    private void dropDraggedItem()
+    {
+        if (inventory.CurrentlyDraggedSlot.gameObject.transform.childCount == 0)
+            return;
+
+        currentlyDragedItemName = inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).name;
+        Debug.Log("DropOffInfoOnMouseUp " + inventory.CurrentlyDraggedSlot.gameObject.transform.childCount + " 2: " + isDropOfCollidingWithCorrectItem(currentlyDragedItemName) + " PlayerColliding: " + PlayerColliding + " ItemColliding: " + ItemColliding);
+        {
+            if (inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 && isDropOfCollidingWithCorrectItem(currentlyDragedItemName) && PlayerColliding && ItemColliding)
+            {
+                invokeOnItemDrop(currentlyDragedItemName);
+                inventory.setCurrentlyDraggedSlotToEmpty();
+                moveToNextItemToDrop();
+                ItemColliding = false;
+                GameObject.Destroy(inventory.CurrentlyDraggedSlot.transform.GetChild(0).gameObject);
+            }
+        }
+    }
+    /*
+        private void OnMouseUp()
+        {
+            dropDraggedItem();
+        }
+    */
 
     private bool isDropOfCollidingWithCorrectItem(Collider2D collision)
     {

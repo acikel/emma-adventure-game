@@ -21,9 +21,6 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
         
     }
 
-    
-
-    
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -31,10 +28,10 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
         dropOff = GameObject.Find("DropOffInfo")?.GetComponent<DropOff>();
         inventory = API.Inventory;
         currentlyDragedItemName = inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).name;
-        //Debug.Log(dropOff);
+        Debug.Log("DropOffInfo "+ dropOff);
         if (dropOff != null)
         {
-            if(inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 &&  dropOff.isDropOfCollidingWithCorrectItem(currentlyDragedItemName) && dropOff.PlayerColliding && dropOff.ItemColliding)
+            if (inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 &&  dropOff.isDropOfCollidingWithCorrectItem(currentlyDragedItemName) && dropOff.PlayerColliding && dropOff.ItemColliding)
             {
                 dropOff.invokeOnItemDrop(currentlyDragedItemName);
                 inventory.setCurrentlyDraggedSlotToEmpty();
