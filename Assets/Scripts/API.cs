@@ -37,6 +37,9 @@ public static class API
     private static CanvasGroup _fadeImageInstance;
     private static Inventory _inventoryInstance;
     private static TextManager _textManagerInstance;
+    private static LockResumePanel _lockResumePanel;
+    private static CanvasGroup _canvasLockInstance;
+    
     public static InputManager InputManager
     {
         get
@@ -97,9 +100,35 @@ public static class API
             if (_fadeImageInstance == null ||
             ReferenceEquals(_fadeImageInstance, null))
             {
-                _fadeImageInstance = FindSingleInstance<CanvasGroup>();
+                _fadeImageInstance = GameObject.FindGameObjectWithTag("FadeImage").GetComponent< CanvasGroup>();
             }
             return _fadeImageInstance;
+        }
+    }
+
+    public static LockResumePanel LockResumePanel
+    {
+        get
+        {
+            if (_lockResumePanel == null ||
+            ReferenceEquals(_lockResumePanel, null))
+            {
+                _lockResumePanel = FindSingleInstance<LockResumePanel>(); 
+            }
+            return _lockResumePanel;
+        }
+    }
+
+    public static CanvasGroup CanvasLock
+    {
+        get
+        {
+            if (_canvasLockInstance == null ||
+            ReferenceEquals(_canvasLockInstance, null))
+            {
+                _canvasLockInstance = GameObject.FindGameObjectWithTag("CanvasLock").GetComponent<CanvasGroup>();
+            }
+            return _canvasLockInstance;
         }
     }
 

@@ -33,7 +33,7 @@ public class InventoryBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             //Debug.Log("Entered");
             inventory = API.Inventory;
-            inventory.InteractionWithInventoryActive = false;
+            inventory.InteractionWithUIActive = false;
         }
         
     }
@@ -42,7 +42,7 @@ public class InventoryBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         //Debug.Log("Entered2");
         inventory = API.Inventory;
-        inventory.InteractionWithInventoryActive = true;
+        inventory.InteractionWithUIActive = true;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -53,7 +53,7 @@ public class InventoryBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             //Debug.Log("Entered3");
             inventory = API.Inventory;
-            inventory.InteractionWithInventoryActive = false;
+            inventory.InteractionWithUIActive = false;
         }
     }
 
@@ -61,6 +61,6 @@ public class InventoryBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         //Debug.Log("Entered4");
         inventory = API.Inventory;
-        inventory.InteractionWithInventoryActive = true;
+        inventory.InteractionWithUIActive = true;
     }
 }

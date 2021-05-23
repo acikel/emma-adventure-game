@@ -66,7 +66,7 @@ public class DropOff : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("collision: "+collision.gameObject.tag);
+        Debug.Log("collision: "+collision.gameObject.tag);
         if (collision.gameObject.tag == "Player")
             playerColliding = true;
         /* else
@@ -95,7 +95,7 @@ public class DropOff : MonoBehaviour
         }
         else if (isDropOfCollidingWithCorrectItem(collision))
         {
-           //Debug.Log("item colliding end");
+           Debug.Log("item colliding end");
             itemColliding = false;
         }
         

@@ -11,6 +11,8 @@ TagManager:
   - Portal
   - DropOff
   - Inventory
+  - FadeImage
+  - CanvasLock
   layers:
   - Default
   - TransparentFX

@@ -134,7 +134,7 @@ public class Item : MonoBehaviour
         if (!inventory.isInvetoryFull())
         {
             //inventory.InteractionWithInventoryActive is set to false in inventory after putting this item into the inventory slot.
-            inventory.InteractionWithInventoryActive = true;
+            inventory.InteractionWithUIActive = true;
             //OnItemCollision event is handled in the inventory script via HandleOnItemCollision method
 
 
@@ -172,7 +172,7 @@ public class Item : MonoBehaviour
     {
         //Debug.Log("MouseOver");
         if(playerIsColliding)
-            inventory.InteractionWithInventoryActive = true;
+            inventory.InteractionWithUIActive = true;
     }
     private void OnMouseExit()
     {
@@ -180,7 +180,7 @@ public class Item : MonoBehaviour
         if (!sceneManager.IsFading)
         {
             //Debug.Log("MouseExit");
-            inventory.InteractionWithInventoryActive = false;
+            inventory.InteractionWithUIActive = false;
         }
     }
 
@@ -188,7 +188,7 @@ public class Item : MonoBehaviour
     {
         //Debug.Log("MouseOver");
         if (playerIsColliding)
-            inventory.InteractionWithInventoryActive = true;
+            inventory.InteractionWithUIActive = true;
     }
 
     private void OnMouseDown()

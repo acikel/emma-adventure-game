@@ -13,7 +13,7 @@ public class Inventory : MonoBehaviour
     public bool[] isFull;
     public GameObject[] slots;
 
-    private bool interactionWithInventoryActive;
+    private bool interactionWithUIActive;
     private GameObject currentlyDraggedSlot;
     //private bool collisionWasHandled;
     private InputManager inputManager;
@@ -22,15 +22,15 @@ public class Inventory : MonoBehaviour
     public delegate void OnOpenInventoryHandler(bool openInventory);
     public static event OnOpenInventoryHandler OnOpenInventory;
 
-    public bool InteractionWithInventoryActive
+    public bool InteractionWithUIActive
     {
         get
         {
-            return interactionWithInventoryActive;
+            return interactionWithUIActive;
         }
         set
         {
-            interactionWithInventoryActive = value;
+            interactionWithUIActive = value;
         }
     }
 

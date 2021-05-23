@@ -12,7 +12,7 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         inventory = API.Inventory;
-        inventory.InteractionWithInventoryActive = true;
+        inventory.InteractionWithUIActive = true;
         transform.position = Camera.main.ScreenToWorldPoint((Input.mousePosition));
         inventory.CurrentlyDraggedSlot = transform.parent.gameObject;
     }
@@ -21,13 +21,13 @@ public class InventoryItem : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         inventory = API.Inventory;
         transform.localPosition = Vector3.zero;
-        inventory.InteractionWithInventoryActive = false;
+        inventory.InteractionWithUIActive = false;
     }
     // Start is called before the first frame update
     void Start()
     {
         inventory = API.Inventory;
-        inventory.InteractionWithInventoryActive = false;
+        inventory.InteractionWithUIActive = false;
     }
 
     // Update is called once per frame

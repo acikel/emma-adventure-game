@@ -46,7 +46,7 @@ public class Backpack : MonoBehaviour
 
     private void OnMouseOver()
     {
-        inventory.InteractionWithInventoryActive = true;
+        inventory.InteractionWithUIActive = true;
     }
 
     private void openInventorySlotsAndBlockMovementForInventory(bool value)

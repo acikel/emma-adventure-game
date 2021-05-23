@@ -407,7 +407,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 670529944}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &670529944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,7 +506,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794754525}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -877,10 +889,7 @@ MonoBehaviour:
   Window: {fileID: 1692182996}
   CheckPanelgreen: {fileID: 21300000, guid: 5d77cc6c3e807124b938e1e008bea88a, type: 3}
   CheckPanelred: {fileID: 21300000, guid: 615ea2366a585c84e94455c953561325, type: 3}
-  InputCode: 
-  InputCodenumber: 0
   Code: 3043
-  count: 0
 --- !u!1 &1273270694
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1273270695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,10 +933,7 @@ MonoBehaviour:
   Window: {fileID: 0}
   CheckPanelgreen: {fileID: 0}
   CheckPanelred: {fileID: 0}
-  InputCode: 
-  InputCodenumber: 0
   Code: 3043
-  count: 0
 --- !u!114 &1273270696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,7 +1186,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1527668868}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1527668868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,7 +1252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1692182997
 Transform:
   m_ObjectHideFlags: 0
@@ -1493,7 +1511,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1894801479}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1894801479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,7 +1643,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1922678665}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1922678665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,7 +1775,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1950171792}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1950171792
 MonoBehaviour:
   m_ObjectHideFlags: 0

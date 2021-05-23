@@ -177,7 +177,7 @@ public class SceneManager : MonoBehaviour
     {
         isFading = true;
         //Debug.Log("inventory interaction1:" + inventory.InteractionWithInventoryActive);
-        inventory.InteractionWithInventoryActive = true;
+        inventory.InteractionWithUIActive = true;
         //Debug.Log("inventory interaction2:" + inventory.InteractionWithInventoryActive);
         faderCanvasGroup.blocksRaycasts = true;
         float fadeSpeed = Mathf.Abs(faderCanvasGroup.alpha - finalAlpha) / fadeDuration;
@@ -188,7 +188,7 @@ public class SceneManager : MonoBehaviour
             yield return null;
         }
         yield return StartCoroutine(Wait(0.001f));
-        inventory.InteractionWithInventoryActive = false;
+        inventory.InteractionWithUIActive = false;
         isFading = false;
         faderCanvasGroup.blocksRaycasts = false;
     }

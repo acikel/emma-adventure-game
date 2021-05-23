@@ -109,7 +109,7 @@ public class PlayerControler : MonoBehaviour
     {
 
         //Debug.Log("in inventory "+inventory.InteractionWithInventoryActive);
-        if (!inventory.InteractionWithInventoryActive && inputManager.isMouseDown())
+        if (!inventory.InteractionWithUIActive && inputManager.isMouseDown())
         {
             if ((raycastHit= inputManager.getRaycastRigidbody("Player")).rigidbody!=null )
             {
