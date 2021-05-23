@@ -90,7 +90,7 @@ public class DropOff : MonoBehaviour
          }*/
         else if (isDropOfCollidingWithCorrectItem(collision))
         {
-            Debug.Log("item colliding start"+ collision.gameObject.name);
+            //Debug.Log("item colliding start"+ collision.gameObject.name);
             itemColliding = true;
         }
     }
@@ -115,7 +115,7 @@ public class DropOff : MonoBehaviour
             return;
 
         currentlyDragedItemName = inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).name;
-        Debug.Log("DropOffInfoOnMouseUp " + inventory.CurrentlyDraggedSlot.gameObject.transform.childCount + " 2: " + isDropOfCollidingWithCorrectItem(currentlyDragedItemName) + " PlayerColliding: " + PlayerColliding + " ItemColliding: " + ItemColliding);
+        //Debug.Log("DropOffInfoOnMouseUp " + inventory.CurrentlyDraggedSlot.gameObject.transform.childCount + " 2: " + isDropOfCollidingWithCorrectItem(currentlyDragedItemName) + " PlayerColliding: " + PlayerColliding + " ItemColliding: " + ItemColliding);
         {
             if (inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 && isDropOfCollidingWithCorrectItem(currentlyDragedItemName) && PlayerColliding && ItemColliding)
             {
