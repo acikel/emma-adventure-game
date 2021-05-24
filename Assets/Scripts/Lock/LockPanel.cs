@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class LockPanel : MonoBehaviour
 {
-    private string InputCode = "";
+    [HideInInspector]
+    public static string InputCode = "";
     private int InputCodenumber;
     public int Code = 3043;
     private int count;
@@ -18,7 +19,7 @@ public class LockPanel : MonoBehaviour
 
     
 
-    //subscribed by LockDoor.cs to set open door active when code was solved.
+    //subscribed by OpenLockDoor.cs to set open door active when code was solved.
     public delegate void HandleLockSolved();
     public static event HandleLockSolved OnLockSolved;
 

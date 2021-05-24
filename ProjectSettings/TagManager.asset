@@ -13,6 +13,7 @@ TagManager:
   - Inventory
   - FadeImage
   - CanvasLock
+  - CanvasImagePopUp
   layers:
   - Default
   - TransparentFX

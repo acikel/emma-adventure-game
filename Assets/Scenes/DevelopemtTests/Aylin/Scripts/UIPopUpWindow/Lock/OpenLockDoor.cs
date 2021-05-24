@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockDoor : OpenPopUpWindow
+public class OpenLockDoor : OpenPopUpWindow
 {
 
     //Door which needs to be set active when code was solved.
@@ -29,6 +29,14 @@ public class LockDoor : OpenPopUpWindow
         {
             //Debug.Log("Lock Door player collided enter");
             playerCollided = true;
+
+            if (mouseWasClickedOnObject)
+            {
+                lockResumePanel.openCanvas();
+                inventory.InteractionWithUIActive = true;
+                //resetMouseClick needed otherwise after closing popupwindow it is resumed after each reinter into trigger.
+                resetMouseClick();
+            }
         }
     }
 
@@ -51,7 +59,7 @@ public class LockDoor : OpenPopUpWindow
     {
         if (playerCollided)
         {
-            lockResumePanel.openLockCanvas();
+            lockResumePanel.openCanvas();
         }
         return playerCollided;
     }

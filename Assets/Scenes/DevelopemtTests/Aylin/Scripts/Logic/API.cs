@@ -39,7 +39,10 @@ public static class API
     private static TextManager _textManagerInstance;
     private static LockResumePanel _lockResumePanel;
     private static CanvasGroup _canvasLockInstance;
-    
+    private static ImagePopUpResumePanel _imagePopUpResumePanel;
+    private static CanvasGroup _canvasImagePopUpInstance;
+    private static ImagePopUpPanel _ImagePopUpPanelInstance;
+
     public static InputManager InputManager
     {
         get
@@ -119,6 +122,34 @@ public static class API
         }
     }
 
+    public static ImagePopUpPanel ImagePopUpPanel
+    {
+        get
+        {
+            if (_ImagePopUpPanelInstance == null ||
+            ReferenceEquals(_ImagePopUpPanelInstance, null))
+            {
+                _ImagePopUpPanelInstance = FindSingleInstance<ImagePopUpPanel>();
+            }
+            return _ImagePopUpPanelInstance;
+        }
+    }
+    
+
+
+    public static ImagePopUpResumePanel ImagePopUpResumePanel
+    {
+        get
+        {
+            if (_imagePopUpResumePanel == null ||
+            ReferenceEquals(_imagePopUpResumePanel, null))
+            {
+                _imagePopUpResumePanel = FindSingleInstance<ImagePopUpResumePanel>();
+            }
+            return _imagePopUpResumePanel;
+        }
+    }
+
     public static CanvasGroup CanvasLock
     {
         get
@@ -129,6 +160,19 @@ public static class API
                 _canvasLockInstance = GameObject.FindGameObjectWithTag("CanvasLock").GetComponent<CanvasGroup>();
             }
             return _canvasLockInstance;
+        }
+    }
+
+    public static CanvasGroup CanvasImagePopUp
+    {
+        get
+        {
+            if (_canvasImagePopUpInstance == null ||
+            ReferenceEquals(_canvasImagePopUpInstance, null))
+            {
+                _canvasImagePopUpInstance = GameObject.FindGameObjectWithTag("CanvasImagePopUp").GetComponent<CanvasGroup>();
+            }
+            return _canvasImagePopUpInstance;
         }
     }
 
