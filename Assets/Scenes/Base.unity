@@ -3837,6 +3837,34 @@ PrefabInstance:
       propertyPath: avatarAnimator
       value: 
       objectReference: {fileID: 615209808}
+    - target: {fileID: 3554606657285527814, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: m_Size.x
+      value: 4.95249
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554606657285527814, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: m_Size.y
+      value: 3.721261
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554606657285527814, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554606657285527814, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.2557884
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554606657285527814, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.7625495
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554606657285527815, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554606657285527815, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.83
+      objectReference: {fileID: 0}
     - target: {fileID: 3554606657285527818, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
       propertyPath: m_Name
       value: Helper

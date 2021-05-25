@@ -6,11 +6,13 @@ public class HelperPillow : ActionObject
 {
     //sprite which should appear after player putting together the helper
     public Sprite spritePillowSloved;
-    private SpriteRenderer spiteRendererForPillow;
+    private SpriteRenderer spriteRendererForPillow;
+    private Collider2D colliderOfPillow;
     // Start is called before the first frame update
     void Start()
     {
-        spiteRendererForPillow = GetComponent<SpriteRenderer>();
+        spriteRendererForPillow = GetComponent<SpriteRenderer>();
+        colliderOfPillow = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -22,12 +24,16 @@ public class HelperPillow : ActionObject
     public override void actionOnDrop(string itemName)
     {
         //also set start position of helper
+        if (colliderOfPillow != null)
+            colliderOfPillow.enabled = false;
         AvatarManager.helperAvatar.gameObject.SetActive(true);
-        if (spiteRendererForPillow != null)
-            spiteRendererForPillow.sprite = spritePillowSloved;
+        if (spriteRendererForPillow != null)
+        {
+            spriteRendererForPillow.sprite = spritePillowSloved;
+            spriteRendererForPillow.sortingOrder = 2;
+        }
         if (AvatarManager.helperAnimator != null)
             AvatarManager.helperAnimator.SetTrigger("Idle");
-
     }
 
 }
