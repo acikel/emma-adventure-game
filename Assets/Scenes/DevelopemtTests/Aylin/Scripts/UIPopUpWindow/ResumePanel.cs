@@ -14,6 +14,7 @@ public abstract class ResumePanel : MonoBehaviour, IPointerClickHandler
     private CanvasGroup canvasGroupPopUpToClose;
     protected Inventory inventory;
     private Canvas canvasResumePanel;
+    private bool popUpWindowJustOpened;
 
     //The inventory Canvas needs to be hidden by its Canvas Group when the canvas of this gameobject is active.
     public CanvasGroup canvasInventory;
@@ -29,6 +30,12 @@ public abstract class ResumePanel : MonoBehaviour, IPointerClickHandler
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
+        if (popUpWindowJustOpened)
+        {
+            popUpWindowJustOpened = false;
+            return;
+        }
+            
         //canvasToClose.SetActive(false);
         openCloseLockInventroyCanvas(false);
         onPointerAction();
@@ -45,6 +52,10 @@ public abstract class ResumePanel : MonoBehaviour, IPointerClickHandler
         openCloseLockInventroyCanvas(true);
     }
 
+    public void justOpened()
+    {
+        popUpWindowJustOpened = true;
+    }
     protected void openCloseLockInventroyCanvas(bool openLockCloseInventory)
     {
         if (openLockCloseInventory)

@@ -16,12 +16,20 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     //This is handled in the subclass OpenImagePopUp and OpenLockDoor when player enters a trigger.
     protected bool mouseWasClickedOnObject;
 
+
+    public SpriteRenderer spriteRendererHintImage;
+    private Color tmpColor;
+    private float hintImageFadeInDuration = 1f;
+    private float hintImageDisappearDuration = 0.3f;
+
     // Start is called before the first frame update
     void Start()
     {
         inputManager = API.InputManager;
         inventory = API.Inventory;
         initializeCanvasToOpen();
+        //spriteRendererHintImage = GetComponent<SpriteRenderer>();
+        setAlphaOfHintImage(0);
     }
 
     // Update is called once per frame
@@ -56,22 +64,26 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     //object and the mouse, otherwise the OnMouse events of this script wont be triggered when entering the trigger/collider).
     public abstract bool activatePopUpWindow();
 
-    public void OnMouseOver()
+    private void OnMouseOver()
     {
-        //Debug.Log("OnMouseOver1");
-        //inventory.InteractionWithUIActive = true;
+        if (spriteRendererHintImage != null && canvasToOpen.alpha == 0)
+            StartCoroutine(Fade(1, spriteRendererHintImage));
+
     }
 
     public void OnMouseExit()
     {
         //Debug.Log("OnMouseExit1");
-        if (canvasToOpen!=null && canvasToOpen.alpha==0)
+        if (canvasToOpen != null && canvasToOpen.alpha==0)
         {
+            StartCoroutine(waitAndHideHintImage());
             //Debug.Log("OnMouseExit1b");
             inventory.InteractionWithUIActive = false;
             mouseWasClicked = false;
         }
+
         
+
     }
 
     public void OnMouseDown()
@@ -80,6 +92,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         //Debug.Log("OnMouseDown1");
         if (activatePopUpWindow())
         {
+            setAlphaOfHintImage(0);
             //Debug.Log("OnMouseDown2");
             inventory.InteractionWithUIActive = true;
             resetMouseClick();
@@ -92,4 +105,34 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         mouseWasClicked = false;
     }
 
+    private IEnumerator waitAndHideHintImage()
+    {
+        if (spriteRendererHintImage == null || canvasToOpen.alpha == 1)
+            yield break;
+
+        yield return new WaitForSeconds(hintImageDisappearDuration);
+        setAlphaOfHintImage(0);
+    }
+
+    protected void setAlphaOfHintImage(float alpha)
+    {
+        if (spriteRendererHintImage == null)
+            return;
+
+        tmpColor = spriteRendererHintImage.color;
+        tmpColor.a = alpha;
+        spriteRendererHintImage.color = tmpColor;
+    }
+
+    private IEnumerator Fade(float finalAlpha, SpriteRenderer spriteRenderer)
+    {
+
+        float fadeSpeed = Mathf.Abs(spriteRenderer.color.a - finalAlpha) / hintImageFadeInDuration;
+        while (!Mathf.Approximately(spriteRenderer.color.a, finalAlpha))
+        {
+            setAlphaOfHintImage(Mathf.MoveTowards(spriteRenderer.color.a, finalAlpha,
+                fadeSpeed * Time.deltaTime));
+            yield return null;
+        }
+    }
 }

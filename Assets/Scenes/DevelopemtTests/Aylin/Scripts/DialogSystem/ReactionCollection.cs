@@ -9,11 +9,16 @@ public class ReactionCollection : MonoBehaviour
     public Reaction[] reactions;
     private int lastReactionToPlay;
     private int lastReactionToPlayTmp;
+    //counts the total of reactions with reaction turn higher then 0, as the ones set to 0 are not played because the textManger turn count start from 1.
+    //This is intentional as this way audio reactions dont need to be played after each text even if they are added.
+    private int countOfReactions;
 
     private void OnEnable()
     {
         if (reactions == null)
             return;
+
+        setCountOfActiveReactions();
 
         //reactions = new Reaction[0];
         TextManager.OnNextTurn += React;
@@ -32,6 +37,16 @@ public class ReactionCollection : MonoBehaviour
         React();
     }
 
+    //For explanation of this method see explanation of countOfReactions.
+    private void setCountOfActiveReactions()
+    {
+        countOfReactions = 0;
+        foreach (Reaction reaction in reactions)
+        {
+            if (reaction.reactionTurn != 0)
+                countOfReactions++;
+        }
+    }
     private void printReactions()
     {
         for (int i=0; i< reactions.Length; i++)
@@ -83,7 +98,8 @@ public class ReactionCollection : MonoBehaviour
 
     public bool reactionsFinished()
     {
-        return lastReactionToPlay == reactions.Length;
+        //Debug.Log(name +": "+ " lastReactionToPlay: "+ lastReactionToPlay+ " countOfReactions: " + countOfReactions);
+        return lastReactionToPlay >= countOfReactions;
     }
 
     private void assignGameObjectName()

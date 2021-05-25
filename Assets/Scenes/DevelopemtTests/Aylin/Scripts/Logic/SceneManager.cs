@@ -19,8 +19,13 @@ public class SceneManager : MonoBehaviour
     private CanvasGroup faderCanvasGroup;
     public float fadeDuration = 1f;
 
+    //The inventory Canvas needs to be hidden by its Canvas Group when the dialog system is opened.
+    private CanvasGroup canvasInventory;
+    private string currentDialogSystemName;
+
     private Inventory inventory;
     private bool isReloading;
+    private bool dialogUnloading;
 
     //need to be actions to call in IEnumerator method HandleOnCollisionWithPortal below.
     //subscribed by Saver and therefore GameObjectActivitySaver as Saver is the parent of GameObjectActivitySaver.
@@ -32,6 +37,24 @@ public class SceneManager : MonoBehaviour
 
     public List<AvatarScaleValues> sceneScales = new List<AvatarScaleValues>();
     private AvatarScaleValues currentSceneValues;
+
+    private bool tmpPlayerFlip;
+    private bool tmpHelperFlip;
+
+    //keeps count of current sequence/level of the game (as after each dialog a new sequence/level is entered).
+    private int currentSequenceNummber;
+
+    public int CurrentSequenceNummber
+    {
+        get
+        {
+            return currentSequenceNummber;
+        }
+        set
+        {
+            currentSequenceNummber = value;
+        }
+    }
 
     public bool IsReloading
     {
@@ -52,6 +75,7 @@ public class SceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentSequenceNummber = 1;
         faderCanvasGroup = API.FadeImage;
         faderCanvasGroup.alpha = 1f;
         avatarManager = API.AvatarManager;
@@ -62,10 +86,11 @@ public class SceneManager : MonoBehaviour
         //ScM.SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
         inputManager = API.InputManager;
         inventory = API.Inventory;
+        canvasInventory = API.CanvasInventory;
+        
 
         loadStartLocations();
-        if(playerStartLocation!=null)
-            initializeStartLocations();
+        initializeStartLocations();
 
         //PLayer scale and scale needs to be set on player for first scene as AfterAvatarInitialization is null on start.
         /*
@@ -81,24 +106,15 @@ public class SceneManager : MonoBehaviour
     }
 
     
-    private void loadStartLocations()
-    {
-        playerStartLocation = GameObject.Find("PlayerStartLocation");
-        helperStartLocation = GameObject.Find("HelperStartLocation");
-    }
-    private void initializeStartLocations()
-    {
-        AvatarManager.playerAvatar.gameObject.transform.position = playerStartLocation.transform.position;
-        AvatarManager.helperAvatar.gameObject.transform.position = helperStartLocation.transform.position;
-    }
     private void OnEnable()
     {
-        PlayerControler.OnCollisionWithPortal += HandleOnCollisionWithPortal;
+        dialogUnloading = false;
+        PlayerControler.OnCollisionWithPortal += HandleNextSceneLoad;
     }
 
     private void OnDisable()
     {
-        PlayerControler.OnCollisionWithPortal -= HandleOnCollisionWithPortal;
+        PlayerControler.OnCollisionWithPortal -= HandleNextSceneLoad;
     }
 
     // Update is called once per frame
@@ -121,8 +137,7 @@ public class SceneManager : MonoBehaviour
                 
                 avatarManager.ReloadGround();
                 loadStartLocations();
-                if (playerStartLocation != null)
-                    initializeStartLocations();
+                initializeStartLocations();
                 if (currentSceneValues != null)
                     AfterAvatarInitialization?.Invoke(currentSceneValues.avatarStartScale, currentSceneValues.avatarScaleFactor);
 
@@ -137,7 +152,25 @@ public class SceneManager : MonoBehaviour
     {
         return currentSceneValues;
     }
-    private IEnumerator HandleOnCollisionWithPortal(string sceneNameToTransitionTo)
+
+
+    public void loadDialogSystemLockPlayer(string dialogSystemName)
+    {
+        //Debug.Log("SceneManager loadDialogSystemLockPlayer");
+        currentDialogSystemName = dialogSystemName;
+        openCloseInventroyCanvas(false);
+        StartCoroutine(loadDialogSystem(dialogSystemName));
+
+    }
+
+    public void unloadDialogSystemLoadNewSequenceUnlockPlayer(string newSceneNameToTransitionTo)
+    {
+        dialogUnloading = true;
+        StartCoroutine(unloadDialogSystemLoadNewSequence(newSceneNameToTransitionTo));
+
+    }
+
+    private IEnumerator HandleNextSceneLoad(string sceneNameToTransitionTo)
     {
         isReloading = true;
         yield return StartCoroutine(Fade(1f));
@@ -145,9 +178,13 @@ public class SceneManager : MonoBehaviour
         if (BeforeSceneUnload != null)
             BeforeSceneUnload();
 
+        //Debug.Log(currentAdditiveSceneName);
         ScM.SceneManager.UnloadSceneAsync(currentAdditiveSceneName);
-        yield return ScM.SceneManager.LoadSceneAsync(sceneNameToTransitionTo, LoadSceneMode.Additive);
-        
+
+        if (Application.CanStreamedLevelBeLoaded(sceneNameToTransitionTo))
+        {
+            yield return ScM.SceneManager.LoadSceneAsync(sceneNameToTransitionTo, LoadSceneMode.Additive);
+        }
 
         if (AfterSceneLoad != null)
             AfterSceneLoad();
@@ -158,6 +195,27 @@ public class SceneManager : MonoBehaviour
         reloadDone = false;
 
         
+    }
+
+
+    private void loadStartLocations()
+    {
+        playerStartLocation = GameObject.Find("PlayerStartLocation");
+        helperStartLocation = GameObject.Find("HelperStartLocation");
+    }
+
+    private void loadStartLocationsDialog()
+    {
+        playerStartLocation = GameObject.Find("DialogPlayerStartLocation");
+        helperStartLocation = GameObject.Find("DialogHelperStartLocation");
+    }
+
+    private void initializeStartLocations()
+    {
+        if (playerStartLocation != null)
+            AvatarManager.playerAvatar.gameObject.transform.position = playerStartLocation.transform.position;
+        if (helperStartLocation != null)
+            AvatarManager.helperAvatar.gameObject.transform.position = helperStartLocation.transform.position;
     }
 
     private void assignScaleValueForCurrentScene()
@@ -187,14 +245,63 @@ public class SceneManager : MonoBehaviour
                 fadeSpeed * Time.deltaTime);
             yield return null;
         }
-        yield return StartCoroutine(Wait(0.001f));
-        inventory.InteractionWithUIActive = false;
-        isFading = false;
-        faderCanvasGroup.blocksRaycasts = false;
+        if(finalAlpha!=1)//only when fading in
+        {
+            yield return StartCoroutine(Wait(0.001f));
+            inventory.InteractionWithUIActive = false;
+            isFading = false;
+            if (dialogUnloading)
+            {
+                openCloseInventroyCanvas(true);
+                dialogUnloading = false;
+            }
+            faderCanvasGroup.blocksRaycasts = false;
+        }
     }
 
     private IEnumerator Wait(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+    }
+
+
+    private IEnumerator loadDialogSystem(string dialogSystemName)
+    {
+        yield return StartCoroutine(Fade(1f));
+        yield return ScM.SceneManager.LoadSceneAsync(dialogSystemName, LoadSceneMode.Additive);
+        loadStartLocationsDialog();
+        initializeStartLocations();
+        tmpPlayerFlip = AvatarManager.playerAvatar.avatarSpriteRenderer.flipX;
+        tmpHelperFlip = AvatarManager.helperAvatar.avatarSpriteRenderer.flipX;
+        AvatarManager.playerAvatar.avatarSpriteRenderer.flipX= true;
+        AvatarManager.helperAvatar.avatarSpriteRenderer.flipX = true;
+        if (currentSceneValues != null)
+            AfterAvatarInitialization?.Invoke(currentSceneValues.avatarStartScale, currentSceneValues.avatarScaleFactor);
+        //assignScaleValueForCurrentScene();
+        yield return StartCoroutine(Fade(0f));
+        inventory.InteractionWithUIActive = true; //needs to be done in Grandma.cs script too as otherwise the player still moves when starting grandma script. And here again as Fadeing with an alpha other then 1 sets inventory.InteractionWithUIActive to false as in all other scene load the player is able to move after a scene load, except for the dialog system.
+    }
+
+    private IEnumerator unloadDialogSystemLoadNewSequence(string newSceneNameToTransitionTo)
+    {
+        //Debug.Log("newSceneNameToTransitionTo: "+newSceneNameToTransitionTo);
+        yield return StartCoroutine(HandleNextSceneLoad(newSceneNameToTransitionTo));
+        yield return ScM.SceneManager.UnloadSceneAsync(currentDialogSystemName);
+
+        AvatarManager.playerAvatar.avatarSpriteRenderer.flipX = tmpPlayerFlip;
+        AvatarManager.helperAvatar.avatarSpriteRenderer.flipX = tmpHelperFlip;
+        //assignScaleValueForCurrentScene(); //This line is not needed as its already done in HandleNextSceneLoad;
+
+        //inventory.InteractionWithUIActive = false; //This line is not needed as its already done in update after reloadDone is set to false with HandleNextSceneLoad.
+    }
+
+    private void openCloseInventroyCanvas(bool openInventory)
+    {
+        if (canvasInventory == null)
+            return;
+        canvasInventory.alpha = Convert.ToInt32(openInventory);
+        canvasInventory.blocksRaycasts = openInventory;
+        canvasInventory.interactable = openInventory;
+
     }
 }

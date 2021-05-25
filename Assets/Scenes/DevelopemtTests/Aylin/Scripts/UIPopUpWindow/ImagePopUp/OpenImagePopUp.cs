@@ -11,12 +11,14 @@ public class OpenImagePopUp : OpenPopUpWindow
     private ImagePopUpPanel imagePopUpPanel;
     
 
+
     //image to be displayed by ImagePopUpWindow when this game object was clicked.
     public Sprite imageToBeDisplayed;
 
     private void OnEnable()
     {
         imagePopUpPanel = API.ImagePopUpPanel;
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,7 +30,9 @@ public class OpenImagePopUp : OpenPopUpWindow
             if (mouseWasClickedOnObject)
             {
                 imagePopUpResumePanel.openCanvas();
+                imagePopUpResumePanel.justOpened();
                 imagePopUpPanel.setImageOfPopUpImagePanel(imageToBeDisplayed);
+                setAlphaOfHintImage(0);
                 inventory.InteractionWithUIActive = true;
                 //resetMouseClick needed otherwise after closing popupwindow it is resumed after each reinter into trigger.
                 resetMouseClick();
@@ -52,6 +56,7 @@ public class OpenImagePopUp : OpenPopUpWindow
         {
             //Debug.Log("ImagePopUp Door activatePopUpWindow2");
             imagePopUpResumePanel.openCanvas();
+            imagePopUpResumePanel.justOpened();
             imagePopUpPanel.setImageOfPopUpImagePanel(imageToBeDisplayed);
         }
         return playerCollided;
@@ -62,4 +67,6 @@ public class OpenImagePopUp : OpenPopUpWindow
         canvasToOpen = API.CanvasImagePopUp;
         imagePopUpResumePanel = API.ImagePopUpResumePanel;
     }
+
+   
 }

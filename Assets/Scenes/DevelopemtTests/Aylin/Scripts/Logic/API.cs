@@ -41,6 +41,7 @@ public static class API
     private static CanvasGroup _canvasLockInstance;
     private static ImagePopUpResumePanel _imagePopUpResumePanel;
     private static CanvasGroup _canvasImagePopUpInstance;
+    private static CanvasGroup _canvasInventoryInstance;
     private static ImagePopUpPanel _ImagePopUpPanelInstance;
 
     public static InputManager InputManager
@@ -176,6 +177,20 @@ public static class API
         }
     }
 
+    public static CanvasGroup CanvasInventory
+    {
+        get
+        {
+            if (_canvasInventoryInstance == null ||
+            ReferenceEquals(_canvasInventoryInstance, null))
+            {
+                _canvasInventoryInstance = GameObject.FindGameObjectWithTag("CanvasInventory").GetComponent<CanvasGroup>();
+            }
+            return _canvasInventoryInstance;
+        }
+    }
+
+    
     public static Inventory Inventory
     {
         get

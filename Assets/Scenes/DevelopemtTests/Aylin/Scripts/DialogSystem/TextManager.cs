@@ -11,6 +11,7 @@ using System.Collections;
 // makes sure they are played in the correct order.
 public class TextManager : MonoBehaviour
 {
+
     // This struct encapsulates the messages that are
     // sent for organising.
     public struct Instruction
@@ -32,6 +33,10 @@ public class TextManager : MonoBehaviour
     public delegate void OnNextTurnHandler();
     public static event OnNextTurnHandler OnNextTurn;
 
+    //list of all ReactionCollections in DialogScene to determine if all ended in update function.
+    public List<ReactionCollection> listOfReactionColledtions;
+    private SceneManager sceneManager;
+
     //Subscribed by Typeeriter to determine end of typewriting.
     public delegate void OnEndTypeWritingHandler();
     public static event OnEndTypeWritingHandler OnEndTypeWriting;
@@ -52,6 +57,8 @@ public class TextManager : MonoBehaviour
     private static int turnCounter=1;
     private bool newMouseClick = true;
 
+    //Canvas to asign main camera to for render mode screen space camera, as the camera is another scene then the dialog system.
+    public Canvas CanvasDialog;
     public static int TurnCounter
     {
         get
@@ -62,7 +69,11 @@ public class TextManager : MonoBehaviour
 
     private void Start()
     {
+        CanvasDialog.worldCamera = Camera.main;
+        //Set CanvasDialog.planeDistance to zero as mouse events (onclick) wont work on buttons otherwise as colliders/raycastblockers are overlapped.
+        CanvasDialog.planeDistance = 0;
         inputManager = API.InputManager;
+        sceneManager = API.SceneManager;
         typeWriter = GetComponent<TipewriterEffect>();
         turnCounter = 1;
         addOnClickListenerToButtons();
@@ -79,7 +90,7 @@ public class TextManager : MonoBehaviour
         }
     }
 
-    void OnClick()
+    public void OnClick()
     {
         setButtonsActive(false);
         //Write.written = false;
@@ -106,11 +117,32 @@ public class TextManager : MonoBehaviour
         OnNextTurn?.Invoke();
     }
 
+    private bool didAllReactionsEnd()
+    {
+        if (listOfReactionColledtions == null)
+            return false;
+        foreach(ReactionCollection reactionCollection in listOfReactionColledtions)
+        {
+            if (!reactionCollection.reactionsFinished())
+                return false;
+        }
+        return true;
+    }
+
     private void Update()
     {
         //Debug.Log("turn count:" + turnCounter + "newMouseClick"+ newMouseClick+ "inputManager.isMouseDown()"+ inputManager.isMouseDown()+ "!buttonAnswerOptions[0].IsActive()"+ !buttonAnswerOptions[0].IsActive());
         if (newMouseClick && inputManager.isMouseDown() && !buttonAnswerOptions[0].IsActive()/*&& type writer ist fertig und sound fertig sonst beenden in anderen methode und keine buttons activ da dann antwort gewaehlt werden muss*/)
         {
+            //Debug.Log("Text Manager in next turn");
+            if (didAllReactionsEnd())
+            {
+                //Debug.Log("Text Manager didAllReactionsEnd()");
+                sceneManager.CurrentSequenceNummber++;
+                //Disable for smooth fade to next scene
+                CanvasDialog.enabled = false;
+                sceneManager.unloadDialogSystemLoadNewSequenceUnlockPlayer("Sequence"+sceneManager.CurrentSequenceNummber+"Zone1");
+            }
             newMouseClick = false;
             if (typeWriter.IsWritingDone)
             {

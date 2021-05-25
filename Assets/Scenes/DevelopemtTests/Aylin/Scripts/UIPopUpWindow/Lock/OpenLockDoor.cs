@@ -33,7 +33,9 @@ public class OpenLockDoor : OpenPopUpWindow
             if (mouseWasClickedOnObject)
             {
                 lockResumePanel.openCanvas();
+                lockResumePanel.justOpened();
                 inventory.InteractionWithUIActive = true;
+                setAlphaOfHintImage(0);
                 //resetMouseClick needed otherwise after closing popupwindow it is resumed after each reinter into trigger.
                 resetMouseClick();
             }
@@ -60,6 +62,7 @@ public class OpenLockDoor : OpenPopUpWindow
         if (playerCollided)
         {
             lockResumePanel.openCanvas();
+            lockResumePanel.justOpened();
         }
         return playerCollided;
     }
