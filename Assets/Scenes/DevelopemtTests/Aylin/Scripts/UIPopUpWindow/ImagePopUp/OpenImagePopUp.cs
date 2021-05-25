@@ -30,7 +30,7 @@ public class OpenImagePopUp : OpenPopUpWindow
             if (mouseWasClickedOnObject)
             {
                 imagePopUpResumePanel.openCanvas();
-                imagePopUpResumePanel.justOpened();
+                //imagePopUpResumePanel.justOpened(); //no need for resume onPointerDown blocker as player first needs to walk to this game object and mouse is aleady released till then.
                 imagePopUpPanel.setImageOfPopUpImagePanel(imageToBeDisplayed);
                 setAlphaOfHintImage(0);
                 inventory.InteractionWithUIActive = true;
@@ -46,6 +46,7 @@ public class OpenImagePopUp : OpenPopUpWindow
         {
             //Debug.Log("ImagePopUp Door player collided exit");
             playerCollided = false;
+            resetMouseClick();
         }
     }
 

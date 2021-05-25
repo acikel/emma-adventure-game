@@ -48,6 +48,16 @@ public abstract class OpenPopUpWindow : MonoBehaviour
                 mouseWasClickedOnObject = false;
             } 
         }
+
+        //inventory.InteractionWithUIActive needs to be reset if player was on this game object when entering the pop up image
+        //and exited this game object with the mouse while the pop up image was open this way the mouse exit wasnt entered
+        // and inventory.InteractionWithUIActive wasnt reset to false.
+        if (!inputManager.isMouseDown() && canvasToOpen.alpha == 0 && inventory.InteractionWithUIActive)
+        {
+            inventory.InteractionWithUIActive = false;
+            resetMouseClick();
+        }
+            
     }
 
     //this is the method of a subclass (like LockDoor and ImagePopUp) which needs to initialize canvasToOpen via API class 
@@ -86,8 +96,8 @@ public abstract class OpenPopUpWindow : MonoBehaviour
             mouseWasClicked = false;
         }
 
-        
 
+        //resetMouseClick();
     }
 
     public void OnMouseDown()
@@ -99,7 +109,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
             inventory.InteractionWithUIActive = true;
             setAlphaOfHintImage(0);
             //Debug.Log("OnMouseDown2");
-            resetMouseClick();
+            //resetMouseClick();
         }
         
     }

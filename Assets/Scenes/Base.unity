@@ -883,6 +883,7 @@ MonoBehaviour:
   - {fileID: 7055683086293303161, guid: e6a211f37a2d92744b6c27180c5a2747, type: 3}
   - {fileID: 8519019710717560422, guid: d72576f3c16de024d96eb3dc95a50306, type: 3}
   - {fileID: 2483125759296433395, guid: 10bffb7f28d01674eba0b6cbc5c538ea, type: 3}
+  - {fileID: 8429834706820185778, guid: 5555f73e32ed0b34d88b3e7d4dc79234, type: 3}
   inventoryItemslots: {fileID: 558216588}
   InventoryBlocker: {fileID: 980996455}
   isFull: 00000000
@@ -1504,6 +1505,7 @@ MonoBehaviour:
   CheckPanelSolved: {fileID: 21300000, guid: 5d77cc6c3e807124b938e1e008bea88a, type: 3}
   CheckPanelUnsolved: {fileID: 21300000, guid: 615ea2366a585c84e94455c953561325, type: 3}
   CheckPanel: {fileID: 1705586563}
+  imageResumePanel: {fileID: 988109667}
 --- !u!1 &804535769
 GameObject:
   m_ObjectHideFlags: 0
@@ -3256,7 +3258,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1455400433}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 0
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3661,6 +3663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93ebfa38f076b24a8824724491b6532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageResumePanel: {fileID: 231938325}
   popUpImagePanelImage: {fileID: 196748527}
 --- !u!1001 &1054238852431802393
 PrefabInstance:

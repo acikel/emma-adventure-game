@@ -28,9 +28,14 @@ public abstract class ResumePanel : MonoBehaviour, IPointerDownHandler
         inventory = API.Inventory;
     }
 
+   
     public void OnPointerDown(PointerEventData pointerEventData)
     {
-        
+        //Debug.Log("OnPointerDown1");
+        //OnPointerDown blocker if PopUpWindow was lounched on ResumePanel. Without this blocker the popupwindow will be
+        //closed immidiatly as the OnPointerDown mouse click will be notified on the resume panel.
+        //popUpWindowJustOpened is set to true if to popupwindow is not launched on the resume panel. This is done
+        //in ImagePopUpPanel.cs and LockPanel.cs via OnPointerEnter and imageResumePanel.resetJustOpened().
         if (popUpWindowJustOpened)
         {
             popUpWindowJustOpened = false;
@@ -38,19 +43,15 @@ public abstract class ResumePanel : MonoBehaviour, IPointerDownHandler
         }
         
         
+        
         //canvasToClose.SetActive(false);
         openCloseLockInventroyCanvas(false);
         onPointerAction();
+        //inventory.InteractionWithUIActive = false;
         //needs to be set to false so player can move player again.
         //It is set to true when this panel is opened up through the script ImagePopUp
         //or its subclasses LockDoor or ImagePopUp.
-        
-    }
 
-    public void OnPointerUp(PointerEventData pointerEventData)
-    {
-        popUpWindowJustOpened = true;
-        inventory.InteractionWithUIActive = false;
     }
 
     public abstract void onPointerAction();
@@ -58,6 +59,7 @@ public abstract class ResumePanel : MonoBehaviour, IPointerDownHandler
     public void openCanvas()
     {
         //StartCoroutine(openCanvasLockInventroyResetOnPointAfterWait());
+        //Debug.Log("openCanvas");
         openCloseLockInventroyCanvas(true);
     }
 
@@ -65,10 +67,15 @@ public abstract class ResumePanel : MonoBehaviour, IPointerDownHandler
     {
         popUpWindowJustOpened = true;
     }
+    public void resetJustOpened()
+    {
+        popUpWindowJustOpened = false;
+    }
     protected void openCloseLockInventroyCanvas(bool openLockCloseInventory)
     {
         if (openLockCloseInventory)
         {
+            //Debug.Log("openCanvas2");
             canvasPopUpToClose.sortingOrder = 8;
             canvasResumePanel.sortingOrder = 8;
 
@@ -83,7 +90,7 @@ public abstract class ResumePanel : MonoBehaviour, IPointerDownHandler
         canvasGroupPopUpToClose.alpha = Convert.ToInt32(openLockCloseInventory);
         canvasGroupPopUpToClose.blocksRaycasts = openLockCloseInventory;
         canvasGroupPopUpToClose.interactable = openLockCloseInventory;
-
+        //Debug.Log("openCanvas alpha"+ canvasGroupPopUpToClose.alpha);
 
 
         canvasInventory.alpha = Convert.ToInt32(!openLockCloseInventory);
