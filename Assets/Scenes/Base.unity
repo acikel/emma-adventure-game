@@ -1255,6 +1255,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598116510}
   m_CullTransparentMesh: 1
+--- !u!1 &615209807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3554606657285527818, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+  m_PrefabInstance: {fileID: 3554606656321580620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &615209808
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615209807}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d8d5771e8e80d0b4ab618ab17fc2feb1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &630309717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,6 +3833,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3554606657285527813, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: avatarAnimator
+      value: 
+      objectReference: {fileID: 615209808}
     - target: {fileID: 3554606657285527818, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
       propertyPath: m_Name
       value: Helper

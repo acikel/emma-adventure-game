@@ -25,6 +25,8 @@ public class HelperPillow : ActionObject
         AvatarManager.helperAvatar.gameObject.SetActive(true);
         if (spiteRendererForPillow != null)
             spiteRendererForPillow.sprite = spritePillowSloved;
+        if (AvatarManager.helperAnimator != null)
+            AvatarManager.helperAnimator.SetTrigger("Idle");
 
     }
 

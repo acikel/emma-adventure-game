@@ -19,6 +19,10 @@ public abstract class ResumePanel : MonoBehaviour, IPointerDownHandler
     //The inventory Canvas needs to be hidden by its Canvas Group when the canvas of this gameobject is active.
     public CanvasGroup canvasInventory;
 
+    //subscribed by OpenPopUpWindow.cs to unlock player control after popupwondow is closed (for lock popupwindow and also for image popupwindow) in this OnPointerDown method with openCloseLockInventroyCanvas(false).
+    public delegate void OnClosePopUpWinodwByResumePanelHandler();
+    public static event OnClosePopUpWinodwByResumePanelHandler OnClosePopUpWinodwByResumePanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +50,8 @@ public abstract class ResumePanel : MonoBehaviour, IPointerDownHandler
         
         //canvasToClose.SetActive(false);
         openCloseLockInventroyCanvas(false);
+        OnClosePopUpWinodwByResumePanel?.Invoke();
+        //Debug.Log("OnPointerDown4");
         onPointerAction();
         //inventory.InteractionWithUIActive = false;
         //needs to be set to false so player can move player again.

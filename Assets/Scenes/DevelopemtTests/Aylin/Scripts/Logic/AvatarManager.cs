@@ -14,12 +14,17 @@ public class AvatarManager : Object
 	public static Avatar currentAvatar;
 	public static GameObject background;
 	public static PolygonCollider2D backgroundCollider;
+	public static Animator helperAnimator;
+	public static Animator playerAnimator;
 
 	public static Avatar playerAvatar;
 
 	public static Avatar helperAvatar;
 
 	public static Transform groundCenter;
+
+	//private static GameObject player;
+	//private static GameObject helper;
 	public static AvatarManager Instance
 	{
 		get
@@ -30,8 +35,12 @@ public class AvatarManager : Object
 				
 				AvatarManager.instance = new AvatarManager();
 				//Debug.Log("hi3"+instance);
+				//player = GameObject.FindWithTag("Player");
+				//helper = GameObject.FindWithTag("Helper");
 				playerAvatar = GameObject.FindWithTag("Player").GetComponent<Emma>();
 				helperAvatar = GameObject.FindWithTag("Helper").GetComponent<Helper>();
+				playerAnimator = playerAvatar.gameObject.GetComponent<Animator>();
+				helperAnimator = helperAvatar.gameObject.GetComponent<Animator>();
 				helperAvatar.gameObject.SetActive(false);
 				background = GameObject.FindWithTag("Ground");
 				backgroundCollider = background?.GetComponent<PolygonCollider2D>();

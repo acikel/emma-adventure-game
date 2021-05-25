@@ -14,12 +14,14 @@ public class OpenLockDoor : OpenPopUpWindow
     private LockResumePanel lockResumePanel;
 
 
-    private void OnEnable()
+    private new void OnEnable()
     {
+        base.OnEnable();
         LockPanel.OnLockSolved += lockResolved;
     }
-    private void OnDisable()
+    private new void OnDisable()
     {
+        base.OnDisable();
         LockPanel.OnLockSolved -= lockResolved;
     }
 
