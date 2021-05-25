@@ -120,7 +120,7 @@ public class PlayerControler : MonoBehaviour
             }
             //else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
             
-            //TODO UNCOMMENT TO GET CONTROL OVER HELPER BY CLICKING ON HIM
+            /*//TODO UNCOMMENT TO GET CONTROL OVER HELPER BY CLICKING ON HIM
             else if ((raycastHit = inputManager.getRaycastRigidbody("Helper")).rigidbody != null)
             {
                 if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
@@ -128,7 +128,7 @@ public class PlayerControler : MonoBehaviour
                     avatarManager.ChangeController(AvatarManager.helperAvatar, AvatarManager.playerAvatar);
                 }
             }
-            
+            */
             else if (inputManager.checkIfColliderWasHit("SelectedItem"))
             {
 
