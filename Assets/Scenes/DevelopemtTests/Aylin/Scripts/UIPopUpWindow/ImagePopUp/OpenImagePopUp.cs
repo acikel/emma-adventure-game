@@ -51,9 +51,10 @@ public class OpenImagePopUp : OpenPopUpWindow
 
     public override bool activatePopUpWindow()
     {
-        //Debug.Log("ImagePopUp Door activatePopUpWindow1");
+        //Debug.Log("ImagePopUp Door activatePopUpWindow1 playerCollided: "+ playerCollided);
         if (playerCollided)
         {
+            inventory.InteractionWithUIActive = true;
             //Debug.Log("ImagePopUp Door activatePopUpWindow2");
             imagePopUpResumePanel.openCanvas();
             imagePopUpResumePanel.justOpened();

@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 //Also the Panel itself has to have a canvas conponent which does not inherit the sorting order from its parents and is one less then the sorting order of canvasPopUpToClose.
 //And a Graphic Raycaster component. Also the image which partly covers this resume panel needs to have an Graphic Raycaster component otherwise this panel will apear and disapear immidiatly.
 //The image of the panel which holds this scripts can be set invisible by setting the alpha of its image to transparent.
-public abstract class ResumePanel : MonoBehaviour, IPointerClickHandler
+public abstract class ResumePanel : MonoBehaviour, IPointerDownHandler
 {
     public Canvas canvasPopUpToClose;
     private CanvasGroup canvasGroupPopUpToClose;
@@ -28,20 +28,28 @@ public abstract class ResumePanel : MonoBehaviour, IPointerClickHandler
         inventory = API.Inventory;
     }
 
-    void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData pointerEventData)
     {
+        
         if (popUpWindowJustOpened)
         {
             popUpWindowJustOpened = false;
             return;
         }
-            
+        
+        
         //canvasToClose.SetActive(false);
         openCloseLockInventroyCanvas(false);
         onPointerAction();
         //needs to be set to false so player can move player again.
         //It is set to true when this panel is opened up through the script ImagePopUp
         //or its subclasses LockDoor or ImagePopUp.
+        
+    }
+
+    public void OnPointerUp(PointerEventData pointerEventData)
+    {
+        popUpWindowJustOpened = true;
         inventory.InteractionWithUIActive = false;
     }
 
@@ -49,6 +57,7 @@ public abstract class ResumePanel : MonoBehaviour, IPointerClickHandler
 
     public void openCanvas()
     {
+        //StartCoroutine(openCanvasLockInventroyResetOnPointAfterWait());
         openCloseLockInventroyCanvas(true);
     }
 
@@ -81,5 +90,24 @@ public abstract class ResumePanel : MonoBehaviour, IPointerClickHandler
         canvasInventory.blocksRaycasts = !openLockCloseInventory;
         canvasInventory.interactable = !openLockCloseInventory;
 
+    }
+
+    private IEnumerator openCanvasLockInventroyResetOnPointAfterWait()
+    {
+
+        canvasPopUpToClose.sortingOrder = 8;
+        canvasResumePanel.sortingOrder = 8;
+
+        canvasGroupPopUpToClose.alpha = 1;
+        canvasGroupPopUpToClose.blocksRaycasts = true;
+        canvasGroupPopUpToClose.interactable = true;
+
+        canvasInventory.alpha = 0;
+        canvasInventory.blocksRaycasts = false;
+        canvasInventory.interactable = false;
+
+        //needed to not recognize OnPointerClick when first opened.
+        yield return new WaitForSeconds(0.4f);
+        popUpWindowJustOpened = false;
     }
 }

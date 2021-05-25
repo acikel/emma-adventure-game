@@ -67,7 +67,11 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     private void OnMouseOver()
     {
         if (spriteRendererHintImage != null && canvasToOpen.alpha == 0)
+        {
+            //inventory.InteractionWithUIActive = true;
             StartCoroutine(Fade(1, spriteRendererHintImage));
+        }
+            
 
     }
 
@@ -89,12 +93,12 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     public void OnMouseDown()
     {
         mouseWasClicked = true;
-        //Debug.Log("OnMouseDown1");
-        if (activatePopUpWindow())
+        //Debug.Log("OnMouseDown1 canvasToOpen.alpha: "+ canvasToOpen.alpha);
+        if (canvasToOpen.alpha == 0 && activatePopUpWindow())
         {
+            inventory.InteractionWithUIActive = true;
             setAlphaOfHintImage(0);
             //Debug.Log("OnMouseDown2");
-            inventory.InteractionWithUIActive = true;
             resetMouseClick();
         }
         
