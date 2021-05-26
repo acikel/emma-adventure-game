@@ -308,9 +308,9 @@ public class PlayerControler : MonoBehaviour
         raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.up, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
         if (assignColliderAndExit()) return true;
 
-        //Only hits ground layers. Searches for Ground collider from right. Same as problem as left raycast below if scene sequence1zone5 would be flipped.
-        //raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
-        //if (assignColliderAndExit()) return true;
+        //Only hits ground layers. Searches for Ground collider from right.
+        raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
+        if (assignColliderAndExit()) return true;
 
         //Raycast to left not needed. Causes problems with center raycast (for example for the background collider in scene sequence1zone5). Better to raycast to center then.
         //Only hits ground layers. Searches for Ground collider from left
@@ -372,8 +372,7 @@ public class PlayerControler : MonoBehaviour
         if (avatarIsCollidingWithObstacle)
         {
             avatar.transform.position = avatarPreviousPosition;
-        }else
-        if (t >= avatar.startWalkDelay && t < stopDistance && !walkTriggered)
+        }else if (t >= avatar.startWalkDelay && t < stopDistance && !walkTriggered)
         {
             triggerWalkAnimation();
         }
