@@ -11,9 +11,12 @@ public class PlayerControler : MonoBehaviour
     private bool isMoving;
     private Avatar avatar;
     private RaycastHit2D raycastSecondayHit;
+    private RaycastHit2D raycastSecondayHitCompare;
+
     private Vector2 mousePositionWorld2d;
 
     private RaycastHit2D raycastHit;
+    
 
     private AvatarManager avatarManager;
     private InputManager inputManager;
@@ -183,7 +186,7 @@ public class PlayerControler : MonoBehaviour
             else
             {
                 //print("name3: " + raycastFirstHit.collider);
-                if (getGroundColliderIntersectionToMouseclickOutsideGround())
+                if (getGroundColliderIntersectionToMouseclickOutsideGroundWithSmallestDistance())
                 {
                     //move player infront of item.
                     if (inputManager.checkIfColliderWasHit("Item"))
@@ -297,7 +300,7 @@ public class PlayerControler : MonoBehaviour
             //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale * LocalScaleRight;
         }
     }
-    private bool getGroundColliderIntersectionToMouseclickOutsideGround()
+    private bool getGroundColliderIntersectionToMouseclickOutsideGroundWithoutSmallestDistance()
     {
         mousePositionWorld2d = inputManager.getMousePositionWorld2d();
         //Only hits ground layers. Searches for Ground collider from above
@@ -329,6 +332,62 @@ public class PlayerControler : MonoBehaviour
 
         return false;
 
+    }
+
+
+    private bool getGroundColliderIntersectionToMouseclickOutsideGroundWithSmallestDistance()
+    {
+        mousePositionWorld2d = inputManager.getMousePositionWorld2d();
+        //Only hits ground layers. Searches for Ground collider from above
+        raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.down, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
+        //if (assignColliderAndExit()) return true;
+
+        //Only hits ground layers. Searches for Ground collider from below
+        rayCastAndGetSmallestDistance(Vector2.up);
+
+        //Only hits ground layers. Searches for Ground collider from right.
+        rayCastAndGetSmallestDistance(Vector2.right);
+
+        //Only hits ground layers. Searches for Ground collider from left
+        rayCastAndGetSmallestDistance(Vector2.left);
+
+        if (AvatarManager.groundCenter != null)
+        {
+            //Debug.Log("GroundCenter");
+            Vector2 groundCenter2d = AvatarManager.groundCenter.position;
+            Vector2 direction = groundCenter2d - mousePositionWorld2d;
+            rayCastAndGetSmallestDistance(direction);
+        }
+
+
+        if (assignColliderAndExit()) return true;
+        return false;
+
+    }
+
+    private void rayCastAndGetSmallestDistance(Vector2 direction)
+    {
+        raycastSecondayHitCompare = Physics2D.Raycast(mousePositionWorld2d, direction, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
+        //if (assignColliderAndExit()) return true;
+        raycastSecondayHit = getRaycastWithSmallestDistance(raycastSecondayHit, raycastSecondayHitCompare, mousePositionWorld2d);
+    }
+
+    private RaycastHit2D getRaycastWithSmallestDistance(RaycastHit2D raycast1, RaycastHit2D raycast2, Vector2 targetPosition)
+    {
+        if (raycast1.collider == null)
+            return raycast2;
+
+        if (raycast2.collider == null)
+            return raycast1;
+
+        if (Vector2.Distance(raycast1.point,targetPosition)> Vector2.Distance(raycast2.point, targetPosition))
+        {
+            return raycast2;
+        }
+        else
+        {
+            return raycast1;
+        }
     }
     private bool assignColliderAndExit()
     {
