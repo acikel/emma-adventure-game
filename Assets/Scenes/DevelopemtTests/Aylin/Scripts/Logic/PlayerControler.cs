@@ -308,19 +308,21 @@ public class PlayerControler : MonoBehaviour
         raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.up, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
         if (assignColliderAndExit()) return true;
 
-        //Only hits ground layers. Searches for Ground collider from right
-        raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
-        if (assignColliderAndExit()) return true;
+        //Only hits ground layers. Searches for Ground collider from right. Same as problem as left raycast below if scene sequence1zone5 would be flipped.
+        //raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
+        //if (assignColliderAndExit()) return true;
 
+        //Raycast to left not needed. Causes problems with center raycast (for example for the background collider in scene sequence1zone5). Better to raycast to center then.
         //Only hits ground layers. Searches for Ground collider from left
-        raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
-        if (assignColliderAndExit()) return true;
+        //raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.left, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
+        //if (assignColliderAndExit()) return true;
 
         if (AvatarManager.groundCenter != null)
         {
+            //Debug.Log("GroundCenter");
             Vector2 groundCenter2d = AvatarManager.groundCenter.position;
             Vector2 direction = groundCenter2d - mousePositionWorld2d;
-            raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, 1 << LayerMask.NameToLayer("Ground"));
+            raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, direction, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
             if (assignColliderAndExit()) return true;
 
         }
@@ -335,6 +337,7 @@ public class PlayerControler : MonoBehaviour
             targetPosition = raycastSecondayHit.point;
             return true;
         }
+        //Debug.Log("assignColliderAndExit false");
         return false;
     }
 
