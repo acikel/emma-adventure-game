@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 public enum GameState { INTRO, MAIN_MENU, PAUSED, GAME, CREDITS, HELP }
 public class AvatarManager : Object
@@ -14,6 +15,7 @@ public class AvatarManager : Object
 	public static Avatar currentAvatar;
 	public static GameObject background;
 	public static PolygonCollider2D backgroundCollider;
+	public static List<Collider2D> obstacles = new List<Collider2D>();
 	public static Animator helperAnimator;
 	public static Animator playerAnimator;
 
@@ -22,6 +24,9 @@ public class AvatarManager : Object
 	public static Avatar helperAvatar;
 
 	public static Transform groundCenter;
+
+	private static GameObject[] obstaclesTmp;
+	private SceneManager sceneManager = API.SceneManager;
 
 	//private static GameObject player;
 	//private static GameObject helper;
@@ -45,6 +50,11 @@ public class AvatarManager : Object
 				background = GameObject.FindWithTag("Ground");
 				backgroundCollider = background?.GetComponent<PolygonCollider2D>();
 				
+				obstaclesTmp = GameObject.FindGameObjectsWithTag("Obstacle");
+				foreach (GameObject gameObject in obstaclesTmp)
+				{
+					obstacles.AddRange(gameObject.transform.GetComponentsInChildren<Collider2D>());
+				}
 
 				currentAvatar = playerAvatar;
 				groundCenter = GameObject.FindWithTag("Ground")?.transform.Find("Center");
@@ -55,6 +65,7 @@ public class AvatarManager : Object
 
 	}
 
+	//Used by Scene Manager after new scene load.
 	public void ReloadGround()
     {
 		//Debug.Log("hi");
@@ -62,7 +73,31 @@ public class AvatarManager : Object
 		background = GameObject.FindWithTag("Ground");
 		groundCenter = GameObject.FindWithTag("Ground").transform.Find("Center");
 	}
-	
+	//Used Scene Manager after new scene load.
+	public void ReloadObstacles()
+	{
+		//Debug.Log("ReloadObstacles");
+		obstacles.Clear();
+		obstaclesTmp = GameObject.FindGameObjectsWithTag("Obstacle");
+		foreach(GameObject gameObject in obstaclesTmp)
+        {
+			obstacles.AddRange(gameObject.transform.GetComponentsInChildren<Collider2D>());
+        }
+	}
+
+	public bool checkForCollisionWithObstacles(Collider2D colliderToCheck)
+    {
+		if (sceneManager.IsReloading)
+			return false;
+
+        foreach (Collider2D obstacleCollider in obstacles)
+        {
+			if (colliderToCheck.IsTouching(obstacleCollider))
+				return true;
+		}
+		return false;
+		
+    }
 	public void ChangeGroundCenter(Transform newGroundCenter)
 	{
 		groundCenter = newGroundCenter;

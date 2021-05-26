@@ -3772,6 +3772,14 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -0.45
       objectReference: {fileID: 0}
+    - target: {fileID: 1054238853574533172, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+      propertyPath: colliderOfAvatarHelper
+      value: 
+      objectReference: {fileID: 3554606656321580621}
+    - target: {fileID: 1054238853574533172, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+      propertyPath: colliderOfAvatarPlayer
+      value: 
+      objectReference: {fileID: 1054238852431802394}
     - target: {fileID: 1054238853574533183, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3782,6 +3790,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+--- !u!58 &1054238852431802394 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1054238853574533171, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+  m_PrefabInstance: {fileID: 1054238852431802393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3554606656321580620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3875,3 +3888,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+--- !u!58 &3554606656321580621 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3554606657285527815, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+  m_PrefabInstance: {fileID: 3554606656321580620}
+  m_PrefabAsset: {fileID: 0}

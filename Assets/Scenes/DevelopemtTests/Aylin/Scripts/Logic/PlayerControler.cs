@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-
+    public Collider2D colliderOfAvatarPlayer;
+    public Collider2D colliderOfAvatarHelper;
+    private Collider2D colliderOfAvatarCurrent;
     private Vector3 targetPosition;
     private bool isMoving;
     private Avatar avatar;
@@ -29,6 +31,9 @@ public class PlayerControler : MonoBehaviour
     private float avatarDistanceToHorizont;
     private float maxDistance;
 
+    private bool avatarIsCollidingWithObstacle;
+    private Vector3 avatarPreviousPosition;
+
     //used to flip player with its colliders. avatar.avatarSpriteRenderer.flipX only turns sprite but not the collider
     private Vector3 LocalScaleLeft = new Vector3(1f, 1f, 1f);
     private Vector3 LocalScaleRight = new Vector3(-1f, 1f, 1f);
@@ -39,6 +44,7 @@ public class PlayerControler : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Debug.Log("PlayerController OnCollisionEnter2D" + collision.gameObject.name);
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         {
             triggerIdleAnimation();
@@ -76,6 +82,31 @@ public class PlayerControler : MonoBehaviour
     {
         resetTriggerIdleAnimation();
     }
+
+    //Collision with obstacles need to be treated in OnTrigger instead of OnCollision as the obstacle colliders are triggers.
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (avatarManager.checkForCollisionWithObstacles(colliderOfAvatarCurrent))
+        {
+            triggerIdleAnimation();
+            avatarIsCollidingWithObstacle = true;
+        }
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (avatarManager.checkForCollisionWithObstacles(colliderOfAvatarCurrent))
+        {
+            avatar.transform.position = avatarPreviousPosition;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        avatarIsCollidingWithObstacle = false;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -95,7 +126,7 @@ public class PlayerControler : MonoBehaviour
         sceneManager = API.SceneManager;
         sceneManager.AfterAvatarInitialization += initializeAndRescalePlayer;
         scaleCharachter();
-
+        colliderOfAvatarCurrent = colliderOfAvatarPlayer;
     }
 
     private void OnDisable()
@@ -107,6 +138,10 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!avatarIsCollidingWithObstacle)
+            avatarPreviousPosition = avatar.transform.position;
+       
+        
 
         //Debug.Log("in inventory "+inventory.InteractionWithInventoryActive);
         if (!inventory.InteractionWithUIActive && inputManager.isMouseDown())
@@ -116,16 +151,18 @@ public class PlayerControler : MonoBehaviour
                 if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
                 {
                     avatarManager.ChangeController(AvatarManager.playerAvatar, AvatarManager.helperAvatar);
+                    colliderOfAvatarCurrent = colliderOfAvatarPlayer;
                 }  
             }
             //else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
-            
+
             /*//TODO UNCOMMENT TO GET CONTROL OVER HELPER BY CLICKING ON HIM
             else if ((raycastHit = inputManager.getRaycastRigidbody("Helper")).rigidbody != null)
             {
                 if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
                 {
                     avatarManager.ChangeController(AvatarManager.helperAvatar, AvatarManager.playerAvatar);
+                    colliderOfAvatarCurrent = colliderOfAvatarHelper;
                 }
             }
             */
@@ -327,13 +364,17 @@ public class PlayerControler : MonoBehaviour
         }
 
         //lerp!
-        float t = currentLerpTime / lerpDuration; 
+        float t = currentLerpTime / lerpDuration;
 
+        if (avatarIsCollidingWithObstacle)
+        {
+            avatar.transform.position = avatarPreviousPosition;
+        }else
         if (t >= avatar.startWalkDelay && t < stopDistance && !walkTriggered)
         {
             triggerWalkAnimation();
         }
-        if (t >= stopDistance && !idleTriggered)
+        else if (t >= stopDistance && !idleTriggered)
         {
             triggerIdleAnimation();
         }
@@ -341,6 +382,8 @@ public class PlayerControler : MonoBehaviour
         avatar.getRigidbody2D().velocity = Vector2.one * 0.001f;
         targetPosition.z = avatar.transform.position.z;
         avatar.transform.position = Vector3.Lerp(avatar.transform.position, targetPosition, t);
+
+
     }
 
 }
