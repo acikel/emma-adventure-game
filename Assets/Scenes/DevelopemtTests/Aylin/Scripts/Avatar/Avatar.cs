@@ -20,9 +20,24 @@ public class Avatar : MonoBehaviour
     private Vector3 avatarLocalScale = Vector3.one;
     private CapsuleCollider2D capsuleTrigger;
     private Rigidbody2D rigidbody2d;
+    private float currentFlipDirection=1; //1 or -1 for left and right flip
+
+    /*
+    public float CurrentFlipDirection
+    {
+        get
+        {
+            return currentFlipDirection;
+        }
+        set
+        {
+            currentFlipDirection = value;
+        }
+    }*/
 
     private void Start()
     {
+        //currentFlipDirection = 1.0f;
         avatarLocalScale = gameObject.transform.localScale;
         capsuleTrigger = gameObject.GetComponent<CapsuleCollider2D>();
         rigidbody2d = gameObject.GetComponent<Rigidbody2D>();
@@ -51,5 +66,16 @@ public class Avatar : MonoBehaviour
     public void setLocalScale(Vector3 localScale)
     {
         avatarLocalScale = localScale;
+    }
+
+
+    public float getFlipDirection()
+    {
+        return currentFlipDirection;
+    }
+
+    public void setFlipDirection(float flipDirection)
+    {
+        currentFlipDirection = flipDirection;
     }
 }
