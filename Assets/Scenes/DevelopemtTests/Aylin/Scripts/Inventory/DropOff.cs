@@ -117,7 +117,7 @@ public class DropOff : MonoBehaviour
         currentlyDragedItemName = inventory.CurrentlyDraggedSlot.gameObject.transform.GetChild(0).name;
         //Debug.Log("DropOffInfoOnMouseUp " + inventory.CurrentlyDraggedSlot.gameObject.transform.childCount + " 2: " + isDropOfCollidingWithCorrectItem(currentlyDragedItemName) + " PlayerColliding: " + PlayerColliding + " ItemColliding: " + ItemColliding);
         {
-            if (inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 && isDropOfCollidingWithCorrectItem(currentlyDragedItemName) && PlayerColliding && ItemColliding)
+            if (inventory.CurrentlyDraggedSlot.gameObject.transform.childCount > 0 && isDropOfCollidingWithCorrectItem(currentlyDragedItemName) /*&& PlayerColliding*/ && ItemColliding) //On drag player does not have to collide with dropoff only when picking up item.
             {
                 invokeOnItemDrop(currentlyDragedItemName);
                 inventory.setCurrentlyDraggedSlotToEmpty();
