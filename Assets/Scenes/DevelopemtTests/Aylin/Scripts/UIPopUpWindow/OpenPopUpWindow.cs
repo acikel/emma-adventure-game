@@ -22,9 +22,12 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     private float hintImageFadeInDuration = 1f;
     private float hintImageDisappearDuration = 0.3f;
 
+    private bool resetPlayerMovement;
+
     // Start is called before the first frame update
     void Start()
     {
+        resetPlayerMovement = false;
         inputManager = API.InputManager;
         inventory = API.Inventory;
         initializeCanvasToOpen();
@@ -44,9 +47,35 @@ public abstract class OpenPopUpWindow : MonoBehaviour
 
     private void unlockPlayerMovement()
     {
-        //Debug.Log("unlockPlayerMovement");
-        StartCoroutine(waitunlockPlayerMovement());
+        resetPlayerMovement = true;
+        
+        Debug.Log("unlockPlayerMovement1");
+        //time based reset not optimal:
+        //StartCoroutine(waitunlockPlayerMovement());
+        StartCoroutine(waitTillMouseWasReleasedAfterResumingFromPopUpPanel());
+        
     }
+    private IEnumerator waitTillMouseWasReleasedAfterResumingFromPopUpPanel()
+    {
+        yield return StartCoroutine(waitTillMouseWasReleased());
+        
+    }
+
+    private IEnumerator waitTillMouseWasReleased()
+    {
+        while (resetPlayerMovement)
+        {
+            if (!inputManager.isMouseDown())
+            {
+                Debug.Log("unlockPlayerMovement2 inputManager.isMouseDown():" + inputManager.isMouseDown());
+                resetPlayerMovement = false;
+            }
+            yield return null;
+        }
+        inventory.InteractionWithUIActive = false;
+        resetMouseClick();
+    }
+
 
     //inventory.InteractionWithUIActive needs to be reset if player was on this game object when entering the pop up image
     //and exited this game object with the mouse while the pop up image was open this way the mouse exit wasnt entered
@@ -66,6 +95,12 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     {
         if (inputManager.isMouseDown())
         {
+            if (resetPlayerMovement && canvasToOpen.alpha == 0)//when canvas was closed
+            {
+                //resetPlayerMovement = false;
+                //inventory.InteractionWithUIActive = false;
+            }
+
             if (mouseWasClicked)
             {
                 mouseWasClickedOnObject = true;
