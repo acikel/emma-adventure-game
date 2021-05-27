@@ -7,9 +7,12 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
 {
     public SpriteRenderer objectToSwitch1;
     public SpriteRenderer objectToSwitch2;
+    public bool fadeTransition;
+    public float fadeDuration = 1f;
 
     private Color colorTmp;
     private Inventory inventory;
+    private float alphaTmp;
 
     private void Start()
     {
@@ -20,16 +23,34 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
     private void OnMouseDown()
     {
         inventory.InteractionWithUIActive = true;
-        if (objectToSwitch1.color.a==1)
+
+        if (!fadeTransition)
         {
-            setAlphaOfRenderer(objectToSwitch1,0);
-            setAlphaOfRenderer(objectToSwitch2, 1);
+            if (objectToSwitch1.color.a == 1)
+            {
+                setAlphaOfRenderer(objectToSwitch1, 0);
+                setAlphaOfRenderer(objectToSwitch2, 1);
+            }
+            else
+            {
+                setAlphaOfRenderer(objectToSwitch1, 1);
+                setAlphaOfRenderer(objectToSwitch2, 0);
+            }
         }
         else
         {
-            setAlphaOfRenderer(objectToSwitch1, 1);
-            setAlphaOfRenderer(objectToSwitch2, 0);
+            if (objectToSwitch1.color.a == 1)
+            {
+                StartCoroutine(Fade(objectToSwitch1, 0));
+                StartCoroutine(Fade(objectToSwitch2, 1));
+            }
+            else
+            {
+                StartCoroutine(Fade(objectToSwitch1, 1));
+                StartCoroutine(Fade(objectToSwitch2, 0));
+            }
         }
+        
     }
 
     private void OnMouseUp()
@@ -42,5 +63,23 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
         colorTmp = renderer.color;
         colorTmp.a = alpha;
         renderer.color = colorTmp;
+    }
+
+    private IEnumerator Fade(SpriteRenderer renderer, float finalAlpha)
+    {
+        float fadeSpeed = Mathf.Abs(renderer.color.a - finalAlpha) / fadeDuration;
+        while (!Mathf.Approximately(renderer.color.a, finalAlpha))
+        {
+            alphaTmp = Mathf.MoveTowards(renderer.color.a, finalAlpha,
+                fadeSpeed * Time.deltaTime);
+
+            setAlphaOfRenderer(renderer, alphaTmp);
+            yield return null;
+        }
+    }
+
+    private IEnumerator Wait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 }

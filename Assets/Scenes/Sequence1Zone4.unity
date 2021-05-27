@@ -1416,6 +1416,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSwitch1: {fileID: 1608234462}
   objectToSwitch2: {fileID: 1698574657}
+  fadeTransition: 0
+  fadeDuration: 1
 --- !u!61 &1608234465
 BoxCollider2D:
   m_ObjectHideFlags: 0
