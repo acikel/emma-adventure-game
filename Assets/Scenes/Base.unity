@@ -3698,19 +3698,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: lerpDuration
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: stopDistance
-      value: 0.08
+      value: 0.085
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: scalingFactor
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+      propertyPath: startWalkDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+      propertyPath: stopDistanceFar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: lerpDistanceFarSummand
-      value: 20
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533169, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: m_RootOrder

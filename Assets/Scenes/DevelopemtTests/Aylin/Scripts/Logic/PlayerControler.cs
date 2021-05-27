@@ -446,7 +446,9 @@ public class PlayerControler : MonoBehaviour
 
         //lerp!
         float t = currentLerpTime / lerpDuration;
-
+        //faster lerp:
+        //t= Mathf.Sin(t * Mathf.PI * 0.5f); // best movement parameters: lerp duration: 20, lerp distance far summand: 60, start walk delay: 0, stop distance far: 0.05, stop distance: 0.085
+        t = t * Mathf.PI * 0.5f; //best movement parameters: lerp duration: 30, lerp distance far summand: 80, start walk delay: 0.001, stop distance far: 0.043, stop distance: 0.07
         if (avatarIsCollidingWithObstacle)
         {
             avatar.transform.position = avatarPreviousPosition;
