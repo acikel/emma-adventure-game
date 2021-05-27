@@ -3780,6 +3780,10 @@ PrefabInstance:
       propertyPath: colliderOfAvatarPlayer
       value: 
       objectReference: {fileID: 1054238852431802394}
+    - target: {fileID: 1054238853574533182, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533183, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: m_Name
       value: Player
