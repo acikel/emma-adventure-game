@@ -38,8 +38,11 @@ public class PlayerControler : MonoBehaviour
     private Vector3 avatarPreviousPosition;
 
     //used to flip player with its colliders. avatar.avatarSpriteRenderer.flipX only turns sprite but not the collider
-    private Vector3 LocalScaleLeft = new Vector3(1f, 1f, 1f);
-    private Vector3 LocalScaleRight = new Vector3(-1f, 1f, 1f);
+    //private Vector3 LocalScaleLeft = new Vector3(1f, 1f, 1f);
+    //private Vector3 LocalScaleRight =  new Vector3(-1f, 1f, 1f);
+    private float localScaleLeft = 1f;
+    private float localScaleRight = -1f;
+    private float currentXScaleTmp;
 
     //subscribed by sceneManager
     public delegate IEnumerator OnCollisionWithPortalHandler(string sceneNameToTransitionTo);
@@ -243,6 +246,12 @@ public class PlayerControler : MonoBehaviour
         avatarDistanceToHorizont = AvatarManager.backgroundCollider.bounds.max.y - avatar.gameObject.transform.position.y;
         maxDistance = AvatarManager.backgroundCollider.bounds.max.y - AvatarManager.backgroundCollider.bounds.min.y;
         avatar.gameObject.transform.localScale = avatar.getLocalScale() + avatarDistanceToHorizont / maxDistance * Vector3.one * avatar.scalingFactor;
+
+        //flip direction if CheckSpriteFlip defined that avatar need to be flipped. avatar.avatarSpriteRenderer.flipX cant be used as it only flips the sprite not the colliders.
+        //Thats why avatars with colliders need to be flipped with their localScale instead. As this controller changes the size of the avatar depending on background depth it we cant just change the current local scale but need to conserve the current local state and multiply it with the right value to flip the scaled carachter. 
+        currentXScaleTmp = avatar.gameObject.transform.localScale.x;
+        currentXScaleTmp *= avatar.CurrentFlipDirection;
+        avatar.gameObject.transform.localScale = new Vector3(currentXScaleTmp, avatar.gameObject.transform.localScale.y, avatar.gameObject.transform.localScale.z);
     }
 
     private void HandleOnControllerChange()
@@ -288,16 +297,26 @@ public class PlayerControler : MonoBehaviour
         if (avatar.transform.position.x > targetPosition.x)
         {
             //look to the left
-            avatar.avatarSpriteRenderer.flipX = false;
+            //avatar.avatarSpriteRenderer.flipX = false;
+
+
             //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale* LocalScaleLeft;
+
+
+            avatar.CurrentFlipDirection = localScaleLeft;
         }
         else
         {
             //look to the right
-            avatar.avatarSpriteRenderer.flipX = true;
+            //avatar.avatarSpriteRenderer.flipX = true;
             //localScaleAvatar.x *= -1;
+
+
             //avatar.gameObject.transform.localScale = localScaleAvatar;
             //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale * LocalScaleRight;
+
+
+            avatar.CurrentFlipDirection = localScaleRight;
         }
     }
     private bool getGroundColliderIntersectionToMouseclickOutsideGroundWithoutSmallestDistance()
