@@ -49,10 +49,10 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     {
         resetPlayerMovement = true;
         
-        Debug.Log("unlockPlayerMovement1");
+        //Debug.Log("unlockPlayerMovement1");
         //time based reset not optimal:
-        //StartCoroutine(waitunlockPlayerMovement());
-        StartCoroutine(waitTillMouseWasReleasedAfterResumingFromPopUpPanel());
+        StartCoroutine(waitunlockPlayerMovement());
+        //StartCoroutine(waitTillMouseWasReleasedAfterResumingFromPopUpPanel());
         
     }
     private IEnumerator waitTillMouseWasReleasedAfterResumingFromPopUpPanel()
@@ -67,7 +67,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         {
             if (!inputManager.isMouseDown())
             {
-                Debug.Log("unlockPlayerMovement2 inputManager.isMouseDown():" + inputManager.isMouseDown());
+                //Debug.Log("unlockPlayerMovement2 inputManager.isMouseDown():" + inputManager.isMouseDown());
                 resetPlayerMovement = false;
             }
             yield return null;

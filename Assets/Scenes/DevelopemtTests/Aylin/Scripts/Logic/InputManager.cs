@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("input manager mouse pressed");
+            //Debug.Log("input manager mouse pressed");
             mouseDown = true;
             mousePosition = Input.mousePosition;
             mousePositionWorld2d = mainCamera.ScreenToWorldPoint(mousePosition);
@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            Debug.Log("input manager mouse released");
+            //Debug.Log("input manager mouse released");
             mouseDown = false;
         }
     }
