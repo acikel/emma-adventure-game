@@ -56,7 +56,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         //need to wait for a short amout of time before unlocking player movement as the mouse is used to return from
         //the popup window. When playermovement is unlocked immidiatly then closing the popupwindow already triggers
         //player movement which is not desired.
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         inventory.InteractionWithUIActive = false;
         resetMouseClick();
     }
