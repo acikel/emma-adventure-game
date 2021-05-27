@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-
+    public Collider2D colliderOfAvatarPlayer;
+    public Collider2D colliderOfAvatarHelper;
+    private Collider2D colliderOfAvatarCurrent;
     private Vector3 targetPosition;
     private bool isMoving;
     private Avatar avatar;
     private RaycastHit2D raycastSecondayHit;
+    private RaycastHit2D raycastSecondayHitCompare;
+
     private Vector2 mousePositionWorld2d;
 
     private RaycastHit2D raycastHit;
+    
 
     private AvatarManager avatarManager;
     private InputManager inputManager;
@@ -29,6 +34,9 @@ public class PlayerControler : MonoBehaviour
     private float avatarDistanceToHorizont;
     private float maxDistance;
 
+    private bool avatarIsCollidingWithObstacle;
+    private Vector3 avatarPreviousPosition;
+
     //used to flip player with its colliders. avatar.avatarSpriteRenderer.flipX only turns sprite but not the collider
     private Vector3 LocalScaleLeft = new Vector3(1f, 1f, 1f);
     private Vector3 LocalScaleRight = new Vector3(-1f, 1f, 1f);
@@ -39,6 +47,7 @@ public class PlayerControler : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Debug.Log("PlayerController OnCollisionEnter2D" + collision.gameObject.name);
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         {
             triggerIdleAnimation();
@@ -76,6 +85,31 @@ public class PlayerControler : MonoBehaviour
     {
         resetTriggerIdleAnimation();
     }
+
+    //Collision with obstacles need to be treated in OnTrigger instead of OnCollision as the obstacle colliders are triggers.
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (avatarManager.checkForCollisionWithObstacles(colliderOfAvatarCurrent))
+        {
+            triggerIdleAnimation();
+            avatarIsCollidingWithObstacle = true;
+        }
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (avatarManager.checkForCollisionWithObstacles(colliderOfAvatarCurrent))
+        {
+            avatar.transform.position = avatarPreviousPosition;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        avatarIsCollidingWithObstacle = false;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -95,7 +129,7 @@ public class PlayerControler : MonoBehaviour
         sceneManager = API.SceneManager;
         sceneManager.AfterAvatarInitialization += initializeAndRescalePlayer;
         scaleCharachter();
-
+        colliderOfAvatarCurrent = colliderOfAvatarPlayer;
     }
 
     private void OnDisable()
@@ -107,6 +141,10 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!avatarIsCollidingWithObstacle)
+            avatarPreviousPosition = avatar.transform.position;
+       
+        
 
         //Debug.Log("in inventory "+inventory.InteractionWithInventoryActive);
         if (!inventory.InteractionWithUIActive && inputManager.isMouseDown())
@@ -116,17 +154,21 @@ public class PlayerControler : MonoBehaviour
                 if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
                 {
                     avatarManager.ChangeController(AvatarManager.playerAvatar, AvatarManager.helperAvatar);
+                    colliderOfAvatarCurrent = colliderOfAvatarPlayer;
                 }  
             }
             //else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
-            
+
+            /*//TODO UNCOMMENT TO GET CONTROL OVER HELPER BY CLICKING ON HIM
             else if ((raycastHit = inputManager.getRaycastRigidbody("Helper")).rigidbody != null)
             {
                 if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
                 {
                     avatarManager.ChangeController(AvatarManager.helperAvatar, AvatarManager.playerAvatar);
+                    colliderOfAvatarCurrent = colliderOfAvatarHelper;
                 }
             }
+            */
             else if (inputManager.checkIfColliderWasHit("SelectedItem"))
             {
 
@@ -144,7 +186,7 @@ public class PlayerControler : MonoBehaviour
             else
             {
                 //print("name3: " + raycastFirstHit.collider);
-                if (getGroundColliderIntersectionToMouseclickOutsideGround())
+                if (getGroundColliderIntersectionToMouseclickOutsideGroundWithSmallestDistance())
                 {
                     //move player infront of item.
                     if (inputManager.checkIfColliderWasHit("Item"))
@@ -258,7 +300,7 @@ public class PlayerControler : MonoBehaviour
             //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale * LocalScaleRight;
         }
     }
-    private bool getGroundColliderIntersectionToMouseclickOutsideGround()
+    private bool getGroundColliderIntersectionToMouseclickOutsideGroundWithoutSmallestDistance()
     {
         mousePositionWorld2d = inputManager.getMousePositionWorld2d();
         //Only hits ground layers. Searches for Ground collider from above
@@ -269,25 +311,83 @@ public class PlayerControler : MonoBehaviour
         raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.up, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
         if (assignColliderAndExit()) return true;
 
-        //Only hits ground layers. Searches for Ground collider from right
+        //Only hits ground layers. Searches for Ground collider from right.
         raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
         if (assignColliderAndExit()) return true;
 
+        //Raycast to left not needed. Causes problems with center raycast (for example for the background collider in scene sequence1zone5). Better to raycast to center then.
         //Only hits ground layers. Searches for Ground collider from left
-        raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
-        if (assignColliderAndExit()) return true;
+        //raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.left, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
+        //if (assignColliderAndExit()) return true;
 
         if (AvatarManager.groundCenter != null)
         {
+            //Debug.Log("GroundCenter");
             Vector2 groundCenter2d = AvatarManager.groundCenter.position;
             Vector2 direction = groundCenter2d - mousePositionWorld2d;
-            raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.right, 1 << LayerMask.NameToLayer("Ground"));
+            raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, direction, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
             if (assignColliderAndExit()) return true;
 
         }
 
         return false;
 
+    }
+
+
+    private bool getGroundColliderIntersectionToMouseclickOutsideGroundWithSmallestDistance()
+    {
+        mousePositionWorld2d = inputManager.getMousePositionWorld2d();
+        //Only hits ground layers. Searches for Ground collider from above
+        raycastSecondayHit = Physics2D.Raycast(mousePositionWorld2d, Vector2.down, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
+        //if (assignColliderAndExit()) return true;
+
+        //Only hits ground layers. Searches for Ground collider from below
+        rayCastAndGetSmallestDistance(Vector2.up);
+
+        //Only hits ground layers. Searches for Ground collider from right.
+        rayCastAndGetSmallestDistance(Vector2.right);
+
+        //Only hits ground layers. Searches for Ground collider from left
+        rayCastAndGetSmallestDistance(Vector2.left);
+
+        if (AvatarManager.groundCenter != null)
+        {
+            //Debug.Log("GroundCenter");
+            Vector2 groundCenter2d = AvatarManager.groundCenter.position;
+            Vector2 direction = groundCenter2d - mousePositionWorld2d;
+            rayCastAndGetSmallestDistance(direction);
+        }
+
+
+        if (assignColliderAndExit()) return true;
+        return false;
+
+    }
+
+    private void rayCastAndGetSmallestDistance(Vector2 direction)
+    {
+        raycastSecondayHitCompare = Physics2D.Raycast(mousePositionWorld2d, direction, float.PositiveInfinity, 1 << LayerMask.NameToLayer("Ground"));
+        //if (assignColliderAndExit()) return true;
+        raycastSecondayHit = getRaycastWithSmallestDistance(raycastSecondayHit, raycastSecondayHitCompare, mousePositionWorld2d);
+    }
+
+    private RaycastHit2D getRaycastWithSmallestDistance(RaycastHit2D raycast1, RaycastHit2D raycast2, Vector2 targetPosition)
+    {
+        if (raycast1.collider == null)
+            return raycast2;
+
+        if (raycast2.collider == null)
+            return raycast1;
+
+        if (Vector2.Distance(raycast1.point,targetPosition)> Vector2.Distance(raycast2.point, targetPosition))
+        {
+            return raycast2;
+        }
+        else
+        {
+            return raycast1;
+        }
     }
     private bool assignColliderAndExit()
     {
@@ -296,6 +396,7 @@ public class PlayerControler : MonoBehaviour
             targetPosition = raycastSecondayHit.point;
             return true;
         }
+        //Debug.Log("assignColliderAndExit false");
         return false;
     }
 
@@ -325,13 +426,16 @@ public class PlayerControler : MonoBehaviour
         }
 
         //lerp!
-        float t = currentLerpTime / lerpDuration; 
+        float t = currentLerpTime / lerpDuration;
 
-        if (t >= avatar.startWalkDelay && t < stopDistance && !walkTriggered)
+        if (avatarIsCollidingWithObstacle)
+        {
+            avatar.transform.position = avatarPreviousPosition;
+        }else if (t >= avatar.startWalkDelay && t < stopDistance && !walkTriggered)
         {
             triggerWalkAnimation();
         }
-        if (t >= stopDistance && !idleTriggered)
+        else if (t >= stopDistance && !idleTriggered)
         {
             triggerIdleAnimation();
         }
@@ -339,6 +443,8 @@ public class PlayerControler : MonoBehaviour
         avatar.getRigidbody2D().velocity = Vector2.one * 0.001f;
         targetPosition.z = avatar.transform.position.z;
         avatar.transform.position = Vector3.Lerp(avatar.transform.position, targetPosition, t);
+
+
     }
 
 }

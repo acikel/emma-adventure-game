@@ -32,6 +32,35 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         setAlphaOfHintImage(0);
     }
 
+    public void OnEnable()
+    {
+        ResumePanel.OnClosePopUpWinodwByResumePanel += unlockPlayerMovement;
+    }
+
+    public void OnDisable()
+    {
+        ResumePanel.OnClosePopUpWinodwByResumePanel -= unlockPlayerMovement;
+    }
+
+    private void unlockPlayerMovement()
+    {
+        //Debug.Log("unlockPlayerMovement");
+        StartCoroutine(waitunlockPlayerMovement());
+    }
+
+    //inventory.InteractionWithUIActive needs to be reset if player was on this game object when entering the pop up image
+    //and exited this game object with the mouse while the pop up image was open this way the mouse exit wasnt entered
+    // and inventory.InteractionWithUIActive wasnt reset to false.
+    private IEnumerator waitunlockPlayerMovement()
+    {
+        //need to wait for a short amout of time before unlocking player movement as the mouse is used to return from
+        //the popup window. When playermovement is unlocked immidiatly then closing the popupwindow already triggers
+        //player movement which is not desired.
+        yield return new WaitForSeconds(0.1f);
+        inventory.InteractionWithUIActive = false;
+        resetMouseClick();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -48,6 +77,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
                 mouseWasClickedOnObject = false;
             } 
         }
+            
     }
 
     //this is the method of a subclass (like LockDoor and ImagePopUp) which needs to initialize canvasToOpen via API class 
@@ -86,8 +116,8 @@ public abstract class OpenPopUpWindow : MonoBehaviour
             mouseWasClicked = false;
         }
 
-        
 
+        //resetMouseClick();
     }
 
     public void OnMouseDown()
@@ -99,7 +129,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
             inventory.InteractionWithUIActive = true;
             setAlphaOfHintImage(0);
             //Debug.Log("OnMouseDown2");
-            resetMouseClick();
+            //resetMouseClick();
         }
         
     }

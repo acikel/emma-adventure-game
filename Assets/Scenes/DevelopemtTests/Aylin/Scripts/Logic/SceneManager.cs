@@ -136,6 +136,7 @@ public class SceneManager : MonoBehaviour
             {
                 
                 avatarManager.ReloadGround();
+                avatarManager.ReloadObstacles();
                 loadStartLocations();
                 initializeStartLocations();
                 if (currentSceneValues != null)
