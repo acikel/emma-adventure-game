@@ -40,8 +40,8 @@ public class PlayerControler : MonoBehaviour
     //used to flip player with its colliders. avatar.avatarSpriteRenderer.flipX only turns sprite but not the collider
     //private Vector3 LocalScaleLeft = new Vector3(1f, 1f, 1f);
     //private Vector3 LocalScaleRight =  new Vector3(-1f, 1f, 1f);
-    private float localScaleLeft = 1f;
-    private float localScaleRight = -1f;
+    private float flipLeft = 1f;
+    private float flipRight = -1f;
     private float currentXScaleTmp;
 
     //subscribed by sceneManager
@@ -162,7 +162,7 @@ public class PlayerControler : MonoBehaviour
             }
             //else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
 
-            /*//TODO UNCOMMENT TO GET CONTROL OVER HELPER BY CLICKING ON HIM
+            //TODO UNCOMMENT TO GET CONTROL OVER HELPER BY CLICKING ON HIM
             else if ((raycastHit = inputManager.getRaycastRigidbody("Helper")).rigidbody != null)
             {
                 if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
@@ -171,7 +171,7 @@ public class PlayerControler : MonoBehaviour
                     colliderOfAvatarCurrent = colliderOfAvatarHelper;
                 }
             }
-            */
+            
             else if (inputManager.checkIfColliderWasHit("SelectedItem"))
             {
 
@@ -239,6 +239,11 @@ public class PlayerControler : MonoBehaviour
         scaleCharachter(this.avatar);
     }
 
+    public void scaleAvatar(Avatar avatar)
+    {
+        scaleCharachter(avatar);
+    }
+
     private void scaleCharachter(Avatar avatar)
     {
         //Debug.Log("collider ground: " + AvatarManager.backgroundCollider.bounds);
@@ -250,7 +255,11 @@ public class PlayerControler : MonoBehaviour
         //flip direction if CheckSpriteFlip defined that avatar need to be flipped. avatar.avatarSpriteRenderer.flipX cant be used as it only flips the sprite not the colliders.
         //Thats why avatars with colliders need to be flipped with their localScale instead. As this controller changes the size of the avatar depending on background depth it we cant just change the current local scale but need to conserve the current local state and multiply it with the right value to flip the scaled carachter. 
         currentXScaleTmp = avatar.gameObject.transform.localScale.x;
-        currentXScaleTmp *= avatar.CurrentFlipDirection;
+        //Debug.Log("avatar.gameObject.transform.localScale.x "+avatar.name+" " + avatar.gameObject.transform.localScale.x);
+        //Debug.Log("currentXScaleTmp1 " + avatar.name + " " + currentXScaleTmp);
+        //Debug.Log("avatar.CurrentFlipDirection " + avatar.name + " " + avatar.getFlipDirection());
+        currentXScaleTmp *= avatar.getFlipDirection();
+        //Debug.Log("currentXScaleTmp2 " + avatar.name + " " + currentXScaleTmp);
         avatar.gameObject.transform.localScale = new Vector3(currentXScaleTmp, avatar.gameObject.transform.localScale.y, avatar.gameObject.transform.localScale.z);
     }
 
@@ -303,7 +312,7 @@ public class PlayerControler : MonoBehaviour
             //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale* LocalScaleLeft;
 
 
-            avatar.CurrentFlipDirection = localScaleLeft;
+            avatar.setFlipDirection(flipLeft);
         }
         else
         {
@@ -316,7 +325,7 @@ public class PlayerControler : MonoBehaviour
             //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale * LocalScaleRight;
 
 
-            avatar.CurrentFlipDirection = localScaleRight;
+            avatar.setFlipDirection(flipRight);
         }
     }
     private bool getGroundColliderIntersectionToMouseclickOutsideGroundWithoutSmallestDistance()

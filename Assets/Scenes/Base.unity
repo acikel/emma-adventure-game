@@ -3698,11 +3698,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: lerpDuration
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: stopDistance
-      value: 0.07
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: scalingFactor
@@ -3714,11 +3714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: stopDistanceFar
-      value: 0.043
+      value: 0.045
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533168, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: lerpDistanceFarSummand
-      value: 80
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533169, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: m_RootOrder
@@ -3855,9 +3855,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3554606657285527813, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: stopDistance
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554606657285527813, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
       propertyPath: avatarAnimator
       value: 
       objectReference: {fileID: 615209808}
+    - target: {fileID: 3554606657285527813, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
+      propertyPath: stopDistanceFar
+      value: 0.042
+      objectReference: {fileID: 0}
     - target: {fileID: 3554606657285527814, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
       propertyPath: m_Size.x
       value: 4.95249
