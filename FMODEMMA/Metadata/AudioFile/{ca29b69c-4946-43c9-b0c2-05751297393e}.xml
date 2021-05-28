@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{ca29b69c-4946-43c9-b0c2-05751297393e}">
+		<property name="assetPath">
+			<value>snd_FallingBottleFloorWood.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5760000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{41ddac83-4ed0-424f-8c61-b3c9889f586e}</destination>
+		</relationship>
+	</object>
+</objects>

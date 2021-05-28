@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{003b7315-92d5-4b6d-afe1-0583f5b16c12}">
+		<property name="assetPath">
+			<value>snd_Paper.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.7024166666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{41ddac83-4ed0-424f-8c61-b3c9889f586e}</destination>
+		</relationship>
+	</object>
+</objects>
