@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0358470a04562b041bef4669e3c6c0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 6
+  reactionTurn: 8
   message: Hello2.2
   textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &180505180
@@ -518,9 +518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 11
+  textAudio: 
 --- !u!114 &485269001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,9 +645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 1
+  textAudio: 
 --- !u!114 &649894617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,9 +659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 8
+  textAudio: 
 --- !u!114 &660571996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,9 +673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 6
+  textAudio: 
 --- !u!114 &734479197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,9 +687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 10
+  textAudio: 
 --- !u!1 &776299772
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,9 +822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 15
+  textAudio: 
 --- !u!114 &845319792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,9 +867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 6
+  textAudio: 
 --- !u!1 &918818920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,9 +1119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 6
+  textAudio: 
 --- !u!1 &1020520193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,9 +1237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 14
+  textAudio: 
 --- !u!114 &1052336079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1619,9 +1610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 9
+  textAudio: 
 --- !u!114 &1301695964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,9 +1624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 8
+  textAudio: 
 --- !u!1 &1302635392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,9 +1688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 13
+  textAudio: 
 --- !u!114 &1414306173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,9 +1717,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 10
+  textAudio: 
 --- !u!114 &1464244178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1744,9 +1731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 8
+  textAudio: 
 --- !u!1 &1494973869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,8 +1945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 2
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  textAudio: 
 --- !u!114 &1618937829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2197,9 +2182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 12
+  textAudio: 
 --- !u!114 &1658474217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2396,8 +2380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 3
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  textAudio: 
 --- !u!114 &1878374845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2559,8 +2542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 4
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  textAudio: 
 --- !u!1 &2036046964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,9 +2830,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86144aa22368ed42aa44b8aaf1071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionTurn: 0
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  reactionTurn: 7
+  textAudio: 
 --- !u!114 &2094867712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2864,5 +2845,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 5
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  textAudio: 

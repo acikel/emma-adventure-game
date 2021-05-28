@@ -71,7 +71,7 @@ public class ReactionCollection : MonoBehaviour
             //Debug.Log("inReact2 "+reactions[i].GameObjectName+ ": " + reactions[i].reactionTurn);
             if (TextManager.TurnCounter == reactions[i].reactionTurn)
             {
-                //Debug.Log("inReact3" + reactions[i].GameObjectName);
+                //Debug.Log("inReact3" + reactions[i].GameObjectName + " TextManager.TurnCounter: "+ TextManager.TurnCounter +" current reaction index: "+ i + "type reactions[i]");
                 lastReactionToPlay++;
                 reactions[i].React(this);
             }

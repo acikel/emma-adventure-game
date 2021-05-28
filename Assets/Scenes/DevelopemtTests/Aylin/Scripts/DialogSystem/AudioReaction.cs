@@ -5,9 +5,10 @@ using UnityEngine;
 // rather than an DelayedReaction.
 public class AudioReaction : Reaction
 {
+    //------------------------------------------------- Implemenetation of Sounds WITHOUT Fmod:  Start-------------------------------------------------
+    /*
     public AudioSource audioSource;     // The AudioSource to play the clip.
     public AudioClip audioClip;         // The AudioClip to be played.
-    //public float delay;                 // How long after React is called before the clip plays.
     
 
     protected override void ImmediateReaction()
@@ -18,6 +19,27 @@ public class AudioReaction : Reaction
             audioSource.clip = audioClip;
             audioSource.Play();
         }
-        //audioSource.PlayDelayed(delay);
     }
+    */
+    //------------------------------------------------- Implemenetation of Sounds WITHOUT Fmod:  End-------------------------------------------------
+
+
+
+
+    //------------------------------------------------- Implemenetation of Sounds WITH Fmod:  Start-------------------------------------------------
+             
+    [FMODUnity.EventRef]
+    public string textAudio; // Reference to the AudioClip to be played.
+
+    protected override void ImmediateReaction()
+    {
+        // Set the AudioSource's clip to the given one and play with the given delay.
+        if (textAudio.Length!=0)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(textAudio);
+        }
+    }
+    
+    //------------------------------------------------- Implemenetation of Sounds WITH Fmod:  End-------------------------------------------------
+
 }
