@@ -6,6 +6,12 @@ public class PlayerControler : MonoBehaviour
 {
     public Collider2D colliderOfAvatarPlayer;
     public Collider2D colliderOfAvatarHelper;
+
+    private FMOD.Studio.EventInstance footstepsEvent;
+    private FMOD.Studio.EventDescription eventDescription;
+    [FMODUnity.EventRef]
+    public string footstepsSound;
+
     private Collider2D colliderOfAvatarCurrent;
     private Vector3 targetPosition;
     private bool isMoving;
@@ -133,6 +139,10 @@ public class PlayerControler : MonoBehaviour
         sceneManager.AfterAvatarInitialization += initializeAndRescalePlayer;
         scaleCharachter();
         colliderOfAvatarCurrent = colliderOfAvatarPlayer;
+
+        //footstepsEvent = FMOD. FMOD_StudioSystem.instance.GetEvent(footstepsSound);
+        eventDescription = FMODUnity.RuntimeManager.GetEventDescription(footstepsSound);
+        eventDescription.createInstance(out footstepsEvent);
     }
 
     private void OnDisable()
@@ -463,10 +473,15 @@ public class PlayerControler : MonoBehaviour
             avatar.transform.position = avatarPreviousPosition;
         }else if (t >= avatar.startWalkDelay && t < stopDistance && !walkTriggered)
         {
+            footstepsEvent.start();
             triggerWalkAnimation();
         }
         else if (t >= stopDistance && !idleTriggered)
         {
+            footstepsEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            footstepsEvent.release();
+            footstepsEvent.clearHandle();
+
             triggerIdleAnimation();
         }
 

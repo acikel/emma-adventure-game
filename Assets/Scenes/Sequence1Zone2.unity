@@ -220,7 +220,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.20626199, y: -0.038107216}
+  m_Offset: {x: 0.16234986, y: -0.038107157}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -231,7 +231,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3504746, y: 2.7156696}
+  m_Size: {x: 1.2626503, y: 2.7156696}
   m_EdgeRadius: 0
 --- !u!114 &58554671
 MonoBehaviour:
@@ -245,8 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5b54969b24a2847b82bd1f93c2f265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSwitch1: {fileID: 58554669}
-  objectToSwitch2: {fileID: 1970992736}
+  objectToSwitchTo: {fileID: 1970992734}
   fadeTransition: 1
   fadeDuration: 1
 --- !u!1 &85686579
@@ -1478,7 +1477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1559659617
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1787,7 +1786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1940644238
 Transform:
   m_ObjectHideFlags: 0
@@ -1866,7 +1865,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08079839, y: 0.7738261}
+  m_Offset: {x: -0.08079839, y: 0.31634688}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1877,7 +1876,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9119983, y: 3.0850172}
+  m_Size: {x: 1.9119983, y: 4.024271}
   m_EdgeRadius: 0
 --- !u!114 &1940644241
 MonoBehaviour:
@@ -1891,8 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5b54969b24a2847b82bd1f93c2f265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSwitch1: {fileID: 1998692032}
-  objectToSwitch2: {fileID: 1940644239}
+  objectToSwitchTo: {fileID: 1998692030}
   fadeTransition: 1
   fadeDuration: 1
 --- !u!1 &1970992734
@@ -1905,13 +1903,15 @@ GameObject:
   m_Component:
   - component: {fileID: 1970992735}
   - component: {fileID: 1970992736}
+  - component: {fileID: 1970992738}
+  - component: {fileID: 1970992737}
   m_Layer: 6
   m_Name: Door1Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1970992735
 Transform:
   m_ObjectHideFlags: 0
@@ -1977,6 +1977,47 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1970992737
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970992734}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.24, y: 2.61}
+    newSize: {x: 21.772827, y: 21.220001}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.24, y: 2.61}
+  m_EdgeRadius: 0
+--- !u!114 &1970992738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970992734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5b54969b24a2847b82bd1f93c2f265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSwitchTo: {fileID: 58554667}
+  fadeTransition: 1
+  fadeDuration: 1
 --- !u!1 &1998692030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2028,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1998692031}
   - component: {fileID: 1998692032}
+  - component: {fileID: 1998692033}
+  - component: {fileID: 1998692034}
   m_Layer: 6
   m_Name: 'Door2Close '
   m_TagString: Untagged
@@ -2059,3 +2102,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1998692033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998692030}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08079839, y: -0.02}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.76, y: 2.98}
+    newSize: {x: 21.772827, y: 21.220001}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9119983, y: 3.0850172}
+  m_EdgeRadius: 0
+--- !u!114 &1998692034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998692030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5b54969b24a2847b82bd1f93c2f265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSwitchTo: {fileID: 1940644237}
+  fadeTransition: 1
+  fadeDuration: 1
