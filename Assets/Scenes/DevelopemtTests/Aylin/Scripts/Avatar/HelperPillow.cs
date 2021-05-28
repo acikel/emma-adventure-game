@@ -27,6 +27,7 @@ public class HelperPillow : ActionObject
         if (colliderOfPillow != null)
             colliderOfPillow.enabled = false;
         AvatarManager.helperAvatar.gameObject.SetActive(true);
+        //PlayerControler.scaleAvatar(AvatarManager.helperAvatar);
         if (spriteRendererForPillow != null)
         {
             spriteRendererForPillow.sprite = spritePillowSloved;
