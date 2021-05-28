@@ -22,6 +22,8 @@ public class LockPanel : MonoBehaviour, IPointerEnterHandler
     public string lockButtonSound;
     [FMODUnity.EventRef]
     public string lockWrongSound;
+    [FMODUnity.EventRef]
+    public string doorOpenSound;
 
     //subscribed by OpenLockDoor.cs to set open door active when code was solved.
     public delegate void HandleLockSolved();
@@ -79,6 +81,7 @@ public class LockPanel : MonoBehaviour, IPointerEnterHandler
                 //close canvas put sprite back to red and open door.
                 OnLockSolved();
                 InputCode = "";
+                FMODUnity.RuntimeManager.PlayOneShot(doorOpenSound);
             }
             else { 
                 FMODUnity.RuntimeManager.PlayOneShot(lockWrongSound);

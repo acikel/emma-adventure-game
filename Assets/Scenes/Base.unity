@@ -1533,6 +1533,7 @@ MonoBehaviour:
   CheckPanel: {fileID: 1705586563}
   lockButtonSound: event:/SFX/Sequence 1/snd_ButtonClickLock
   lockWrongSound: event:/SFX/Sequence 1/snd_LockWrong
+  doorOpenSound: event:/SFX/Doors/snd_DoorOutsideOpen
   imageResumePanel: {fileID: 988109667}
 --- !u!1 &804535769
 GameObject:

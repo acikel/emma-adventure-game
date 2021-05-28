@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MagnetRemove
   guid: 99f8f37a7c7e4b49918768fdb1ca9bf3
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
   Path: event:/SFX/General/snd_BonePickup
   guid: a36576f1369dd342b38fee0b4155e30f
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -64,6 +64,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-9187338380714116018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578477671388735
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-9108696573993134625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +97,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PickupRope
   guid: 6b8bda6158ef4f47aae623c3c573f9e9
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -102,7 +120,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LockOpen
   guid: 1a60586ee0ea43489f2a5e7c07fa0862
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -125,7 +143,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_WaterOpen
   guid: 87a07a973507aa46838a76c1f166169d
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -205,7 +223,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_KnifeRemove
   guid: 6ec48ceda231e340a50b815c153e63d2
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -246,7 +264,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingUmbrella
   guid: 731ead5ed224e0419e8b72a100769f3e
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -291,7 +309,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PickupHands
   guid: 3ad29ac624b4ae4489bc940e5435cebc
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -299,6 +317,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 671
+--- !u!114 &-7396790481169508960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &-7374111126399221330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +393,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_FallingBottleFloorWood
   guid: dc4da0293ac9904d85e850760b769e30
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -403,7 +438,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LightOn
   guid: 0b4b91b4a57cdc4085638318c97dac6e
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -493,7 +528,7 @@ MonoBehaviour:
   Path: event:/SFX/Doors/snd_UnlockDoor
   guid: 41b8e5ceb061834eaa6cb2eeaf75a83e
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -578,7 +613,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_MusikDialogue
   guid: 794a5d207ed5d34683d186a785ed10bf
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -640,7 +675,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_FallingMilkContainer
   guid: 100f80ff7c7bba42abf05986944ba118
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -663,7 +698,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PuttingToghehterBranch
   guid: c83dcdf6eca4704c8dec04f193fe0539
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -765,7 +800,7 @@ MonoBehaviour:
   Path: event:/SFX/General/snd_SkeletonComplete
   guid: d5f24b6c410e5641a9cb377286a2582a
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -938,7 +973,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LookPicture
   guid: ffcbf8d77ac1854f92b9ed1bde034ae6
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -961,7 +996,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MoveCarpet
   guid: b3858fc263d75a4889e93c2d714ccedc
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1028,7 +1063,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingBedsheet
   guid: 43d7390263971847bb8122791a2698e0
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1051,7 +1086,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_DrawerDoor
   guid: 60f3545e339c3b4ab47eb0ab9012f1ba
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1198,10 +1233,10 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LightFlickering
   guid: d6ad84983ecff54bb0a3461ced094535
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -1221,7 +1256,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_DrippingMilk
   guid: b61b4aa0ee22334d9696b6ec3160ddae
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1279,7 +1314,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LockWrong
   guid: 53727a9084913f4ba82fee2afdb6f512
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1386,7 +1421,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_BrokenPlantVase
   guid: 65259316bb8dff43b052c158247e25e0
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1409,7 +1444,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_Rake
   guid: 62aeaff0202cf343beb473de20b8bf80
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1467,7 +1502,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingPlantHeavy
   guid: b6720ad82ce97b4fa652e514c24e557c
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1530,7 +1565,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LockOpenIndoor
   guid: c4ff1cf7f5047245a2f39d448b925aa9
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1574,7 +1609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 796712254389930246}
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   EditorEvents:
   - {fileID: 5961021214402947547}
   - {fileID: 2981677684832045223}
@@ -1632,12 +1667,12 @@ MonoBehaviour:
   - {fileID: 6960301564282304796}
   - {fileID: -3661886565842501358}
   EditorParameters:
-  - {fileID: 3023635756251467353}
+  - {fileID: 8944448046487658475}
   MasterBanks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   StringsBanks:
   - {fileID: 796712254389930246}
-  stringsBankWriteTime: 637578430346835972
+  stringsBankWriteTime: 637578477671448569
   cacheVersion: 3
 --- !u!114 &4374061492138706
 MonoBehaviour:
@@ -1654,7 +1689,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_RepairWheel
   guid: c573765614ba6f449bd43b58505c5fec
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1695,7 +1730,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_ButtonClickLock
   guid: 327f53c192a4bd40b50886e20af738b1
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1757,7 +1792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMODEMMA/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637578430346835972
+  lastModified: 637578477671448569
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1778,7 +1813,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_Paper
   guid: 3bb44ee37c12fc49b1ac21813bf713c7
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1845,7 +1880,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_DrawerEmmaRoom
   guid: a55a9d074d66b543ba220c794fce8974
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1868,7 +1903,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_OpenOven
   guid: 06d2fddabb5ae1458ea0d14184e9fdfc
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1983,7 +2018,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_AmbientOutside
   guid: 315f70987409f84bb78a4573bf862396
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -2007,7 +2042,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &3062797298023529439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2069,6 +2104,24 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &3214935180675115768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578470877780835
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &3325803015978518445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2120,7 +2173,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_RingBicycle
   guid: 16d321af38cf9a4880ad0ff5bdef2443
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2143,7 +2196,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_OpenFridge
   guid: c15f0f14c8bcc941a4c27329a78b0cb3
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2166,7 +2219,7 @@ MonoBehaviour:
   Path: event:/SFX/Doors/snd_DoorOutsideOpen
   guid: 527279367109bb46b765c850a5f19bc9
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2207,7 +2260,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_InteractivePlant
   guid: df63bb878741d94d911386c73414aca8
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2230,7 +2283,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_MusikDreamWorld
   guid: bae174e7b2dd594e98ff9ec4f8823be0
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -2253,7 +2306,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_Stairs
   guid: 86a20563d816e74c8bd0ba00a7228efc
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2276,7 +2329,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_FallingBottleTop
   guid: 83cc9b1312f650478972a9def47cf96e
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2299,7 +2352,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingSpoon
   guid: c22958cdad541c47a2376bfe093efed9
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2344,7 +2397,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_ToyBear
   guid: c8425952c31b3c458e836967f25d187e
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2408,7 +2461,7 @@ MonoBehaviour:
   lastModified: 637578430346755895
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &5961021214402947547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2424,7 +2477,7 @@ MonoBehaviour:
   Path: event:/Emma/Footsteps/snd_EmmaFootsteps
   guid: 20e6e1deec54864bb3a2986bd5449b60
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -2469,7 +2522,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PickupKey
   guid: 0559cc49e3b7f34a9b315e28edbf998d
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2536,7 +2589,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PuttingToghether
   guid: 22867e03f4dd7245b07918b1102ed517
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2581,7 +2634,7 @@ MonoBehaviour:
   Path: event:/SFX/General/snd_BackClosing
   guid: fed7b6167d72e44691097f8aabddf261
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2604,7 +2657,7 @@ MonoBehaviour:
   Path: event:/SFX/General/snd_BackpackOpening
   guid: b6fe780df5ef5545bd207f3d2de9e289
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2627,7 +2680,7 @@ MonoBehaviour:
   Path: event:/SFX/Doors/snd_DoorClose
   guid: ce2635e7de7a6f49891477a9db2224eb
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2716,7 +2769,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_KnifePutinPlace
   guid: 630b429433883046b4eb97426bd55c2b
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2845,7 +2898,7 @@ MonoBehaviour:
   Path: event:/SFX/Menu/snd_Hover
   guid: 31848a3653caae44851e5b3b436759c8
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2868,7 +2921,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_RadioCrackling
   guid: 9899928a465a974fa33fe827419abb46
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -2891,7 +2944,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingPlantLight
   guid: 651f3b5f42302f4d805c2a0bef1a5efa
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2936,7 +2989,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_Stove
   guid: 2d63b44a7c2b564192ba4bf56fe705a7
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -2959,10 +3012,10 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_AmbientInsideGrandmother
   guid: 864a06dfc4c0a44bb014db90f3ea6c2a
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -2982,7 +3035,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PickupWheel
   guid: b4d77312fb0d9f45bd817e56ae499f8d
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3012,6 +3065,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1500
+--- !u!114 &8944448046487658475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &9015256187279682405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3049,7 +3119,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_CloseFridge
   guid: 7de37dfec681524783141e389691c7e9
   Banks:
-  - {fileID: 5884445802949840036}
+  - {fileID: -9187338380714116018}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
