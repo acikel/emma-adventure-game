@@ -1568,7 +1568,7 @@ GameObject:
   - component: {fileID: 1828631482}
   - component: {fileID: 1828631481}
   - component: {fileID: 1828631480}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: HelperBone
   m_TagString: Item
   m_Icon: {fileID: 0}
