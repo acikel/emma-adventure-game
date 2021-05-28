@@ -173,6 +173,11 @@ public class SceneManager : MonoBehaviour
 
     private IEnumerator HandleNextSceneLoad(string sceneNameToTransitionTo)
     {
+        if(sceneNameToTransitionTo.Equals("Sequence1Zone5"))
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Location", 1);
+        else
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Location", 0);
+        
         isReloading = true;
         yield return StartCoroutine(Fade(1f));
 

@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9214557359049395827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MagnetRemove
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MagnetRemove
+  guid: 99f8f37a7c7e4b49918768fdb1ca9bf3
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 562
+--- !u!114 &-9204939273913477030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/General/snd_BonePickup
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/General/snd_BonePickup
+  guid: a36576f1369dd342b38fee0b4155e30f
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 687
 --- !u!114 &-9198752216463000852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,6 +64,75 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-9108696573993134625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_PickupRope
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_PickupRope
+  guid: 6b8bda6158ef4f47aae623c3c573f9e9
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1923
+--- !u!114 &-8990985231412067444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_LockOpen
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_LockOpen
+  guid: 1a60586ee0ea43489f2a5e7c07fa0862
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1656
+--- !u!114 &-8701015234446070010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_WaterOpen
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_WaterOpen
+  guid: 87a07a973507aa46838a76c1f166169d
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1434
 --- !u!114 &-8563752698056132272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,8 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_ToyBear
   guid: c8425952c31b3c458e836967f25d187e
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -57,7 +171,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8350805153457280903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +190,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-8345840441665958806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_KnifeRemove
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_KnifeRemove
+  guid: 6ec48ceda231e340a50b815c153e63d2
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1317
 --- !u!114 &-8291221929129633513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +230,30 @@ MonoBehaviour:
   lastModified: 637578122960111993
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
+--- !u!114 &-8003725356270101066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MovingUmbrella
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MovingUmbrella
+  guid: 731ead5ed224e0419e8b72a100769f3e
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 730
 --- !u!114 &-7500817867899855686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,8 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_DrippingMilk
   guid: b61b4aa0ee22334d9696b6ec3160ddae
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -117,6 +276,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 25039
+--- !u!114 &-7421938503844104467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_PickupHands
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_PickupHands
+  guid: 3ad29ac624b4ae4489bc940e5435cebc
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 671
 --- !u!114 &-7374111126399221330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,8 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_MovingBedsheet
   guid: 43d7390263971847bb8122791a2698e0
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -154,8 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_DrawerEmmaRoom
   guid: a55a9d074d66b543ba220c794fce8974
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -163,6 +343,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3000
+--- !u!114 &-6705966444687463104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_FallingBottleFloorWood
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_FallingBottleFloorWood
+  guid: dc4da0293ac9904d85e850760b769e30
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1576
 --- !u!114 &-6552923255509209991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,8 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_BrokenPlantVase
   guid: 65259316bb8dff43b052c158247e25e0
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -186,6 +388,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1062
+--- !u!114 &-6526795683312303186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_LightOn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_LightOn
+  guid: 0b4b91b4a57cdc4085638318c97dac6e
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 546
 --- !u!114 &-6512833646163265301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,8 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_MovingSpoon
   guid: c22958cdad541c47a2376bfe093efed9
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -246,8 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_PuttingToghehterBranch
   guid: c83dcdf6eca4704c8dec04f193fe0539
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -255,6 +478,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2736
+--- !u!114 &-6025646203867799472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Doors/snd_UnlockDoor
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Doors/snd_UnlockDoor
+  guid: 41b8e5ceb061834eaa6cb2eeaf75a83e
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1328
 --- !u!114 &-5750852592036277094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,8 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/General/snd_BackClosing
   guid: fed7b6167d72e44691097f8aabddf261
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -292,8 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_MovingPlantHeavy
   guid: b6720ad82ce97b4fa652e514c24e557c
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -334,7 +578,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_MusikDialogue
   guid: 794a5d207ed5d34683d186a785ed10bf
   Banks:
-  - {fileID: -8291221929129633513}
+  - {fileID: 7510890945239532369}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -342,6 +586,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 162711
+--- !u!114 &-5262367616844405008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/snd_EmmaFootsteps/Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &-5090822639636473831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,8 +617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_KnifeRemove
   guid: 6ec48ceda231e340a50b815c153e63d2
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -365,6 +625,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1317
+--- !u!114 &-5054225279374737525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_FallingMilkContainer
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_FallingMilkContainer
+  guid: 100f80ff7c7bba42abf05986944ba118
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1524
+--- !u!114 &-5041097126150738335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_PuttingToghehterBranch
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_PuttingToghehterBranch
+  guid: c83dcdf6eca4704c8dec04f193fe0539
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2736
 --- !u!114 &-5034703300339707423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +689,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-4864249148395533299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/snd_EmmaFootsteps/Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &-4812403662521427405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,8 +720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_Stove
   guid: 2d63b44a7c2b564192ba4bf56fe705a7
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -420,8 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_RepairWheel
   guid: c573765614ba6f449bd43b58505c5fec
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -429,6 +750,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1755
+--- !u!114 &-4791085002599489116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/General/snd_SkeletonComplete
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/General/snd_SkeletonComplete
+  guid: d5f24b6c410e5641a9cb377286a2582a
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 635
 --- !u!114 &-4557867656851150558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,8 +787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_LightOn
   guid: 0b4b91b4a57cdc4085638318c97dac6e
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -484,8 +827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_PickupKey
   guid: 0559cc49e3b7f34a9b315e28edbf998d
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -507,8 +849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_DoorOutsideOpen
   guid: 527279367109bb46b765c850a5f19bc9
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -530,8 +871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_WaterOpen
   guid: 87a07a973507aa46838a76c1f166169d
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -553,8 +893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_MoveCarpet
   guid: b3858fc263d75a4889e93c2d714ccedc
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -576,8 +915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_PickupRope
   guid: 6b8bda6158ef4f47aae623c3c573f9e9
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -585,6 +923,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1923
+--- !u!114 &-3661886565842501358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_LookPicture
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_LookPicture
+  guid: ffcbf8d77ac1854f92b9ed1bde034ae6
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1773
+--- !u!114 &-3653524153506422482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MoveCarpet
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MoveCarpet
+  guid: b3858fc263d75a4889e93c2d714ccedc
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1379
 --- !u!114 &-3311472896452290930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,8 +983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_ButtonClickLock
   guid: 327f53c192a4bd40b50886e20af738b1
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -622,8 +1005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_LightFlickering
   guid: d6ad84983ecff54bb0a3461ced094535
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -631,6 +1013,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 6972
+--- !u!114 &-3100028641856368817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MovingBedsheet
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MovingBedsheet
+  guid: 43d7390263971847bb8122791a2698e0
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1647
+--- !u!114 &-2975750428964608490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_DrawerDoor
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_DrawerDoor
+  guid: 60f3545e339c3b4ab47eb0ab9012f1ba
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1607
 --- !u!114 &-2928680045967257771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,8 +1073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_LockOpen
   guid: 1a60586ee0ea43489f2a5e7c07fa0862
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -654,6 +1081,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1656
+--- !u!114 &-2806925379481667458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578361118827674
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-2663163447016605229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,8 +1113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_CloseFridge
   guid: 7de37dfec681524783141e389691c7e9
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -691,8 +1135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_Stairs
   guid: 86a20563d816e74c8bd0ba00a7228efc
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -714,8 +1157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_FallingBottleTop
   guid: 83cc9b1312f650478972a9def47cf96e
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -741,6 +1183,110 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-1891972030112188291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_LightFlickering
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_LightFlickering
+  guid: d6ad84983ecff54bb0a3461ced094535
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6972
+--- !u!114 &-1513468605623903496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_DrippingMilk
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_DrippingMilk
+  guid: b61b4aa0ee22334d9696b6ec3160ddae
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 25039
+--- !u!114 &-1437192503859916225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578383222725769
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-1282686647408674871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/snd_EmmaFootsteps/Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &-1241171070892119087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_LockWrong
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_LockWrong
+  guid: 53727a9084913f4ba82fee2afdb6f512
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1142
 --- !u!114 &-1180794204249747068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,8 +1319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_Rake
   guid: 62aeaff0202cf343beb473de20b8bf80
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -796,8 +1341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_LookPicture
   guid: ffcbf8d77ac1854f92b9ed1bde034ae6
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -819,8 +1363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/General/snd_SkeletonComplete
   guid: d5f24b6c410e5641a9cb377286a2582a
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -828,6 +1371,110 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 635
+--- !u!114 &-637681733936415396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_BrokenPlantVase
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_BrokenPlantVase
+  guid: 65259316bb8dff43b052c158247e25e0
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1062
+--- !u!114 &-602779576784870122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_Rake
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_Rake
+  guid: 62aeaff0202cf343beb473de20b8bf80
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1753
+--- !u!114 &-353761853374306907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578361217239610
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-291319591921698577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/snd_EmmaFootsteps/Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &-219835047555785235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MovingPlantHeavy
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MovingPlantHeavy
+  guid: b6720ad82ce97b4fa652e514c24e557c
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1779
 --- !u!114 &-120298139411873853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -842,8 +1489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_MovingUmbrella
   guid: 731ead5ed224e0419e8b72a100769f3e
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -869,6 +1515,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-54361228952601798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_LockOpenIndoor
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_LockOpenIndoor
+  guid: c4ff1cf7f5047245a2f39d448b925aa9
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1343
 --- !u!114 &-13280462875714060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,8 +1552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_RadioCrackling
   guid: 9899928a465a974fa33fe827419abb46
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -906,70 +1574,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 796712254389930246}
-  - {fileID: -8291221929129633513}
+  - {fileID: 7510890945239532369}
   EditorEvents:
-  - {fileID: 659882000063073207}
-  - {fileID: -4520678970094958032}
-  - {fileID: 7509346307869762066}
-  - {fileID: -4557867656851150558}
-  - {fileID: 7329526360156783412}
-  - {fileID: 8341816532160292309}
-  - {fileID: -2928680045967257771}
   - {fileID: 5961021214402947547}
-  - {fileID: 3062797298023529439}
-  - {fileID: -4812403662521427405}
   - {fileID: 2981677684832045223}
-  - {fileID: -3311472896452290930}
-  - {fileID: 1409264652881662299}
-  - {fileID: 2888471915932528647}
-  - {fileID: 3088151760129607142}
-  - {fileID: -7374111126399221330}
-  - {fileID: -4440468770981836989}
-  - {fileID: 6948572675040940828}
-  - {fileID: 7684462191012327146}
-  - {fileID: -1159307068616246052}
-  - {fileID: 5221078862183838419}
-  - {fileID: 6453437788810657051}
-  - {fileID: -6552923255509209991}
-  - {fileID: -3705544687961819872}
-  - {fileID: -5090822639636473831}
-  - {fileID: -120298139411873853}
   - {fileID: -5335598845876109155}
-  - {fileID: -2663163447016605229}
-  - {fileID: -2099476328610806379}
   - {fileID: 8733102739753412696}
-  - {fileID: -2220123473668135829}
-  - {fileID: -4168369492771534897}
-  - {fileID: -13280462875714060}
-  - {fileID: 7237532616631831952}
-  - {fileID: 6686123956993367547}
-  - {fileID: -7362811302200378687}
-  - {fileID: -3889338984749375950}
-  - {fileID: 7259058094773127554}
-  - {fileID: -7500817867899855686}
-  - {fileID: -5626536365716438061}
-  - {fileID: 8927835800339249454}
   - {fileID: 4202998580712760717}
-  - {fileID: 9015256187279682405}
-  - {fileID: -6512833646163265301}
-  - {fileID: 5121482074158542549}
-  - {fileID: -4803278437956190306}
-  - {fileID: -6337960955235455860}
-  - {fileID: -8563752698056132272}
-  - {fileID: 7098349062471718761}
-  - {fileID: -660513304783602179}
-  - {fileID: -3288036387424312493}
-  - {fileID: 6808973613726944546}
-  - {fileID: 7944849891123271109}
-  - {fileID: -5750852592036277094}
-  - {fileID: -1077595634679121918}
-  EditorParameters: []
+  - {fileID: 6559345306283780969}
+  - {fileID: 1630266986592413128}
+  - {fileID: -6526795683312303186}
+  - {fileID: -5054225279374737525}
+  - {fileID: 3563247114396546692}
+  - {fileID: -8990985231412067444}
+  - {fileID: 6937955819728733453}
+  - {fileID: 8498829075610714472}
+  - {fileID: 8014836993415213037}
+  - {fileID: 328651112606713886}
+  - {fileID: -7421938503844104467}
+  - {fileID: 1094027887449338728}
+  - {fileID: -6025646203867799472}
+  - {fileID: -3100028641856368817}
+  - {fileID: 3714733861426739672}
+  - {fileID: -1241171070892119087}
+  - {fileID: -2975750428964608490}
+  - {fileID: -602779576784870122}
+  - {fileID: 7282105914512446150}
+  - {fileID: 8290176645281491440}
+  - {fileID: -637681733936415396}
+  - {fileID: -9108696573993134625}
+  - {fileID: -8345840441665958806}
+  - {fileID: -8003725356270101066}
+  - {fileID: 9136714152416857406}
+  - {fileID: 4525547726905841544}
+  - {fileID: 4277609552625078027}
+  - {fileID: -8701015234446070010}
+  - {fileID: 8230062382077914988}
+  - {fileID: -9214557359049395827}
+  - {fileID: -9204939273913477030}
+  - {fileID: 1556664243001082876}
+  - {fileID: -3653524153506422482}
+  - {fileID: 8851651701278617228}
+  - {fileID: -1513468605623903496}
+  - {fileID: -219835047555785235}
+  - {fileID: 7031213741571903750}
+  - {fileID: 3613606053279184489}
+  - {fileID: 4636618675294282528}
+  - {fileID: -54361228952601798}
+  - {fileID: 4374061492138706}
+  - {fileID: -5041097126150738335}
+  - {fileID: 5160949715324139654}
+  - {fileID: 7039444219234304592}
+  - {fileID: -4791085002599489116}
+  - {fileID: -1891972030112188291}
+  - {fileID: -6705966444687463104}
+  - {fileID: 3984403312695029262}
+  - {fileID: 6960301564282304796}
+  - {fileID: -3661886565842501358}
+  EditorParameters:
+  - {fileID: 2740081975669330776}
   MasterBanks:
-  - {fileID: -8291221929129633513}
+  - {fileID: 7510890945239532369}
   StringsBanks:
   - {fileID: 796712254389930246}
-  stringsBankWriteTime: 637578122960191783
+  stringsBankWriteTime: 637578419437477640
   cacheVersion: 3
+--- !u!114 &4374061492138706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_RepairWheel
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_RepairWheel
+  guid: c573765614ba6f449bd43b58505c5fec
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1755
 --- !u!114 &269580467692693846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,6 +1680,47 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &328651112606713886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_ButtonClickLock
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_ButtonClickLock
+  guid: 327f53c192a4bd40b50886e20af738b1
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 548
+--- !u!114 &394909491747143662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578391688781305
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &659882000063073207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,8 +1735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Menu/snd_Hover
   guid: 31848a3653caae44851e5b3b436759c8
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1025,12 +1757,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMODEMMA/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637578122960191783
+  lastModified: 637578419437477640
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3608
+    Value: 3468
   Exists: 1
+--- !u!114 &1094027887449338728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_Paper
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_Paper
+  guid: 3bb44ee37c12fc49b1ac21813bf713c7
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2702
 --- !u!114 &1221931412129980712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,8 +1822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_PickupHands
   guid: 3ad29ac624b4ae4489bc940e5435cebc
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1076,6 +1830,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 671
+--- !u!114 &1556664243001082876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_DrawerEmmaRoom
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_DrawerEmmaRoom
+  guid: a55a9d074d66b543ba220c794fce8974
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3000
+--- !u!114 &1630266986592413128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_OpenOven
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_OpenOven
+  guid: 06d2fddabb5ae1458ea0d14184e9fdfc
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2579
 --- !u!114 &2119841670320775199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,6 +1893,23 @@ MonoBehaviour:
   lastModified: 637571040968530542
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &2448704434962808303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/snd_EmmaFootsteps/Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 0
 --- !u!114 &2646631944405867167
 MonoBehaviour:
@@ -1112,6 +1929,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2740081975669330776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &2888471915932528647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1126,8 +1960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_Paper
   guid: 3bb44ee37c12fc49b1ac21813bf713c7
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1150,10 +1983,10 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_AmbientOutside
   guid: 315f70987409f84bb78a4573bf862396
   Banks:
-  - {fileID: -8291221929129633513}
+  - {fileID: 7510890945239532369}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -1172,8 +2005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_PuttingToghether
   guid: 22867e03f4dd7245b07918b1102ed517
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1195,8 +2027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_OpenDoor
   guid: 41b8e5ceb061834eaa6cb2eeaf75a83e
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1204,6 +2035,169 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1328
+--- !u!114 &3175533921735437919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/snd_EmmaFootsteps/Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &3325803015978518445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578361118827674
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &3374674461277599846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578389247844998
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &3563247114396546692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_RingBicycle
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_RingBicycle
+  guid: 16d321af38cf9a4880ad0ff5bdef2443
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2017
+--- !u!114 &3613606053279184489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_OpenFridge
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_OpenFridge
+  guid: c15f0f14c8bcc941a4c27329a78b0cb3
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1683
+--- !u!114 &3714733861426739672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Doors/snd_DoorOutsideOpen
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Doors/snd_DoorOutsideOpen
+  guid: 527279367109bb46b765c850a5f19bc9
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3875
+--- !u!114 &3758148187294936641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578388521693863
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &3984403312695029262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_InteractivePlant
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_InteractivePlant
+  guid: df63bb878741d94d911386c73414aca8
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2072
 --- !u!114 &4202998580712760717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,7 +2213,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_MusikDreamWorld
   guid: bae174e7b2dd594e98ff9ec4f8823be0
   Banks:
-  - {fileID: -8291221929129633513}
+  - {fileID: 7510890945239532369}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1227,6 +2221,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 150000
+--- !u!114 &4277609552625078027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_Stairs
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_Stairs
+  guid: 86a20563d816e74c8bd0ba00a7228efc
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2892
+--- !u!114 &4525547726905841544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_FallingBottleTop
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_FallingBottleTop
+  guid: 83cc9b1312f650478972a9def47cf96e
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1960
+--- !u!114 &4636618675294282528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MovingSpoon
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MovingSpoon
+  guid: c22958cdad541c47a2376bfe093efed9
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2525
 --- !u!114 &5121482074158542549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,8 +2304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_LockOpenIndoor
   guid: c4ff1cf7f5047245a2f39d448b925aa9
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1250,6 +2312,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1343
+--- !u!114 &5160949715324139654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_ToyBear
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_ToyBear
+  guid: c8425952c31b3c458e836967f25d187e
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &5221078862183838419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1264,8 +2349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_KnifePutinPlace
   guid: 630b429433883046b4eb97426bd55c2b
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1273,6 +2357,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1174
+--- !u!114 &5740602955745209756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/snd_EmmaFootsteps/Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &5961021214402947547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,12 +2389,11 @@ MonoBehaviour:
   Path: event:/Emma/Footsteps/snd_EmmaFootsteps
   guid: 20e6e1deec54864bb3a2986bd5449b60
   Banks:
-  - {fileID: -8291221929129633513}
+  - {fileID: 7510890945239532369}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
-  Parameters:
-  - {fileID: -8541464670849060010}
+  Parameters: []
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1311,8 +2411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_MovingPlantLight
   guid: 651f3b5f42302f4d805c2a0bef1a5efa
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1320,6 +2419,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 578
+--- !u!114 &6559345306283780969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_PickupKey
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_PickupKey
+  guid: 0559cc49e3b7f34a9b315e28edbf998d
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 250
 --- !u!114 &6686123956993367547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1334,8 +2456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/General/snd_BonePickup
   guid: a36576f1369dd342b38fee0b4155e30f
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1357,8 +2478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_FallingBottleFloorWood
   guid: dc4da0293ac9904d85e850760b769e30
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1366,6 +2486,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1576
+--- !u!114 &6937955819728733453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_PuttingToghether
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_PuttingToghether
+  guid: 22867e03f4dd7245b07918b1102ed517
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1798
 --- !u!114 &6948572675040940828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1380,8 +2523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_LockWrong
   guid: 53727a9084913f4ba82fee2afdb6f512
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1389,6 +2531,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1142
+--- !u!114 &6960301564282304796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/General/snd_BackClosing
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/General/snd_BackClosing
+  guid: fed7b6167d72e44691097f8aabddf261
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1432
+--- !u!114 &7031213741571903750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/General/snd_BackpackOpening
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/General/snd_BackpackOpening
+  guid: b6fe780df5ef5545bd207f3d2de9e289
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1500
+--- !u!114 &7039444219234304592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Doors/snd_DoorClose
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Doors/snd_DoorClose
+  guid: ce2635e7de7a6f49891477a9db2224eb
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1173
 --- !u!114 &7098349062471718761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1403,8 +2614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_DoorClose
   guid: ce2635e7de7a6f49891477a9db2224eb
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1426,8 +2636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_MagnetRemove
   guid: 99f8f37a7c7e4b49918768fdb1ca9bf3
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1449,8 +2658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_PickupWheel
   guid: b4d77312fb0d9f45bd817e56ae499f8d
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1458,6 +2666,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1176
+--- !u!114 &7282105914512446150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_KnifePutinPlace
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_KnifePutinPlace
+  guid: 630b429433883046b4eb97426bd55c2b
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1174
 --- !u!114 &7329526360156783412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,8 +2703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_FallingMilkContainer
   guid: 100f80ff7c7bba42abf05986944ba118
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1495,8 +2725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_OpenOven
   guid: 06d2fddabb5ae1458ea0d14184e9fdfc
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1504,6 +2733,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2579
+--- !u!114 &7510890945239532369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637578419437387761
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7684462191012327146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,8 +2765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_DrawerDoor
   guid: 60f3545e339c3b4ab47eb0ab9012f1ba
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1541,8 +2787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_InteractivePlant
   guid: df63bb878741d94d911386c73414aca8
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1550,6 +2795,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2072
+--- !u!114 &8014836993415213037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Menu/snd_Hover
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Menu/snd_Hover
+  guid: 31848a3653caae44851e5b3b436759c8
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 13
+--- !u!114 &8230062382077914988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_RadioCrackling
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_RadioCrackling
+  guid: 9899928a465a974fa33fe827419abb46
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 23235
+--- !u!114 &8290176645281491440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MovingPlantLight
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MovingPlantLight
+  guid: 651f3b5f42302f4d805c2a0bef1a5efa
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 578
 --- !u!114 &8341816532160292309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1564,8 +2878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_RingBicycle
   guid: 16d321af38cf9a4880ad0ff5bdef2443
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1573,6 +2886,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2017
+--- !u!114 &8498829075610714472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_Stove
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_Stove
+  guid: 2d63b44a7c2b564192ba4bf56fe705a7
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 32699
 --- !u!114 &8733102739753412696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1588,7 +2924,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_AmbientInsideGrandmother
   guid: 864a06dfc4c0a44bb014db90f3ea6c2a
   Banks:
-  - {fileID: -8291221929129633513}
+  - {fileID: 7510890945239532369}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1596,6 +2932,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 21355
+--- !u!114 &8851651701278617228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_PickupWheel
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_PickupWheel
+  guid: b4d77312fb0d9f45bd817e56ae499f8d
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1176
 --- !u!114 &8927835800339249454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,8 +2969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/General/snd_BackpackOpening
   guid: b6fe780df5ef5545bd207f3d2de9e289
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1633,8 +2991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Emma/SFX/Sequence 1/snd_OpenFridge
   guid: c15f0f14c8bcc941a4c27329a78b0cb3
-  Banks:
-  - {fileID: -8291221929129633513}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1642,3 +2999,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1683
+--- !u!114 &9136714152416857406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_CloseFridge
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_CloseFridge
+  guid: 7de37dfec681524783141e389691c7e9
+  Banks:
+  - {fileID: 7510890945239532369}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1810

@@ -540,6 +540,7 @@ GameObject:
   - component: {fileID: 599976859}
   - component: {fileID: 599976861}
   - component: {fileID: 599976862}
+  - component: {fileID: 599976863}
   m_Layer: 6
   m_Name: Sequence1Zone4
   m_TagString: Portal
@@ -667,6 +668,29 @@ PolygonCollider2D:
       - {x: -0.70664555, y: -7.955428}
       - {x: -0.86135006, y: 7.3202696}
       - {x: 4.0106254, y: 6.704118}
+--- !u!114 &599976863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599976858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Doors/snd_UnlockDoor
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &702905938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1326384911}
   - component: {fileID: 1326384909}
+  - component: {fileID: 1326384910}
   m_Layer: 0
   m_Name: Sequence1Zone1
   m_TagString: Portal
@@ -1277,6 +1302,29 @@ PolygonCollider2D:
       - {x: -22.81082, y: -8.694145}
       - {x: -10.925992, y: -8.812683}
       - {x: -9.272583, y: -6.0086074}
+--- !u!114 &1326384910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326384908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_Stairs
+  PlayEvent: 9
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!4 &1326384911
 Transform:
   m_ObjectHideFlags: 0

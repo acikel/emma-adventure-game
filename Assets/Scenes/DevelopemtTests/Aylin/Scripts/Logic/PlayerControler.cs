@@ -60,11 +60,13 @@ public class PlayerControler : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         {
             triggerIdleAnimation();
-        //}else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
+            stopSound(footstepsEvent);
+            //}else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
         }
         else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
         {
             triggerIdleAnimation();
+            stopSound(footstepsEvent);
             //Debug.Log("Portal name:"+ collision.gameObject.name);
 
             //replacement of OnCollisionWithPortal(collision.gameObject.name); to call events with IEnumerator as return type and Coroutines in Handler Methods:
@@ -87,6 +89,7 @@ public class PlayerControler : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         {
             triggerIdleAnimation();
+            stopSound(footstepsEvent);
         }
     }
 
@@ -101,6 +104,7 @@ public class PlayerControler : MonoBehaviour
         if (avatarManager.checkForCollisionWithObstacles(colliderOfAvatarCurrent))
         {
             triggerIdleAnimation();
+            stopSound(footstepsEvent);
             avatarIsCollidingWithObstacle = true;
         }
         
@@ -110,6 +114,7 @@ public class PlayerControler : MonoBehaviour
     {
         if (avatarManager.checkForCollisionWithObstacles(colliderOfAvatarCurrent))
         {
+            stopSound(footstepsEvent);
             avatar.transform.position = avatarPreviousPosition;
         }
     }
@@ -478,18 +483,22 @@ public class PlayerControler : MonoBehaviour
         }
         else if (t >= stopDistance && !idleTriggered)
         {
-            footstepsEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            footstepsEvent.release();
-            footstepsEvent.clearHandle();
+            stopSound(footstepsEvent);
 
             triggerIdleAnimation();
         }
-
         avatar.getRigidbody2D().velocity = Vector2.one * 0.001f;
         targetPosition.z = avatar.transform.position.z;
         avatar.transform.position = Vector3.Lerp(avatar.transform.position, targetPosition, t);
 
 
+    }
+
+    private void stopSound(FMOD.Studio.EventInstance instance)
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        //instance.release();
+        //instance.clearHandle();
     }
 
 }

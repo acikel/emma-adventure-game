@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{cee5b841-61b0-4e83-aa6c-b2eeaf75a83e}">
 		<property name="name">
-			<value>snd_OpenDoor</value>
+			<value>snd_UnlockDoor</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{bdbd131a-9afd-4847-a969-fa050531d0cd}</destination>
+			<destination>{b707fa06-02fd-4238-b19f-597bfe74e49a}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{c26b37b3-63a5-441e-bc3d-680d6cabc4cb}</destination>

@@ -32,7 +32,7 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
         if (spriteRenderer.color.a!=1 || interactionSwitcher.isSwitcherFading())
             return;
 
-        inventory.InteractionWithUIActive = true;
+        
         if (!fadeTransition)
         {
             objectToSwitchTo.SetActive(true);
@@ -79,7 +79,14 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
         */
 
     }
-
+    private void OnMouseOver()
+    {
+        inventory.InteractionWithUIActive = true;
+    }
+    private void OnMouseExit()
+    {
+        inventory.InteractionWithUIActive = false;
+    }
     private void OnMouseUp()
     {
         //if (spriteRenderer.color.a != 1)
@@ -113,8 +120,6 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
     {
         yield return StartCoroutine(Fade(renderer, finalAlpha));
         isFading = false;
-        if (!interactionSwitcher.isSwitcherFading())
-            inventory.InteractionWithUIActive = false;
         
     }
 
@@ -123,8 +128,6 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
         yield return StartCoroutine(FadeAndDeactivate(renderer, finalAlpha, gameObject));
         gameObject.SetActive(false);
         isFading = false;
-        if (!interactionSwitcher.isSwitcherFading())
-            inventory.InteractionWithUIActive = false;
         
     }
     private IEnumerator FadeAndDeactivate(SpriteRenderer renderer, float finalAlpha, GameObject gameObject)
