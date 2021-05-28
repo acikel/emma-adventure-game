@@ -16,6 +16,11 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     //This is handled in the subclass OpenImagePopUp and OpenLockDoor when player enters a trigger.
     protected bool mouseWasClickedOnObject;
 
+    //variables for sounds reference.
+    //protected FMOD.Studio.EventInstance popUpSoundEvent;
+    //protected FMOD.Studio.EventDescription eventDescription;
+    [FMODUnity.EventRef]
+    public string popUpSound;
 
     public SpriteRenderer spriteRendererHintImage;
     private Color tmpColor;
@@ -33,6 +38,10 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         initializeCanvasToOpen();
         //spriteRendererHintImage = GetComponent<SpriteRenderer>();
         setAlphaOfHintImage(0);
+
+        //eventDescription = FMODUnity.RuntimeManager.GetEventDescription(popUpSound);
+        //if(eventDescription.isValid())
+        //    eventDescription.createInstance(out popUpSoundEvent);
     }
 
     public void OnEnable()
@@ -159,6 +168,10 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         {
             inventory.InteractionWithUIActive = true;
             setAlphaOfHintImage(0);
+            //if (eventDescription.isValid())
+            //    popUpSoundEvent.start();
+
+            FMODUnity.RuntimeManager.PlayOneShot(popUpSound);
             //Debug.Log("OnMouseDown2");
             //resetMouseClick();
         }

@@ -1081,6 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af09d8b079cde54aae2c3ca8ec9a7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpSound: event:/SFX/Sequence 1/snd_LookPicture
   spriteRendererHintImage: {fileID: 483040367}
   imageToBeDisplayed: {fileID: 21300000, guid: 694670f839f3c17479d77e0b8294de1e, type: 3}
 --- !u!61 &1355463666

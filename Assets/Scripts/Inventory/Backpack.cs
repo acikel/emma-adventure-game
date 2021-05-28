@@ -9,6 +9,11 @@ public class Backpack : MonoBehaviour
     public GameObject InventorySlots;
     public GameObject InventoryBlocker;
 
+    [FMODUnity.EventRef]
+    public string backpackOpenSound;
+    [FMODUnity.EventRef]
+    public string backpackCloseSound;
+
     public Sprite openedBackpackSprite;
     public Sprite closedBackpackSprite;
     private Image buttonSprite;
@@ -32,6 +37,7 @@ public class Backpack : MonoBehaviour
         if (InventorySlots.activeSelf == true)
         {
             openInventorySlotsAndBlockMovementForInventory(false);
+            FMODUnity.RuntimeManager.PlayOneShot(backpackCloseSound);
         }
         else
         {
@@ -39,6 +45,8 @@ public class Backpack : MonoBehaviour
             {
                 
                 openInventorySlotsAndBlockMovementForInventory(true);
+                FMODUnity.RuntimeManager.PlayOneShot(backpackOpenSound);
+                
             }
         }
         

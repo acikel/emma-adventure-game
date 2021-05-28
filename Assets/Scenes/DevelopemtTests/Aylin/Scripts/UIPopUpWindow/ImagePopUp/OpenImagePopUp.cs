@@ -39,6 +39,9 @@ public class OpenImagePopUp : OpenPopUpWindow
                 //imagePopUpResumePanel.justOpened(); //no need for resume onPointerDown blocker as player first needs to walk to this game object and mouse is aleady released till then.
                 imagePopUpPanel.setImageOfPopUpImagePanel(imageToBeDisplayed);
                 setAlphaOfHintImage(0);
+                //if (eventDescription.isValid())
+                //    popUpSoundEvent.start();
+                FMODUnity.RuntimeManager.PlayOneShot(popUpSound);
                 inventory.InteractionWithUIActive = true;
                 //resetMouseClick needed otherwise after closing popupwindow it is resumed after each reinter into trigger.
                 resetMouseClick();

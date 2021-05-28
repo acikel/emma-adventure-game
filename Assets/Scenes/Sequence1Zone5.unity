@@ -816,6 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0e2fc53481ed241a0c3c69c87859e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popUpSound: event:/SFX/Sequence 1/snd_LockOpen
   spriteRendererHintImage: {fileID: 2105608158}
   doorOpen: {fileID: 2046776385}
 --- !u!58 &1166814496

@@ -737,6 +737,8 @@ MonoBehaviour:
   BackpackButton: {fileID: 418353900}
   InventorySlots: {fileID: 558216588}
   InventoryBlocker: {fileID: 980996455}
+  backpackOpenSound: event:/SFX/General/snd_BackpackOpening
+  backpackCloseSound: event:/SFX/General/snd_BackClosing
   openedBackpackSprite: {fileID: 21300000, guid: 3bc329053f732fe42906453632e010d1, type: 3}
   closedBackpackSprite: {fileID: 21300000, guid: c2055d14f966e6740b00100fe0a77509, type: 3}
 --- !u!114 &418353900
@@ -1134,7 +1136,6 @@ GameObject:
   - component: {fileID: 598116514}
   - component: {fileID: 598116513}
   - component: {fileID: 598116512}
-  - component: {fileID: 598116515}
   m_Layer: 5
   m_Name: HexagonButton
   m_TagString: Untagged
@@ -1256,29 +1257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598116510}
   m_CullTransparentMesh: 1
---- !u!114 &598116515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598116510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_ButtonClickLock
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &615209807 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3554606657285527818, guid: a3de3961aafd1f04fa863ca454ccf780, type: 3}
@@ -1553,6 +1531,8 @@ MonoBehaviour:
   CheckPanelSolved: {fileID: 21300000, guid: 5d77cc6c3e807124b938e1e008bea88a, type: 3}
   CheckPanelUnsolved: {fileID: 21300000, guid: 615ea2366a585c84e94455c953561325, type: 3}
   CheckPanel: {fileID: 1705586563}
+  lockButtonSound: event:/SFX/Sequence 1/snd_ButtonClickLock
+  lockWrongSound: event:/SFX/Sequence 1/snd_LockWrong
   imageResumePanel: {fileID: 988109667}
 --- !u!1 &804535769
 GameObject:
@@ -2090,7 +2070,6 @@ GameObject:
   - component: {fileID: 1162277606}
   - component: {fileID: 1162277605}
   - component: {fileID: 1162277604}
-  - component: {fileID: 1162277607}
   m_Layer: 5
   m_Name: PentagonButton
   m_TagString: Untagged
@@ -2212,29 +2191,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162277602}
   m_CullTransparentMesh: 1
---- !u!114 &1162277607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162277602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_ButtonClickLock
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &1210146835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,7 +2291,6 @@ GameObject:
   - component: {fileID: 1277697384}
   - component: {fileID: 1277697383}
   - component: {fileID: 1277697382}
-  - component: {fileID: 1277697385}
   m_Layer: 5
   m_Name: SquareButton
   m_TagString: Untagged
@@ -2457,29 +2412,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277697380}
   m_CullTransparentMesh: 1
---- !u!114 &1277697385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277697380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_ButtonClickLock
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &1286462419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,7 +2424,6 @@ GameObject:
   - component: {fileID: 1286462423}
   - component: {fileID: 1286462422}
   - component: {fileID: 1286462421}
-  - component: {fileID: 1286462424}
   m_Layer: 5
   m_Name: TriangleButton
   m_TagString: Untagged
@@ -2614,29 +2545,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286462419}
   m_CullTransparentMesh: 1
---- !u!114 &1286462424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286462419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_ButtonClickLock
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &1290872446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2649,7 +2557,6 @@ GameObject:
   - component: {fileID: 1290872450}
   - component: {fileID: 1290872449}
   - component: {fileID: 1290872448}
-  - component: {fileID: 1290872451}
   m_Layer: 5
   m_Name: CircleButton
   m_TagString: Untagged
@@ -2771,29 +2678,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290872446}
   m_CullTransparentMesh: 1
---- !u!114 &1290872451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290872446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_ButtonClickLock
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &1402366269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,7 +2839,6 @@ GameObject:
   - component: {fileID: 1551751965}
   - component: {fileID: 1551751964}
   - component: {fileID: 1551751963}
-  - component: {fileID: 1551751966}
   m_Layer: 5
   m_Name: OctagonButton
   m_TagString: Untagged
@@ -3077,29 +2960,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551751961}
   m_CullTransparentMesh: 1
---- !u!114 &1551751966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551751961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_ButtonClickLock
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &1640630998
 GameObject:
   m_ObjectHideFlags: 0

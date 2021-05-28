@@ -17,7 +17,11 @@ public class LockPanel : MonoBehaviour, IPointerEnterHandler
     public Sprite CheckPanelUnsolved;
     public Image CheckPanel;
 
-    
+    //variables for sounds reference.
+    [FMODUnity.EventRef]
+    public string lockButtonSound;
+    [FMODUnity.EventRef]
+    public string lockWrongSound;
 
     //subscribed by OpenLockDoor.cs to set open door active when code was solved.
     public delegate void HandleLockSolved();
@@ -56,6 +60,7 @@ public class LockPanel : MonoBehaviour, IPointerEnterHandler
 
     public void codeButtonClick()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(lockButtonSound);
         //Debug.Log("codeButtonClick");
         checkPressedButtonAndAddNumber();
         count = InputCode.Length;
@@ -73,8 +78,12 @@ public class LockPanel : MonoBehaviour, IPointerEnterHandler
                 CheckPanel.sprite = CheckPanelSolved;
                 //close canvas put sprite back to red and open door.
                 OnLockSolved();
+                InputCode = "";
             }
-            InputCode = "";
+            else { 
+                FMODUnity.RuntimeManager.PlayOneShot(lockWrongSound);
+                InputCode = "";
+            }
         }
 
     }
