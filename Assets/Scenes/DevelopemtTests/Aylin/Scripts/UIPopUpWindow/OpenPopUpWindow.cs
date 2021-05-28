@@ -48,19 +48,24 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     private void unlockPlayerMovement()
     {
         resetPlayerMovement = true;
-
+        
         //Debug.Log("unlockPlayerMovement1");
         //time based reset not optimal:
-        //StartCoroutine(waitunlockPlayerMovement());
-        //NOT TIME BASED optimal!:
-        StartCoroutine(waitTillMouseWasReleasedAfterResumingFromPopUpPanel());
+        StartCoroutine(waitunlockPlayerMovement());
+        //StartCoroutine(waitTillMouseWasReleasedAfterResumingFromPopUpPanel());
         
     }
     private IEnumerator waitTillMouseWasReleasedAfterResumingFromPopUpPanel()
     {
+        yield return StartCoroutine(waitTillMouseWasReleased());
+        
+    }
+
+    private IEnumerator waitTillMouseWasReleased()
+    {
         while (resetPlayerMovement)
         {
-            if (Input.GetMouseButtonUp(0))
+            if (!inputManager.isMouseDown())
             {
                 //Debug.Log("unlockPlayerMovement2 inputManager.isMouseDown():" + inputManager.isMouseDown());
                 resetPlayerMovement = false;
@@ -69,7 +74,6 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         }
         inventory.InteractionWithUIActive = false;
         resetMouseClick();
-
     }
 
 
@@ -139,7 +143,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     public void OnMouseExit()
     {
         //Debug.Log("OnMouseExit1");
-        if (canvasToOpen != null && canvasToOpen.alpha==0 && !resetPlayerMovement)
+        if (canvasToOpen != null && canvasToOpen.alpha==0)
         {
             StartCoroutine(waitAndHideHintImage());
             //Debug.Log("OnMouseExit1b");

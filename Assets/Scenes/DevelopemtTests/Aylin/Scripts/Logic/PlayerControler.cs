@@ -38,11 +38,8 @@ public class PlayerControler : MonoBehaviour
     private Vector3 avatarPreviousPosition;
 
     //used to flip player with its colliders. avatar.avatarSpriteRenderer.flipX only turns sprite but not the collider
-    //private Vector3 LocalScaleLeft = new Vector3(1f, 1f, 1f);
-    //private Vector3 LocalScaleRight =  new Vector3(-1f, 1f, 1f);
-    private float flipLeft = 1f;
-    private float flipRight = -1f;
-    private float currentXScaleTmp;
+    private Vector3 LocalScaleLeft = new Vector3(1f, 1f, 1f);
+    private Vector3 LocalScaleRight = new Vector3(-1f, 1f, 1f);
 
     //subscribed by sceneManager
     public delegate IEnumerator OnCollisionWithPortalHandler(string sceneNameToTransitionTo);
@@ -162,7 +159,7 @@ public class PlayerControler : MonoBehaviour
             }
             //else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
 
-            //TODO UNCOMMENT TO GET CONTROL OVER HELPER BY CLICKING ON HIM
+            /*//TODO UNCOMMENT TO GET CONTROL OVER HELPER BY CLICKING ON HIM
             else if ((raycastHit = inputManager.getRaycastRigidbody("Helper")).rigidbody != null)
             {
                 if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
@@ -171,7 +168,7 @@ public class PlayerControler : MonoBehaviour
                     colliderOfAvatarCurrent = colliderOfAvatarHelper;
                 }
             }
-            
+            */
             else if (inputManager.checkIfColliderWasHit("SelectedItem"))
             {
 
@@ -239,11 +236,6 @@ public class PlayerControler : MonoBehaviour
         scaleCharachter(this.avatar);
     }
 
-    public void scaleAvatar(Avatar avatar)
-    {
-        scaleCharachter(avatar);
-    }
-
     private void scaleCharachter(Avatar avatar)
     {
         //Debug.Log("collider ground: " + AvatarManager.backgroundCollider.bounds);
@@ -251,16 +243,6 @@ public class PlayerControler : MonoBehaviour
         avatarDistanceToHorizont = AvatarManager.backgroundCollider.bounds.max.y - avatar.gameObject.transform.position.y;
         maxDistance = AvatarManager.backgroundCollider.bounds.max.y - AvatarManager.backgroundCollider.bounds.min.y;
         avatar.gameObject.transform.localScale = avatar.getLocalScale() + avatarDistanceToHorizont / maxDistance * Vector3.one * avatar.scalingFactor;
-
-        //flip direction if CheckSpriteFlip defined that avatar need to be flipped. avatar.avatarSpriteRenderer.flipX cant be used as it only flips the sprite not the colliders.
-        //Thats why avatars with colliders need to be flipped with their localScale instead. As this controller changes the size of the avatar depending on background depth it we cant just change the current local scale but need to conserve the current local state and multiply it with the right value to flip the scaled carachter. 
-        currentXScaleTmp = avatar.gameObject.transform.localScale.x;
-        //Debug.Log("avatar.gameObject.transform.localScale.x "+avatar.name+" " + avatar.gameObject.transform.localScale.x);
-        //Debug.Log("currentXScaleTmp1 " + avatar.name + " " + currentXScaleTmp);
-        //Debug.Log("avatar.CurrentFlipDirection " + avatar.name + " " + avatar.getFlipDirection());
-        currentXScaleTmp *= avatar.getFlipDirection();
-        //Debug.Log("currentXScaleTmp2 " + avatar.name + " " + currentXScaleTmp);
-        avatar.gameObject.transform.localScale = new Vector3(currentXScaleTmp, avatar.gameObject.transform.localScale.y, avatar.gameObject.transform.localScale.z);
     }
 
     private void HandleOnControllerChange()
@@ -306,26 +288,16 @@ public class PlayerControler : MonoBehaviour
         if (avatar.transform.position.x > targetPosition.x)
         {
             //look to the left
-            //avatar.avatarSpriteRenderer.flipX = false;
-
-
+            avatar.avatarSpriteRenderer.flipX = false;
             //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale* LocalScaleLeft;
-
-
-            avatar.setFlipDirection(flipLeft);
         }
         else
         {
             //look to the right
-            //avatar.avatarSpriteRenderer.flipX = true;
+            avatar.avatarSpriteRenderer.flipX = true;
             //localScaleAvatar.x *= -1;
-
-
             //avatar.gameObject.transform.localScale = localScaleAvatar;
             //avatar.gameObject.transform.localScale = sceneManager.getCurrentSceneValues().avatarStartScale * LocalScaleRight;
-
-
-            avatar.setFlipDirection(flipRight);
         }
     }
     private bool getGroundColliderIntersectionToMouseclickOutsideGroundWithoutSmallestDistance()
@@ -455,9 +427,7 @@ public class PlayerControler : MonoBehaviour
 
         //lerp!
         float t = currentLerpTime / lerpDuration;
-        //faster lerp:
-        //t= Mathf.Sin(t * Mathf.PI * 0.5f); // best movement parameters: lerp duration: 20, lerp distance far summand: 60, start walk delay: 0, stop distance far: 0.05, stop distance: 0.085
-        t = t * Mathf.PI * 0.5f; //best movement parameters: lerp duration: 30, lerp distance far summand: 80, start walk delay: 0.001, stop distance far: 0.043, stop distance: 0.07
+
         if (avatarIsCollidingWithObstacle)
         {
             avatar.transform.position = avatarPreviousPosition;
