@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 954442809}
   - component: {fileID: 954442810}
   m_Layer: 0
-  m_Name: Sequence1Zone5
+  m_Name: Door_Sequence1Zone5
   m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 1592200802}
   - component: {fileID: 1592200801}
   m_Layer: 0
-  m_Name: Sequence1Zone2
+  m_Name: Door_Sequence1Zone2
   m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1339,7 +1339,7 @@ GameObject:
   - component: {fileID: 1390723267}
   - component: {fileID: 1390723268}
   m_Layer: 0
-  m_Name: Sequence1Zone2
+  m_Name: Door_Sequence1Zone2
   m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3786,8 +3786,16 @@ PrefabInstance:
       value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533172, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+      propertyPath: stairsSound
+      value: event:/SFX/Sequence 1/snd_Stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054238853574533172, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: footstepsSound
       value: event:/Emma/Footsteps/snd_EmmaFootsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054238853574533172, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
+      propertyPath: doorHandleSound
+      value: event:/SFX/Doors/snd_DoorHandle
       objectReference: {fileID: 0}
     - target: {fileID: 1054238853574533172, guid: 0f85c3e12fa993448a25107034fdfbd8, type: 3}
       propertyPath: colliderOfAvatarHelper

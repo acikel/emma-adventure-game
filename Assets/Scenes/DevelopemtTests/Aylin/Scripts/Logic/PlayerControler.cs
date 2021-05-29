@@ -11,6 +11,10 @@ public class PlayerControler : MonoBehaviour
     private FMOD.Studio.EventDescription eventDescription;
     [FMODUnity.EventRef]
     public string footstepsSound;
+    [FMODUnity.EventRef]
+    public string doorHandleSound;
+    [FMODUnity.EventRef]
+    public string stairsSound;
 
     private Collider2D colliderOfAvatarCurrent;
     private Vector3 targetPosition;
@@ -65,6 +69,11 @@ public class PlayerControler : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
         {
+            if(collision.gameObject.name.Contains("Door"))
+                FMODUnity.RuntimeManager.PlayOneShot(doorHandleSound);
+            else if(collision.gameObject.name.Contains("Stairs"))
+                FMODUnity.RuntimeManager.PlayOneShot(stairsSound);
+
             triggerIdleAnimation();
             stopSound(footstepsEvent);
             //Debug.Log("Portal name:"+ collision.gameObject.name);

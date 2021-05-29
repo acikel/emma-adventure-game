@@ -41,6 +41,10 @@ public class SceneManager : MonoBehaviour
     private bool tmpPlayerFlip;
     private bool tmpHelperFlip;
 
+    //vairable um door wort von name der nächster scene rauszuschneiden.
+    private string substringTMp;
+    private int indexTmp;
+
     //keeps count of current sequence/level of the game (as after each dialog a new sequence/level is entered).
     private int currentSequenceNummber;
 
@@ -173,12 +177,20 @@ public class SceneManager : MonoBehaviour
 
     private IEnumerator HandleNextSceneLoad(string sceneNameToTransitionTo)
     {
-        if(sceneNameToTransitionTo.Equals("Sequence1Zone5"))
+        isReloading = true;
+        indexTmp = sceneNameToTransitionTo.IndexOf("_");
+
+        if (sceneNameToTransitionTo.Contains("_"))
+            substringTMp = sceneNameToTransitionTo.Substring(indexTmp + 1);
+        else
+            substringTMp = sceneNameToTransitionTo;
+
+        if (substringTMp.Equals("Sequence1Zone5") || substringTMp.Equals("Sequence2Zone1"))
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Location", 1);
         else
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Location", 0);
-        
-        isReloading = true;
+
+        //Debug.Log("HandleNextSceneLoad SceneName: "+ substringTMp);
         yield return StartCoroutine(Fade(1f));
 
         if (BeforeSceneUnload != null)
@@ -187,15 +199,15 @@ public class SceneManager : MonoBehaviour
         //Debug.Log(currentAdditiveSceneName);
         ScM.SceneManager.UnloadSceneAsync(currentAdditiveSceneName);
 
-        if (Application.CanStreamedLevelBeLoaded(sceneNameToTransitionTo))
+        if (Application.CanStreamedLevelBeLoaded(substringTMp))
         {
-            yield return ScM.SceneManager.LoadSceneAsync(sceneNameToTransitionTo, LoadSceneMode.Additive);
+            yield return ScM.SceneManager.LoadSceneAsync(substringTMp, LoadSceneMode.Additive);
         }
 
         if (AfterSceneLoad != null)
             AfterSceneLoad();
 
-        currentAdditiveSceneName = sceneNameToTransitionTo;
+        currentAdditiveSceneName = substringTMp;
         assignScaleValueForCurrentScene();
         //Debug.Log("current scene name:"+ currentAdditiveSceneName);
         reloadDone = false;
