@@ -3179,7 +3179,7 @@ MonoBehaviour:
   CollisionTag: 
   Event: event:/SFX/Sequence 1/snd_LightFlickering
   PlayEvent: 11
-  StopEvent: 0
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

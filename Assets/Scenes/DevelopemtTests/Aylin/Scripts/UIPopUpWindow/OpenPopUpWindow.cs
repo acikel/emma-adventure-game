@@ -22,6 +22,9 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     [FMODUnity.EventRef]
     public string popUpSound;
 
+    [FMODUnity.EventRef]
+    public string popUpSound2;
+
     public SpriteRenderer spriteRendererHintImage;
     private Color tmpColor;
     private float hintImageFadeInDuration = 1f;
@@ -172,6 +175,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
             //    popUpSoundEvent.start();
 
             FMODUnity.RuntimeManager.PlayOneShot(popUpSound);
+            FMODUnity.RuntimeManager.PlayOneShot(popUpSound2);
             //Debug.Log("OnMouseDown2");
             //resetMouseClick();
         }
