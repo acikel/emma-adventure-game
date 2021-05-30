@@ -747,8 +747,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpSound: event:/SFX/Sequence 1/snd_Paper
+  popUpSound2: event:/Emma/Voice Overs/Sequence 1/Hints/PaperPile_IsThereSomethingICanUseHere
   spriteRendererHintImage: {fileID: 873707912}
-  imageToBeDisplayed: {fileID: 21300000, guid: 28b6b2881d20af448a5542268c482ac3, type: 3}
+  imageToBeDisplayed: {fileID: 21300000, guid: 7893a6648e5f7714cad753ec515cfe89, type: 3}
 --- !u!61 &367320439
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -935,6 +936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpSound: event:/SFX/Sequence 1/snd_Paper
+  popUpSound2: 
   spriteRendererHintImage: {fileID: 456116535}
   imageToBeDisplayed: {fileID: 21300000, guid: 2e5122a0fb7eb274fb00aff3f459b625, type: 3}
 --- !u!61 &569408762
@@ -3163,6 +3165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpSound: event:/SFX/Sequence 1/snd_LookPicture
+  popUpSound2: 
   spriteRendererHintImage: {fileID: 1019327390}
   imageToBeDisplayed: {fileID: 21300000, guid: b09d133a00eee214fb44312d5ef3e866, type: 3}
 --- !u!1 &1407669143
