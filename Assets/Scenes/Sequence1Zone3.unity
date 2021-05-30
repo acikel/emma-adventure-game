@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -319,8 +319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -1150,8 +1150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_OpenOven
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -1299,8 +1299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -1758,6 +1758,7 @@ GameObject:
   - component: {fileID: 580613917}
   - component: {fileID: 580613916}
   - component: {fileID: 580613915}
+  - component: {fileID: 580613919}
   m_Layer: 0
   m_Name: Locker1
   m_TagString: Untagged
@@ -1871,6 +1872,29 @@ Transform:
   m_Father: {fileID: 873492638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &580613919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580613914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &600592076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,9 +2456,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_DrippingMilk
   PlayEvent: 11
-  StopEvent: 0
+  StopEvent: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -2720,6 +2744,7 @@ GameObject:
   - component: {fileID: 1082977147}
   - component: {fileID: 1082977146}
   - component: {fileID: 1082977145}
+  - component: {fileID: 1082977149}
   m_Layer: 0
   m_Name: Plant1
   m_TagString: Untagged
@@ -2833,6 +2858,29 @@ Transform:
   m_Father: {fileID: 678079387}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082977149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082977144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1153147024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3199,6 +3247,7 @@ GameObject:
   - component: {fileID: 1250072729}
   - component: {fileID: 1250072728}
   - component: {fileID: 1250072727}
+  - component: {fileID: 1250072731}
   m_Layer: 0
   m_Name: Spoon1
   m_TagString: Untagged
@@ -3312,6 +3361,29 @@ Transform:
   m_Father: {fileID: 1205630085}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250072731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250072726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_MovingSpoon
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1261887068
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,6 +3737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpSound: event:/SFX/Sequence 1/snd_LookPicture
+  popUpSound2: 
   spriteRendererHintImage: {fileID: 483040367}
   imageToBeDisplayed: {fileID: 21300000, guid: 694670f839f3c17479d77e0b8294de1e, type: 3}
 --- !u!61 &1355463666
@@ -3755,8 +3828,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_MovingSpoon
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -3904,8 +3977,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -4300,6 +4373,7 @@ GameObject:
   - component: {fileID: 1547146759}
   - component: {fileID: 1547146758}
   - component: {fileID: 1547146757}
+  - component: {fileID: 1547146761}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Untagged
@@ -4413,6 +4487,29 @@ Transform:
   m_Father: {fileID: 1273137121}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1547146761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547146756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1585394420
 GameObject:
   m_ObjectHideFlags: 0
@@ -4425,6 +4522,7 @@ GameObject:
   - component: {fileID: 1585394423}
   - component: {fileID: 1585394422}
   - component: {fileID: 1585394421}
+  - component: {fileID: 1585394425}
   m_Layer: 0
   m_Name: Locker1
   m_TagString: Untagged
@@ -4538,6 +4636,29 @@ Transform:
   m_Father: {fileID: 1266789999}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1585394425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585394420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1586282193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4789,6 +4910,7 @@ GameObject:
   - component: {fileID: 1619261892}
   - component: {fileID: 1619261891}
   - component: {fileID: 1619261890}
+  - component: {fileID: 1619261894}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Untagged
@@ -4902,6 +5024,29 @@ Transform:
   m_Father: {fileID: 1452679565}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1619261894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619261889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_DrawerEmmaRoom
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1663488944
 GameObject:
   m_ObjectHideFlags: 0
@@ -5063,8 +5208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_DrawerEmmaRoom
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -5259,6 +5404,7 @@ GameObject:
   - component: {fileID: 1710449433}
   - component: {fileID: 1710449432}
   - component: {fileID: 1710449431}
+  - component: {fileID: 1710449435}
   m_Layer: 0
   m_Name: Milk1
   m_TagString: Untagged
@@ -5372,6 +5518,29 @@ Transform:
   m_Father: {fileID: 1156168620}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710449435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710449430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_FallingMilkContainer
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1788956517
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,6 +5585,7 @@ GameObject:
   - component: {fileID: 1883344604}
   - component: {fileID: 1883344603}
   - component: {fileID: 1883344602}
+  - component: {fileID: 1883344606}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Untagged
@@ -5529,6 +5699,29 @@ Transform:
   m_Father: {fileID: 600592077}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1883344606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883344601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_OpenOven
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1904076396
 GameObject:
   m_ObjectHideFlags: 0
@@ -5541,6 +5734,7 @@ GameObject:
   - component: {fileID: 1904076399}
   - component: {fileID: 1904076398}
   - component: {fileID: 1904076397}
+  - component: {fileID: 1904076401}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Untagged
@@ -5654,6 +5848,29 @@ Transform:
   m_Father: {fileID: 1788956518}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1904076401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904076396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1928495195
 GameObject:
   m_ObjectHideFlags: 0
@@ -5815,8 +6032,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
