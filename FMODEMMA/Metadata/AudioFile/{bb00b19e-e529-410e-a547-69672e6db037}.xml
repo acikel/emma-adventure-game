@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{bb00b19e-e529-410e-a547-69672e6db037}">
 		<property name="assetPath">
-			<value>snd_RadioCrackling.wav</value>
+			<value>SFX/snd_RadioCrackling.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

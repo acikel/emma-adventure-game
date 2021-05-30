@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{0305208e-35bc-438b-94f8-33fe8362fbf8}">
 		<property name="assetPath">
-			<value>snd_LockWrong.wav</value>
+			<value>SFX/snd_LockWrong.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

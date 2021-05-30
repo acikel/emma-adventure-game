@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{3178d7b4-cb44-44ef-8fc1-8e9b65da0366}">
 		<property name="assetPath">
-			<value>snd_LightFlickering.wav</value>
+			<value>SFX/snd_LightFlickering.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

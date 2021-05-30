@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{ca29b69c-4946-43c9-b0c2-05751297393e}">
 		<property name="assetPath">
-			<value>snd_FallingBottleFloorWood.wav</value>
+			<value>SFX/snd_FallingBottleFloorWood.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

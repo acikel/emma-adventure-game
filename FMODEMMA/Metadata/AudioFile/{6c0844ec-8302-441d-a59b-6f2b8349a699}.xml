@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{6c0844ec-8302-441d-a59b-6f2b8349a699}">
 		<property name="assetPath">
-			<value>snd_MusikDreamWorld.wav</value>
+			<value>SFX/snd_MusikDreamWorld.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{32edcbad-58b6-4a8a-8a5a-b9827fd887cc}">
 		<property name="assetPath">
-			<value>snd_ButtonClickLock.wav</value>
+			<value>SFX/snd_ButtonClickLock.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

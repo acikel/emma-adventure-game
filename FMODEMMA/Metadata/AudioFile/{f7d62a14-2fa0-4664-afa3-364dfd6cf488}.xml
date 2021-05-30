@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{f7d62a14-2fa0-4664-afa3-364dfd6cf488}">
 		<property name="assetPath">
-			<value>snd_Rake.wav</value>
+			<value>SFX/snd_Rake.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

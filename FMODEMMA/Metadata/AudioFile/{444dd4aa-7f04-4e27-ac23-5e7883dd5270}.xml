@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{444dd4aa-7f04-4e27-ac23-5e7883dd5270}">
 		<property name="assetPath">
-			<value>snd_PuttingToghether.wav</value>
+			<value>SFX/snd_PuttingToghether.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

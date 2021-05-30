@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{dd9d73e3-d59e-4590-afd5-3b3b79b931d1}">
 		<property name="assetPath">
-			<value>snd_FallingMilkContainer.wav</value>
+			<value>SFX/snd_FallingMilkContainer.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

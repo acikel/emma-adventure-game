@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{6dabd287-3d95-499d-9aa5-a4f5d74a2650}">
 		<property name="assetPath">
-			<value>snd_MoveCarpet.wav</value>
+			<value>SFX/snd_MoveCarpet.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

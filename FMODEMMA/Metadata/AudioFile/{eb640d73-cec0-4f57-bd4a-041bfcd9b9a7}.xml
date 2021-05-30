@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{eb640d73-cec0-4f57-bd4a-041bfcd9b9a7}">
 		<property name="assetPath">
-			<value>snd_DrippingMilk.wav</value>
+			<value>SFX/snd_DrippingMilk.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

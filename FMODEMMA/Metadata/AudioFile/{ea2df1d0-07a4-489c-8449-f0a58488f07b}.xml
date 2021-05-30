@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{ea2df1d0-07a4-489c-8449-f0a58488f07b}">
 		<property name="assetPath">
-			<value>snd_OpenFridge.wav</value>
+			<value>SFX/snd_OpenFridge.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

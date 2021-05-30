@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{8bbf0a7a-e0ba-4ffc-86c5-941e87bf388c}">
 		<property name="assetPath">
-			<value>snd_AmbientInsideGrandmother.wav</value>
+			<value>SFX/snd_AmbientInsideGrandmother.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{24e3bd05-4b8f-457a-bfd8-9b653bb43e0d}">
 		<property name="assetPath">
-			<value>snd_BonePickup.wav</value>
+			<value>SFX/snd_BonePickup.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

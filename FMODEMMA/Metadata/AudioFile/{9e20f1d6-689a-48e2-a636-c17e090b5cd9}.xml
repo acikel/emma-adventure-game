@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{9e20f1d6-689a-48e2-a636-c17e090b5cd9}">
 		<property name="assetPath">
-			<value>snd_RepairWheel.wav</value>
+			<value>SFX/snd_RepairWheel.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{13e9135c-1e5b-42e0-a75b-ebf830aec71d}">
 		<property name="assetPath">
-			<value>snd_LookPicture.wav</value>
+			<value>SFX/snd_LookPicture.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

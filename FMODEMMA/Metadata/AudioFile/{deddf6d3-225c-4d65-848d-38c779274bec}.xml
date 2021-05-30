@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{deddf6d3-225c-4d65-848d-38c779274bec}">
 		<property name="assetPath">
-			<value>snd_AmbientOutside.wav</value>
+			<value>SFX/snd_AmbientOutside.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

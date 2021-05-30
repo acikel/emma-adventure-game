@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{1e9284d8-b454-4e24-b547-7f57b9440d8f}">
 		<property name="assetPath">
-			<value>snd_MovingUmbrella.wav</value>
+			<value>SFX/snd_MovingUmbrella.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

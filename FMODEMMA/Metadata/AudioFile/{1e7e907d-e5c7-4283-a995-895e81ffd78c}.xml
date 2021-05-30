@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{1e7e907d-e5c7-4283-a995-895e81ffd78c}">
 		<property name="assetPath">
-			<value>snd_MovingSpoon.wav</value>
+			<value>SFX/snd_MovingSpoon.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

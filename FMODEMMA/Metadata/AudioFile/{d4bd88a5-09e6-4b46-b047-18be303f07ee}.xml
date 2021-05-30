@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{d4bd88a5-09e6-4b46-b047-18be303f07ee}">
 		<property name="assetPath">
-			<value>snd_OpenOven.wav</value>
+			<value>SFX/snd_OpenOven.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{eea91ee2-01f2-452f-ae58-432a3f4ff215}">
 		<property name="assetPath">
-			<value>snd_DrawerEmmaRoom  .wav</value>
+			<value>SFX/snd_DrawerEmmaRoom  .wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

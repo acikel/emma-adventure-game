@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{9bb4ed84-a8ee-4cff-8371-071c9035e695}">
 		<property name="assetPath">
-			<value>snd_DoorClose.wav</value>
+			<value>SFX/snd_DoorClose.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

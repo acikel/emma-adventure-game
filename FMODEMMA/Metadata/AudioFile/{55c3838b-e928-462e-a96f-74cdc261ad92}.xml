@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{55c3838b-e928-462e-a96f-74cdc261ad92}">
 		<property name="assetPath">
-			<value>snd_RingBicycle.wav</value>
+			<value>SFX/snd_RingBicycle.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{4ba4cecb-fdc0-48dc-be20-9a11063b3207}">
 		<property name="assetPath">
-			<value>snd_MagnetRemove.wav</value>
+			<value>SFX/snd_MagnetRemove.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
