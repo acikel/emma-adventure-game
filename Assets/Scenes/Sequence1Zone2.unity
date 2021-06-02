@@ -2177,7 +2177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_MovingShoes
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -2836,7 +2836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpSound: event:/SFX/Sequence 1/snd_LookPicture
-  popUpSound2: 
+  popUpSound2: event:/Emma/Voice Overs/Sequence 1/Hints/Grandparents
   spriteRendererHintImage: {fileID: 303510607}
   imageToBeDisplayed: {fileID: 21300000, guid: c048656b2da690746af7dac1b7c1add6, type: 3}
 --- !u!1 &1728827210
@@ -3101,7 +3101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_MovingShoes
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1

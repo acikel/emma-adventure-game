@@ -535,7 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_Rake
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -1421,11 +1421,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.8350072, y: -6.3580313}
-      - {x: -3.0774264, y: -5.770145}
-      - {x: 1.7750778, y: -2.090161}
-      - {x: 2.8230786, y: -3.3520048}
-      - {x: 1.6730642, y: -5.7167816}
+    - - {x: 0.84578276, y: -2.9461153}
+      - {x: 0.8828316, y: -1.9317397}
+      - {x: 1.4704416, y: 6.5005546}
+      - {x: 2.2011926, y: 6.959859}
+      - {x: 2.57937, y: -2.559953}
+      - {x: 2.6478984, y: -3.1578445}
 --- !u!1 &1019437322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,7 +1737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_MovingPlantHeavy
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -2014,7 +2015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpSound: event:/SFX/Sequence 1/snd_LockOpen
-  popUpSound2: 
+  popUpSound2: event:/Emma/Voice Overs/Sequence 1/Hints/DidISeeACodeSomewhere
   spriteRendererHintImage: {fileID: 2105608158}
   doorOpen: {fileID: 2046776385}
 --- !u!58 &1166814496
@@ -2138,6 +2139,7 @@ GameObject:
   - component: {fileID: 1359907294}
   - component: {fileID: 1359907293}
   - component: {fileID: 1359907295}
+  - component: {fileID: 1359907296}
   m_Layer: 6
   m_Name: Branch
   m_TagString: Untagged
@@ -2231,6 +2233,29 @@ MonoBehaviour:
   - {fileID: 2233469257052804866, guid: bd88921b68546604594949e0911f38c0, type: 3}
   dropOffZone: {fileID: 96345033}
   gameObjectToDeactivateAfterLastDrag: {fileID: 1591823063}
+--- !u!114 &1359907296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359907292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Emma/Voice Overs/Sequence 1/Hints/AttachBranch
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1395362171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,7 +2565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -2752,6 +2777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1591823065}
   - component: {fileID: 1591823064}
+  - component: {fileID: 1591823066}
   m_Layer: 6
   m_Name: Key
   m_TagString: Untagged
@@ -2824,6 +2850,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.99}
+--- !u!114 &1591823066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591823063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Emma/Voice Overs/Sequence 1/Hints/LivingroomkeyFound
+  PlayEvent: 12
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1696381809
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,7 +3169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -3255,7 +3304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_MovingPlantHeavy
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -3448,7 +3497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_Rake
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1

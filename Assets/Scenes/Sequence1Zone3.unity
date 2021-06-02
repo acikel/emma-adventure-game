@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 74927274}
   - component: {fileID: 74927273}
   - component: {fileID: 74927276}
+  - component: {fileID: 74927277}
   m_Layer: 0
   m_Name: Butterfly
   m_TagString: Item
@@ -548,6 +549,29 @@ MonoBehaviour:
   dragObjects: []
   dropOffZone: {fileID: 0}
   gameObjectToDeactivateAfterLastDrag: {fileID: 0}
+--- !u!114 &74927277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74927272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Emma/Voice Overs/Sequence 1/Hints/MyFavouriteButterflyMagnet
+  PlayEvent: 12
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &160952537
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +584,7 @@ GameObject:
   - component: {fileID: 160952540}
   - component: {fileID: 160952539}
   - component: {fileID: 160952538}
+  - component: {fileID: 160952542}
   m_Layer: 0
   m_Name: Knife1
   m_TagString: Untagged
@@ -580,7 +605,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.056101218, y: 0.4017647}
+  m_Offset: {x: 0.1598205, y: 0.03874755}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -591,7 +616,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55961657, y: 1.6023906}
+  m_Size: {x: 0.76705503, y: 2.7433019}
   m_EdgeRadius: 0
 --- !u!114 &160952539
 MonoBehaviour:
@@ -673,6 +698,29 @@ Transform:
   m_Father: {fileID: 188719192}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &160952542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160952537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_KnifeRemove
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &186298001
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +753,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.14475119, y: -0.043908}
+  m_Offset: {x: -0.11971331, y: 0.043721437}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -716,7 +764,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8983164, y: 0.55285865}
+  m_Size: {x: 2.9999433, y: 0.72811747}
   m_EdgeRadius: 0
 --- !u!114 &186298003
 MonoBehaviour:
@@ -842,7 +890,6 @@ GameObject:
   - component: {fileID: 271165399}
   - component: {fileID: 271165398}
   - component: {fileID: 271165397}
-  - component: {fileID: 271165396}
   m_Layer: 0
   m_Name: Bottle2
   m_TagString: Untagged
@@ -858,35 +905,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271165394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1, y: -1.4, z: 100}
+  m_LocalPosition: {x: -1.2, y: -2.3, z: 100}
   m_LocalScale: {x: 4.9, y: 4.9, z: 1}
   m_Children: []
   m_Father: {fileID: 842833957}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &271165396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271165394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &271165397
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -904,7 +928,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.79, y: 3.28}
+    oldSize: {x: 3.43, y: 3.28}
     newSize: {x: 5.46, y: 8.22}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -968,7 +992,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 4c17cb8ac9191df43a2bad76ed45078c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a7f299cfc749b24c8ac1a1465f4b7a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
@@ -1448,8 +1472,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_KnobTurn
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -1471,7 +1495,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.9854018, y: -1.0626295}
+  m_Offset: {x: 0.97419757, y: -1.1298554}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1482,7 +1506,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4933964, y: 0.52232003}
+  m_Size: {x: 1.0536112, y: 1.0153092}
   m_EdgeRadius: 0
 --- !u!114 &416077259
 MonoBehaviour:
@@ -1971,6 +1995,7 @@ GameObject:
   - component: {fileID: 779086652}
   - component: {fileID: 779086651}
   - component: {fileID: 779086650}
+  - component: {fileID: 779086654}
   m_Layer: 0
   m_Name: Hotplate1
   m_TagString: Untagged
@@ -1991,7 +2016,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02098757, y: -0.012587972}
+  m_Offset: {x: -0.02098766, y: 0.021024883}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2002,7 +2027,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.52107203, y: 0.5038744}
+  m_Size: {x: 1.1036952, y: 1.1089061}
   m_EdgeRadius: 0
 --- !u!114 &779086651
 MonoBehaviour:
@@ -2084,6 +2109,29 @@ Transform:
   m_Father: {fileID: 975399646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &779086654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779086649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_KnobTurn
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &785336416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842833956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 85.4, y: -29.1, z: 0}
+  m_LocalPosition: {x: 88.3, y: -28.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1411589979}
@@ -2275,8 +2323,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_KnifePutinPlace
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -2298,7 +2346,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.37848967, y: -0.04191354}
+  m_Offset: {x: 0.069526196, y: 0.07137306}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2309,7 +2357,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2658304, y: 0.2464506}
+  m_Size: {x: 2.5016842, y: 0.4730238}
   m_EdgeRadius: 0
 --- !u!114 &864924280
 MonoBehaviour:
@@ -2765,7 +2813,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.14475119, y: -2.4832993}
+  m_Offset: {x: 0.019487977, y: -1.5307178}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2776,7 +2824,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8983164, y: 3.4227304}
+  m_Size: {x: 2.6209629, y: 7.6929245}
   m_EdgeRadius: 0
 --- !u!114 &1082977146
 MonoBehaviour:
@@ -3396,6 +3444,7 @@ GameObject:
   - component: {fileID: 1261887071}
   - component: {fileID: 1261887070}
   - component: {fileID: 1261887069}
+  - component: {fileID: 1261887073}
   m_Layer: 0
   m_Name: Bottle1
   m_TagString: Untagged
@@ -3416,7 +3465,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.027884007, y: -0.53871727}
+  m_Offset: {x: 0.027884007, y: -0.035176218}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3427,7 +3476,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2941546, y: 1.4585028}
+  m_Size: {x: 1.2941546, y: 3.0550966}
   m_EdgeRadius: 0
 --- !u!114 &1261887070
 MonoBehaviour:
@@ -3509,6 +3558,29 @@ Transform:
   m_Father: {fileID: 1663488945}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1261887073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261887068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_FallingBottleTop
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1266789998
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,7 +3809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpSound: event:/SFX/Sequence 1/snd_LookPicture
-  popUpSound2: 
+  popUpSound2: event:/Emma/Voice Overs/Sequence 1/Hints/PictureEmmaBaby
   spriteRendererHintImage: {fileID: 483040367}
   imageToBeDisplayed: {fileID: 21300000, guid: 694670f839f3c17479d77e0b8294de1e, type: 3}
 --- !u!61 &1355463666
@@ -3977,7 +4049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  Event: event:/SFX/Sequence 1/snd_CloseFridge
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -4091,6 +4163,7 @@ GameObject:
   - component: {fileID: 1411589978}
   - component: {fileID: 1411589977}
   - component: {fileID: 1411589976}
+  - component: {fileID: 1411589980}
   m_Layer: 0
   m_Name: Bottle1
   m_TagString: Untagged
@@ -4111,18 +4184,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.24697, y: -0.66185737}
+  m_Offset: {x: 0.27060992, y: 0.031871796}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.43, y: 3.28}
+    oldSize: {x: 1.79, y: 3.28}
     newSize: {x: 5.46, y: 8.22}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7277103, y: 1.5077586}
+  m_Size: {x: 2.6804304, y: 2.895217}
   m_EdgeRadius: 0
 --- !u!114 &1411589977
 MonoBehaviour:
@@ -4179,7 +4252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9a7f299cfc749b24c8ac1a1465f4b7a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c17cb8ac9191df43a2bad76ed45078c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4198,12 +4271,35 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411589975}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -1.4, z: 100}
+  m_LocalPosition: {x: 3.3, y: -2.2, z: 100}
   m_LocalScale: {x: 4.9, y: 4.9, z: 1}
   m_Children: []
   m_Father: {fileID: 842833957}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1411589980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411589975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_FallingBottleFloorWood
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1452679564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4268,7 +4364,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03347367, y: 0.003648907}
+  m_Offset: {x: -0.38099033, y: -0.28264773}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4279,7 +4375,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.50467193, y: 0.5966732}
+  m_Size: {x: 1.3207256, y: 1.5313008}
   m_EdgeRadius: 0
 --- !u!114 &1507902119
 MonoBehaviour:
@@ -4729,7 +4825,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2832936, y: -0.0017030165}
+  m_Offset: {x: -0.30183405, y: -0.048326552}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4740,7 +4836,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8408186, y: 0.45000607}
+  m_Size: {x: 2.417212, y: 0.5432532}
   m_EdgeRadius: 0
 --- !u!114 &1586282197
 MonoBehaviour:
@@ -5425,7 +5521,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.057085752, y: -3.4390182}
+  m_Offset: {x: -0.057085752, y: -3.280701}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5436,7 +5532,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.354403, y: 1.7413671}
+  m_Size: {x: 3.354403, y: 2.058002}
   m_EdgeRadius: 0
 --- !u!114 &1710449432
 MonoBehaviour:
@@ -6180,7 +6276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_BrokenEgg
   PlayEvent: 11
   StopEvent: 0
   AllowFadeout: 1
@@ -6268,7 +6364,6 @@ GameObject:
   - component: {fileID: 2088563107}
   - component: {fileID: 2088563106}
   - component: {fileID: 2088563105}
-  - component: {fileID: 2088563104}
   m_Layer: 0
   m_Name: Bottle2
   m_TagString: Untagged
@@ -6290,29 +6385,6 @@ Transform:
   m_Father: {fileID: 1663488945}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2088563104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088563102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &2088563105
 BoxCollider2D:
   m_ObjectHideFlags: 0
