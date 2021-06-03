@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 11
-  textAudio: 
+  textAudio: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/YouAreNotAlone
 --- !u!114 &485269001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 1
-  textAudio: 
+  textAudio: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OhIsThatYouEmma_
 --- !u!114 &649894617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 15
-  textAudio: 
+  textAudio: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OilThis
 --- !u!114 &845319792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1689,7 +1689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 13
-  textAudio: 
+  textAudio: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/DillyDally
 --- !u!114 &1414306173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1945,7 +1945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 2
-  textAudio: 
+  textAudio: event:/Emma/Voice Overs/Sequence 1/DialogueEmma/EmmaCrying
 --- !u!114 &1618937829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2380,7 +2380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 3
-  textAudio: 
+  textAudio: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OhDontFretDear
 --- !u!114 &1878374845
 MonoBehaviour:
   m_ObjectHideFlags: 0
