@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{db43b8ed-9602-4956-9b0b-9d84e0484e09}">
+	<object class="AudioFile" id="{69b3a689-7742-423f-bc52-529f3a8a4fdd}">
 		<property name="assetPath">
-			<value>SFX/snd_FootstepOutside5.wav</value>
+			<value>SFX/snd_FootstepInside1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.140625</value>
+			<value>0.35337499999999999</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{41ddac83-4ed0-424f-8c61-b3c9889f586e}</destination>
