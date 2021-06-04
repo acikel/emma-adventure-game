@@ -773,7 +773,7 @@ MonoBehaviour:
   popUpSound: event:/SFX/Sequence 1/snd_Paper
   popUpSound2: event:/Emma/Voice Overs/Sequence 1/Hints/PaperPile_IsThereSomethingICanUseHere
   spriteRendererHintImage: {fileID: 873707912}
-  imageToBeDisplayed: {fileID: 21300000, guid: 7893a6648e5f7714cad753ec515cfe89, type: 3}
+  imageToBeDisplayed: {fileID: 21300000, guid: cd7e19a9878a85f4da1f27462e3cb3c1, type: 3}
 --- !u!61 &367320439
 BoxCollider2D:
   m_ObjectHideFlags: 0
