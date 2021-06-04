@@ -40,14 +40,14 @@ public class AudioReaction : Reaction
 
         eventDescription = FMODUnity.RuntimeManager.GetEventDescription(textAudio);
         eventDescription.createInstance(out audioEvent);
-        TextManager.OnNextTurn += stopCurrentSound;
+        TextManager.OnEndTypeWriting += stopCurrentSound;
     }
     private void OnDisable()
     {
         if (textAudio == null)
             return;
 
-        TextManager.OnNextTurn -= stopCurrentSound;
+        TextManager.OnEndTypeWriting -= stopCurrentSound;
         releaseSound(audioEvent);
     }
 
