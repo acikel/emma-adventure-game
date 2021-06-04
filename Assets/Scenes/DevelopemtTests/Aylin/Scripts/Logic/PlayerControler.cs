@@ -163,6 +163,7 @@ public class PlayerControler : MonoBehaviour
     {
         avatarManager.OnControllerChange -= HandleOnControllerChange;
         sceneManager.AfterAvatarInitialization -= initializeAndRescalePlayer;
+        releaseSound(footstepsEvent);
     }
 
     // Update is called once per frame
@@ -208,7 +209,7 @@ public class PlayerControler : MonoBehaviour
                 isMoving = true;
 
                 //Check if sprite flip needed:
-                CheckSpriteFlip();
+                CheckAvatarFlip();
             }
             else
             {
@@ -224,7 +225,7 @@ public class PlayerControler : MonoBehaviour
                     isMoving = true;
 
                     //Check if sprite flip needed:
-                    CheckSpriteFlip();
+                    CheckAvatarFlip();
                 }
             }
         }
@@ -325,7 +326,7 @@ public class PlayerControler : MonoBehaviour
     }
 
 
-    private void CheckSpriteFlip()
+    private void CheckAvatarFlip()
     {
         if (avatar.transform.position.x > targetPosition.x)
         {
@@ -510,4 +511,10 @@ public class PlayerControler : MonoBehaviour
         //instance.clearHandle();
     }
 
+    private void releaseSound(FMOD.Studio.EventInstance instance)
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        instance.release();
+        instance.clearHandle();
+    }
 }
