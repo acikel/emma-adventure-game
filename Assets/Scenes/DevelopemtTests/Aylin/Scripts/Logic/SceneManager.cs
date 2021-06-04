@@ -90,7 +90,10 @@ public class SceneManager : MonoBehaviour
         faderCanvasGroup.alpha = 1f;
         avatarManager = API.AvatarManager;
         //Debug.Log("avatarManager1:" + avatarManager);
-        currentAdditiveSceneName ="Sequence1Zone1";
+        //currentAdditiveSceneName ="Sequence1Zone1";
+        currentAdditiveSceneName = ScM.SceneManager.GetSceneAt(ScM.SceneManager.sceneCount - 1).name;
+        //Debug.Log("currentAdditiveSceneName: " + currentAdditiveSceneName);
+
         assignScaleValueForCurrentScene();
         //ScM.SceneManager.LoadSceneAsync("Sequence1Zone1", LoadSceneMode.Additive);
         //ScM.SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
