@@ -282,8 +282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_MoveBirdSkeleton
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 117220131}
   - component: {fileID: 117220130}
   - component: {fileID: 117220129}
+  - component: {fileID: 117220133}
   m_Layer: 0
   m_Name: Bird1
   m_TagString: Untagged
@@ -509,6 +510,29 @@ Transform:
   m_Father: {fileID: 1873210280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.829}
+--- !u!114 &117220133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117220128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_MoveBirdSkeleton
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &140758871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Emma/Voice Overs/Sequence 1/Hints/Weddingdress
+  Event: event:/Emma/Voice Overs/Sequence 1/NewEmmaVoice/ILikeTheDress
   PlayEvent: 16
   StopEvent: 0
   AllowFadeout: 1
@@ -1107,8 +1131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_MoveBirdSkeleton
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -1221,6 +1245,7 @@ GameObject:
   - component: {fileID: 640271636}
   - component: {fileID: 640271635}
   - component: {fileID: 640271634}
+  - component: {fileID: 640271638}
   m_Layer: 0
   m_Name: Fish1
   m_TagString: Untagged
@@ -1334,6 +1359,29 @@ Transform:
   m_Father: {fileID: 1543950727}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.829}
+--- !u!114 &640271638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640271633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_SkeletonFish
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &666975951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,7 +1816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingBedsheet
+  Event: event:/SFX/Sequence 1/snd_MovingPillow
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -1825,7 +1873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
+  Event: event:/SFX/Sequence 1/snd_TurningHeadSkeleton
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -1974,8 +2022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_TurningHeadSkeleton
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -2924,7 +2972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_Paper
+  Event: event:/SFX/Sequence 1/snd_TurningHeadSkeleton
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -3831,8 +3879,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_LightOn
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_SkeletonFish
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -4027,6 +4075,7 @@ GameObject:
   - component: {fileID: 1601892568}
   - component: {fileID: 1601892567}
   - component: {fileID: 1601892566}
+  - component: {fileID: 1601892570}
   m_Layer: 0
   m_Name: Bird1
   m_TagString: Untagged
@@ -4140,6 +4189,29 @@ Transform:
   m_Father: {fileID: 519529316}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -125}
+--- !u!114 &1601892570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601892565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_FallingBirdSkeleton
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1608234461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4482,7 +4554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Emma/Voice Overs/Sequence 1/Hints/LampEmma
+  Event: event:/Emma/Voice Overs/Sequence 1/NewEmmaVoice/LetThereBeLight
   PlayEvent: 11
   StopEvent: 12
   AllowFadeout: 1
@@ -4929,6 +5001,7 @@ GameObject:
   - component: {fileID: 1977365319}
   - component: {fileID: 1977365318}
   - component: {fileID: 1977365317}
+  - component: {fileID: 1977365321}
   m_Layer: 0
   m_Name: Head1
   m_TagString: Untagged
@@ -5042,6 +5115,29 @@ Transform:
   m_Father: {fileID: 841389991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1977365321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977365316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/SFX/Sequence 1/snd_TurningHeadSkeleton
+  PlayEvent: 15
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &2009388295
 GameObject:
   m_ObjectHideFlags: 0
@@ -5174,7 +5270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingBedsheet
+  Event: event:/SFX/Sequence 1/snd_MovingPillow
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -5416,7 +5512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/SFX/Sequence 1/snd_MovingFlippers
-  PlayEvent: 13
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
