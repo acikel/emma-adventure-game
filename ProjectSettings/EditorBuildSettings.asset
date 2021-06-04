@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sequence2Zone1.unity
     guid: 6c20d7f7d7cabc440a6c5e11fbeff6ec
+  - enabled: 1
+    path: Assets/Scenes/Sequence1Dream.unity
+    guid: d5c1b6a4c709b4f48809fef6441a3770
   m_configObjects: {}

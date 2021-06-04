@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MagnetRemove
   guid: 99f8f37a7c7e4b49918768fdb1ca9bf3
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
   Path: event:/SFX/General/snd_BonePickup
   guid: a36576f1369dd342b38fee0b4155e30f
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PickupRope
   guid: 6b8bda6158ef4f47aae623c3c573f9e9
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -160,7 +160,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LockOpen
   guid: 1a60586ee0ea43489f2a5e7c07fa0862
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -200,7 +200,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_WaterOpen
   guid: 87a07a973507aa46838a76c1f166169d
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -254,6 +254,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 6305
+--- !u!114 &-8650355732986074870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OhDontFretDear
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OhDontFretDear
+  guid: 962d35ec6a918e42a05cc60489125b11
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 13940
 --- !u!114 &-8641918137667754979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +372,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_KnifeRemove
   guid: 6ec48ceda231e340a50b815c153e63d2
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -357,6 +380,47 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1317
+--- !u!114 &-8341998910237841917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/YouAreNotAlone
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/YouAreNotAlone
+  guid: 28099d21bcc4904ea52fc4918bf4834e
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 14333
+--- !u!114 &-8300667178561288697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODEMMA/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637583297312318877
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8291221929129633513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +454,7 @@ MonoBehaviour:
   Path: event:/SFX/Doors/snd_Door
   guid: 3e1f29eaf502ec4d9f57e61725f408b6
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -413,7 +477,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingUmbrella
   guid: 731ead5ed224e0419e8b72a100769f3e
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -490,6 +554,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4813
+--- !u!114 &-7839991849513149763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/DialogueEmma/EmmaCrying
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/DialogueEmma/EmmaCrying
+  guid: bf68e65e0f1af44ca5684a42ca4269b0
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4131
 --- !u!114 &-7823579352039997742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +600,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 9737
+--- !u!114 &-7723716368468237805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/HelloMyFriend
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/HelloMyFriend
+  guid: 2a77bdbf0a2c6d4f87debb7fc3665bdd
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3304
 --- !u!114 &-7615764252299874160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,7 +683,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PickupHands
   guid: 3ad29ac624b4ae4489bc940e5435cebc
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -665,6 +775,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3000
+--- !u!114 &-7293678945212484122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/MagnetWoudntLetMeDown
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/MagnetWoudntLetMeDown
+  guid: 0b3e22747b886b4fb33f2da6ede4d13a
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4305
+--- !u!114 &-7248921361873497577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/DidISeeACodeSomewhere
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/DidISeeACodeSomewhere
+  guid: 3cfeb7eed563d7448ae595857d6ea44a
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4305
 --- !u!114 &-7152219717406477147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,7 +905,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_FallingBottleFloorWood
   guid: dc4da0293ac9904d85e850760b769e30
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -794,7 +950,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LightOn
   guid: 0b4b91b4a57cdc4085638318c97dac6e
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -907,7 +1063,7 @@ MonoBehaviour:
   Path: event:/SFX/Doors/snd_UnlockDoor
   guid: 41b8e5ceb061834eaa6cb2eeaf75a83e
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -915,6 +1071,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1328
+--- !u!114 &-5842590200200593013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/GrandmasOldSlippers
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/GrandmasOldSlippers
+  guid: 5309e1a572be3b4d8003d18f71fa9fac
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5067
 --- !u!114 &-5758696373530116193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,6 +1139,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1432
+--- !u!114 &-5710506812138849682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Helper/Helper Noise
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Helper/Helper Noise
+  guid: 8b48b1ff635d2d40b184364448664faf
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2241
+--- !u!114 &-5648598164500774419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/INeedSomethingToGrabTheKeyWith
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/INeedSomethingToGrabTheKeyWith
+  guid: bcd9b58dca7a014098ad276b9b0c3ad4
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6084
 --- !u!114 &-5626536365716438061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,6 +1225,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5454136125252267984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/DillyDally
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/DillyDally
+  guid: 08befb1c2307be4cab2ba66fdf5647bd
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 8896
 --- !u!114 &-5372135615832018052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,7 +1265,7 @@ MonoBehaviour:
   lastModified: 637578513953987270
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5335598845876109155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,7 +1281,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_MusikDialogue
   guid: 794a5d207ed5d34683d186a785ed10bf
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1058,6 +1306,29 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-5181486904232253609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/Weddingdress
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/Weddingdress
+  guid: 919c921bb215b24f9a7051dc22bce751
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7355
 --- !u!114 &-5090822639636473831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,7 +1366,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_FallingMilkContainer
   guid: 100f80ff7c7bba42abf05986944ba118
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1141,7 +1412,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PuttingToghehterBranch
   guid: c83dcdf6eca4704c8dec04f193fe0539
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1243,7 +1514,7 @@ MonoBehaviour:
   Path: event:/SFX/General/snd_SkeletonComplete
   guid: d5f24b6c410e5641a9cb377286a2582a
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1266,7 +1537,7 @@ MonoBehaviour:
   Path: event:/SFX/Doors/snd_DoorHandle
   guid: d120835b00865a4d8104de4ebe16a45e
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1375,6 +1646,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3875
+--- !u!114 &-4222469838303846052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/Grandparents
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/Grandparents
+  guid: 4cde11527e23264db6300e4d00109dc9
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4813
 --- !u!114 &-4168369492771534897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,6 +1691,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1434
+--- !u!114 &-3993811301544300175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/SkyLooksPrettier
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/SkyLooksPrettier
+  guid: d68b0716f8fba74f9af1181c808e4c74
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2857
 --- !u!114 &-3978442375367597736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1442,6 +1759,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1379
+--- !u!114 &-3741463353957958856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MovingShoes
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MovingShoes
+  guid: 613d18d2428e9a4a8248549f65f97903
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1131
 --- !u!114 &-3705544687961819872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,7 +1819,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LookPicture
   guid: ffcbf8d77ac1854f92b9ed1bde034ae6
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1487,6 +1827,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1773
+--- !u!114 &-3655655375714178668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/RopeSwing
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/RopeSwing
+  guid: d35dc945c408384c88fa3f82a4bb2bf4
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6847
 --- !u!114 &-3653524153506422482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1502,7 +1865,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MoveCarpet
   guid: b3858fc263d75a4889e93c2d714ccedc
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1572,6 +1935,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-3226434511567661898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/GrandmasBook
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/GrandmasBook
+  guid: d23fca421babac48918e38bfc6c748b7
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6847
 --- !u!114 &-3100028641856368817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,7 +1973,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingBedsheet
   guid: 43d7390263971847bb8122791a2698e0
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1595,6 +1981,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1647
+--- !u!114 &-3003659522578596313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/ButterflyMyFavouriteBug
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/ButterflyMyFavouriteBug
+  guid: 55a2f5b085eea84090ed41ab05c43432
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4305
+--- !u!114 &-2987694641348686871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/Hmm
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/Hmm
+  guid: 5948670a0b2465428a9a84beb8c58997
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2140
 --- !u!114 &-2975750428964608490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,7 +2042,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_DrawerDoor
   guid: 60f3545e339c3b4ab47eb0ab9012f1ba
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1658,6 +2090,52 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2777689448735309235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/ValveIsHardToTurn
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/ValveIsHardToTurn
+  guid: 2a197ce8dc348949803396ceeb4447e3
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3796
+--- !u!114 &-2732064946908714766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_UpBoard
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_UpBoard
+  guid: 0d254e927596fc4bab5fddb5e57d8059
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1225
 --- !u!114 &-2663163447016605229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,6 +2203,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2892
+--- !u!114 &-2155737161445163162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/IsItFollowingMe
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/IsItFollowingMe
+  guid: 7fa559a2af85e74285319f7c1edac900
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2430
 --- !u!114 &-2138975890136396309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1788,6 +2289,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2048209448537278032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Location
+  m_EditorClassIdentifier: 
+  Name: Location
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-1941360042150847397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,7 +2344,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LightFlickering
   guid: d6ad84983ecff54bb0a3461ced094535
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1857,6 +2375,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 6847
+--- !u!114 &-1825788620152569718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/AttachBranch
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/AttachBranch
+  guid: 995758854570e94693a8ef572eed1563
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6305
 --- !u!114 &-1513468605623903496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1872,7 +2413,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_DrippingMilk
   guid: b61b4aa0ee22334d9696b6ec3160ddae
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -1953,7 +2494,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LockWrong
   guid: 53727a9084913f4ba82fee2afdb6f512
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2042,6 +2583,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2140
+--- !u!114 &-1105667193405830259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/HelperPlaceOfHonor
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/HelperPlaceOfHonor
+  guid: 55f240fb313db74388091fc50bb10cc0
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4813
+--- !u!114 &-1088090998086054307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/PaperPile_IsThereSomethingICanUseHere
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/PaperPile_IsThereSomethingICanUseHere
+  guid: 8568d89bcfc62147a0f8d2b8fc10c579
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5830
 --- !u!114 &-1077595634679121918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2082,6 +2669,52 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-828329485307046873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_KnobTurn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_KnobTurn
+  guid: 1dd40c9f5c559a4c8b37f6d4d783abf2
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 400
+--- !u!114 &-705390048482504633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/Mushrooms
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/Mushrooms
+  guid: 401ba20117eb1f46824d568d70d3e19e
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3347
 --- !u!114 &-660513304783602179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2119,7 +2752,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_BrokenPlantVase
   guid: 65259316bb8dff43b052c158247e25e0
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2142,7 +2775,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_Rake
   guid: 62aeaff0202cf343beb473de20b8bf80
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2173,6 +2806,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3347
+--- !u!114 &-542106748104882554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/ItsAMissingRip
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/ItsAMissingRip
+  guid: d8c8cd7e283e5540a019ec27ad958f94
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5340
 --- !u!114 &-479918181589737975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2246,7 +2902,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingPlantHeavy
   guid: b6720ad82ce97b4fa652e514c24e557c
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2309,7 +2965,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_LockOpenIndoor
   guid: c4ff1cf7f5047245a2f39d448b925aa9
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2353,7 +3009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 796712254389930246}
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   EditorEvents:
   - {fileID: 5961021214402947547}
   - {fileID: 2981677684832045223}
@@ -2412,70 +3068,70 @@ MonoBehaviour:
   - {fileID: -3661886565842501358}
   - {fileID: -8089160337253342667}
   - {fileID: -4586277811235805009}
-  - {fileID: 9017423954602500399}
-  - {fileID: -7953603769858745067}
-  - {fileID: 9208458383936365862}
-  - {fileID: 570542022719563455}
-  - {fileID: -1473713412458607538}
-  - {fileID: 785569715962622906}
-  - {fileID: -8679570410493909178}
-  - {fileID: -2366406439004813185}
-  - {fileID: 3261396845890048176}
-  - {fileID: -8641918137667754979}
-  - {fileID: -5758696373530116193}
-  - {fileID: 2725829175067547211}
-  - {fileID: 7834010309961540006}
-  - {fileID: 2932277386753086553}
-  - {fileID: -7955690521788141799}
-  - {fileID: 4830389807615189853}
-  - {fileID: -546371468767866326}
-  - {fileID: 51240549591371952}
-  - {fileID: 7791410658776685180}
-  - {fileID: 5231884172692905366}
-  - {fileID: -7396704416386813145}
-  - {fileID: -7928327950692946368}
-  - {fileID: 6638422610043190072}
-  - {fileID: -3978442375367597736}
-  - {fileID: -1118374424130448856}
-  - {fileID: 1956562207264652029}
-  - {fileID: 2495493845998311380}
-  - {fileID: -5042225368399926812}
-  - {fileID: 2623510813790847145}
-  - {fileID: 2657563439913498793}
-  - {fileID: -1941360042150847397}
-  - {fileID: 3255757268603648413}
-  - {fileID: -7615764252299874160}
-  - {fileID: 1913459356669847740}
-  - {fileID: 6342854282561485973}
-  - {fileID: 8237495448842114299}
-  - {fileID: 4990062154961960202}
-  - {fileID: 8637558131557385610}
-  - {fileID: -6147354422327624099}
-  - {fileID: -8678980444941862268}
-  - {fileID: -7003550134350956874}
-  - {fileID: 6909118954674033808}
-  - {fileID: -7823579352039997742}
-  - {fileID: 8078600370742174647}
-  - {fileID: -9086431744321516687}
-  - {fileID: 5501649669933656857}
-  - {fileID: -1858749129351875348}
-  - {fileID: -7152219717406477147}
-  - {fileID: 4466396283019988350}
-  - {fileID: 6307154927159722612}
-  - {fileID: -6874069524231540740}
-  - {fileID: -2138975890136396309}
-  - {fileID: -479918181589737975}
-  - {fileID: 3860977406483446027}
-  - {fileID: 8020303453062149755}
-  - {fileID: 3331660020290808789}
-  - {fileID: 4367106007210291569}
+  - {fileID: 282310480788141490}
+  - {fileID: 4674366170298691005}
+  - {fileID: -5454136125252267984}
+  - {fileID: -7293678945212484122}
+  - {fileID: -2732064946908714766}
+  - {fileID: 3390430158063226809}
+  - {fileID: 3520956281152473964}
+  - {fileID: 7324760415900921080}
+  - {fileID: -828329485307046873}
+  - {fileID: 5225600952839240554}
+  - {fileID: -8341998910237841917}
+  - {fileID: -2777689448735309235}
+  - {fileID: -7723716368468237805}
+  - {fileID: 5031264124028111698}
+  - {fileID: 8349389116644914937}
+  - {fileID: -7248921361873497577}
+  - {fileID: -705390048482504633}
+  - {fileID: -4222469838303846052}
+  - {fileID: 6548697559673786090}
+  - {fileID: -5842590200200593013}
+  - {fileID: -3003659522578596313}
+  - {fileID: -1105667193405830259}
+  - {fileID: 6315152549748175248}
+  - {fileID: 8327703204317028221}
+  - {fileID: -2987694641348686871}
+  - {fileID: 2636187139229738064}
+  - {fileID: -3741463353957958856}
+  - {fileID: 2896866444929776181}
+  - {fileID: 6952150145462764190}
+  - {fileID: 3094789854548529949}
+  - {fileID: 864295285055531398}
+  - {fileID: 6854823101078544432}
+  - {fileID: -2155737161445163162}
+  - {fileID: 8627714518371540398}
+  - {fileID: -1088090998086054307}
+  - {fileID: -5710506812138849682}
+  - {fileID: 5210669166492366011}
+  - {fileID: -5181486904232253609}
+  - {fileID: -8650355732986074870}
+  - {fileID: -1825788620152569718}
+  - {fileID: 1702184475139320860}
+  - {fileID: 2549481988793070783}
+  - {fileID: 3445463567910180599}
+  - {fileID: -5648598164500774419}
+  - {fileID: -7839991849513149763}
+  - {fileID: 359564242550999250}
+  - {fileID: -3226434511567661898}
+  - {fileID: -3655655375714178668}
+  - {fileID: 5681478115930240629}
+  - {fileID: -3993811301544300175}
+  - {fileID: 2207530221397953317}
+  - {fileID: -542106748104882554}
+  - {fileID: 4455237829673201378}
+  - {fileID: 3452574128900726773}
+  - {fileID: 3486057152277487347}
+  - {fileID: 2706121551727105987}
+  - {fileID: 8571663730927860822}
   EditorParameters:
-  - {fileID: 1883619180239442204}
+  - {fileID: -2048209448537278032}
   MasterBanks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   StringsBanks:
   - {fileID: 796712254389930246}
-  stringsBankWriteTime: 637582567849106252
+  stringsBankWriteTime: 637583297312348795
   cacheVersion: 3
 --- !u!114 &4374061492138706
 MonoBehaviour:
@@ -2492,7 +3148,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_RepairWheel
   guid: c573765614ba6f449bd43b58505c5fec
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2541,6 +3197,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &282310480788141490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/ThasALotOfBugs
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/ThasALotOfBugs
+  guid: 05209c125cddc944bb2af981df508b0d
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3558
 --- !u!114 &328651112606713886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2556,7 +3235,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_ButtonClickLock
   guid: 327f53c192a4bd40b50886e20af738b1
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2564,6 +3243,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 548
+--- !u!114 &359564242550999250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/yes
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/yes
+  guid: c91f9bbd280a144fa750e4ca3215e9c2
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1617
 --- !u!114 &394909491747143662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2664,12 +3366,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMODEMMA/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637582567849106252
+  lastModified: 637583297312348795
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 6456
   Exists: 1
+--- !u!114 &864295285055531398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/StorageBox
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/StorageBox
+  guid: 7162dc509fa41443abd3a7f55f8a148a
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6067
 --- !u!114 &1094027887449338728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2685,7 +3410,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_Paper
   guid: 3bb44ee37c12fc49b1ac21813bf713c7
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2752,7 +3477,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_DrawerEmmaRoom
   guid: a55a9d074d66b543ba220c794fce8974
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2775,7 +3500,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_OpenOven
   guid: 06d2fddabb5ae1458ea0d14184e9fdfc
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2783,6 +3508,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2579
+--- !u!114 &1702184475139320860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/TheSkyLooksPrittier
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/TheSkyLooksPrittier
+  guid: a95a9ba0e389e045b51983a6f9b3de9b
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2857
 --- !u!114 &1883619180239442204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2864,6 +3612,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2207530221397953317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MovingFlippers
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MovingFlippers
+  guid: d753165f4f0243419aeba06436ab070a
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 743
 --- !u!114 &2448704434962808303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2904,6 +3675,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1131
+--- !u!114 &2549481988793070783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MovingPillow
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MovingPillow
+  guid: b59027ab995abf4088fb6e14d4b6ea20
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &2623510813790847145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2927,6 +3721,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4559
+--- !u!114 &2636187139229738064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/MadameBouttons
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/MadameBouttons
+  guid: 5ead9f64ab53764fb70507502a96061e
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5576
 --- !u!114 &2646631944405867167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2968,6 +3785,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4988
+--- !u!114 &2706121551727105987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_BookOpen
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_BookOpen
+  guid: f48d5c73aa2d474cb6c6b6388191e912
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 600
 --- !u!114 &2725829175067547211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3030,6 +3870,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2702
+--- !u!114 &2896866444929776181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_MovingCurtain
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_MovingCurtain
+  guid: 620ac249f0e9c34680526e180aa2691a
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1258
 --- !u!114 &2932277386753086553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3068,7 +3931,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_AmbientOutside
   guid: 315f70987409f84bb78a4573bf862396
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -3137,6 +4000,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1328
+--- !u!114 &3094789854548529949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/DialogueEmma/WhyDidYouLeaveMeAlone
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/DialogueEmma/WhyDidYouLeaveMeAlone
+  guid: 6e96d1240a121d4aa2e11de39474e2fd
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4988
 --- !u!114 &3175533921735437919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3277,6 +4163,121 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3390430158063226809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_BrokenEgg
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_BrokenEgg
+  guid: 0d4dc2856ecbd140a2e29b52eee1e004
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 296
+--- !u!114 &3445463567910180599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OhIsThatYouEmma_
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OhIsThatYouEmma_
+  guid: b7fa4d10d73fdf4d8eb7ed00d297d9ac
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 9737
+--- !u!114 &3452574128900726773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/MoreBones
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/MoreBones
+  guid: e7e9ff2e7713b34696d5b6a612897e78
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3675
+--- !u!114 &3486057152277487347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/OneRibIsMissing
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/OneRibIsMissing
+  guid: eaf9929b92c8404c8f7db85b9db68005
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3923
+--- !u!114 &3520956281152473964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/ThePictureOfMeAndMyFriends
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/ThePictureOfMeAndMyFriends
+  guid: 118e5b9952b61f4fbdff38095b374c4e
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4813
 --- !u!114 &3563247114396546692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3292,7 +4293,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_RingBicycle
   guid: 16d321af38cf9a4880ad0ff5bdef2443
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3315,7 +4316,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_OpenFridge
   guid: c15f0f14c8bcc941a4c27329a78b0cb3
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3355,7 +4356,7 @@ MonoBehaviour:
   Path: event:/SFX/Doors/snd_DoorOutsideOpen
   guid: 527279367109bb46b765c850a5f19bc9
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3419,7 +4420,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_InteractivePlant
   guid: df63bb878741d94d911386c73414aca8
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3442,7 +4443,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_MusikDreamWorld
   guid: bae174e7b2dd594e98ff9ec4f8823be0
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -3465,7 +4466,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_Stairs
   guid: 86a20563d816e74c8bd0ba00a7228efc
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3496,6 +4497,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 5906
+--- !u!114 &4455237829673201378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/IThinkThatsSpoiled
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/IThinkThatsSpoiled
+  guid: dcc8aa97aae3024ab4daa5e83b046319
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3542
 --- !u!114 &4466396283019988350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3534,7 +4558,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_FallingBottleTop
   guid: 83cc9b1312f650478972a9def47cf96e
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3557,7 +4581,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingSpoon
   guid: c22958cdad541c47a2376bfe093efed9
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3565,6 +4589,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2525
+--- !u!114 &4674366170298691005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/PapersOnTable
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/PapersOnTable
+  guid: 084d64deddf14a44b4b29cd2af82c45d
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4813
 --- !u!114 &4830389807615189853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3628,6 +4675,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4813
+--- !u!114 &5031264124028111698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/NoIDontThinkSo
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/NoIDontThinkSo
+  guid: 2b597fa6d7dc2d4dbc682a5e349e9ab8
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3288
 --- !u!114 &5121482074158542549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3665,7 +4735,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_ToyBear
   guid: c8425952c31b3c458e836967f25d187e
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3673,6 +4743,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1765
+--- !u!114 &5210669166492366011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/LivingroomkeyFound
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/LivingroomkeyFound
+  guid: 9038d7809fda9c48acba7f8915b934ba
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4813
 --- !u!114 &5221078862183838419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3695,6 +4788,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1174
+--- !u!114 &5225600952839240554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/Grandma
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/Grandma
+  guid: 24ac313285110043a5c43dd3aacbdd7d
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2271
 --- !u!114 &5231884172692905366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3759,6 +4875,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &5681478115930240629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/DialogueEmma/WhipesTearsAndBreathes
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/DialogueEmma/WhipesTearsAndBreathes
+  guid: d48b186e0c78d34482d7e3882ad36546
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5052
 --- !u!114 &5740602955745209756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3827,7 +4966,7 @@ MonoBehaviour:
   Path: event:/Emma/Footsteps/snd_EmmaFootsteps
   guid: 20e6e1deec54864bb3a2986bd5449b60
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -3858,6 +4997,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2857
+--- !u!114 &6315152549748175248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/Hmm
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/Hmm
+  guid: 5889719410c582488258ae2aa7b11b88
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1519
 --- !u!114 &6342854282561485973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,6 +5065,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 578
+--- !u!114 &6548697559673786090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/PlantsMakingThemSelfsAtHome
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/PlantsMakingThemSelfsAtHome
+  guid: 5160d2d72d1d0348a3be2f251bb4fa0d
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5576
 --- !u!114 &6559345306283780969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3918,7 +5103,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PickupKey
   guid: 0559cc49e3b7f34a9b315e28edbf998d
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3987,7 +5172,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6808973613726944546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4010,6 +5195,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1576
+--- !u!114 &6854823101078544432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sequence 1/snd_BookClose
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sequence 1/snd_BookClose
+  guid: 7ccaeba878b5294dbf715717c4b1af8f
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 453
 --- !u!114 &6909118954674033808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4048,7 +5256,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PuttingToghether
   guid: 22867e03f4dd7245b07918b1102ed517
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4078,6 +5286,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1142
+--- !u!114 &6952150145462764190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/LampEmma
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/LampEmma
+  guid: 6e44d7d31f0a91449162ab3715ac1815
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4559
 --- !u!114 &6960301564282304796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4093,7 +5324,7 @@ MonoBehaviour:
   Path: event:/SFX/General/snd_BackClosing
   guid: fed7b6167d72e44691097f8aabddf261
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4116,7 +5347,7 @@ MonoBehaviour:
   Path: event:/SFX/General/snd_BackpackOpening
   guid: b6fe780df5ef5545bd207f3d2de9e289
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4139,7 +5370,7 @@ MonoBehaviour:
   Path: event:/SFX/Doors/snd_DoorClose
   guid: ce2635e7de7a6f49891477a9db2224eb
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4228,7 +5459,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_KnifePutinPlace
   guid: 630b429433883046b4eb97426bd55c2b
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4236,6 +5467,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1174
+--- !u!114 &7324760415900921080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/PictureEmmaBaby
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/PictureEmmaBaby
+  guid: 1970c73acbd4f04990271f7f26c8564f
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 8627
 --- !u!114 &7329526360156783412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4421,7 +5675,7 @@ MonoBehaviour:
   Path: event:/SFX/Menu/snd_Hover
   guid: 31848a3653caae44851e5b3b436759c8
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4490,7 +5744,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_RadioCrackling
   guid: 9899928a465a974fa33fe827419abb46
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -4536,7 +5790,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_MovingPlantLight
   guid: 651f3b5f42302f4d805c2a0bef1a5efa
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4544,6 +5798,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 578
+--- !u!114 &8327703204317028221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Reactions/HeavyBooks
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Reactions/HeavyBooks
+  guid: 58bbe907d7e2774eb67dba540bf0018a
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4402
 --- !u!114 &8341816532160292309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4566,6 +5843,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2017
+--- !u!114 &8349389116644914937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/MyFavouriteButterflyMagnet
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/MyFavouriteButterflyMagnet
+  guid: 3bb207e5a98e6947aa444b6dfaa1d14a
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3312
 --- !u!114 &8498829075610714472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4581,7 +5881,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_Stove
   guid: 2d63b44a7c2b564192ba4bf56fe705a7
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -4589,6 +5889,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 32699
+--- !u!114 &8571663730927860822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OilThis
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OilThis
+  guid: fc886a8b1e8bd94b9cc30f14e0ff717d
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5906
+--- !u!114 &8627714518371540398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Emma/Voice Overs/Sequence 1/Hints/GrandmaHuggingAnimal
+  m_EditorClassIdentifier: 
+  Path: event:/Emma/Voice Overs/Sequence 1/Hints/GrandmaHuggingAnimal
+  guid: 81aa41ebb357d5448238445a31b56ed4
+  Banks:
+  - {fileID: -8300667178561288697}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6338
 --- !u!114 &8637558131557385610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4627,7 +5973,7 @@ MonoBehaviour:
   Path: event:/Emma/Music/Sequence 1/snd_AmbientInsideGrandmother
   guid: 864a06dfc4c0a44bb014db90f3ea6c2a
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -4650,7 +5996,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_PickupWheel
   guid: b4d77312fb0d9f45bd817e56ae499f8d
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4757,7 +6103,7 @@ MonoBehaviour:
   Path: event:/SFX/Sequence 1/snd_CloseFridge
   guid: 7de37dfec681524783141e389691c7e9
   Banks:
-  - {fileID: 5616105465507871436}
+  - {fileID: -8300667178561288697}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
