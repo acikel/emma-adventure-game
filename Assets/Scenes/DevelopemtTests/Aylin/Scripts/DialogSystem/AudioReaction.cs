@@ -5,19 +5,6 @@ using UnityEngine;
 // rather than an DelayedReaction.
 public class AudioReaction : Reaction
 {
-    private void OnEnable()
-    {
-        TextManager.OnNextTurn += StopSound;
-    }
-
-    private void OnDisable()
-    {
-        TextManager.OnNextTurn -= StopSound;
-    }
-    private void StopSound()
-    {
-
-    }
     //------------------------------------------------- Implemenetation of Sounds WITHOUT Fmod:  Start-------------------------------------------------
     /*
     public AudioSource audioSource;     // The AudioSource to play the clip.
