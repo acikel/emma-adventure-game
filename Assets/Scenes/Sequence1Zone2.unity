@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_UpBoard
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -2356,7 +2356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_UpBoard
+  Event: event:/SFX/Sequence 1/snd_DrawerDoor
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
