@@ -35,12 +35,18 @@ public class AudioReaction : Reaction
 
     private void OnEnable()
     {
+        if (textAudio.Equals("") || textAudio == null)
+            return;
+
         eventDescription = FMODUnity.RuntimeManager.GetEventDescription(textAudio);
         eventDescription.createInstance(out audioEvent);
         TextManager.OnNextTurn += stopCurrentSound;
     }
     private void OnDisable()
     {
+        if (textAudio == null)
+            return;
+
         TextManager.OnNextTurn -= stopCurrentSound;
         releaseSound(audioEvent);
     }
