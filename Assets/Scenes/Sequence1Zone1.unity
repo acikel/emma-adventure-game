@@ -2125,7 +2125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Emma/Voice Overs/Sequence 1/Hints/GrandmasBook
+  Event: event:/Emma/Voice Overs/Sequence 1/NewEmmaVoice/ThisBookIsBoring
   PlayEvent: 11
   StopEvent: 12
   AllowFadeout: 1
@@ -3860,7 +3860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popUpSound: event:/SFX/Sequence 1/snd_LookPicture
-  popUpSound2: 
+  popUpSound2: event:/Emma/Voice Overs/Sequence 1/NewEmmaVoice/ImissMyFriends
   spriteRendererHintImage: {fileID: 1308611248}
   imageToBeDisplayed: {fileID: 21300000, guid: 054d700814cad0147aee99db1438f6c4, type: 3}
 --- !u!61 &1757312503
@@ -3917,7 +3917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Emma/Voice Overs/Sequence 1/Hints/ThePictureOfMeAndMyFriends
+  Event: event:/Emma/Voice Overs/Sequence 1/NewEmmaVoice/ImissMyFriends
   PlayEvent: 16
   StopEvent: 0
   AllowFadeout: 1
