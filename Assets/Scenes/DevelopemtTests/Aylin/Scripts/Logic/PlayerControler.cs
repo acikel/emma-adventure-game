@@ -208,7 +208,7 @@ public class PlayerControler : MonoBehaviour
                 isMoving = true;
 
                 //Check if sprite flip needed:
-                CheckSpriteFlip();
+                CheckAvatarFlip();
             }
             else
             {
@@ -224,7 +224,7 @@ public class PlayerControler : MonoBehaviour
                     isMoving = true;
 
                     //Check if sprite flip needed:
-                    CheckSpriteFlip();
+                    CheckAvatarFlip();
                 }
             }
         }
@@ -325,7 +325,7 @@ public class PlayerControler : MonoBehaviour
     }
 
 
-    private void CheckSpriteFlip()
+    private void CheckAvatarFlip()
     {
         if (avatar.transform.position.x > targetPosition.x)
         {

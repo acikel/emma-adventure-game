@@ -175,6 +175,9 @@ MonoBehaviour:
   - sceneName: Sequence2Zone1
     avatarStartScale: 3.5
     avatarScaleFactor: 3.5
+  - sceneName: Sequence1Dream
+    avatarStartScale: 4.5
+    avatarScaleFactor: 2.5
 --- !u!4 &1237573578
 Transform:
   m_ObjectHideFlags: 0

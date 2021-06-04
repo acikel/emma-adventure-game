@@ -8,8 +8,10 @@ public class Grandma : ActionObject
     public Animator animator;
     private SceneManager sceneManager;
     private string dialogSystemNameToLoad = "Sequence1DialogSystem";
+    private string dreamSceneNameToLoad = "Sequence1Dream";
     private Inventory inventory;
 
+    
     private void Start()
     {
         sceneManager = API.SceneManager;
@@ -38,6 +40,6 @@ public class Grandma : ActionObject
         inventory.InteractionWithUIActive = true;
         yield return new WaitForSeconds(seconds);
         //Debug.Log("waitAndLoadDialogSystem2");
-        sceneManager.loadDialogSystemLockPlayer(dialogSystemNameToLoad);
+        sceneManager.loadDialogSystemLockPlayer(dialogSystemNameToLoad, dreamSceneNameToLoad);
     }
 }
