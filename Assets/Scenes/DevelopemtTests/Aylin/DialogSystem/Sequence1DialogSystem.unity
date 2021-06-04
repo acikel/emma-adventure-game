@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 1
-  textAudio: event:/Emma/Voice Overs/Sequence 1/DialogueGrandma/OhIsThatYouEmma_
+  textAudio: 
 --- !u!114 &649894617
 MonoBehaviour:
   m_ObjectHideFlags: 0
