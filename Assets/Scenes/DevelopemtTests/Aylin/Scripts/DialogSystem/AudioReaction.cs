@@ -63,6 +63,7 @@ public class AudioReaction : Reaction
 
     private void stopSound(FMOD.Studio.EventInstance instance)
     {
+        Debug.Log("stop sound");
         instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 

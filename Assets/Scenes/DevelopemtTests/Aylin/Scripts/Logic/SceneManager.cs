@@ -82,6 +82,13 @@ public class SceneManager : MonoBehaviour
         }
     }
 
+    public AvatarScaleValues CurrentSceneValues
+    {
+        get
+        {
+            return currentSceneValues;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -114,6 +121,7 @@ public class SceneManager : MonoBehaviour
             AfterAvatarInitialization?.Invoke(currentSceneValues.avatarStartScale, currentSceneValues.avatarScaleFactor);
         }
         */
+
         StartCoroutine(Fade(0f));
 
     }

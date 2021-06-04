@@ -151,12 +151,15 @@ public class PlayerControler : MonoBehaviour
         inventory = API.Inventory;
         sceneManager = API.SceneManager;
         sceneManager.AfterAvatarInitialization += initializeAndRescalePlayer;
-        scaleCharachter();
+        //scaleCharachter();
         colliderOfAvatarCurrent = colliderOfAvatarPlayer;
 
         //footstepsEvent = FMOD. FMOD_StudioSystem.instance.GetEvent(footstepsSound);
         eventDescription = FMODUnity.RuntimeManager.GetEventDescription(footstepsSound);
         eventDescription.createInstance(out footstepsEvent);
+
+        //scale character with current values of scene manager for first loaded scene
+        initializeAndRescalePlayer(sceneManager.CurrentSceneValues.avatarStartScale, sceneManager.CurrentSceneValues.avatarScaleFactor);
     }
 
     private void OnDisable()
