@@ -43,16 +43,47 @@ public class AudioReaction : Reaction
 
     [FMODUnity.EventRef]
     public string textAudio; // Reference to the AudioClip to be played.
+    private FMOD.Studio.EventInstance audioEvent;
+    private FMOD.Studio.EventDescription eventDescription;
+
+    private void OnEnable()
+    {
+        eventDescription = FMODUnity.RuntimeManager.GetEventDescription(textAudio);
+        eventDescription.createInstance(out audioEvent);
+        TextManager.OnNextTurn += stopCurrentSound;
+    }
+    private void OnDisable()
+    {
+        TextManager.OnNextTurn -= stopCurrentSound;
+        releaseSound(audioEvent);
+    }
 
     protected override void ImmediateReaction()
     {
         // Set the AudioSource's clip to the given one and play with the given delay.
         if (textAudio.Length!=0)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(textAudio);
+            //FMODUnity.RuntimeManager.PlayOneShot(textAudio);
+            audioEvent.start();
         }
     }
-    
+
+    private void stopSound(FMOD.Studio.EventInstance instance)
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
+    private void releaseSound(FMOD.Studio.EventInstance instance)
+    {
+        instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        instance.release();
+        instance.clearHandle();
+    }
+
+    private void stopCurrentSound()
+    {
+        stopSound(audioEvent);
+    }
     //------------------------------------------------- Implemenetation of Sounds WITH Fmod:  End-------------------------------------------------
 
 }

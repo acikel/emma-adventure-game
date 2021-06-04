@@ -29,7 +29,7 @@ public class TextManager : MonoBehaviour
     public Button[] buttonAnswerOptions;
 
 
-    //Subscribed by ReactionCollection to define which reaction will be invoked next.
+    //Subscribed by ReactionCollection to define which reaction will be invoked next. And AudioReaction to stop sound when a text is skipped.
     public delegate void OnNextTurnHandler();
     public static event OnNextTurnHandler OnNextTurn;
 
