@@ -836,8 +836,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_KnifePutinPlace
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_Scoop
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -4834,8 +4834,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_KnifePutinPlace
-  PlayEvent: 11
+  Event: event:/SFX/Sequence 1/snd_Scoop
+  PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0

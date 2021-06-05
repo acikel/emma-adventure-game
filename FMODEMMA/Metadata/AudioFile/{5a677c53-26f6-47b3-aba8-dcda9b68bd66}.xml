@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{5a677c53-26f6-47b3-aba8-dcda9b68bd66}">
+		<property name="assetPath">
+			<value>SFX/snd_Scoop.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.13216666666666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{41ddac83-4ed0-424f-8c61-b3c9889f586e}</destination>
+		</relationship>
+	</object>
+</objects>
