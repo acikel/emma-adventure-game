@@ -2026,7 +2026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 2
-  textAudio: event:/Emma/Voice Overs/Sequence 1/DialogueEmma/EmmaCrying
+  textAudio: event:/Emma/Voice Overs/Sequence 1/NewEmmaVoice/Crying
 --- !u!114 &1618937829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2264,7 +2264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 12
-  textAudio: 
+  textAudio: event:/Emma/Voice Overs/Sequence 1/NewEmmaVoice/WhipesHerNose
 --- !u!114 &1658474217
 MonoBehaviour:
   m_ObjectHideFlags: 0
