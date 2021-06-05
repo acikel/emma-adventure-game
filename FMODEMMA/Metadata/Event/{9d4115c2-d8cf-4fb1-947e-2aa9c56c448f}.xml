@@ -89,6 +89,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{231274bd-ff0c-41d3-b914-617181038e51}" />
 	<object class="SingleSound" id="{f787d0d8-533a-4384-b76a-f5642a93ce0e}">
+		<property name="start">
+			<value>1</value>
+		</property>
 		<property name="length">
 			<value>2.0609999999999999</value>
 		</property>
@@ -98,7 +101,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{aede7584-b06c-48dc-be34-2c2d19ef728f}">
 		<property name="volume">
-			<value>-6</value>
+			<value>-13</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
