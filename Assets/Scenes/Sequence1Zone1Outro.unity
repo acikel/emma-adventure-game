@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Emma/Music/Sequence 1/snd_MusikDreamWorld
+  Event: event:/Emma/Music/Sequence 1/snd_DreamWorldToBeContinued
   PlayEvent: 1
   StopEvent: 12
   AllowFadeout: 1
