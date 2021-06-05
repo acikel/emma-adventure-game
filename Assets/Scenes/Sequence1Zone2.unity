@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  Event: event:/SFX/Sequence 1/snd_CabinetClosing
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1
@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_DrawerDoor
+  Event: event:/SFX/Sequence 1/snd_CabinetClosing
   PlayEvent: 15
   StopEvent: 0
   AllowFadeout: 1

@@ -50,6 +50,7 @@ public class SceneManager : MonoBehaviour
     private float flipAvatarLeft = 1f;
     private float flipAvatarRight = -1f;
 
+    public AsyncOperation async;
 
     //keeps count of current sequence/level of the game (as after each dialog a new sequence/level is entered).
     private int currentSequenceNummber;
@@ -317,7 +318,7 @@ public class SceneManager : MonoBehaviour
         AvatarManager.helperAvatar.setFlipDirection(flipAvatarRight);
 
         yield return StartCoroutine(HandleNextSceneLoad(dreamSceneName));
-        yield return ScM.SceneManager.LoadSceneAsync(dialogSystemName, LoadSceneMode.Additive);
+        yield return async = ScM.SceneManager.LoadSceneAsync(dialogSystemName, LoadSceneMode.Additive);
         
 
         //if (currentSceneValues != null)

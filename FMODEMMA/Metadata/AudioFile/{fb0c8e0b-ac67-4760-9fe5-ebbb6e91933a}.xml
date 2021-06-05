@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{fb0c8e0b-ac67-4760-9fe5-ebbb6e91933a}">
+		<property name="assetPath">
+			<value>VoiceOvers/NewEmmaVoice/ThisBookIsBoring.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.0609999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{41ddac83-4ed0-424f-8c61-b3c9889f586e}</destination>
+		</relationship>
+	</object>
+</objects>
