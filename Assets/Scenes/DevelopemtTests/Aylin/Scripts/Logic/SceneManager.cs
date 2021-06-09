@@ -331,7 +331,7 @@ public class SceneManager : MonoBehaviour
             isFading = false;
             if (activateInventory)
             {
-                Debug.Log("activate Inventory");
+                //Debug.Log("activate Inventory");
                 openInventroyCanvas(true);
                 activateInventory = false;
             }
