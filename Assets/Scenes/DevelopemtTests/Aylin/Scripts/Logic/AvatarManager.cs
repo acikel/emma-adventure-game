@@ -27,6 +27,8 @@ public class AvatarManager : Object
 
 	private static GameObject[] obstaclesTmp;
 	private SceneManager sceneManager = API.SceneManager;
+	private static List<Collider2D> helperColliders = new List<Collider2D>();
+	private static List<Collider2D> playerColliders = new List<Collider2D>();
 
 	//private static GameObject player;
 	//private static GameObject helper;
@@ -55,6 +57,8 @@ public class AvatarManager : Object
 				{
 					obstacles.AddRange(gameObject.transform.GetComponentsInChildren<Collider2D>());
 				}
+				helperColliders.AddRange(helperAvatar.gameObject.transform.GetComponents<CapsuleCollider2D>());
+				playerColliders.AddRange(playerAvatar.gameObject.transform.GetComponents<CapsuleCollider2D>());
 
 				currentAvatar = playerAvatar;
 				//groundCenter = GameObject.FindWithTag("Ground")?.transform.Find("Center");
@@ -91,14 +95,41 @@ public class AvatarManager : Object
 		if (sceneManager.IsReloading)
 			return false;
 
-        foreach (Collider2D obstacleCollider in obstacles)
+		//check for obstacles tagged as obstacles
+
+		if (checkForCollision(obstacles, colliderToCheck))
+			return true;
+
+        //check for opposite avatar (if player is current avatar then collision with helper and if helper current avatar then collision with player):
+        //check player:
+		if (currentAvatar == playerAvatar)
         {
+			if (checkForCollision(helperColliders, colliderToCheck))
+				return true;
+        }
+
+		//check helper:
+		if (currentAvatar == helperAvatar)
+		{
+			if (checkForCollision(playerColliders, colliderToCheck))
+				return true;
+		}
+
+
+		return false;
+		
+    }
+
+	private bool checkForCollision(List<Collider2D> obstaclesColliders, Collider2D colliderToCheck)
+    {
+		foreach (Collider2D obstacleCollider in obstaclesColliders)
+		{
 			if (colliderToCheck.IsTouching(obstacleCollider))
 				return true;
 		}
 		return false;
-		
-    }
+	}
+
 	public void ChangeGroundCenter(Transform newGroundCenter)
 	{
 		groundCenter = newGroundCenter;
