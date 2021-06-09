@@ -100,8 +100,12 @@ public class SceneManager : MonoBehaviour
         avatarManager = API.AvatarManager;
         //Debug.Log("avatarManager1:" + avatarManager);
         //currentAdditiveSceneName ="Sequence1Zone1";
+        
+        //3. additive scene at game start is set as first loaded scene and unloaded first.
         currentAdditiveSceneName = ScM.SceneManager.GetSceneAt(ScM.SceneManager.sceneCount - 1).name;
         //Debug.Log("currentAdditiveSceneName: " + currentAdditiveSceneName);
+
+        
 
         assignScaleValueForCurrentScene();
         //ScM.SceneManager.LoadSceneAsync("Sequence1Zone1", LoadSceneMode.Additive);
@@ -110,7 +114,8 @@ public class SceneManager : MonoBehaviour
         inventory = API.Inventory;
         canvasInventory = API.CanvasInventory;
 
-
+        //hide avatars (player and helper) and inventory canvas when start menu is displayed on start:
+        hideAvatarsAndInventoryOnStartMenuLoad();
         loadStartLocations();
         initializeStartLocations();
 
@@ -127,7 +132,6 @@ public class SceneManager : MonoBehaviour
         StartCoroutine(Fade(0f));
 
     }
-
 
     private void OnEnable()
     {
@@ -188,7 +192,7 @@ public class SceneManager : MonoBehaviour
         //Debug.Log("SceneManager loadDialogSystemLockPlayer");
         dialogSystemLoaded = true;
         currentDialogSystemName = dialogSystemName;
-        openCloseInventroyCanvas(false);
+        openInventroyCanvas(false);
         StartCoroutine(loadDialogSystem(dialogSystemName, dreamSceneName));
 
     }
@@ -201,14 +205,21 @@ public class SceneManager : MonoBehaviour
 
     }
 
+    public void loadNextSceneUnhideInventoryAndAvatars(string sceneNameToTransitionTo)
+    {
+        activateInventory = true;
+        unHideAvatars = true;
+        StartCoroutine(HandleNextSceneLoad(sceneNameToTransitionTo));
+    }
+
     public void loadNextSceneHideInventoryAndAvatars(string sceneNameToTransitionTo) {
         StartCoroutine(loadNextSceneHideInventoryAndAvatarsRoutine(sceneNameToTransitionTo));
     }
     private IEnumerator loadNextSceneHideInventoryAndAvatarsRoutine(string sceneNameToTransitionTo)
     {
-        yield return StartCoroutine(HandleNextSceneLoad(sceneNameToTransitionTo));
-        openCloseInventroyCanvas(false);
+        openInventroyCanvas(false);
         avatarManager.hideAvatars(true);
+        yield return StartCoroutine(HandleNextSceneLoad(sceneNameToTransitionTo));
     }
 
     private IEnumerator HandleNextSceneLoad(string sceneNameToTransitionTo)
@@ -244,6 +255,7 @@ public class SceneManager : MonoBehaviour
             AfterSceneLoad();
 
         currentAdditiveSceneName = substringTMp;
+        hideAvatarsAndInventoryOnStartMenuLoad();
         assignScaleValueForCurrentScene();
         //Debug.Log("current scene name:"+ currentAdditiveSceneName);
         reloadDone = false;
@@ -251,6 +263,18 @@ public class SceneManager : MonoBehaviour
         
     }
 
+    private void hideAvatarsAndInventoryOnStartMenuLoad()
+    {
+        if (currentAdditiveSceneName.Equals("StartMenu"))
+        {
+            //Debug.Log("Start Menu Loaded");
+            //hide avatars (player and helper) and inventory canvas when start menu is displayed.
+            openInventroyCanvas(false);
+            activateInventory = false;
+            unHideAvatars = false;
+            avatarManager.hideAvatars(true);
+        }
+    }
 
     private void loadStartLocations()
     {
@@ -307,7 +331,8 @@ public class SceneManager : MonoBehaviour
             isFading = false;
             if (activateInventory)
             {
-                openCloseInventroyCanvas(true);
+                Debug.Log("activate Inventory");
+                openInventroyCanvas(true);
                 activateInventory = false;
             }
             if (unHideAvatars)
@@ -358,10 +383,12 @@ public class SceneManager : MonoBehaviour
         //inventory.InteractionWithUIActive = false; //This line is not needed as its already done in update after reloadDone is set to false with HandleNextSceneLoad.
     }
 
-    private void openCloseInventroyCanvas(bool openInventory)
+    private void openInventroyCanvas(bool openInventory)
     {
         if (canvasInventory == null)
             return;
+
+        //Debug.Log("openIventoryCanvas"+ Convert.ToInt32(openInventory));
         canvasInventory.alpha = Convert.ToInt32(openInventory);
         canvasInventory.blocksRaycasts = openInventory;
         canvasInventory.interactable = openInventory;

@@ -159,7 +159,8 @@ public class PlayerControler : MonoBehaviour
         eventDescription.createInstance(out footstepsEvent);
 
         //scale character with current values of scene manager for first loaded scene
-        initializeAndRescalePlayer(sceneManager.CurrentSceneValues.avatarStartScale, sceneManager.CurrentSceneValues.avatarScaleFactor);
+        if(sceneManager.CurrentSceneValues!=null) //is case for start menu as avatars are not displayed
+            initializeAndRescalePlayer(sceneManager.CurrentSceneValues.avatarStartScale, sceneManager.CurrentSceneValues.avatarScaleFactor);
     }
 
     private void OnDisable()
