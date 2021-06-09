@@ -1698,7 +1698,7 @@ Transform:
   m_LocalScale: {x: -6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &864842220
 GameObject:
@@ -1974,9 +1974,11 @@ GameObject:
   - component: {fileID: 945014485}
   - component: {fileID: 945014484}
   - component: {fileID: 945014483}
+  - component: {fileID: 945014486}
+  - component: {fileID: 945014487}
   m_Layer: 6
   m_Name: Wheel
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2063,12 +2065,45 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945014482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 73.8, y: -59.8458, z: 0}
+  m_LocalPosition: {x: 73.8, y: -59.8458, z: 100}
   m_LocalScale: {x: 8.235, y: 4.700729, z: 8.235}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &945014486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945014482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5934bfa66b26441aa4f133db67eb75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Wheel
+  orderedSpritesToChange: []
+  dragObjects: []
+  dropOffZone: {fileID: 0}
+  gameObjectToDeactivateAfterLastDrag: {fileID: 0}
+--- !u!58 &945014487
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945014482}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.79641134, y: 0.53}
+  serializedVersion: 2
+  m_Radius: 2.4914112
 --- !u!1 &957416953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,6 +2345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1006850222}
   - component: {fileID: 1006850221}
+  - component: {fileID: 1006850220}
   m_Layer: 6
   m_Name: Bike (1)
   m_TagString: Untagged
@@ -2317,6 +2353,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1006850220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006850219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251500cd3f7af574893ab00ab059e601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropOff: {fileID: 1828615833}
+  orderedList: 0
+  itemNameToDrop:
+  - Wheel
+  spriteBicycleRepaired: {fileID: 21300000, guid: dee43c4660d54bf4286369c42b5f86d8, type: 3}
 --- !u!212 &1006850221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2380,7 +2433,7 @@ Transform:
   m_LocalScale: {x: 4.9, y: 4.9, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1017454473
 GameObject:
@@ -2544,7 +2597,7 @@ Transform:
   m_LocalScale: {x: 4.9, y: 4.9, z: 44.9}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041255096
 GameObject:
@@ -2626,7 +2679,7 @@ Transform:
   m_LocalScale: {x: 4.9, y: 4.9, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1235873931
 GameObject:
@@ -3450,7 +3503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1510510427
 GameObject:
@@ -3500,7 +3553,7 @@ Transform:
   - {fileID: 1634343912}
   - {fileID: 1975738665}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1619602445
 GameObject:
@@ -3928,6 +3981,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1690875859}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1828615830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1828615834}
+  - component: {fileID: 1828615833}
+  - component: {fileID: 1828615832}
+  - component: {fileID: 1828615831}
+  m_Layer: 0
+  m_Name: DropOffBike
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!58 &1828615831
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828615830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 25.480186
+--- !u!50 &1828615832
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828615830}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1828615833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828615830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd67899dd4523c4e831a0ebd8dc8d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderedList: 1
+  itemNameToDrop:
+  - Wheel
+--- !u!4 &1828615834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828615830}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -97.7, y: -18.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880333473
 GameObject:

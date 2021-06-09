@@ -886,6 +886,7 @@ MonoBehaviour:
   - {fileID: 8519019710717560422, guid: d72576f3c16de024d96eb3dc95a50306, type: 3}
   - {fileID: 2483125759296433395, guid: 10bffb7f28d01674eba0b6cbc5c538ea, type: 3}
   - {fileID: 8429834706820185778, guid: 5555f73e32ed0b34d88b3e7d4dc79234, type: 3}
+  - {fileID: 6480810417215346672, guid: 538e78769e3a8ce4a9d081b27d4a58ae, type: 3}
   inventoryItemslots: {fileID: 558216588}
   InventoryBlocker: {fileID: 980996455}
   isFull: 00000000

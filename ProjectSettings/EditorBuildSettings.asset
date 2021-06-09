@@ -38,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sequence1Dream.unity
     guid: d5c1b6a4c709b4f48809fef6441a3770
+  - enabled: 1
+    path: Assets/Scenes/Sequence2Zone1Outro.unity
+    guid: 26879845cc90bb043b75abc5acdc5236
+  - enabled: 1
+    path: Assets/Scenes/Sequence1Zone1Intro.unity
+    guid: 705da66cf48cb984aaa8672e65b3e11b
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 02f713d29f0af244eb7dee9844220474
   m_configObjects: {}

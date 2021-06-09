@@ -25,7 +25,8 @@ public class SceneManager : MonoBehaviour
 
     private Inventory inventory;
     private bool isReloading;
-    private bool dialogUnloading;
+    private bool activateInventory;
+    private bool unHideAvatars;
     //tells if dialog system is loaded. So the player interaction only gets enabled after fade to alpha=0 (in the Fade method) if no dialog system is loaded.
     private bool dialogSystemLoaded;
 
@@ -108,7 +109,7 @@ public class SceneManager : MonoBehaviour
         inputManager = API.InputManager;
         inventory = API.Inventory;
         canvasInventory = API.CanvasInventory;
-        
+
 
         loadStartLocations();
         initializeStartLocations();
@@ -127,10 +128,11 @@ public class SceneManager : MonoBehaviour
 
     }
 
-    
+
     private void OnEnable()
     {
-        dialogUnloading = false;
+        unHideAvatars = false;
+        activateInventory = false;
         dialogSystemLoaded = false;
         PlayerControler.OnCollisionWithPortal += HandleNextSceneLoad;
     }
@@ -194,9 +196,19 @@ public class SceneManager : MonoBehaviour
     public void unloadDialogSystemLoadNewSequenceUnlockPlayer(string newSceneNameToTransitionTo)
     {
         dialogSystemLoaded = false;
-        dialogUnloading = true;
+        activateInventory = true;
         StartCoroutine(unloadDialogSystemLoadNewSequence(newSceneNameToTransitionTo));
 
+    }
+
+    public void loadNextSceneHideInventoryAndAvatars(string sceneNameToTransitionTo) {
+        StartCoroutine(loadNextSceneHideInventoryAndAvatarsRoutine(sceneNameToTransitionTo));
+    }
+    private IEnumerator loadNextSceneHideInventoryAndAvatarsRoutine(string sceneNameToTransitionTo)
+    {
+        yield return StartCoroutine(HandleNextSceneLoad(sceneNameToTransitionTo));
+        openCloseInventroyCanvas(false);
+        avatarManager.hideAvatars(true);
     }
 
     private IEnumerator HandleNextSceneLoad(string sceneNameToTransitionTo)
@@ -293,10 +305,15 @@ public class SceneManager : MonoBehaviour
             if(!dialogSystemLoaded)
                 inventory.InteractionWithUIActive = false;
             isFading = false;
-            if (dialogUnloading)
+            if (activateInventory)
             {
                 openCloseInventroyCanvas(true);
-                dialogUnloading = false;
+                activateInventory = false;
+            }
+            if (unHideAvatars)
+            {
+                avatarManager.hideAvatars(false);
+                unHideAvatars = false;
             }
             faderCanvasGroup.blocksRaycasts = false;
         }

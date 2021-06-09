@@ -30,6 +30,9 @@ public class AvatarManager : Object
 	private static List<Collider2D> helperColliders = new List<Collider2D>();
 	private static List<Collider2D> playerColliders = new List<Collider2D>();
 
+	private static SpriteRenderer playerSpriteRenderer;
+	private static SpriteRenderer helperSpriteRenderer;
+
 	//private static GameObject player;
 	//private static GameObject helper;
 	public static AvatarManager Instance
@@ -48,6 +51,8 @@ public class AvatarManager : Object
 				helperAvatar = GameObject.FindWithTag("Helper").GetComponent<Helper>();
 				playerAnimator = playerAvatar.gameObject.GetComponent<Animator>();
 				helperAnimator = helperAvatar.gameObject.GetComponent<Animator>();
+				playerSpriteRenderer = playerAvatar.gameObject.GetComponent<SpriteRenderer>();
+				helperSpriteRenderer = helperAvatar.gameObject.GetComponent<SpriteRenderer>();
 				helperAvatar.gameObject.SetActive(false);
 				background = GameObject.FindWithTag("Ground");
 				backgroundCollider = background?.GetComponent<PolygonCollider2D>();
@@ -120,6 +125,11 @@ public class AvatarManager : Object
 		
     }
 
+	public void hideAvatars(bool hide)
+    {
+		helperSpriteRenderer.enabled = !hide;
+		playerSpriteRenderer.enabled = !hide;
+    }
 	private bool checkForCollision(List<Collider2D> obstaclesColliders, Collider2D colliderToCheck)
     {
 		foreach (Collider2D obstacleCollider in obstaclesColliders)

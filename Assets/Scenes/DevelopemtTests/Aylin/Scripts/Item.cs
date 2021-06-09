@@ -31,7 +31,7 @@ public class Item : MonoBehaviour
     public GameObject gameObjectToDeactivateAfterLastDrag;
 
     private SpriteRenderer spriteRenderer;
-    //subscribed by inventory.cs
+    //subscribed by inventory.cs used to search for the corresponding sprite to instanciate in list. This items corresponding sprite needs to be added to the list of inventory.cs via unity editor too.
     public delegate void HandleItemCollision(string itemName);
     public static event HandleItemCollision OnItemCollision;
     private InputManager inputManager;
@@ -100,10 +100,14 @@ public class Item : MonoBehaviour
 
     private void putItemToInventory()
     {
-        if(playerIsColliding && !inventory.isInvetoryFull() && inputManager.checkIfSpecificColliderWasHit("Item", itemCollider))
+        //Debug.Log("itemCollider name: " + itemCollider.name);
+        //Debug.Log("putItemToInventory1: " + itemName + "playerIsColliding:"+ playerIsColliding + "inputManager.checkIfSpecificColliderWasHit: "+ inputManager.checkIfSpecificColliderWasHit("Item", itemCollider));
+        if (playerIsColliding && !inventory.isInvetoryFull() && inputManager.checkIfSpecificColliderWasHit("Item", itemCollider))
         {
+            //Debug.Log("putItemToInventory1.5: " + itemName);
             if (dragObjects.Count == 0 && orderedSpritesToChange.Count == 0)
             {
+                //Debug.Log("putItemToInventory2: " + itemName);
                 lockMovementAndPutItemIntoInventory(itemName);
             }
             else if (dragObjects.Count == 0 && orderedSpritesToChange.Count != 0)
@@ -138,7 +142,7 @@ public class Item : MonoBehaviour
             //OnItemCollision event is handled in the inventory script via HandleOnItemCollision method
 
 
-
+            //Debug.Log("itemName: "+ itemName);
             OnItemCollision?.Invoke(itemName);
             //replacement of OnItemCollision?.Invoke(); to call events with IEnumerator as return type and Coroutines in Handler Methods:
             /*
