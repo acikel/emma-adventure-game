@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 11
-  message: You're not alone. Not anymore..  (helper) is with you my dear, after all,
+  message: You're not alone. Not anymore..  Friend is with you my dear, after all,
     as long as there are bones, we can't be forgotten. Now, don't be afraid, you're
     a brave girl and I know you can find the answers that you're looking for.
   textColor: {r: 0, g: 0, b: 0, a: 1}
