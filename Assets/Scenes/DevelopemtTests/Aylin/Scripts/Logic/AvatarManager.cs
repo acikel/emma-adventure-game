@@ -80,8 +80,13 @@ public class AvatarManager : Object
     {
 		//Debug.Log("hi");
 		background = GameObject.FindWithTag("Ground");
-		backgroundCollider = background.GetComponent<PolygonCollider2D>();
-		groundCenter = background.transform.Find("Center");
+        if (background != null)
+        {
+			backgroundCollider = background.GetComponent<PolygonCollider2D>();
+			groundCenter = background.transform.Find("Center");
+		}
+			
+		
 	}
 	//Used Scene Manager after new scene load.
 	public void ReloadObstacles()

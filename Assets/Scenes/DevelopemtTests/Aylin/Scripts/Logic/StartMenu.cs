@@ -27,4 +27,9 @@ public class StartMenu : MonoBehaviour
         //sceneManager.loadNextSceneUnhideInventoryAndAvatars("Sequence1Zone1");
         sceneManager.loadNextSceneHideInventoryAndAvatars("Sequence1Zone1Intro");
     }
+
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }

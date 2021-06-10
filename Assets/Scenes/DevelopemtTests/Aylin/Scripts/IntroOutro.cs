@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Intro : MonoBehaviour
+//Attach this script to last animator or only animator that is existent.
+public class IntroOutro : MonoBehaviour
 {
     private Animator animator;
     private SceneManager sceneManager;
