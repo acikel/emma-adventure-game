@@ -205,13 +205,18 @@ public class SceneManager : MonoBehaviour
 
     }
 
-    public void loadNextSceneUnhideInventoryAndAvatars(string sceneNameToTransitionTo)
+    public void loadNextSceneUnhideInventoryAndAvatarsLast(string sceneNameToTransitionTo)
     {
         activateInventory = true;
         unHideAvatars = true;
-        //openInventroyCanvas(true);
-        //avatarManager.hideAvatars(true);
         StartCoroutine(HandleNextSceneLoad(sceneNameToTransitionTo));
+    }
+
+    public void loadNextSceneUnhideInventoryAndAvatarsFirst(string sceneNameToTransitionTo)
+    {
+        activateInventory = true;
+        unHideAvatars = true;
+        StartCoroutine(loadNextSceneUnHideInventoryAndAvatarsRoutineFirst(sceneNameToTransitionTo));
     }
 
     public void loadNextSceneHideInventoryAndAvatars(string sceneNameToTransitionTo) {
@@ -222,6 +227,14 @@ public class SceneManager : MonoBehaviour
         openInventroyCanvas(false);
         avatarManager.hideAvatars(true);
         yield return StartCoroutine(HandleNextSceneLoad(sceneNameToTransitionTo));
+    }
+
+    private IEnumerator loadNextSceneUnHideInventoryAndAvatarsRoutineFirst(string sceneNameToTransitionTo)
+    {
+        
+        yield return StartCoroutine(HandleNextSceneLoad(sceneNameToTransitionTo));
+        openInventroyCanvas(false);
+        avatarManager.hideAvatars(true);
     }
 
     private IEnumerator HandleNextSceneLoad(string sceneNameToTransitionTo)

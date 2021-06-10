@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Attach this script to last animator or only animator that is existent.
-public class IntroOutro : MonoBehaviour
+public class Intro : MonoBehaviour
 {
     private Animator animator;
     private SceneManager sceneManager;
@@ -21,16 +21,16 @@ public class IntroOutro : MonoBehaviour
     void Update()
     {
         //check if animator is animating any animation and if no animation is played go into next scene
-        if (animator!=null && !sceneWasLoaded && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        if (animator != null && !sceneWasLoaded && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {  //If normalizedTime is 0 to 1 means animation is playing, if greater than 1 means finished
             //Debug.Log("not playing");
             //sceneManager.loadNextSceneUnhideInventoryAndAvatars("Sequence1Zone1");
-            sceneManager.loadNextSceneUnhideInventoryAndAvatars(nextSceneName);
+            sceneManager.loadNextSceneUnhideInventoryAndAvatarsFirst(nextSceneName);
             sceneWasLoaded = true;
         }
         //else
         //{
-            //Debug.Log("playing");
+        //Debug.Log("playing");
         //}
     }
 }
