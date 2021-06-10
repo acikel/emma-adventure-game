@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 6
-  message: What proffesor what are you talking about?
+  message: What professor what are you talking about?
   textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &54111781
 MonoBehaviour:
@@ -151,9 +151,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactionTurn: 3
-  message: Oh don't fret dear, look who it is! (Helper) was my friend when I was
-    your age, and when his time came, I put his bones together on my own. I just
-    couldn't say goodbye... I'm glad he's here to watch over you.
+  message: Oh don't fret dear, look who it is! He was my friend when I was your age,
+    and when his time came, I put his bones together on my own. I just couldn't say
+    goodbye... I'm glad he's here to watch over you.
   textColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &59382076
 GameObject:
