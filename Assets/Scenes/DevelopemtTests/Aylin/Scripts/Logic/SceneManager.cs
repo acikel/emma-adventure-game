@@ -209,8 +209,8 @@ public class SceneManager : MonoBehaviour
     {
         activateInventory = true;
         unHideAvatars = true;
-        openInventroyCanvas(true);
-        avatarManager.hideAvatars(true);
+        //openInventroyCanvas(true);
+        //avatarManager.hideAvatars(true);
         StartCoroutine(HandleNextSceneLoad(sceneNameToTransitionTo));
     }
 
