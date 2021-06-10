@@ -223,6 +223,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resettableScriptableObjects:
   - {fileID: 11400000, guid: 35d011b2fcd5a1c44b66f8607d2550fa, type: 2}
+  - {fileID: 11400000, guid: 70c9d9d8473ee8a41bd133313ee91bf6, type: 2}
+  - {fileID: 11400000, guid: 25a295220f35d34478bfdc0146d33a66, type: 2}
+  - {fileID: 11400000, guid: a18796ea2bd24674b903ba183d6f3bda, type: 2}
+  - {fileID: 11400000, guid: c44902cc3b3cf1b42a0134866b568743, type: 2}
 --- !u!4 &1478332853
 Transform:
   m_ObjectHideFlags: 0

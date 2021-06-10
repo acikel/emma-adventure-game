@@ -67,7 +67,8 @@ public class AvatarManager : Object
 
 				currentAvatar = playerAvatar;
 				//groundCenter = GameObject.FindWithTag("Ground")?.transform.Find("Center");
-				groundCenter = background?.transform.GetChild(0)?.gameObject.transform;
+				if (background?.transform.childCount !=0)
+					groundCenter = background?.transform.GetChild(0)?.gameObject.transform;
 			}
 			return AvatarManager.instance;
 
