@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DropOff : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class DropOff : MonoBehaviour
 
 
     private string currentlyDragedItemName;
+    private Image imageOfCurrentlyDragedItemSlot;
 
     public bool PlayerColliding
     {
@@ -123,7 +125,17 @@ public class DropOff : MonoBehaviour
                 inventory.setCurrentlyDraggedSlotToEmpty();
                 moveToNextItemToDrop();
                 ItemColliding = false;
+
+                //Set background of inventory slot to black if it was set to gray for the currently item.
+                imageOfCurrentlyDragedItemSlot = inventory.CurrentlyDraggedSlot.gameObject.GetComponent<Image>();
+                if (imageOfCurrentlyDragedItemSlot != null && imageOfCurrentlyDragedItemSlot.sprite.name.Contains("gray"))
+                {
+                    imageOfCurrentlyDragedItemSlot.sprite = inventory.blackBackground;
+                }
+
                 GameObject.Destroy(inventory.CurrentlyDraggedSlot.transform.GetChild(0).gameObject);
+                
+                
             }
         }
     }

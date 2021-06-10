@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class Inventory : MonoBehaviour
     //Subscribed from backpack.cs
     public delegate void OnOpenInventoryHandler(bool openInventory);
     public static event OnOpenInventoryHandler OnOpenInventory;
+
+    public Sprite blackBackground;
+    public Sprite grayBackground;
+    private Image spriteRendererOfCurrentlyDraggedSlot;
 
     public bool InteractionWithUIActive
     {
@@ -97,7 +102,7 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    private void HandleOnItemCollision(string itemName)
+    private void HandleOnItemCollision(string itemName, bool needsGrayInventoryBackground)
     {
         openInventorySlotsAndBlockMovementForInventory(true);
         GameObject invItem = getCorrespondingSpriteToItemThatWasClicked(itemName);
@@ -109,6 +114,9 @@ public class Inventory : MonoBehaviour
                 isFull[i] = true;
                 GameObject newItem = Instantiate(invItem, slots[i].transform, false);
                 newItem.transform.position = slots[i].transform.position;
+                spriteRendererOfCurrentlyDraggedSlot = slots[i].GetComponent<Image>();
+                if (spriteRendererOfCurrentlyDraggedSlot!=null && needsGrayInventoryBackground)
+                    spriteRendererOfCurrentlyDraggedSlot.sprite = grayBackground;
                 break;
             }
         }

@@ -895,6 +895,8 @@ MonoBehaviour:
   - {fileID: 257813481}
   - {fileID: 1640630998}
   - {fileID: 1149049260}
+  blackBackground: {fileID: 21300000, guid: 245749a6028d6384e8185d5475095c94, type: 3}
+  grayBackground: {fileID: 21300000, guid: e0e61583c3d92524eb525b72d37acaa0, type: 3}
 --- !u!1 &434072753
 GameObject:
   m_ObjectHideFlags: 0

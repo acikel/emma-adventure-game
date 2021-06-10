@@ -2065,6 +2065,7 @@ MonoBehaviour:
   dragObjects: []
   dropOffZone: {fileID: 0}
   gameObjectToDeactivateAfterLastDrag: {fileID: 0}
+  needsGrayInventoryBackground: 1
 --- !u!58 &945014487
 CircleCollider2D:
   m_ObjectHideFlags: 0

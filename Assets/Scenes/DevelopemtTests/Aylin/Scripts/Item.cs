@@ -29,10 +29,10 @@ public class Item : MonoBehaviour
     //orderedSpritesToChange has items and the last changed item stays in the scene for this gameObjectToDeactivateAfterLastDrag needs to be 
     //null otherwise gameObjectToDeactivateAfterLastDrag will be deactivated even if this item stays visible.
     public GameObject gameObjectToDeactivateAfterLastDrag;
-
+    public bool needsGrayInventoryBackground;
     private SpriteRenderer spriteRenderer;
     //subscribed by inventory.cs used to search for the corresponding sprite to instanciate in list. This items corresponding sprite needs to be added to the list of inventory.cs via unity editor too.
-    public delegate void HandleItemCollision(string itemName);
+    public delegate void HandleItemCollision(string itemName, bool needsGrayInventoryBackground);
     public static event HandleItemCollision OnItemCollision;
     private InputManager inputManager;
     private Inventory inventory;
@@ -143,7 +143,7 @@ public class Item : MonoBehaviour
 
 
             //Debug.Log("itemName: "+ itemName);
-            OnItemCollision?.Invoke(itemName);
+            OnItemCollision?.Invoke(itemName, needsGrayInventoryBackground);
             //replacement of OnItemCollision?.Invoke(); to call events with IEnumerator as return type and Coroutines in Handler Methods:
             /*
             if (OnItemCollision != null)
