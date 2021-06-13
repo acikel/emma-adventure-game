@@ -50,6 +50,27 @@ public class Item : MonoBehaviour
         inputManager = API.InputManager;
         sceneManager = API.SceneManager;
         counterOfDragItems = 0;
+        setCounterIndexToCurrentSprite();
+    }
+
+    //If the leaves and reenters the scene after dropping one element onto this item and the sprite was changed
+    //then it needs to be reset after reentering the scene as the displayed sprite has progressed onto the next
+    //item in the list.
+    //The sprite which was displayed before leaving the scene is saved through the saver game object in the scene.
+    private void setCounterIndexToCurrentSprite()
+    {
+        foreach(Sprite sprite in orderedSpritesToChange)
+        {
+            if (sprite.Equals(spriteRenderer.sprite))//if no name equals the names in the list then the currently displayed sprite is the defualt sprite and no items where dragged onto this sprite, so the counterOfDragItems is still 0 as already set in the Start() function.
+            {
+                //Debug.Log("hi1: " + orderedSpritesToChange.IndexOf(sprite));
+                counterOfDragItems = orderedSpritesToChange.IndexOf(sprite) + 1;
+                //set also the counter for the list in the dropzone
+                dropOffZone.setCurrentListItemCounter(counterOfDragItems);
+                //Debug.Log("hi2: " + counterOfDragItems);
+            }
+        }
+        
     }
 
     // Update is called once per frame
@@ -64,15 +85,16 @@ public class Item : MonoBehaviour
     private void ChangeSpriteAccordingToDropedItem(string itemName)
     {
         //Debug.Log("ChangeSpriteAccordingToDropedItem1 dragObjects: "+ dragObjects 
-        //    + " orderedSpritesToChange: "+ orderedSpritesToChange + " spriteRenderer: "+ spriteRenderer);
+            //+ " orderedSpritesToChange: "+ orderedSpritesToChange + " spriteRenderer: "+ spriteRenderer);
         if (dragObjects == null || orderedSpritesToChange == null || spriteRenderer == null)
             return;
 
         //Debug.Log("ChangeSpriteAccordingToDropedItem1.5 itemName: " + itemName 
-        //    + " dragObjects[counterOfDragItems].inventoryItemName "+ dragObjects[counterOfDragItems].inventoryItemName);
+            //+ " dragObjects[counterOfDragItems].inventoryItemName "+ dragObjects[counterOfDragItems].inventoryItemName);
         if (itemName.Contains(dragObjects[counterOfDragItems].inventoryItemName)){
             spriteRenderer.sprite = orderedSpritesToChange[counterOfDragItems];
             counterOfDragItems++;
+            //Debug.Log("hi3: " + counterOfDragItems);
             //when the last inventory item was dragged onto this item the item with the name itemName is put into the inventory.
             if (counterOfDragItems>= dragObjects.Count)
             {

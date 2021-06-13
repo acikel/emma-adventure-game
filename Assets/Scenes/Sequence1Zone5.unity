@@ -1502,6 +1502,7 @@ MonoBehaviour:
   dragObjects: []
   dropOffZone: {fileID: 0}
   gameObjectToDeactivateAfterLastDrag: {fileID: 0}
+  needsGrayInventoryBackground: 0
 --- !u!60 &794744923
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2039,6 +2040,8 @@ GameObject:
   - component: {fileID: 1166794710}
   - component: {fileID: 1166794713}
   - component: {fileID: 1166794712}
+  - component: {fileID: 1166794714}
+  - component: {fileID: 1166794715}
   m_Layer: 0
   m_Name: Savers
   m_TagString: Untagged
@@ -2105,6 +2108,36 @@ MonoBehaviour:
   uniqueIdentifier: DoorOpenGameObject
   saveData: {fileID: 11400000, guid: c44902cc3b3cf1b42a0134866b568743, type: 2}
   gameObjectToSave: {fileID: 2046776385}
+--- !u!114 &1166794714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166794709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d93a6ad00a12734f8854551076c25e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: BranchGameObject
+  saveData: {fileID: 11400000, guid: c44902cc3b3cf1b42a0134866b568743, type: 2}
+  spriteRendererToSaveSpriteOf: {fileID: 1359907293}
+--- !u!114 &1166794715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166794709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d93a6ad00a12734f8854551076c25e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueIdentifier: SwingGameObject
+  saveData: {fileID: 11400000, guid: c44902cc3b3cf1b42a0134866b568743, type: 2}
+  spriteRendererToSaveSpriteOf: {fileID: 794744920}
 --- !u!1 &1166814491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2455,7 @@ MonoBehaviour:
   - {fileID: 2233469257052804866, guid: bd88921b68546604594949e0911f38c0, type: 3}
   dropOffZone: {fileID: 96345033}
   gameObjectToDeactivateAfterLastDrag: {fileID: 1591823063}
+  needsGrayInventoryBackground: 0
 --- !u!114 &1359907296
 MonoBehaviour:
   m_ObjectHideFlags: 0

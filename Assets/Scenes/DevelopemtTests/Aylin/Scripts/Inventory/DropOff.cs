@@ -74,6 +74,14 @@ public class DropOff : MonoBehaviour
         OnItemDrop?.Invoke(currentlyDragedItemName);
     }
 
+    //is used by the item when the scene is reentered after dropping some items onto this dropzone before leaving.
+    //Basically the currentListItem needs to be reset every time the scene is reentered for the case that an item was
+    //dropped onto this dropzone.
+    //This function is used in the setCounterIndexToCurrentSprite method of the item.cs script.
+    public void setCurrentListItemCounter(int counterValue)
+    {
+        currentListItem = counterValue;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("collision: "+collision.gameObject.tag);

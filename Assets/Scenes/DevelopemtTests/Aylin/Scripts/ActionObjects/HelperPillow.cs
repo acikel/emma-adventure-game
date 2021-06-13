@@ -13,6 +13,8 @@ public class HelperPillow : ActionObject
     {
         spriteRendererForPillow = GetComponent<SpriteRenderer>();
         colliderOfPillow = GetComponent<Collider2D>();
+        if (spriteRendererForPillow.sprite.Equals(spritePillowSloved))
+            colliderOfPillow.enabled = false;
     }
 
     // Update is called once per frame

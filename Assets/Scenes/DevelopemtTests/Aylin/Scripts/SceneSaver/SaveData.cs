@@ -77,6 +77,7 @@ public class SaveData : ResettableScriptableObject
     public KeyValuePairLists<string> stringKeyValuePairLists = new KeyValuePairLists<string>();
     public KeyValuePairLists<Vector3> vector3KeyValuePairLists = new KeyValuePairLists<Vector3>();
     public KeyValuePairLists<Quaternion> quaternionKeyValuePairLists = new KeyValuePairLists<Quaternion>();
+    public KeyValuePairLists<Sprite> spriteKeyValuePairLists = new KeyValuePairLists<Sprite>();
 
 
     public override void Reset()
@@ -86,6 +87,7 @@ public class SaveData : ResettableScriptableObject
         stringKeyValuePairLists.Clear();
         vector3KeyValuePairLists.Clear();
         quaternionKeyValuePairLists.Clear();
+        spriteKeyValuePairLists.Clear();
     }
 
 
@@ -135,6 +137,11 @@ public class SaveData : ResettableScriptableObject
         Save(quaternionKeyValuePairLists, key, value);
     }
 
+    public void Save(string key, Sprite value)
+    {
+        Save(spriteKeyValuePairLists, key, value);
+    }
+
 
     // This works the same as the public Save overloads except
     // it calls the generic Load function.
@@ -165,5 +172,10 @@ public class SaveData : ResettableScriptableObject
     public bool Load(string key, ref Quaternion value)
     {
         return Load(quaternionKeyValuePairLists, key, ref value);
+    }
+
+    public bool Load(string key, ref Sprite value)
+    {
+        return Load(spriteKeyValuePairLists, key, ref value);
     }
 }
