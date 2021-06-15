@@ -24,6 +24,7 @@ public class PlayerControler : MonoBehaviour
     private RaycastHit2D raycastSecondayHitCompare;
 
     private Vector2 mousePositionWorld2d;
+    private Vector3 directionPlayer;
 
     private RaycastHit2D raycastHit;
     
@@ -65,6 +66,11 @@ public class PlayerControler : MonoBehaviour
         {
             triggerIdleAnimation();
             stopSound(footstepsEvent);
+            avatarIsCollidingWithObstacle = true;
+            directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
+            avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.01f;
+            //triggerIdleAnimation();
+            //stopSound(footstepsEvent);
             //}else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
         }
         else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
@@ -97,14 +103,22 @@ public class PlayerControler : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         {
+            //triggerIdleAnimation();
+            //stopSound(footstepsEvent);
             triggerIdleAnimation();
             stopSound(footstepsEvent);
+            directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
+            avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.05f;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         resetTriggerIdleAnimation();
+        if (collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
+        {
+            avatarIsCollidingWithObstacle = false;
+        }
     }
 
     //Collision with obstacles need to be treated in OnTrigger instead of OnCollision as the obstacle colliders are triggers.
@@ -115,6 +129,8 @@ public class PlayerControler : MonoBehaviour
             triggerIdleAnimation();
             stopSound(footstepsEvent);
             avatarIsCollidingWithObstacle = true;
+            directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
+            avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.05f;
         }
         
     }
@@ -124,7 +140,8 @@ public class PlayerControler : MonoBehaviour
         if (avatarManager.checkForCollisionWithObstacles(colliderOfAvatarCurrent))
         {
             stopSound(footstepsEvent);
-            avatar.transform.position = avatarPreviousPosition;
+            directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
+            avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.05f;
         }
     }
 
