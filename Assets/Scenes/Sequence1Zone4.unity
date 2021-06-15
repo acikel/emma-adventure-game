@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 330154301}
   - component: {fileID: 330154300}
   - component: {fileID: 330154304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plant1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,7 +930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 519529316}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bird2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 587141751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Slippers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1073,7 @@ GameObject:
   - component: {fileID: 618442943}
   - component: {fileID: 618442942}
   - component: {fileID: 618442941}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bird2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1449,7 +1449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 708762348}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 'Plant '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1485,7 +1485,7 @@ GameObject:
   - component: {fileID: 720487750}
   - component: {fileID: 720487749}
   - component: {fileID: 720487748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bear2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1815,7 +1815,7 @@ GameObject:
   - component: {fileID: 809420627}
   - component: {fileID: 809420626}
   - component: {fileID: 809420625}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 833570748}
   - component: {fileID: 833570747}
   - component: {fileID: 833570746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2109,7 +2109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 841389991}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MonkeyHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2541,7 +2541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1105368287}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GoatHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2573,7 +2573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1106769353}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 'Bear '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2637,7 +2637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1135103764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2673,7 +2673,7 @@ GameObject:
   - component: {fileID: 1173749088}
   - component: {fileID: 1173749087}
   - component: {fileID: 1173749086}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plant2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2822,7 +2822,7 @@ GameObject:
   - component: {fileID: 1233284031}
   - component: {fileID: 1233284030}
   - component: {fileID: 1233284034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3134,22 +3134,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 6.7373934, y: -8.384024}
-      - {x: 5.388898, y: -7.462708}
-      - {x: 0.75536984, y: -7.8221908}
-      - {x: -7.0092707, y: -7.629892}
+    - - {x: 8.436248, y: -5.2545567}
+      - {x: 2.8853233, y: -5.1379604}
+      - {x: 0.93419653, y: -7.0174704}
+      - {x: -6.383377, y: -6.8251715}
       - {x: -7.9670215, y: -5.4654355}
-      - {x: -12.949425, y: -5.4598045}
-      - {x: -12.554068, y: -9.289679}
-      - {x: -17.742344, y: -12.469805}
-      - {x: -11.96074, y: -16.367218}
-      - {x: 17.216867, y: -16.332972}
-      - {x: 17.044985, y: -13.882036}
-      - {x: 17.095854, y: -13.832217}
-      - {x: 15.188793, y: -13.2800455}
-      - {x: 12.426301, y: -12.0158415}
-      - {x: 11.547918, y: -10.980631}
-      - {x: 10.763523, y: -9.521234}
+      - {x: -14.290627, y: -5.4598045}
+      - {x: -15.594123, y: -8.306131}
+      - {x: -28.412804, y: -16.367218}
+      - {x: 29.256071, y: -16.514618}
+      - {x: 29.05719, y: -9.244027}
+      - {x: 12.730618, y: -7.55414}
 --- !u!4 &1361350361
 Transform:
   m_ObjectHideFlags: 0
@@ -3178,7 +3173,7 @@ GameObject:
   - component: {fileID: 1386174943}
   - component: {fileID: 1386174942}
   - component: {fileID: 1386174941}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Forground_3PicturePopUpHelper
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -3261,7 +3256,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3476,7 +3471,7 @@ GameObject:
   - component: {fileID: 1463118173}
   - component: {fileID: 1463118172}
   - component: {fileID: 1463118176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bear1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4052,7 +4047,7 @@ GameObject:
   - component: {fileID: 1601892567}
   - component: {fileID: 1601892566}
   - component: {fileID: 1601892570}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bird1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4201,7 +4196,7 @@ GameObject:
   - component: {fileID: 1608234464}
   - component: {fileID: 1608234465}
   - component: {fileID: 1608234466}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lamp_LightOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4381,7 +4376,7 @@ GameObject:
   - component: {fileID: 1698574660}
   - component: {fileID: 1698574661}
   - component: {fileID: 1698574662}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lamp_LightOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4763,69 +4758,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1850430500}
-  - component: {fileID: 1850430499}
-  - component: {fileID: 1850430498}
-  - component: {fileID: 1850430501}
   - component: {fileID: 1850430502}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackgroundObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1850430498
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850430497}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 115.41375, y: -46.307976}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 53.24495, y: 93.61595}
-  m_EdgeRadius: 0
---- !u!61 &1850430499
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850430497}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 53.298576, y: 34.56737}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 172.65956, y: 95.94562}
-  m_EdgeRadius: 0
 --- !u!4 &1850430500
 Transform:
   m_ObjectHideFlags: 0
@@ -4840,35 +4780,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1850430501
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850430497}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 88.43822, y: -64.07626}
-      - {x: 89.42658, y: -78.3214}
-      - {x: 140.9227, y: -78.63394}
-      - {x: 140.03578, y: -21.569479}
 --- !u!60 &1850430502
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4894,11 +4805,27 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -32.70246, y: 95.61488}
-      - {x: -33.082558, y: -9.50572}
-      - {x: 5.0862947, y: -9.408606}
-      - {x: 5.63418, y: -6.015465}
-      - {x: 140.73956, y: -4.4397297}
+    - - {x: -141.79575, y: 94.30051}
+      - {x: -140.25092, y: -65.3599}
+      - {x: -45.477882, y: -63.21232}
+      - {x: -42.794765, y: -33.457733}
+      - {x: -82.54557, y: -33.147743}
+      - {x: -70.68502, y: -28.302387}
+      - {x: -70.73615, y: 50.130478}
+      - {x: -38.691315, y: 50.918766}
+      - {x: -40.968815, y: -18.70636}
+      - {x: -34.481384, y: -25.134703}
+      - {x: 4.210043, y: -25.181133}
+      - {x: 6.948558, y: -17.40673}
+      - {x: 33.398785, y: -17.5835}
+      - {x: 35.27817, y: -26.009495}
+      - {x: 51.02203, y: -28.419794}
+      - {x: 53.57706, y: -31.80586}
+      - {x: 62.04496, y: -32.701797}
+      - {x: 51.493465, y: -41.311535}
+      - {x: 90.135826, y: -50.443764}
+      - {x: 87.77289, y: -65.2527}
+      - {x: 140.08598, y: -64.453835}
       - {x: 140.9684, y: 96.19389}
 --- !u!1 &1873210279
 GameObject:
@@ -4932,6 +4859,124 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.106}
+--- !u!1 &1955026422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955026424}
+  - component: {fileID: 1955026423}
+  m_Layer: 0
+  m_Name: A*
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1955026423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955026422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAAAIIeweQDPPbgIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty2jAU/RVG68LYJjS4u9YhpIs8JqSTjTfCusYaZMmjR4Bk+PdeyTZ26Qpxzn2ce3TlL8KlaaCwSq81Z4+KAfkxIf5Mvk0G8gGOdKfkhn9CH/POma18EA0xr9RyhXjs04yqwWpe/JQ74YMjBJ3kpdL1iu0gU8YahEsqDCCllfXZEqGvCTnizzT1KSc8Jbf+9ImnNJqc8ViAtKBHofFskSyWt8s0Xk2jRZc2jWaLLm+6nKU3cZx8X6QYsAxFnCwErRtgfqKhVrLs28aLNARKnLaL8ZMVSghuOqnEnppgRUYb43BQDGCc4uhBXzybI1AB31XW1x6nP5elAds5o+npjmv0sK1LfqnW2JqafavtgwoXJKRJUNUWffyPn8aBLrWqH/q+ceR72IoX+1d6KqixI+fH8N1IerDoQMWebgW8VyCf1ForJxmSVjuf6gwkd8Pfy2hZBcV+wFupV6BrBs97x/tr9jOcw/THTPB666nZTQtshAqOh+0AjXfzGwWH3TFdCUS9ij8G3uhuvGQdcc+1sUh1U0ovb6uc9qFkFTzz0zibKS0hwJ3oBiQV9vSCZez1FV5xo7ZXzD31z6lr3nH9K7lKCfAQH0VX1Is6XC7LVOrwCKZ6dlZwCYNoTzyhT5mSst2wsSd92sbpkhajtJ3j7N/VIgmNomS5ZeUc5kkS30xTFpVpgscipXQexyTsHpc4JxUvrdDOHrw1ORSXuGf9V2ay1rQJ2840Paz5Z61GlnNZqk2hAeRzW+EiHDQ2wXfJVoyjQRuwlstw3+QrJ0IVe2D5pVAeJl0drab5UCUnDf9Q1iM5ycJnJSdncv4LUEsDBBQAAAgIAAAIIexQuUgqbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSUaKBgZFFUkqacaqxkZGhia5likGapRGQmWyZmGhsaKgUC1RfUlmQ6peYmwrRE5BYkpGWmZeSmZeu516UmeIOMlopthYAUEsBAi0AFAAACAgAAAgh7B5AM89uAgAAFQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7FC5SCpsAAAAeAAAAAkAJAAAAAAAAAAAAAAAuwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAByAwAAAAA=
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 0
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames:
+  - Basic Ground
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 10
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &1955026424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955026422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3642843, y: 2.999652, z: -144.37346}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1960697332
 GameObject:
   m_ObjectHideFlags: 0
@@ -5027,7 +5072,7 @@ GameObject:
   - component: {fileID: 1977365318}
   - component: {fileID: 1977365317}
   - component: {fileID: 1977365321}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5410,7 +5455,7 @@ GameObject:
   - component: {fileID: 2017160864}
   - component: {fileID: 2017160863}
   - component: {fileID: 2017160867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Slippers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5558,7 +5603,7 @@ GameObject:
   - component: {fileID: 2058587800}
   - component: {fileID: 2058587799}
   - component: {fileID: 2058587798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Slippers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

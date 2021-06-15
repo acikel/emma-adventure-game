@@ -66,7 +66,8 @@ public class Item : MonoBehaviour
                 //Debug.Log("hi1: " + orderedSpritesToChange.IndexOf(sprite));
                 counterOfDragItems = orderedSpritesToChange.IndexOf(sprite) + 1;
                 //set also the counter for the list in the dropzone
-                dropOffZone.setCurrentListItemCounter(counterOfDragItems);
+                if (dropOffZone != null)
+                    dropOffZone.setCurrentListItemCounter(counterOfDragItems);
                 //Debug.Log("hi2: " + counterOfDragItems);
             }
         }

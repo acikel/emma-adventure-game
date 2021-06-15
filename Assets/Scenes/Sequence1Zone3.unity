@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 50308900}
   - component: {fileID: 50308899}
   - component: {fileID: 50308898}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 64818879}
   - component: {fileID: 64818878}
   - component: {fileID: 64818877}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plant2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,6 +548,7 @@ MonoBehaviour:
   dragObjects: []
   dropOffZone: {fileID: 0}
   gameObjectToDeactivateAfterLastDrag: {fileID: 0}
+  needsGrayInventoryBackground: 0
 --- !u!1 &160952537
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +562,7 @@ GameObject:
   - component: {fileID: 160952539}
   - component: {fileID: 160952538}
   - component: {fileID: 160952542}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Knife1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +711,7 @@ GameObject:
   - component: {fileID: 186298003}
   - component: {fileID: 186298002}
   - component: {fileID: 186298006}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Scoop1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -855,7 +856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 188719192}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +891,7 @@ GameObject:
   - component: {fileID: 271165399}
   - component: {fileID: 271165398}
   - component: {fileID: 271165397}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,7 +1141,7 @@ GameObject:
   - component: {fileID: 355369070}
   - component: {fileID: 355369069}
   - component: {fileID: 355369068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,7 +1290,7 @@ GameObject:
   - component: {fileID: 371699078}
   - component: {fileID: 371699077}
   - component: {fileID: 371699076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Locker2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1438,7 +1439,7 @@ GameObject:
   - component: {fileID: 416077259}
   - component: {fileID: 416077258}
   - component: {fileID: 416077257}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hotplate2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1583,7 +1584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 442567760}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Scoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1783,7 +1784,7 @@ GameObject:
   - component: {fileID: 580613916}
   - component: {fileID: 580613915}
   - component: {fileID: 580613919}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Locker1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1928,7 +1929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600592077}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Oven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1960,7 +1961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678079387}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plant (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1996,7 +1997,7 @@ GameObject:
   - component: {fileID: 779086651}
   - component: {fileID: 779086650}
   - component: {fileID: 779086654}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hotplate1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2253,7 +2254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842833957}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2289,7 +2290,7 @@ GameObject:
   - component: {fileID: 864924280}
   - component: {fileID: 864924279}
   - component: {fileID: 864924278}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Knife2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2434,7 +2435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 873492638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Locker_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2470,7 +2471,7 @@ GameObject:
   - component: {fileID: 895619684}
   - component: {fileID: 895619683}
   - component: {fileID: 895619682}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Milk2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2757,7 +2758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975399646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hotplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2793,7 +2794,7 @@ GameObject:
   - component: {fileID: 1082977146}
   - component: {fileID: 1082977145}
   - component: {fileID: 1082977149}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plant1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3020,7 +3021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1156168620}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Milk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3052,7 +3053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1205630085}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3296,7 +3297,7 @@ GameObject:
   - component: {fileID: 1250072728}
   - component: {fileID: 1250072727}
   - component: {fileID: 1250072731}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spoon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3445,7 +3446,7 @@ GameObject:
   - component: {fileID: 1261887070}
   - component: {fileID: 1261887069}
   - component: {fileID: 1261887073}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3590,7 +3591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1266789999}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Locker_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3668,7 +3669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273137121}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Coffer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3731,13 +3732,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1297135865}
   - component: {fileID: 1297135866}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackgroundObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1297135865
 Transform:
   m_ObjectHideFlags: 0
@@ -3752,8 +3753,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1297135866
-BoxCollider2D:
+--- !u!60 &1297135866
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3762,10 +3763,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.3202286, y: 20.487772}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3775,9 +3776,15 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 209.68227, y: 107.40471}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -95.61724, y: 76.25866}
+      - {x: -96.44474, y: -45.34582}
+      - {x: -91.17084, y: -37.903408}
+      - {x: 86.84358, y: -37.626797}
+      - {x: 98.241585, y: -45.73129}
+      - {x: 112.303055, y: -44.45186}
+      - {x: 112.44627, y: 75.98328}
 --- !u!1 &1355463663
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,7 +3873,7 @@ GameObject:
   - component: {fileID: 1356836600}
   - component: {fileID: 1356836599}
   - component: {fileID: 1356836598}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spoon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4015,7 +4022,7 @@ GameObject:
   - component: {fileID: 1404918590}
   - component: {fileID: 1404918589}
   - component: {fileID: 1404918588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Locker2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4164,7 +4171,7 @@ GameObject:
   - component: {fileID: 1411589977}
   - component: {fileID: 1411589976}
   - component: {fileID: 1411589980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4309,7 +4316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1452679565}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shawl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4341,7 +4348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1484261686}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Radio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4376,7 +4383,7 @@ GameObject:
   - component: {fileID: 1507902120}
   - component: {fileID: 1507902119}
   - component: {fileID: 1507902118}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: egg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4502,7 +4509,7 @@ GameObject:
   - component: {fileID: 1547146758}
   - component: {fileID: 1547146757}
   - component: {fileID: 1547146761}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4651,7 +4658,7 @@ GameObject:
   - component: {fileID: 1585394422}
   - component: {fileID: 1585394421}
   - component: {fileID: 1585394425}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Locker1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4800,7 +4807,7 @@ GameObject:
   - component: {fileID: 1586282197}
   - component: {fileID: 1586282196}
   - component: {fileID: 1586282195}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Scoop2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4948,7 +4955,7 @@ GameObject:
   - component: {fileID: 1590917505}
   - component: {fileID: 1590917504}
   - component: {fileID: 1590917503}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Radio1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5134,7 +5141,7 @@ GameObject:
   - component: {fileID: 1617308242}
   - component: {fileID: 1617308241}
   - component: {fileID: 1617308240}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Radio2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5313,7 +5320,7 @@ GameObject:
   - component: {fileID: 1619261891}
   - component: {fileID: 1619261890}
   - component: {fileID: 1619261894}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5458,7 +5465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1663488945}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5576,7 +5583,7 @@ GameObject:
   - component: {fileID: 1675659441}
   - component: {fileID: 1675659440}
   - component: {fileID: 1675659439}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5807,7 +5814,7 @@ GameObject:
   - component: {fileID: 1710449432}
   - component: {fileID: 1710449431}
   - component: {fileID: 1710449435}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Milk1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5952,7 +5959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1788956518}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Coffer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5988,7 +5995,7 @@ GameObject:
   - component: {fileID: 1883344603}
   - component: {fileID: 1883344602}
   - component: {fileID: 1883344606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6137,7 +6144,7 @@ GameObject:
   - component: {fileID: 1904076398}
   - component: {fileID: 1904076397}
   - component: {fileID: 1904076401}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6282,7 +6289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1928495196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6400,7 +6407,7 @@ GameObject:
   - component: {fileID: 2010219697}
   - component: {fileID: 2010219696}
   - component: {fileID: 2010219695}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6548,7 +6555,7 @@ GameObject:
   - component: {fileID: 2032626532}
   - component: {fileID: 2032626531}
   - component: {fileID: 2032626530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: egg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6658,6 +6665,124 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2081619169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2081619171}
+  - component: {fileID: 2081619170}
+  m_Layer: 0
+  m_Name: A*
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2081619170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081619169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAAAIIeweQDPPbgIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty2jAU/RVG68LYJjS4u9YhpIs8JqSTjTfCusYaZMmjR4Bk+PdeyTZ26Qpxzn2ce3TlL8KlaaCwSq81Z4+KAfkxIf5Mvk0G8gGOdKfkhn9CH/POma18EA0xr9RyhXjs04yqwWpe/JQ74YMjBJ3kpdL1iu0gU8YahEsqDCCllfXZEqGvCTnizzT1KSc8Jbf+9ImnNJqc8ViAtKBHofFskSyWt8s0Xk2jRZc2jWaLLm+6nKU3cZx8X6QYsAxFnCwErRtgfqKhVrLs28aLNARKnLaL8ZMVSghuOqnEnppgRUYb43BQDGCc4uhBXzybI1AB31XW1x6nP5elAds5o+npjmv0sK1LfqnW2JqafavtgwoXJKRJUNUWffyPn8aBLrWqH/q+ceR72IoX+1d6KqixI+fH8N1IerDoQMWebgW8VyCf1ForJxmSVjuf6gwkd8Pfy2hZBcV+wFupV6BrBs97x/tr9jOcw/THTPB666nZTQtshAqOh+0AjXfzGwWH3TFdCUS9ij8G3uhuvGQdcc+1sUh1U0ovb6uc9qFkFTzz0zibKS0hwJ3oBiQV9vSCZez1FV5xo7ZXzD31z6lr3nH9K7lKCfAQH0VX1Is6XC7LVOrwCKZ6dlZwCYNoTzyhT5mSst2wsSd92sbpkhajtJ3j7N/VIgmNomS5ZeUc5kkS30xTFpVpgscipXQexyTsHpc4JxUvrdDOHrw1ORSXuGf9V2ay1rQJ2840Paz5Z61GlnNZqk2hAeRzW+EiHDQ2wXfJVoyjQRuwlstw3+QrJ0IVe2D5pVAeJl0drab5UCUnDf9Q1iM5ycJnJSdncv4LUEsDBBQAAAgIAAAIIexQuUgqbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrSSUaKBgZFFUkqacaqxkZGhia5likGapRGQmWyZmGhsaKgUC1RfUlmQ6peYmwrRE5BYkpGWmZeSmZeu516UmeIOMlopthYAUEsBAi0AFAAACAgAAAgh7B5AM89uAgAAFQUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7FC5SCpsAAAAeAAAAAkAJAAAAAAAAAAAAAAAuwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAByAwAAAAA=
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 0
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames:
+  - Basic Ground
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 10
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &2081619171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081619169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3642843, y: 2.999652, z: -144.37346}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2088563102
 GameObject:
   m_ObjectHideFlags: 0
@@ -6670,7 +6795,7 @@ GameObject:
   - component: {fileID: 2088563107}
   - component: {fileID: 2088563106}
   - component: {fileID: 2088563105}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

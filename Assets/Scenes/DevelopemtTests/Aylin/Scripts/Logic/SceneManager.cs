@@ -129,6 +129,7 @@ public class SceneManager : MonoBehaviour
         }
         */
 
+        //AvatarManager.helperAvatar.gameObject.SetActive(false);
         StartCoroutine(Fade(0f));
 
     }
@@ -177,6 +178,8 @@ public class SceneManager : MonoBehaviour
                 StartCoroutine(Fade(0f));
                 reloadDone = true;
                 isReloading = false;
+                if(currentAdditiveSceneName.Equals("Sequence1Zon1"))
+                    AvatarManager.helperAvatar.gameObject.SetActive(false);
             }
         }
     }

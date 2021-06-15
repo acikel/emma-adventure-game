@@ -138,6 +138,9 @@ public class AvatarManager : Object
     }
 	private bool checkForCollision(List<Collider2D> obstaclesColliders, Collider2D colliderToCheck)
     {
+		if (colliderToCheck == null || obstaclesColliders == null)
+			return false;
+
 		foreach (Collider2D obstacleCollider in obstaclesColliders)
 		{
 			if (colliderToCheck.IsTouching(obstacleCollider))
@@ -156,8 +159,10 @@ public class AvatarManager : Object
 		currentAvatar = newAvatar;
 		currentAvatar.avatarSpriteRenderer.sortingOrder++;
 		previousAvatar.avatarSpriteRenderer.sortingOrder--;
-		previousAvatar.getCapsuleTrigger().isTrigger = false;
+		previousAvatar.getCapsuleTrigger().isTrigger = true;
+		previousAvatar.getCircleTrigger().isTrigger = true;
 		currentAvatar.getCapsuleTrigger().isTrigger = true;
+		currentAvatar.getCircleTrigger().isTrigger = false;
 		currentAvatar.getRigidbody2D().mass = 1;
 		previousAvatar.getRigidbody2D().mass = 10000;
 

@@ -23,10 +23,10 @@ TagManager:
   - Water
   - UI
   - Forground
-  - 
-  - 
-  - 
-  - 
+  - Obstacle
+  - Player
+  - Helper
+  - IgnoredFromA*
   - 
   - 
   - 
