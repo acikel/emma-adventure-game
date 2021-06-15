@@ -38,6 +38,11 @@ public class SceneManager : MonoBehaviour
     public delegate void HandleAfterAvatarInitialization(float avatarStartScale, float avatarScaleFactor);
     public event HandleAfterAvatarInitialization AfterAvatarInitialization;
 
+    //subscribed by DataResetter.cs to reset all saved states of objects when game is done (when resetting start Menu)
+    public delegate void HandleOnStartMenuEntered();
+    public event HandleOnStartMenuEntered OnStartMenuEntered;
+
+
     public List<AvatarScaleValues> sceneScales = new List<AvatarScaleValues>();
     private AvatarScaleValues currentSceneValues;
 
@@ -50,6 +55,8 @@ public class SceneManager : MonoBehaviour
 
     private float flipAvatarLeft = 1f;
     private float flipAvatarRight = -1f;
+
+    private bool startMenuWasEntered;
 
     public AsyncOperation async;
 
@@ -178,8 +185,13 @@ public class SceneManager : MonoBehaviour
                 StartCoroutine(Fade(0f));
                 reloadDone = true;
                 isReloading = false;
-                if(currentAdditiveSceneName.Equals("Sequence1Zon1"))
+
+                if (startMenuWasEntered && currentAdditiveSceneName.Equals("Sequence1Zone1"))
+                {
                     AvatarManager.helperAvatar.gameObject.SetActive(false);
+                    startMenuWasEntered = false;
+                }
+                    
             }
         }
     }
@@ -291,6 +303,8 @@ public class SceneManager : MonoBehaviour
             activateInventory = false;
             unHideAvatars = false;
             avatarManager.hideAvatars(true);
+            startMenuWasEntered = true;
+            OnStartMenuEntered?.Invoke();
         }
     }
 

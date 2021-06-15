@@ -10,11 +10,26 @@ using UnityEngine;
 public class DataResetter : MonoBehaviour
 {
 	public ResettableScriptableObject[] resettableScriptableObjects;    // All of the scriptable object assets that should be reset at the start of the game.
-
+	private SceneManager sceneManager;
 
 	private void Awake()
 	{
+		sceneManager = API.SceneManager;
 		// Go through all the scriptable objects and call their Reset function.
+		resetObjects();
+
+	}
+    private void OnEnable()
+    {
+		sceneManager.OnStartMenuEntered += resetObjects;
+    }
+
+    private void OnDisable()
+    {
+		sceneManager.OnStartMenuEntered -= resetObjects;
+	}
+    private void resetObjects()
+    {
 		for (int i = 0; i < resettableScriptableObjects.Length; i++)
 		{
 			resettableScriptableObjects[i].Reset();
