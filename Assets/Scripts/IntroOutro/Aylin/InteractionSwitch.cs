@@ -19,6 +19,9 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
 
     private SceneManager sceneManager;
 
+    [FMODUnity.EventRef]
+    public string interactionSound;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -45,12 +48,14 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
             setAlphaOfRenderer(objectToSwitchToSpriteRenderer, 1);
             gameObject.SetActive(false);
             setAlphaOfRenderer(spriteRenderer, 0);
+            FMODUnity.RuntimeManager.PlayOneShot(interactionSound);
         }
         else
         {
             objectToSwitchTo.SetActive(true);
             StartCoroutine(FadeCaller(objectToSwitchToSpriteRenderer, 1));
             StartCoroutine(FadeAndDeactivateCaller(spriteRenderer, 0, gameObject));
+            FMODUnity.RuntimeManager.PlayOneShot(interactionSound);
         }
 
         /*

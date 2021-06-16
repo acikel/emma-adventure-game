@@ -249,6 +249,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1970992734}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: 
 --- !u!114 &58554672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +367,6 @@ GameObject:
   - component: {fileID: 176648705}
   - component: {fileID: 176648704}
   - component: {fileID: 176648703}
-  - component: {fileID: 176648707}
   m_Layer: 10
   m_Name: Umbrellas1
   m_TagString: Untagged
@@ -415,6 +415,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1728827210}
   fadeTransition: 0
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingUmbrella
 --- !u!212 &176648705
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -480,29 +481,6 @@ Transform:
   m_Father: {fileID: 1809696331}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &176648707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176648702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingUmbrella
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &247942546
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +605,6 @@ GameObject:
   - component: {fileID: 348153991}
   - component: {fileID: 348153990}
   - component: {fileID: 348153989}
-  - component: {fileID: 348153988}
   m_Layer: 10
   m_Name: DoorOpen2
   m_TagString: Untagged
@@ -649,29 +626,6 @@ Transform:
   m_Father: {fileID: 1813041972}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &348153988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348153986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_CabinetClosing
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &348153989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -713,6 +667,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1435934455}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_CabinetClosing
 --- !u!212 &348153991
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -956,7 +911,6 @@ GameObject:
   - component: {fileID: 586151888}
   - component: {fileID: 586151887}
   - component: {fileID: 586151886}
-  - component: {fileID: 586151890}
   m_Layer: 10
   m_Name: DoorClose1
   m_TagString: Untagged
@@ -1005,6 +959,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 876515047}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_DrawerDoor
 --- !u!212 &586151888
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1070,29 +1025,6 @@ Transform:
   m_Father: {fileID: 1813041972}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &586151890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586151885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_DrawerDoor
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &599976858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,7 +1236,6 @@ GameObject:
   - component: {fileID: 876515052}
   - component: {fileID: 876515051}
   - component: {fileID: 876515050}
-  - component: {fileID: 876515049}
   m_Layer: 10
   m_Name: DoorOpen1
   m_TagString: Untagged
@@ -1326,29 +1257,6 @@ Transform:
   m_Father: {fileID: 1813041972}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &876515049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 876515047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_CabinetClosing
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &876515050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1390,6 +1298,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 586151885}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_CabinetClosing
 --- !u!212 &876515052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1790,6 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af09d8b079cde54aae2c3ca8ec9a7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skipsOfVoiceOver: 3
   popUpSound: event:/SFX/Sequence 1/snd_LookPicture
   popUpSound2: 
   spriteRendererHintImage: {fileID: 1128220103}
@@ -1959,7 +1869,6 @@ GameObject:
   - component: {fileID: 1163998873}
   - component: {fileID: 1163998872}
   - component: {fileID: 1163998871}
-  - component: {fileID: 1163998875}
   m_Layer: 10
   m_Name: Plant1
   m_TagString: Untagged
@@ -2008,6 +1917,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1889146905}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_BrokenPlantVase
 --- !u!212 &1163998873
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2073,29 +1983,6 @@ Transform:
   m_Father: {fileID: 1935717802}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1163998875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163998870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_BrokenPlantVase
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &1326384908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,7 +2055,6 @@ GameObject:
   - component: {fileID: 1361331795}
   - component: {fileID: 1361331794}
   - component: {fileID: 1361331793}
-  - component: {fileID: 1361331797}
   m_Layer: 10
   m_Name: Shoe1
   m_TagString: Untagged
@@ -2217,6 +2103,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1881863715}
   fadeTransition: 0
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingShoes
 --- !u!212 &1361331795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2282,29 +2169,6 @@ Transform:
   m_Father: {fileID: 2024409535}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1361331797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361331792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingShoes
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &1397367961
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,7 +2211,6 @@ GameObject:
   - component: {fileID: 1435934458}
   - component: {fileID: 1435934457}
   - component: {fileID: 1435934456}
-  - component: {fileID: 1435934460}
   m_Layer: 10
   m_Name: DoorClose2
   m_TagString: Untagged
@@ -2396,6 +2259,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 348153986}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_DrawerDoor
 --- !u!212 &1435934458
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2461,29 +2325,6 @@ Transform:
   m_Father: {fileID: 1813041972}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1435934460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435934455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_DrawerDoor
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!1 &1481270973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,6 +2796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af09d8b079cde54aae2c3ca8ec9a7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skipsOfVoiceOver: 3
   popUpSound: event:/SFX/Sequence 1/snd_LookPicture
   popUpSound2: event:/Emma/Voice Overs/Sequence 1/NewEmmaVoice/IsThisMyGrandparents
   spriteRendererHintImage: {fileID: 303510607}
@@ -2971,7 +2813,6 @@ GameObject:
   - component: {fileID: 1728827215}
   - component: {fileID: 1728827214}
   - component: {fileID: 1728827213}
-  - component: {fileID: 1728827212}
   m_Layer: 10
   m_Name: Umbrellas2
   m_TagString: Untagged
@@ -2993,29 +2834,6 @@ Transform:
   m_Father: {fileID: 1809696331}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1728827212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1728827210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingUmbrella
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &1728827213
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3057,6 +2875,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 176648702}
   fadeTransition: 0
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingUmbrella
 --- !u!212 &1728827215
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3186,7 +3005,6 @@ GameObject:
   - component: {fileID: 1881863720}
   - component: {fileID: 1881863719}
   - component: {fileID: 1881863718}
-  - component: {fileID: 1881863717}
   m_Layer: 10
   m_Name: Shoe2
   m_TagString: Untagged
@@ -3208,29 +3026,6 @@ Transform:
   m_Father: {fileID: 2024409535}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1881863717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881863715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingShoes
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &1881863718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3272,6 +3067,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1361331792}
   fadeTransition: 0
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingShoes
 --- !u!212 &1881863720
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3394,6 +3190,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1163998870}
   fadeTransition: 0
   fadeDuration: 1
+  interactionSound: 
 --- !u!212 &1889146909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3603,6 +3400,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1998692030}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: 
 --- !u!114 &1940644242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3752,6 +3550,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 58554667}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: 
 --- !u!114 &1970992739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3901,6 +3700,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1940644237}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: 
 --- !u!114 &1998692035
 MonoBehaviour:
   m_ObjectHideFlags: 0

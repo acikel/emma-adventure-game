@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 126361743}
   - component: {fileID: 126361742}
   - component: {fileID: 126361741}
-  - component: {fileID: 126361740}
   m_Layer: 10
   m_Name: Plant2
   m_TagString: Untagged
@@ -157,29 +156,6 @@ Transform:
   m_Father: {fileID: 907946027}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &126361740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126361738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &126361741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -221,6 +197,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 316578916}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingPlantLight
 --- !u!212 &126361743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -315,7 +292,6 @@ GameObject:
   - component: {fileID: 240565200}
   - component: {fileID: 240565203}
   - component: {fileID: 240565202}
-  - component: {fileID: 240565201}
   m_Layer: 10
   m_Name: Plant2
   m_TagString: Untagged
@@ -337,29 +313,6 @@ Transform:
   m_Father: {fileID: 136789326}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -84.15}
---- !u!114 &240565201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240565199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_PlantFallGrandma
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!114 &240565202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +328,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 522457524}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_PlantFallGrandma
 --- !u!212 &240565203
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -520,7 +474,6 @@ GameObject:
   - component: {fileID: 316578920}
   - component: {fileID: 316578919}
   - component: {fileID: 316578918}
-  - component: {fileID: 316578917}
   m_Layer: 10
   m_Name: Plant1
   m_TagString: Untagged
@@ -528,29 +481,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &316578917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316578916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &316578918
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -592,6 +522,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 126361738}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingPlantLight
 --- !u!212 &316578920
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -699,7 +630,6 @@ GameObject:
   - component: {fileID: 522457528}
   - component: {fileID: 522457527}
   - component: {fileID: 522457526}
-  - component: {fileID: 522457525}
   m_Layer: 10
   m_Name: Plant1
   m_TagString: Untagged
@@ -707,29 +637,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &522457525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522457524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_PlantFallGrandma
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &522457526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -771,6 +678,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 240565199}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_PlantFallGrandma
 --- !u!212 &522457528
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -962,7 +870,6 @@ GameObject:
   - component: {fileID: 702183742}
   - component: {fileID: 702183741}
   - component: {fileID: 702183740}
-  - component: {fileID: 702183739}
   m_Layer: 10
   m_Name: Pot2
   m_TagString: Untagged
@@ -984,29 +891,6 @@ Transform:
   m_Father: {fileID: 1698104601}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &702183739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702183737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &702183740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1048,6 +932,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 2067012467}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingPlantLight
 --- !u!212 &702183742
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1111,7 +996,6 @@ GameObject:
   - component: {fileID: 720533788}
   - component: {fileID: 720533787}
   - component: {fileID: 720533786}
-  - component: {fileID: 720533785}
   m_Layer: 10
   m_Name: Pot1
   m_TagString: Untagged
@@ -1119,29 +1003,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &720533785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720533784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &720533786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1183,6 +1044,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1805754112}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingPlantLight
 --- !u!212 &720533788
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2223,7 +2085,6 @@ GameObject:
   - component: {fileID: 1370536968}
   - component: {fileID: 1370536967}
   - component: {fileID: 1370536966}
-  - component: {fileID: 1370536965}
   m_Layer: 10
   m_Name: Plant1
   m_TagString: Untagged
@@ -2231,29 +2092,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1370536965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1370536964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &1370536966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2295,6 +2133,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1885659795}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingPlantLight
 --- !u!212 &1370536968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2548,7 +2387,6 @@ GameObject:
   - component: {fileID: 1805754117}
   - component: {fileID: 1805754116}
   - component: {fileID: 1805754115}
-  - component: {fileID: 1805754114}
   m_Layer: 10
   m_Name: Pot2
   m_TagString: Untagged
@@ -2570,29 +2408,6 @@ Transform:
   m_Father: {fileID: 1774455316}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1805754114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805754112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &1805754115
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2634,6 +2449,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 720533784}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingPlantLight
 --- !u!212 &1805754117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2697,7 +2513,6 @@ GameObject:
   - component: {fileID: 1885659800}
   - component: {fileID: 1885659799}
   - component: {fileID: 1885659798}
-  - component: {fileID: 1885659797}
   m_Layer: 10
   m_Name: Plant2
   m_TagString: Untagged
@@ -2719,29 +2534,6 @@ Transform:
   m_Father: {fileID: 631466016}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1885659797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885659795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &1885659798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2783,6 +2575,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 1370536964}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingPlantLight
 --- !u!212 &1885659800
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2846,7 +2639,6 @@ GameObject:
   - component: {fileID: 2067012471}
   - component: {fileID: 2067012470}
   - component: {fileID: 2067012469}
-  - component: {fileID: 2067012468}
   m_Layer: 10
   m_Name: Pot1
   m_TagString: Untagged
@@ -2854,29 +2646,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2067012468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067012467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/SFX/Sequence 1/snd_MovingPlantLight
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!61 &2067012469
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2918,6 +2687,7 @@ MonoBehaviour:
   objectToSwitchTo: {fileID: 702183737}
   fadeTransition: 1
   fadeDuration: 1
+  interactionSound: event:/SFX/Sequence 1/snd_MovingPlantLight
 --- !u!212 &2067012471
 SpriteRenderer:
   m_ObjectHideFlags: 0
