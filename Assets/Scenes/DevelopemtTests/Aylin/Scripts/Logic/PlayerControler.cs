@@ -146,7 +146,7 @@ public class PlayerControler : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
+        /*if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
         {
             
             if (inputManager.wasCollidedPortalhit(collision.gameObject.GetComponent<Collider2D>()))
@@ -174,7 +174,7 @@ public class PlayerControler : MonoBehaviour
                 stopPlayerAndPushBackToPrevoiusPosition();
             }
 
-        }
+        }*/
         //if (collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         //{
         //triggerIdleAnimation();
@@ -205,6 +205,7 @@ public class PlayerControler : MonoBehaviour
 
         if (colliderOfAvatarCurrent.IsTouching(currentTriggerCollider) && (collision.gameObject.layer.Equals("Foreground") || collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player"))
         {
+            avatarIsCollidingWithObstacle = true;
             //Debug.Log("trigger stay2");
             if (colliderOfAvatarCurrent.IsTouching(collision))
             {
@@ -245,7 +246,8 @@ public class PlayerControler : MonoBehaviour
         stopSound(footstepsEvent);
         //directionAvatar = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
         //avatar.transform.position = avatarPreviousPosition + directionAvatar * 0.05f;
-        avatar.transform.position = avatar.transform.position - directionAvatar * 0.05f;
+        //avatar.transform.position = avatar.transform.position - directionAvatar * 0.05f;
+        avatar.transform.position = avatarPreviousPosition - directionAvatar * 0.05f;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -263,6 +265,11 @@ public class PlayerControler : MonoBehaviour
                 //directionAvatar = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
                 //avatar.transform.position = avatarPreviousPosition + directionAvatar * 0.05f;
                 //avatar.transform.position = avatar.transform.position - directionAvatar * 0.05f;
+                //resetTriggerWalkAnimation();
+                //triggerIdleAnimation();
+                //stopSound(footstepsEvent);
+                //avatar.transform.position = avatarPreviousPosition - directionAvatar * 0.05f; //needs to be previous position avatarPreviousPosition instead of current position avatar.transform.position otherwise the player slides as it changes it position as its pushed back by this line and triggerStay2D is applying it each time.
+                stopPlayerAndPushBackToPrevoiusPosition();
             }
 
         }
@@ -280,7 +287,7 @@ public class PlayerControler : MonoBehaviour
         //Debug.Log("trigger exit");
         currentTriggerCollider = null;
         //resetTriggerIdleAnimation();
-        //avatarIsCollidingWithObstacle = false;
+        avatarIsCollidingWithObstacle = false;
     }
 
     // Start is called before the first frame update
@@ -331,8 +338,8 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (!avatarIsCollidingWithObstacle)
-            //avatarPreviousPosition = avatar.transform.position;
+        if (!avatarIsCollidingWithObstacle)
+            avatarPreviousPosition = avatar.transform.position;
 
 
 
