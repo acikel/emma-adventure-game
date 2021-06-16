@@ -25,10 +25,10 @@ public class PlayerControler : MonoBehaviour
     private RaycastHit2D raycastSecondayHitCompare;
 
     private Vector2 mousePositionWorld2d;
-    private Vector3 directionPlayer;
+    private Vector3 directionAvatar;
 
     private RaycastHit2D raycastHit;
-    
+
 
     private AvatarManager avatarManager;
     private InputManager inputManager;
@@ -84,60 +84,97 @@ public class PlayerControler : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("PlayerController OnCollisionEnter2D" + collision.gameObject.name);
-        
-        if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
+
+        if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading )
         {
-            if(collision.gameObject.name.Contains("Door"))
-                FMODUnity.RuntimeManager.PlayOneShot(doorHandleSound);
-            else if(collision.gameObject.name.Contains("Stairs"))
-                FMODUnity.RuntimeManager.PlayOneShot(stairsSound);
-
-            triggerIdleAnimation();
-            stopSound(footstepsEvent);
-            //Debug.Log("Portal name:"+ collision.gameObject.name);
-
-            //replacement of OnCollisionWithPortal(collision.gameObject.name); to call events with IEnumerator as return type and Coroutines in Handler Methods:
-            if (OnCollisionWithPortal != null)
+            if (inputManager.wasCollidedPortalhit(collision.gameObject.GetComponent<Collider2D>()))
             {
-                for (int n = OnCollisionWithPortal.GetInvocationList().Length - 1; n >= 0; n--)
+                if (collision.gameObject.name.Contains("Door"))
+                    FMODUnity.RuntimeManager.PlayOneShot(doorHandleSound);
+                else if (collision.gameObject.name.Contains("Stairs"))
+                    FMODUnity.RuntimeManager.PlayOneShot(stairsSound);
+
+                stopAvatar();
+                //Debug.Log("Portal name:"+ collision.gameObject.name);
+
+                //replacement of OnCollisionWithPortal(collision.gameObject.name); to call events with IEnumerator as return type and Coroutines in Handler Methods:
+                if (OnCollisionWithPortal != null)
                 {
-                    OnCollisionWithPortalHandler onCollisionWithPortalCoroutine = OnCollisionWithPortal.GetInvocationList()[n] as OnCollisionWithPortalHandler;
-                    StartCoroutine(onCollisionWithPortalCoroutine(collision.gameObject.name));
+                    for (int n = OnCollisionWithPortal.GetInvocationList().Length - 1; n >= 0; n--)
+                    {
+                        OnCollisionWithPortalHandler onCollisionWithPortalCoroutine = OnCollisionWithPortal.GetInvocationList()[n] as OnCollisionWithPortalHandler;
+                        StartCoroutine(onCollisionWithPortalCoroutine(collision.gameObject.name));
+                    }
                 }
             }
-            /*else if(collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player" || collision.gameObject.layer.Equals( "Foreground")) //not needed anymore because helper and player are triggers if deactivated for the AI script
+            else
             {
-                Debug.Log("collision enter");
-                resetTriggerWalkAnimation();
-                triggerIdleAnimation();
-                stopSound(footstepsEvent);
-                avatarIsCollidingWithObstacle = true;
-                isMoving = false;
-                //directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
-                //avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.01f;
-                //triggerIdleAnimation();
-                //stopSound(footstepsEvent);
-                //}else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
-            }*/
-
-            /*if(collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
-            {
-                triggerIdleAnimation();
-                stopSound(footstepsEvent);
-                avatarIsCollidingWithObstacle = true;
-                directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
-                avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.01f;
-                //triggerIdleAnimation();
-                //stopSound(footstepsEvent);
-                //}else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
-            }*/
+                stopPlayerAndPushBackToPrevoiusPosition();
+            }
 
         }
+        /*else if(collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player" || collision.gameObject.layer.Equals( "Foreground")) //not needed anymore because helper and player are triggers if deactivated for the AI script
+        {
+            Debug.Log("collision enter");
+            resetTriggerWalkAnimation();
+            triggerIdleAnimation();
+            stopSound(footstepsEvent);
+            avatarIsCollidingWithObstacle = true;
+            isMoving = false;
+            //directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
+            //avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.01f;
+            //triggerIdleAnimation();
+            //stopSound(footstepsEvent);
+            //}else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
+        }*/
+
+        /*if(collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
+        {
+            triggerIdleAnimation();
+            stopSound(footstepsEvent);
+            avatarIsCollidingWithObstacle = true;
+            directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
+            avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.01f;
+            //triggerIdleAnimation();
+            //stopSound(footstepsEvent);
+            //}else if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading && inputManager.checkIfColliderWasHit("Portal"))
+        }*/
+
+
 
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
+        {
+            
+            if (inputManager.wasCollidedPortalhit(collision.gameObject.GetComponent<Collider2D>()))
+            {
+                if (collision.gameObject.name.Contains("Door"))
+                    FMODUnity.RuntimeManager.PlayOneShot(doorHandleSound);
+                else if (collision.gameObject.name.Contains("Stairs"))
+                    FMODUnity.RuntimeManager.PlayOneShot(stairsSound);
+
+                stopAvatar();
+                //Debug.Log("Portal name:"+ collision.gameObject.name);
+
+                //replacement of OnCollisionWithPortal(collision.gameObject.name); to call events with IEnumerator as return type and Coroutines in Handler Methods:
+                if (OnCollisionWithPortal != null)
+                {
+                    for (int n = OnCollisionWithPortal.GetInvocationList().Length - 1; n >= 0; n--)
+                    {
+                        OnCollisionWithPortalHandler onCollisionWithPortalCoroutine = OnCollisionWithPortal.GetInvocationList()[n] as OnCollisionWithPortalHandler;
+                        StartCoroutine(onCollisionWithPortalCoroutine(collision.gameObject.name));
+                    }
+                }
+            }
+            else
+            {
+                stopPlayerAndPushBackToPrevoiusPosition();
+            }
+
+        }
         //if (collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         //{
         //triggerIdleAnimation();
@@ -146,8 +183,8 @@ public class PlayerControler : MonoBehaviour
         //triggerIdleAnimation();
         //isMoving = false;
         //stopSound(footstepsEvent);
-            //directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
-            //avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.05f;
+        //directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
+        //avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.05f;
         //}
     }
 
@@ -156,7 +193,7 @@ public class PlayerControler : MonoBehaviour
         resetTriggerIdleAnimation();
         //if (collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         //{
-            avatarIsCollidingWithObstacle = false;
+        avatarIsCollidingWithObstacle = false;
         //}
     }
 
@@ -172,11 +209,7 @@ public class PlayerControler : MonoBehaviour
             if (colliderOfAvatarCurrent.IsTouching(collision))
             {
                 //Debug.Log("trigger stay3");
-                resetTriggerWalkAnimation();
-                triggerIdleAnimation();
-                stopSound(footstepsEvent);
-                directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
-                avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.05f;
+                stopPlayerAndPushBackToPrevoiusPosition();
             }
 
         }
@@ -205,6 +238,15 @@ public class PlayerControler : MonoBehaviour
 
     }
 
+    private void stopPlayerAndPushBackToPrevoiusPosition()
+    {
+        resetTriggerWalkAnimation();
+        triggerIdleAnimation();
+        stopSound(footstepsEvent);
+        //directionAvatar = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
+        //avatar.transform.position = avatarPreviousPosition + directionAvatar * 0.05f;
+        avatar.transform.position = avatar.transform.position - directionAvatar * 0.05f;
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log("trigger stay1");
@@ -218,12 +260,13 @@ public class PlayerControler : MonoBehaviour
                 //resetTriggerWalkAnimation();
                 //triggerIdleAnimation();
                 //stopSound(footstepsEvent);
-                directionPlayer = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
-                avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.05f;
+                //directionAvatar = targetPosition - new Vector3(mousePositionWorld2d.x, mousePositionWorld2d.y, targetPosition.z);
+                //avatar.transform.position = avatarPreviousPosition + directionAvatar * 0.05f;
+                //avatar.transform.position = avatar.transform.position - directionAvatar * 0.05f;
             }
 
         }
-        
+
         /*if (avatarManager.checkForCollisionWithObstacles(colliderOfAvatarCurrent))
         {
             stopSound(footstepsEvent);
@@ -239,12 +282,12 @@ public class PlayerControler : MonoBehaviour
         //resetTriggerIdleAnimation();
         //avatarIsCollidingWithObstacle = false;
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {
         //Debug.Log("avatarManager1:" + avatarManager);
-        
+
         avatarManager = API.AvatarManager;
         avatarManager.OnControllerChange += HandleOnControllerChange;
         avatar = AvatarManager.currentAvatar;
@@ -266,11 +309,11 @@ public class PlayerControler : MonoBehaviour
         eventDescription.createInstance(out footstepsEvent);
 
         //scale character with current values of scene manager for first loaded scene
-        if(sceneManager.CurrentSceneValues!=null) //is case for start menu as avatars are not displayed
+        if (sceneManager.CurrentSceneValues != null) //is case for start menu as avatars are not displayed
             initializeAndRescalePlayer(sceneManager.CurrentSceneValues.avatarStartScale, sceneManager.CurrentSceneValues.avatarScaleFactor);
-        
+
         seeker = avatar.seeker;
-        rb = avatar.getRigidbody2D() ;
+        rb = avatar.getRigidbody2D();
         speed = avatar.speed;
         nextWaypointDistance = avatar.nextWaypointDistance;
 
@@ -283,26 +326,26 @@ public class PlayerControler : MonoBehaviour
         releaseSound(footstepsEvent);
     }
 
- 
+
 
     // Update is called once per frame
     void Update()
     {
-        if (!avatarIsCollidingWithObstacle)
-            avatarPreviousPosition = avatar.transform.position;
-       
-        
+        //if (!avatarIsCollidingWithObstacle)
+            //avatarPreviousPosition = avatar.transform.position;
+
+
 
         //Debug.Log("in inventory "+inventory.InteractionWithInventoryActive);
         if (!inventory.InteractionWithUIActive && inputManager.isMouseDown() && !sceneManager.IsReloading)
         {
-            if ((raycastHit= inputManager.getRaycastRigidbody("Player")).rigidbody!=null )
+            if ((raycastHit = inputManager.getRaycastRigidbody("Player")).rigidbody != null)
             {
-                if(raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
+                if (raycastHit.rigidbody.gameObject != AvatarManager.currentAvatar.gameObject && !isMoving)
                 {
                     avatarManager.ChangeController(AvatarManager.playerAvatar, AvatarManager.helperAvatar);
                     colliderOfAvatarCurrent = colliderOfAvatarPlayer;
-                }  
+                }
             }
             //else if (inputManager.getRaycastMainHitOnMouseDown().rigidbody != null && inputManager.getRaycastMainHitOnMouseDown().rigidbody.tag == "Helper")
 
@@ -328,7 +371,7 @@ public class PlayerControler : MonoBehaviour
                 isMoving = true;
                 resetTriggerIdleAnimation();
                 triggerWalkAnimation();
-                
+
                 //Check if sprite flip needed:
                 CheckAvatarFlip();
 
@@ -342,13 +385,13 @@ public class PlayerControler : MonoBehaviour
                     //move player infront of item.
                     if (inputManager.checkIfColliderWasHit("Item"))
                         targetPosition.x -= 1;
-                    
+
                     //triggerWalkAnimation();
                     initializeLerp();
                     isMoving = true;
                     resetTriggerIdleAnimation();
                     triggerWalkAnimation();
-                    
+
                     //Check if sprite flip needed:
                     CheckAvatarFlip();
                     UpdatePath();
@@ -374,7 +417,7 @@ public class PlayerControler : MonoBehaviour
             isMoving = true;
             resetTriggerIdleAnimation();
             triggerWalkAnimation();
-            
+
             //Debug.Log("OnPathComplete entered");
         }
     }
@@ -385,25 +428,24 @@ public class PlayerControler : MonoBehaviour
         if (isMoving)
         {
             //Lerp();
+            if (sceneManager.IsReloading)
+            {
+                stopAvatar();
+                return;
+            }
+                
+
             scaleCharachter();
 
             if (path == null) //no path currently exists.
                 return;
             //if(currentTriggerCollider!=null)
-                //Debug.Log("FixedUpdate5: "+ currentTriggerCollider + " "+ colliderOfAvatarCurrent.IsTouching(currentTriggerCollider));
+            //Debug.Log("FixedUpdate5: "+ currentTriggerCollider + " "+ colliderOfAvatarCurrent.IsTouching(currentTriggerCollider));
             if (currentWayPoint >= path.vectorPath.Count /*|| (currentTriggerCollider!=null && colliderOfAvatarCurrent.IsTouching(currentTriggerCollider) && !currentTriggerCollider.gameObject.layer.Equals("Ground") && !currentTriggerCollider.gameObject.layer.Equals("Obstacle") && !currentTriggerCollider.gameObject.name.Contains("DropOff"))*/)//check if we havent reached the end the path. If we reached it we want to stop moving. path.vectorPath.Count describes the total amount of waypoint on our path.
             {
                 //Debug.Log("FixedUpdate entered1");
-                reachedEndOfPath = true;
-                isMoving = false;
-                stopSound(footstepsEvent);
-                currentWayPoint = path.vectorPath.Count;
-                //if(avatar.avatarAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-                resetTriggerWalkAnimation();
-                avatar.avatarAnimator.enabled = false;
-                avatar.avatarAnimator.enabled = true;
-                triggerIdleAnimation();
-                
+                stopAvatar();
+
                 return;
             }
             else
@@ -412,15 +454,18 @@ public class PlayerControler : MonoBehaviour
                 reachedEndOfPath = false;
                 footstepsEvent.start();
                 //if (avatar.avatarAnimator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
-                    //triggerWalkAnimation();
-                
+                //triggerWalkAnimation();
+
             }
             //Debug.Log("FixedUpdate entered3");
             //move helper:
             //get direction to the next waypoint along our path:
-            Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;//path.vectorPath[currentWayPoint] finds current waypoint along our path. path.vectorPath[currentWayPoint] - rb.position gives a vector that points from current position rb.position to the next waypoint path.vectorPath[currentWayPoint]. We normilize the direction to have a vector with length 1.
-                                                                                                     //Apply force to move helper into the direction direction:
-            Vector2 force = direction * speed * Time.deltaTime;
+            //Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;//path.vectorPath[currentWayPoint] finds current waypoint along our path. path.vectorPath[currentWayPoint] - rb.position gives a vector that points from current position rb.position to the next waypoint path.vectorPath[currentWayPoint]. We normilize the direction to have a vector with length 1.
+
+            directionAvatar = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;//path.vectorPath[currentWayPoint] finds current waypoint along our path. path.vectorPath[currentWayPoint] - rb.position gives a vector that points from current position rb.position to the next waypoint path.vectorPath[currentWayPoint]. We normilize the direction to have a vector with length 1.
+            
+            //Apply force to move helper into the direction direction://Apply force to move helper into the direction direction:
+            Vector2 force = directionAvatar * speed * Time.deltaTime;
 
             //adding force to helper:
             rb.AddForce(force);
@@ -434,7 +479,7 @@ public class PlayerControler : MonoBehaviour
             }
         }
 
-        
+
     }
 
 
@@ -448,6 +493,18 @@ public class PlayerControler : MonoBehaviour
         scaleCharachter(AvatarManager.helperAvatar);
     }
 
+    private void stopAvatar()
+    {
+        reachedEndOfPath = true;
+        isMoving = false;
+        stopSound(footstepsEvent);
+        currentWayPoint = path.vectorPath.Count;
+        //if(avatar.avatarAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        resetTriggerWalkAnimation();
+        //avatar.avatarAnimator.enabled = false;
+        //avatar.avatarAnimator.enabled = true;
+        triggerIdleAnimation();
+    }
     private void initializePlayerAvatar(Avatar avatar, float avatarStartScale, float avatarScaleFactor)
     {
         avatar.setLocalScale(Vector3.one * avatarStartScale);

@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     private Vector2 mousePositionWorld2d;
     private Camera mainCamera;
     private RaycastHit2D[] raycastMainHit;
+    private RaycastHit2D[] raycastPortalHit;
     private bool mouseDown;
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,14 @@ public class InputManager : MonoBehaviour
             //Raycast 2D for item detection, object need 2d collider to be detected
             raycastMainHit = Physics2D.RaycastAll(mousePositionWorld2d, Vector2.zero);
             //Debug.Log("Raycasting" +raycastMainHit.Length);
+
+            raycastPortalHit=Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            //above code line (raycastPortalHit=Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero)) for 3d:
+            /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit[] hits;
+            hits = Physics.RaycastAll(ray);
+            */
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -56,6 +65,17 @@ public class InputManager : MonoBehaviour
         return mouseDown;
     }
 
+    public bool wasCollidedPortalhit(Collider2D collidedPortal)
+    {
+        foreach(RaycastHit2D raycastCollider in raycastPortalHit)
+        {
+            if(raycastCollider.collider != null && raycastCollider.collider.gameObject.tag.Equals("Portal") && collidedPortal== raycastCollider.collider)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public RaycastHit2D getRaycastCollider(string colliderTag)
     {
         if (raycastMainHit != null)
