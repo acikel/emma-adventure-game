@@ -142,6 +142,7 @@ public class SceneManager : MonoBehaviour
         hideAvatarsAndInventoryOnStartMenuLoad();
         loadStartLocations();
         initializeStartLocations();
+        popUpWindowIsOpen = false;
 
         //PLayer scale and scale needs to be set on player for first scene as AfterAvatarInitialization is null on start.
         /*
@@ -321,6 +322,7 @@ public class SceneManager : MonoBehaviour
             unHideAvatars = false;
             avatarManager.hideAvatars(true);
             startMenuWasEntered = true;
+            popUpWindowIsOpen = false;
             OnStartMenuEntered?.Invoke();
         }
     }
