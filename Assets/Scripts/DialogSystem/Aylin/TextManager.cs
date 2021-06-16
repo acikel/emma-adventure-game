@@ -59,6 +59,12 @@ public class TextManager : MonoBehaviour
 
     //Canvas to asign main camera to for render mode screen space camera, as the camera is another scene then the dialog system.
     public Canvas CanvasDialog;
+
+    //only allows skipping while not waiting for the next text to load. Otherwise the dialog system gets bugged and the next scene on dialog and cant be loaded.
+    private bool isWaitingForNextText;
+
+    //Checks if new scene was begun to load. Without the check the new scene wont load if the player keeps clicking while scene load as the current scene counter sceneManager.CurrentSequenceNummber++ in the upadte method will be counted up in this case.
+    private bool nextSceneLoadWasActivated;
     public static int TurnCounter
     {
         get
@@ -78,10 +84,16 @@ public class TextManager : MonoBehaviour
         turnCounter = 1;
         addOnClickListenerToButtons();
         setButtonsActive(false);
+        isWaitingForNextText = false;
+        nextSceneLoadWasActivated = false;
 
     }
 
-    
+    private void OnEnable()
+    {
+        nextSceneLoadWasActivated = false;
+    }
+
     private void addOnClickListenerToButtons()
     {
         foreach(Button b in buttonAnswerOptions)
@@ -113,8 +125,10 @@ public class TextManager : MonoBehaviour
     //The longer the text the longer the function needs to wait.
     private IEnumerator invokeNextTypewrittenDialogText()
     {
+        isWaitingForNextText = true;
         yield return new WaitForSeconds(0.3f);
         OnNextTurn?.Invoke();
+        isWaitingForNextText = false;
     }
 
     private bool didAllReactionsEnd()
@@ -131,17 +145,22 @@ public class TextManager : MonoBehaviour
 
     private void Update()
     {
+        if (isWaitingForNextText || nextSceneLoadWasActivated)
+            return;
+
         //Debug.Log("turn count:" + turnCounter + "newMouseClick"+ newMouseClick+ "inputManager.isMouseDown()"+ inputManager.isMouseDown()+ "!buttonAnswerOptions[0].IsActive()"+ !buttonAnswerOptions[0].IsActive());
         if (newMouseClick && inputManager.isMouseDown() && !buttonAnswerOptions[0].IsActive()/*&& type writer ist fertig und sound fertig sonst beenden in anderen methode und keine buttons activ da dann antwort gewaehlt werden muss*/)
         {
             //Debug.Log("Text Manager in next turn");
             if (didAllReactionsEnd())
             {
-                //Debug.Log("Text Manager didAllReactionsEnd()");
+                nextSceneLoadWasActivated = true;
+                //Debug.Log("Text Manager didAllReactionsEnd()"+ sceneManager.CurrentSequenceNummber);
                 sceneManager.CurrentSequenceNummber++;
                 //Disable for smooth fade to next scene
                 CanvasDialog.enabled = false;
                 sceneManager.unloadDialogSystemLoadNewSequenceUnlockPlayer("Sequence"+sceneManager.CurrentSequenceNummber+"Zone1");
+                
             }
             newMouseClick = false;
             if (typeWriter.IsWritingDone)

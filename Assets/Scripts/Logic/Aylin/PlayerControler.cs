@@ -146,7 +146,7 @@ public class PlayerControler : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        /*if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
+        if (collision.gameObject.tag == "Portal" && !sceneManager.IsReloading)
         {
             
             if (inputManager.wasCollidedPortalhit(collision.gameObject.GetComponent<Collider2D>()))
@@ -174,7 +174,7 @@ public class PlayerControler : MonoBehaviour
                 stopPlayerAndPushBackToPrevoiusPosition();
             }
 
-        }*/
+        }
         //if (collision.gameObject.tag == "Helper" || collision.gameObject.tag == "Player")
         //{
         //triggerIdleAnimation();
@@ -343,7 +343,7 @@ public class PlayerControler : MonoBehaviour
 
 
 
-        //Debug.Log("in inventory "+inventory.InteractionWithInventoryActive);
+        //Debug.Log("in inventory "+inventory.InteractionWithUIActive);
         if (!inventory.InteractionWithUIActive && inputManager.isMouseDown() && !sceneManager.IsReloading)
         {
             if ((raycastHit = inputManager.getRaycastRigidbody("Player")).rigidbody != null)

@@ -9,6 +9,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     protected CanvasGroup canvasToOpen;
     protected Inventory inventory;
     private InputManager inputManager;
+    protected SceneManager sceneManager;
     //Determines if this object was clicked
     private bool mouseWasClicked;
     //looks at each mouse click in game and is true if this obejct was clicked. 
@@ -43,6 +44,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         resetPlayerMovement = false;
         inputManager = API.InputManager;
         inventory = API.Inventory;
+        sceneManager = API.SceneManager;
         initializeCanvasToOpen();
         //spriteRendererHintImage = GetComponent<SpriteRenderer>();
         setAlphaOfHintImage(0);
@@ -86,7 +88,11 @@ public abstract class OpenPopUpWindow : MonoBehaviour
             yield return null;
         }
         inventory.InteractionWithUIActive = false;
+        //Debug.Log("waitTillMouseWasReleasedAfterResumingFromPopUpPanel");
         resetMouseClick();
+
+        sceneManager.PopUpWindowIsOpen = false;//if this method was entered a popupwindow was closed scripts that reset player movement lock should check if an popupwindow is opened to not reset player movement lock if mouse enters their trigger like in InteractionSwitch.cs for interactables.
+        //sceneManager.PopUpWindowIsOpen needs to be set to true in every subclass of OpenPopUpWindow.cs like OpenImagePopUp.cs and OpenLockDoor.cs, everytime the player opens the popupwindow while colliding (in the activatePopUpWindow() method) and in the OnTriggerEnter2D function which also opens the popupwindow when the popupwindow collider was clicked and the player entered later (by walking to the collider first).
 
     }
 
@@ -101,6 +107,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         //player movement which is not desired.
         yield return new WaitForSeconds(0.3f);
         inventory.InteractionWithUIActive = false;
+        //Debug.Log("waitunlockPlayerMovement2");
         resetMouseClick();
     }
 
@@ -185,7 +192,6 @@ public abstract class OpenPopUpWindow : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShot(popUpSound2);
             //Debug.Log("OnMouseDown2");
             //resetMouseClick();
-            
         }
 
     }

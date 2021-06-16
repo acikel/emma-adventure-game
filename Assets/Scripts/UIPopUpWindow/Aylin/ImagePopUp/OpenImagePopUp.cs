@@ -48,7 +48,7 @@ public class OpenImagePopUp : OpenPopUpWindow
                 inventory.InteractionWithUIActive = true;
                 //resetMouseClick needed otherwise after closing popupwindow it is resumed after each reinter into trigger.
                 resetMouseClick();
-                
+                sceneManager.PopUpWindowIsOpen = true;//if the if was entered a popupwindow was opened scripts that reset player movement lock should check if an popupwindow is opened to not reset player movement lock if mouse enters their trigger like in InteractionSwitch.cs for interactables.
             }
         }
     }
@@ -74,6 +74,7 @@ public class OpenImagePopUp : OpenPopUpWindow
             imagePopUpResumePanel.justOpened();
             imagePopUpPanel.setImageOfPopUpImagePanel(imageToBeDisplayed);
             openCounter++;
+            sceneManager.PopUpWindowIsOpen = true;//if the if was entered a popupwindow was opened scripts that reset player movement lock should check if an popupwindow is opened to not reset player movement lock if mouse enters their trigger like in InteractionSwitch.cs for interactables.
         }
         return playerCollided;
     }

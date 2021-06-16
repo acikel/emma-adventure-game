@@ -17,18 +17,24 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
     private float alphaTmp;
     private bool isFading;
 
+    private SceneManager sceneManager;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         objectToSwitchToSpriteRenderer = objectToSwitchTo.GetComponent<SpriteRenderer>();
         interactionSwitcher = objectToSwitchTo.GetComponent<InteractionSwitch>();
         inventory = API.Inventory;
+        sceneManager = API.SceneManager;
         isFading = false;
     }
 
 
     private void OnMouseDown()
     {
+        if (sceneManager.PopUpWindowIsOpen)//checks if an popup window (any class that extends OpenPopUpWindow.cs) is opened and does no interaction if an popupwindow overlays an interactable object in the scene.
+            return;
+
         if (spriteRenderer.color.a!=1 || interactionSwitcher.isSwitcherFading())
             return;
 
@@ -81,11 +87,14 @@ public class InteractionSwitch : MonoBehaviour//, IPointerDownHandler
     }
     private void OnMouseOver()
     {
-        inventory.InteractionWithUIActive = true;
+        if(!sceneManager.PopUpWindowIsOpen) //checks if an popup window (any class that extends OpenPopUpWindow.cs) is opened to not lock or unlock player movement if an popupwindow overlays this interactable.
+            inventory.InteractionWithUIActive = true;
     }
     private void OnMouseExit()
     {
-        inventory.InteractionWithUIActive = false;
+        if (!sceneManager.PopUpWindowIsOpen)//checks if an popup window (any class that extends OpenPopUpWindow.cs) is opened to not lock or unlock player movement if an popupwindow overlays this interactable.
+            inventory.InteractionWithUIActive = false;
+        //Debug.Log("OnMouseExit1"+ sceneManager.PopUpWindowIsOpen);
     }
     private void OnMouseUp()
     {

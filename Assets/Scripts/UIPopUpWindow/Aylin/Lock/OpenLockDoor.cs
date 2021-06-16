@@ -13,7 +13,10 @@ public class OpenLockDoor : OpenPopUpWindow
     private bool playerCollided;
     private LockResumePanel lockResumePanel;
 
-
+    //needed as without it player will move to a random place as the player will get hit by the collider on activating the opened door doorOpen collider in lockResolved().
+    //This happens because of the colliderStay2D code in PlayerController.cs, which moves the player to the previous position and pushes it back while colliding with the opened door collider.
+    //This collision happens till the lock is closed and the player is set back very far away from the door.
+    public Transform playerPositionOnDoorOpen;
     private new void OnEnable()
     {
         base.OnEnable();
@@ -44,6 +47,7 @@ public class OpenLockDoor : OpenPopUpWindow
                     FMODUnity.RuntimeManager.PlayOneShot(popUpSound2);
                 //resetMouseClick needed otherwise after closing popupwindow it is resumed after each reinter into trigger.
                 resetMouseClick();
+                sceneManager.PopUpWindowIsOpen = true;//if the if was entered a popupwindow was opened scripts that reset player movement lock should check if an popupwindow is opened to not reset player movement lock if mouse enters their trigger like in InteractionSwitch.cs for interactables.
             }
         }
     }
@@ -70,13 +74,17 @@ public class OpenLockDoor : OpenPopUpWindow
             lockResumePanel.openCanvas();
             lockResumePanel.justOpened();
             openCounter++;
+            sceneManager.PopUpWindowIsOpen = true;//if the if was entered a popupwindow was opened scripts that reset player movement lock should check if an popupwindow is opened to not reset player movement lock if mouse enters their trigger like in InteractionSwitch.cs for interactables.
         }
         return playerCollided;
     }
     private void lockResolved()
     {
+        AvatarManager.playerAvatar.gameObject.transform.position = playerPositionOnDoorOpen.position;
         doorOpen.SetActive(true);
         gameObject.SetActive(false);
+
+        //inventory.InteractionWithUIActive = true;
     }
 
 }

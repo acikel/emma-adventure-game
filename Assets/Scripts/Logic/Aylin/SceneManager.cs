@@ -63,6 +63,11 @@ public class SceneManager : MonoBehaviour
     //keeps count of current sequence/level of the game (as after each dialog a new sequence/level is entered).
     private int currentSequenceNummber;
 
+    //used by OpenPopUpWindow.cs to define if any popup window is currently opened (for example Lock popupwindow or image popup window)
+    //This is then used by objects which reset the player movement unlock like the InteractionSwitch.cs which resets the player movement unlock
+    //whenever the mouse exits the collider of interactables. If it does not know when the popup window is open it will reset it when an interactable
+    //object is overlayed by an opened popupwindow and the player starts moving even if this is not wanted.
+    private bool popUpWindowIsOpen;
     public int CurrentSequenceNummber
     {
         get
@@ -72,6 +77,18 @@ public class SceneManager : MonoBehaviour
         set
         {
             currentSequenceNummber = value;
+        }
+    }
+
+    public bool PopUpWindowIsOpen
+    {
+        get
+        {
+            return popUpWindowIsOpen;
+        }
+        set
+        {
+            popUpWindowIsOpen = value;
         }
     }
 

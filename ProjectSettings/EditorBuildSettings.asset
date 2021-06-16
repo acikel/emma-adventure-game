@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Sequence1Zone6.unity
     guid: 9521a864a3cde3145b26207b836dc680
   - enabled: 1
-    path: Assets/Scenes/DevelopemtTests/Aylin/DialogSystem/Sequence1DialogSystem.unity
+    path: Assets/Scenes/Sequence1DialogSystem.unity
     guid: dcaaf49190c8d494bae00615b94f245c
   - enabled: 1
     path: Assets/Scenes/Sequence2Zone1.unity

@@ -34,6 +34,7 @@ public class InventoryBlocker : MonoBehaviour, IPointerEnterHandler, IPointerExi
             //Debug.Log("Entered");
             inventory = API.Inventory;
             inventory.InteractionWithUIActive = false;
+            //Debug.Log("1");
         }
         
     }
