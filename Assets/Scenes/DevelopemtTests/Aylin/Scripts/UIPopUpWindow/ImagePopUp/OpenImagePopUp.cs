@@ -35,6 +35,7 @@ public class OpenImagePopUp : OpenPopUpWindow
 
             if (mouseWasClickedOnObject)
             {
+                openCounter++;
                 imagePopUpResumePanel.openCanvas();
                 //imagePopUpResumePanel.justOpened(); //no need for resume onPointerDown blocker as player first needs to walk to this game object and mouse is aleady released till then.
                 imagePopUpPanel.setImageOfPopUpImagePanel(imageToBeDisplayed);
@@ -42,9 +43,12 @@ public class OpenImagePopUp : OpenPopUpWindow
                 //if (eventDescription.isValid())
                 //    popUpSoundEvent.start();
                 FMODUnity.RuntimeManager.PlayOneShot(popUpSound);
+                if (openCounter % skipsOfVoiceOver == 1)
+                    FMODUnity.RuntimeManager.PlayOneShot(popUpSound2);
                 inventory.InteractionWithUIActive = true;
                 //resetMouseClick needed otherwise after closing popupwindow it is resumed after each reinter into trigger.
                 resetMouseClick();
+                
             }
         }
     }
@@ -69,6 +73,7 @@ public class OpenImagePopUp : OpenPopUpWindow
             imagePopUpResumePanel.openCanvas();
             imagePopUpResumePanel.justOpened();
             imagePopUpPanel.setImageOfPopUpImagePanel(imageToBeDisplayed);
+            openCounter++;
         }
         return playerCollided;
     }

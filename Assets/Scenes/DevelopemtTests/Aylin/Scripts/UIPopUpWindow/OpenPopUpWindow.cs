@@ -16,6 +16,11 @@ public abstract class OpenPopUpWindow : MonoBehaviour
     //This is handled in the subclass OpenImagePopUp and OpenLockDoor when player enters a trigger.
     protected bool mouseWasClickedOnObject;
 
+    //counts how many times the popupwindow was opened and plays the voice over every third time.
+    protected int openCounter;
+    //amount of clicks which are done to play the voice over for the popupwindow again
+    public int skipsOfVoiceOver = 3;
+
     //variables for sounds reference.
     //protected FMOD.Studio.EventInstance popUpSoundEvent;
     //protected FMOD.Studio.EventDescription eventDescription;
@@ -41,6 +46,7 @@ public abstract class OpenPopUpWindow : MonoBehaviour
         initializeCanvasToOpen();
         //spriteRendererHintImage = GetComponent<SpriteRenderer>();
         setAlphaOfHintImage(0);
+        openCounter = 0;
 
         //eventDescription = FMODUnity.RuntimeManager.GetEventDescription(popUpSound);
         //if(eventDescription.isValid())
@@ -175,11 +181,13 @@ public abstract class OpenPopUpWindow : MonoBehaviour
             //    popUpSoundEvent.start();
 
             FMODUnity.RuntimeManager.PlayOneShot(popUpSound);
-            FMODUnity.RuntimeManager.PlayOneShot(popUpSound2);
+            if(openCounter% skipsOfVoiceOver == 1)//play mouseover sound every 3. time the popupWindow was opened
+                FMODUnity.RuntimeManager.PlayOneShot(popUpSound2);
             //Debug.Log("OnMouseDown2");
             //resetMouseClick();
+            
         }
-        
+
     }
     public void resetMouseClick()
     {

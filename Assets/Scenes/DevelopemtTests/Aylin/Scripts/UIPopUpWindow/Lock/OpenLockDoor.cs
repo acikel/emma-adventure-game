@@ -34,11 +34,14 @@ public class OpenLockDoor : OpenPopUpWindow
 
             if (mouseWasClickedOnObject)
             {
+                openCounter++;
                 lockResumePanel.openCanvas();
                 //imagePopUpResumePanel.justOpened(); //no need for resume onPointerDown blocker as player first needs to walk to this game object and mouse is aleady released till then.
                 inventory.InteractionWithUIActive = true;
                 setAlphaOfHintImage(0);
                 FMODUnity.RuntimeManager.PlayOneShot(popUpSound);
+                if (openCounter % skipsOfVoiceOver == 1)
+                    FMODUnity.RuntimeManager.PlayOneShot(popUpSound2);
                 //resetMouseClick needed otherwise after closing popupwindow it is resumed after each reinter into trigger.
                 resetMouseClick();
             }
@@ -66,6 +69,7 @@ public class OpenLockDoor : OpenPopUpWindow
         {
             lockResumePanel.openCanvas();
             lockResumePanel.justOpened();
+            openCounter++;
         }
         return playerCollided;
     }
