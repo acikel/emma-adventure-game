@@ -450,8 +450,8 @@ public class SceneManager : MonoBehaviour
         //ScM.SceneManager.LoadSceneAsync("Sequence1Zone1", LoadSceneMode.Additive);
         //ScM.SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
         inputManager = API.InputManager;
-        
-        yield return StartCoroutine(loadInitialSceneSetup());
+        if(ScM.SceneManager.sceneCount==1)
+            yield return StartCoroutine(loadInitialSceneSetup());
         currentSequenceNummber = 1;
         faderCanvasGroup = API.FadeImage;
         faderCanvasGroup.alpha = 1f;
@@ -468,10 +468,11 @@ public class SceneManager : MonoBehaviour
 
 
         assignScaleValueForCurrentScene();
-        
+
 
         //hide avatars (player and helper) and inventory canvas when start menu is displayed on start:
-        hideAvatarsAndInventoryOnStartMenuLoad();
+        if (ScM.SceneManager.sceneCount == 1)
+            hideAvatarsAndInventoryOnStartMenuLoad();
         loadStartLocations();
         initializeStartLocations();
         popUpWindowIsOpen = false;
