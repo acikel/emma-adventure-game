@@ -15,7 +15,11 @@ public class InputManager : MonoBehaviour
     {
         mainCamera = Camera.main;
     }
-
+    
+    public void reasignCamera()
+    {
+        mainCamera = Camera.main;
+    }
     // Update is called once per frame
     void Update()
     {

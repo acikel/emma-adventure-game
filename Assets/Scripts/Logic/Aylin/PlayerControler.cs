@@ -212,9 +212,9 @@ public class PlayerControler : MonoBehaviour
             {
                 //Debug.Log("trigger stay3");
                 //stopPlayerAndPushBackToPrevoiusPosition();
-                ContactPoint2D[] contacts= new ContactPoint2D[0];
-                collision.GetContacts(contacts);
-                Vector3 pos = contacts[0].point;
+                //ContactPoint2D[] contacts= new ContactPoint2D[0];
+                //collision.GetContacts(contacts);
+                //Vector3 pos = contacts[0].point;
 
                 avatar.transform.position = avatarPreviousPosition - directionAvatar * 0.05f;
             }

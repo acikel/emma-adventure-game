@@ -116,51 +116,17 @@ public class SceneManager : MonoBehaviour
             return currentSceneValues;
         }
     }
-    // Start is called before the first frame update
-    void Start()
+
+
+    
+        // Start is called before the first frame update
+        void Start()
     {
-        currentSequenceNummber = 1;
-        faderCanvasGroup = API.FadeImage;
-        faderCanvasGroup.alpha = 1f;
-        avatarManager = API.AvatarManager;
-        //Debug.Log("avatarManager1:" + avatarManager);
-        //currentAdditiveSceneName ="Sequence1Zone1";
-        
-        //3. additive scene at game start is set as first loaded scene and unloaded first.
-        currentAdditiveSceneName = ScM.SceneManager.GetSceneAt(ScM.SceneManager.sceneCount - 1).name;
-        //Debug.Log("currentAdditiveSceneName: " + currentAdditiveSceneName);
-
-        
-
-        assignScaleValueForCurrentScene();
-        //ScM.SceneManager.LoadSceneAsync("Sequence1Zone1", LoadSceneMode.Additive);
-        //ScM.SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
-        inputManager = API.InputManager;
-        inventory = API.Inventory;
-        canvasInventory = API.CanvasInventory;
-
-        //hide avatars (player and helper) and inventory canvas when start menu is displayed on start:
-        hideAvatarsAndInventoryOnStartMenuLoad();
-        loadStartLocations();
-        initializeStartLocations();
-        popUpWindowIsOpen = false;
-
-        audioListener = API.FMODAudioListenerInstance;
-        //PLayer scale and scale needs to be set on player for first scene as AfterAvatarInitialization is null on start.
-        /*
-        assignScaleValueForCurrentScene();
-
-        if (currentSceneValues != null)
-        {
-            AfterAvatarInitialization?.Invoke(currentSceneValues.avatarStartScale, currentSceneValues.avatarScaleFactor);
-        }
-        */
-
-        //AvatarManager.helperAvatar.gameObject.SetActive(false);
-        StartCoroutine(Fade(0f));
+        StartCoroutine(startGame());
 
     }
 
+    
     private void OnEnable()
     {
         unHideAvatars = false;
@@ -451,5 +417,77 @@ public class SceneManager : MonoBehaviour
         canvasInventory.blocksRaycasts = openInventory;
         canvasInventory.interactable = openInventory;
 
+    }
+
+    private void loadCameraAfterInitialization()
+    {
+        inputManager.reasignCamera();
+    }
+
+    private IEnumerator loadInitialSceneSetup()
+    {
+        //disable audio listener on scene load (here in HandleNextSceneLoad) and enable it after loading (in update -> !reloadeDone).
+        //audioListener.enabled = false;//sadly buggy as audiolistener is not disableble
+        Scene scene = ScM.SceneManager.GetActiveScene();
+        if (scene == null)
+            yield return ScM.SceneManager.LoadSceneAsync("Logic", LoadSceneMode.Additive);
+        else if (scene.name.Equals("Logic"))
+            ScM.SceneManager.SetActiveScene(ScM.SceneManager.GetSceneByName("Logic"));
+        else
+        {
+            yield return ScM.SceneManager.LoadSceneAsync("Logic", LoadSceneMode.Additive);
+            ScM.SceneManager.SetActiveScene(ScM.SceneManager.GetSceneByName("Logic"));
+        }
+
+        yield return ScM.SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
+        yield return ScM.SceneManager.LoadSceneAsync("StartMenu", LoadSceneMode.Additive);
+        currentAdditiveSceneName = ScM.SceneManager.GetSceneAt(ScM.SceneManager.sceneCount - 1).name;
+        loadCameraAfterInitialization();
+    }
+
+    private IEnumerator startGame()
+    {
+        //ScM.SceneManager.LoadSceneAsync("Sequence1Zone1", LoadSceneMode.Additive);
+        //ScM.SceneManager.LoadSceneAsync("Base", LoadSceneMode.Additive);
+        inputManager = API.InputManager;
+        
+        yield return StartCoroutine(loadInitialSceneSetup());
+        currentSequenceNummber = 1;
+        faderCanvasGroup = API.FadeImage;
+        faderCanvasGroup.alpha = 1f;
+        avatarManager = API.AvatarManager;
+        //Debug.Log("avatarManager1:" + avatarManager);
+        //currentAdditiveSceneName ="Sequence1Zone1";
+
+        //3. additive scene at game start is set as first loaded scene and unloaded first.
+        currentAdditiveSceneName = ScM.SceneManager.GetSceneAt(ScM.SceneManager.sceneCount - 1).name;
+        //Debug.Log("currentAdditiveSceneName: " + currentAdditiveSceneName);
+
+        inventory = API.Inventory;
+        canvasInventory = API.CanvasInventory;
+
+
+        assignScaleValueForCurrentScene();
+        
+
+        //hide avatars (player and helper) and inventory canvas when start menu is displayed on start:
+        hideAvatarsAndInventoryOnStartMenuLoad();
+        loadStartLocations();
+        initializeStartLocations();
+        popUpWindowIsOpen = false;
+
+        audioListener = API.FMODAudioListenerInstance;
+        //PLayer scale and scale needs to be set on player for first scene as AfterAvatarInitialization is null on start.
+        /*
+        assignScaleValueForCurrentScene();
+
+        if (currentSceneValues != null)
+        {
+            AfterAvatarInitialization?.Invoke(currentSceneValues.avatarStartScale, currentSceneValues.avatarScaleFactor);
+        }
+        */
+
+        //AvatarManager.helperAvatar.gameObject.SetActive(false);
+        StartCoroutine(Fade(0f));
     }
 }
