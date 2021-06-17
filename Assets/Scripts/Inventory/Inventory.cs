@@ -152,5 +152,16 @@ public class Inventory : MonoBehaviour
         */
     }
 
+    //used to clear inventory slots when entering a new sequence (like in Grandma.cs script when loading Sequence2 when ending Seuqence1)
+    //or resarting the game (when Start Menu was entered the slots are cleared in the SceneManager).
+    public void clearInventorySlots()
+    {
+        foreach (GameObject slot in slots)
+        {
+            if(slot.gameObject.transform.childCount>0)
+                GameObject.Destroy(slot.gameObject.transform.GetChild(0).gameObject);
+        }
+        
+    }
    
 }

@@ -10,6 +10,7 @@ public class SceneManager : MonoBehaviour
     private InputManager inputManager;
     private string currentAdditiveSceneName;
     private AvatarManager avatarManager;
+    private FMODUnity.StudioListener audioListener;
     private bool reloadDone = true;
 
     private GameObject playerStartLocation;
@@ -144,6 +145,7 @@ public class SceneManager : MonoBehaviour
         initializeStartLocations();
         popUpWindowIsOpen = false;
 
+        audioListener = API.FMODAudioListenerInstance;
         //PLayer scale and scale needs to be set on player for first scene as AfterAvatarInitialization is null on start.
         /*
         assignScaleValueForCurrentScene();
@@ -207,9 +209,11 @@ public class SceneManager : MonoBehaviour
                 if (startMenuWasEntered && currentAdditiveSceneName.Equals("Sequence1Zone1"))
                 {
                     AvatarManager.helperAvatar.gameObject.SetActive(false);
+                    //inventory.clearInventorySlots(); //sadly buggy as audiolistener is not disableble
                     startMenuWasEntered = false;
                 }
-                    
+                //disable audio listener on scene load (in HandleNextSceneLoad) and enable it after loading (here in update -> !reloadeDone).
+                //audioListener.enabled = true; //sadly buggy as audiolistener is not disableble
             }
         }
     }
@@ -272,6 +276,9 @@ public class SceneManager : MonoBehaviour
 
     private IEnumerator HandleNextSceneLoad(string sceneNameToTransitionTo)
     {
+        //disable audio listener on scene load (here in HandleNextSceneLoad) and enable it after loading (in update -> !reloadeDone).
+        //audioListener.enabled = false;//sadly buggy as audiolistener is not disableble
+
         isReloading = true;
         indexTmp = sceneNameToTransitionTo.IndexOf("_");
 

@@ -187,6 +187,7 @@ public class PlayerControler : MonoBehaviour
         //avatar.transform.position = avatarPreviousPosition + directionPlayer * 0.05f;
         //}
     }
+  
 
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -210,7 +211,12 @@ public class PlayerControler : MonoBehaviour
             if (colliderOfAvatarCurrent.IsTouching(collision))
             {
                 //Debug.Log("trigger stay3");
-                stopPlayerAndPushBackToPrevoiusPosition();
+                //stopPlayerAndPushBackToPrevoiusPosition();
+                ContactPoint2D[] contacts= new ContactPoint2D[0];
+                collision.GetContacts(contacts);
+                Vector3 pos = contacts[0].point;
+
+                avatar.transform.position = avatarPreviousPosition - directionAvatar * 0.05f;
             }
 
         }
@@ -308,6 +314,7 @@ public class PlayerControler : MonoBehaviour
         inventory = API.Inventory;
         sceneManager = API.SceneManager;
         sceneManager.AfterAvatarInitialization += initializeAndRescalePlayer;
+        OpenLockDoor.OnPlayerReprosition += scaleCharachter;
         //scaleCharachter();
         colliderOfAvatarCurrent = colliderOfAvatarPlayer;
 
@@ -331,6 +338,7 @@ public class PlayerControler : MonoBehaviour
         avatarManager.OnControllerChange -= HandleOnControllerChange;
         sceneManager.AfterAvatarInitialization -= initializeAndRescalePlayer;
         releaseSound(footstepsEvent);
+        OpenLockDoor.OnPlayerReprosition -= scaleCharachter;
     }
 
 

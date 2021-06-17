@@ -41,5 +41,6 @@ public class Grandma : ActionObject
         yield return new WaitForSeconds(seconds);
         //Debug.Log("waitAndLoadDialogSystem2");
         sceneManager.loadDialogSystemLockPlayer(dialogSystemNameToLoad, dreamSceneNameToLoad);
+        //inventory.clearInventorySlots(); //sadly buggy as audiolistener is not disableble
     }
 }

@@ -43,6 +43,7 @@ public static class API
     private static CanvasGroup _canvasImagePopUpInstance;
     private static CanvasGroup _canvasInventoryInstance;
     private static ImagePopUpPanel _ImagePopUpPanelInstance;
+    private static FMODUnity.StudioListener _FMODAudioListenerInstance;
 
     public static InputManager InputManager
     {
@@ -95,6 +96,20 @@ public static class API
             }
             return _avatarManagerInstance;
         }
+    }
+
+    public static FMODUnity.StudioListener FMODAudioListenerInstance
+    {
+        get
+        {
+            if (_FMODAudioListenerInstance == null ||
+            ReferenceEquals(_FMODAudioListenerInstance, null))
+            {
+                _FMODAudioListenerInstance = FindSingleInstance<PlayerControler>().GetComponent<FMODUnity.StudioListener>();
+            }
+            return _FMODAudioListenerInstance;
+        }
+        
     }
 
     public static CanvasGroup FadeImage

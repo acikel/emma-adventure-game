@@ -13,6 +13,10 @@ public class OpenLockDoor : OpenPopUpWindow
     private bool playerCollided;
     private LockResumePanel lockResumePanel;
 
+    //subscribed by PlayerController to rescale player when repositioned in lockResolved() method of this script.
+    public delegate void OnPlayerRepositionHandler();
+    public static event OnPlayerRepositionHandler OnPlayerReprosition;
+
     //needed as without it player will move to a random place as the player will get hit by the collider on activating the opened door doorOpen collider in lockResolved().
     //This happens because of the colliderStay2D code in PlayerController.cs, which moves the player to the previous position and pushes it back while colliding with the opened door collider.
     //This collision happens till the lock is closed and the player is set back very far away from the door.
@@ -84,6 +88,7 @@ public class OpenLockDoor : OpenPopUpWindow
         doorOpen.SetActive(true);
         gameObject.SetActive(false);
 
+        OnPlayerReprosition?.Invoke();
         //inventory.InteractionWithUIActive = true;
     }
 
